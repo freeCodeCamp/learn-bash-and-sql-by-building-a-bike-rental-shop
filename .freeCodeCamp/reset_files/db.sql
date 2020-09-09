@@ -84,6 +84,16 @@ ALTER SEQUENCE public.bikes_bike_id_seq OWNED BY public.bikes.bike_id;
 
 
 --
+-- Name: customers; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.customers (
+);
+
+
+ALTER TABLE public.customers OWNER TO freecodecamp;
+
+--
 -- Name: bikes bike_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
@@ -92,6 +102,12 @@ ALTER TABLE ONLY public.bikes ALTER COLUMN bike_id SET DEFAULT nextval('public.b
 
 --
 -- Data for Name: bikes; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+
+
+--
+-- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
 
