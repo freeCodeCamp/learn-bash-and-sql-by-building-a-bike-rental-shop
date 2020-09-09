@@ -89,7 +89,8 @@ ALTER SEQUENCE public.bikes_bike_id_seq OWNED BY public.bikes.bike_id;
 
 CREATE TABLE public.customers (
     customer_id integer NOT NULL,
-    phone character varying(15) NOT NULL
+    phone character varying(15) NOT NULL,
+    name character varying(40) NOT NULL
 );
 
 
