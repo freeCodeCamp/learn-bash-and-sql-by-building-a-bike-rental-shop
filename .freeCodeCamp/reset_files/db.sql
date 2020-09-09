@@ -52,15 +52,60 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.bikes (
+    bike_id integer NOT NULL
 );
 
 
 ALTER TABLE public.bikes OWNER TO freecodecamp;
 
 --
+-- Name: bikes_bike_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.bikes_bike_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.bikes_bike_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: bikes_bike_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.bikes_bike_id_seq OWNED BY public.bikes.bike_id;
+
+
+--
+-- Name: bikes bike_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.bikes ALTER COLUMN bike_id SET DEFAULT nextval('public.bikes_bike_id_seq'::regclass);
+
+
+--
 -- Data for Name: bikes; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+
+
+--
+-- Name: bikes_bike_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
+--
+
+SELECT pg_catalog.setval('public.bikes_bike_id_seq', 1, false);
+
+
+--
+-- Name: bikes bikes_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.bikes
+    ADD CONSTRAINT bikes_pkey PRIMARY KEY (bike_id);
 
 
 --
