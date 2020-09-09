@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { Client } = require('pg');
 
 const database = 'bikes';
@@ -8,8 +8,8 @@ const client = new Client({
 });
 
 describe('The "bikes" table', () => {
-  it('should have a column named "size" with the correct properties', async () => {
-    const query1 = `SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'public' AND is_nullable = 'NO' AND table_name = 'bikes' AND column_name = 'size' AND data_type = 'integer'`;
+  it('should have a column named "available" with the correct properties', async () => {
+    const query1 = `SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'public' AND is_nullable = 'NO' AND table_name = 'bikes' AND column_name = 'available' AND data_type = 'boolean' AND column_default = 'true';`;
 
     try {
       await client.connect();
@@ -22,4 +22,4 @@ describe('The "bikes" table', () => {
       await client.end();
     }
   });
-});*/
+});
