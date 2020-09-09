@@ -88,16 +88,46 @@ ALTER SEQUENCE public.bikes_bike_id_seq OWNED BY public.bikes.bike_id;
 --
 
 CREATE TABLE public.customers (
+    customer_id integer NOT NULL
 );
 
 
 ALTER TABLE public.customers OWNER TO freecodecamp;
 
 --
+-- Name: customers_customer_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.customers_customer_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.customers_customer_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: customers_customer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.customers_customer_id_seq OWNED BY public.customers.customer_id;
+
+
+--
 -- Name: bikes bike_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.bikes ALTER COLUMN bike_id SET DEFAULT nextval('public.bikes_bike_id_seq'::regclass);
+
+
+--
+-- Name: customers customer_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.customers ALTER COLUMN customer_id SET DEFAULT nextval('public.customers_customer_id_seq'::regclass);
 
 
 --
@@ -120,11 +150,26 @@ SELECT pg_catalog.setval('public.bikes_bike_id_seq', 1, false);
 
 
 --
+-- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
+--
+
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 1, false);
+
+
+--
 -- Name: bikes bikes_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.bikes
     ADD CONSTRAINT bikes_pkey PRIMARY KEY (bike_id);
+
+
+--
+-- Name: customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.customers
+    ADD CONSTRAINT customers_pkey PRIMARY KEY (customer_id);
 
 
 --
