@@ -54,7 +54,8 @@ SET default_table_access_method = heap;
 CREATE TABLE public.bikes (
     bike_id integer NOT NULL,
     type character varying(50) NOT NULL,
-    size integer NOT NULL
+    size integer NOT NULL,
+    available boolean DEFAULT true NOT NULL
 );
 
 
