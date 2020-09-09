@@ -4,6 +4,12 @@ config:
     commands:
       - cd .freeCodeCamp && npm install
       - sudo cp ~/project/.freeCodeCamp/.bashrc ~
+      - sudo chmod 777 ~/project/.freeCodeCamp/test/pg.log
+      - sudo cp ~/project/.freeCodeCamp/.psqlrc ~
+      - sudo cp ~/project/.freeCodeCamp/postgresql.conf /etc/postgresql/12/main/postgresql.conf
+      - sudo cp ~/project/.freeCodeCamp/pg_hba.conf /etc/postgresql/12/main/pg_hba.conf
+      - sudo service postgresql start
+      - sudo -u postgres psql -c "CREATE USER freecodecamp WITH CREATEDB;"
   testRunner:
     command: ./node_modules/.bin/mocha
     args:
