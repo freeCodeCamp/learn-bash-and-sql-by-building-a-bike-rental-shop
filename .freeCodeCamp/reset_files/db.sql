@@ -88,7 +88,8 @@ ALTER SEQUENCE public.bikes_bike_id_seq OWNED BY public.bikes.bike_id;
 --
 
 CREATE TABLE public.customers (
-    customer_id integer NOT NULL
+    customer_id integer NOT NULL,
+    phone character varying(15) NOT NULL
 );
 
 
@@ -162,6 +163,14 @@ SELECT pg_catalog.setval('public.customers_customer_id_seq', 1, false);
 
 ALTER TABLE ONLY public.bikes
     ADD CONSTRAINT bikes_pkey PRIMARY KEY (bike_id);
+
+
+--
+-- Name: customers customers_phone_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.customers
+    ADD CONSTRAINT customers_phone_key UNIQUE (phone);
 
 
 --
