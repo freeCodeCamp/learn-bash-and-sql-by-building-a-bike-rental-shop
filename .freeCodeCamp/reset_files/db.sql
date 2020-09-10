@@ -125,7 +125,8 @@ ALTER SEQUENCE public.customers_customer_id_seq OWNED BY public.customers.custom
 CREATE TABLE public.rentals (
     rental_id integer NOT NULL,
     customer_id integer NOT NULL,
-    bike_id integer NOT NULL
+    bike_id integer NOT NULL,
+    date_rented date DEFAULT now() NOT NULL
 );
 
 
