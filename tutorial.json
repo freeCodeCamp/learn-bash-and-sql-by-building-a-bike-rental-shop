@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "summary": {
-    "title": "Learn Bash Scripting by Building Five Programs",
+    "title": "Learn Bash and SQL by Building a Bike Rental Shop",
     "description": "> Welcome to the Bash and SQL lessons!"
   },
   "config": {
@@ -73,7 +73,7 @@
           "id": "20.1",
           "setup": {
             "watchers": [
-              "./.freeCodeCamp/test/queryResults.log"
+              "./.freeCodeCamp/test/pg.log"
             ],
             "commits": [
               "a57c59666fec0b9a565941f625ebdbb8de6b1fb6"
@@ -169,7 +169,7 @@
           "id": "60.1",
           "setup": {
             "watchers": [
-              "./.freeCodeCamp/test/queryResults.log"
+              "./.freeCodeCamp/test/pg.log"
             ],
             "commits": [
               "c666b24ebb9d729366ac32926ffc7ae8e1cddbf1"
@@ -439,7 +439,7 @@
               "f0c84b47beb4b0d24eed8747f30c50b4508ae2ae"
             ]
           },
-          "content": "Add column customer_id serial not null primary key",
+          "content": "Add column customer_id serial primary key",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
@@ -487,7 +487,7 @@
               "1a625674d687fd1dc8b97cba7097e183861cde29"
             ]
           },
-          "content": "Add column phone varchar(15) unique;",
+          "content": "Add column phone varchar(15) not null unique;",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
@@ -583,7 +583,7 @@
               "e0adbe6d1b81ab4a1a5b424684d9505687addf1b"
             ]
           },
-          "content": "Add column rental_id serial not null primary key",
+          "content": "Add column rental_id serial primary key",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
