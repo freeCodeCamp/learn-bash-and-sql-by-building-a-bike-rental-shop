@@ -220,3 +220,15 @@ levels:
         setup:
           watchers:
             - ./.freeCodeCamp/test/queryResults.log
+  - id: '340'
+    steps:
+      - id: '340.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log
+  - id: '350'
+    steps:
+      - id: '350.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log

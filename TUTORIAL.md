@@ -354,9 +354,31 @@ Display `rentals` Details
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 330. Display Tables
+## 330. Add Column `date_returned`
 
 ### 330.1
+
+Add column `date_returned` date;
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 340. Display `rentals` Details
+
+### 340.1
+
+Display `rentals` details
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 350. Display Tables
+
+### 350.1
 
 Display Tables
 
