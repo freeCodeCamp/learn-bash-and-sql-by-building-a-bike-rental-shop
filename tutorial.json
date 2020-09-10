@@ -49,7 +49,7 @@
           "id": "10.1",
           "setup": {
             "watchers": [
-              "./.freeCodeCamp/test/queryResults.log"
+              "../.bash_history"
             ],
             "commits": [
               "d1e3f558535a4cafe0370e47e2dcb368fcee0f52"
