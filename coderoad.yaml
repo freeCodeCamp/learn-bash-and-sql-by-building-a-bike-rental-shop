@@ -233,3 +233,39 @@ levels:
         setup:
           watchers:
             - ./.freeCodeCamp/test/queryResults.log
+  - id: '360'
+    steps:
+      - id: '360.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log
+  - id: '370'
+    steps:
+      - id: '370.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log
+  - id: '380'
+    steps:
+      - id: '380.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log
+  - id: '390'
+    steps:
+      - id: '390.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log
+  - id: '400'
+    steps:
+      - id: '400.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log
+  - id: '410'
+    steps:
+      - id: '410.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/queryResults.log

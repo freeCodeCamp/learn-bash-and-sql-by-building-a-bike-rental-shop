@@ -386,3 +386,69 @@ Display Tables
 
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 360. Insert 27 inch Mountain Bike
+
+### 360.1
+
+I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `mountain` and a `size` of `27`. The other columns will automatically be filled in, so don't worry about those.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 370. Insert 28 inch Mountain Bike
+
+### 370.1
+
+Insert 28 inch Mountain Bike
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 380. Insert 29 inch Mountain Bike
+
+### 380.1
+
+Insert 29 inch Mountain Bike
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 390. Insert 27 inch Road Bike
+
+### 390.1
+
+Insert 27 inch Road Bike
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 400. Insert 28 and 29 inch Road Bikes
+
+### 400.1
+
+Insert 28 and 29 inch Road Bikes
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 410. Insert 19, 20, 21 inch BMX Bikes
+
+### 410.1
+
+Insert 23, 24 and 25 inch BMX Bikes
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
