@@ -27,7 +27,7 @@ levels:
       - id: '10.1'
         setup:
           watchers:
-            - ./.freeCodeCamp/test/queryResults.log
+            - ../.bash_history
   - id: '20'
     steps:
       - id: '20.1'
