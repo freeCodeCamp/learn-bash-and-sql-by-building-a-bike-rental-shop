@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { Client } = require('pg');
 
 const database = 'bikes';
@@ -8,8 +8,8 @@ const client = new Client({
 });
 
 describe('The "bikes" table', () => {
-  it('should have a row for a 28 inch Mountain Bike"', async () => {
-    const query = `SELECT * FROM bikes WHERE type='Mountain' AND size=28;`;
+  it('should have a row for a 29 inch Mountain Bike"', async () => {
+    const query = `SELECT * FROM bikes WHERE type='Mountain' AND size=29;`;
 
     try {
       await client.connect();
@@ -22,4 +22,4 @@ describe('The "bikes" table', () => {
       await client.end();
     }
   });
-});*/
+});
