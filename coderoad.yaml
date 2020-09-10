@@ -2,6 +2,7 @@ version: '0.1.0'
 config:
   setup:
     commands:
+      - sudo service postgresql stop
       - cd .freeCodeCamp && npm install
       - sudo cp ~/project/.freeCodeCamp/.bashrc ~
       - sudo chmod 777 ~/project/.freeCodeCamp/test/pg.log
