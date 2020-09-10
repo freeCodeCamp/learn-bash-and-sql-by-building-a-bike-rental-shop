@@ -181,6 +181,7 @@ ALTER TABLE ONLY public.rentals ALTER COLUMN rental_id SET DEFAULT nextval('publ
 --
 
 INSERT INTO public.bikes VALUES (1, 'Mountain', 27, true);
+INSERT INTO public.bikes VALUES (2, 'Mountain', 28, true);
 
 
 --
@@ -199,7 +200,7 @@ INSERT INTO public.bikes VALUES (1, 'Mountain', 27, true);
 -- Name: bikes_bike_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.bikes_bike_id_seq', 1, true);
+SELECT pg_catalog.setval('public.bikes_bike_id_seq', 2, true);
 
 
 --
