@@ -1,4 +1,4 @@
-# Learn Bash Scripting by Building Five Programs
+# Learn Bash and SQL by Building a Bike Rental Shop
 
 > Welcome to the Bash and SQL lessons!
 
@@ -182,7 +182,7 @@ Create table `customers`
 
 ### 170.1
 
-Add column customer_id serial not null primary key
+Add column customer_id serial primary key
 
 #### HINTS
 
@@ -204,7 +204,7 @@ Display `customers` details
 
 ### 190.1
 
-Add column phone varchar(15) unique;
+Add column phone varchar(15) not null unique;
 
 #### HINTS
 
@@ -248,7 +248,7 @@ Create table `rentals`
 
 ### 230.1
 
-Add column rental_id serial not null primary key
+Add column rental_id serial primary key
 
 #### HINTS
 

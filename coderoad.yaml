@@ -33,7 +33,7 @@ levels:
       - id: '20.1'
         setup:
           watchers:
-            - ./.freeCodeCamp/test/queryResults.log
+            - ./.freeCodeCamp/test/pg.log
   - id: '30'
     steps:
       - id: '30.1'
@@ -57,7 +57,7 @@ levels:
       - id: '60.1'
         setup:
           watchers:
-            - ./.freeCodeCamp/test/queryResults.log
+            - ./.freeCodeCamp/test/pg.log
   - id: '70'
     steps:
       - id: '70.1'
