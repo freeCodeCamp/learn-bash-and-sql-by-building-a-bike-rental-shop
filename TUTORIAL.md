@@ -398,9 +398,20 @@ I think the structure of your database is set. You have nine bikes in your inven
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 370. Insert 28 inch Mountain Bike
+## 370. Select all from Bikes
 
 ### 370.1
+
+Select * from bikes;
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 380. Insert 28 inch Mountain Bike
+
+### 380.1
 
 Insert 28 inch Mountain Bike
 
@@ -409,9 +420,9 @@ Insert 28 inch Mountain Bike
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 380. Insert 29 inch Mountain Bike
+## 390. Insert 29 inch Mountain Bike
 
-### 380.1
+### 390.1
 
 Insert 29 inch Mountain Bike
 
@@ -420,9 +431,9 @@ Insert 29 inch Mountain Bike
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 390. Insert 27 inch Road Bike
+## 400. Insert 27 inch Road Bike
 
-### 390.1
+### 400.1
 
 Insert 27 inch Road Bike
 
@@ -431,9 +442,20 @@ Insert 27 inch Road Bike
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 400. Insert 28 and 29 inch Road Bikes
+## 410. Select all from Bikes
 
-### 400.1
+### 410.1
+
+Select * from bikes;
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 420. Insert 28 and 29 inch Road Bikes
+
+### 420.1
 
 Insert 28 and 29 inch Road Bikes
 
@@ -442,11 +464,22 @@ Insert 28 and 29 inch Road Bikes
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 410. Insert 19, 20, 21 inch BMX Bikes
+## 430. Insert 19, 20, 21 inch BMX Bikes
 
-### 410.1
+### 430.1
 
 Insert 23, 24 and 25 inch BMX Bikes
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 440. Select all from Bikes
+
+### 440.1
+
+Select * from bikes;
 
 #### HINTS
 
