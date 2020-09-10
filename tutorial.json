@@ -8,10 +8,16 @@
     "setup": {
       "commands": [
         "cd .freeCodeCamp && npm install",
-        "sudo cp ~/project/.freeCodeCamp/.bashrc ~"
+        "sudo cp ~/project/.freeCodeCamp/.bashrc ~",
+        "sudo chmod 777 ~/project/.freeCodeCamp/test/pg.log",
+        "sudo cp ~/project/.freeCodeCamp/.psqlrc ~",
+        "sudo cp ~/project/.freeCodeCamp/postgresql.conf /etc/postgresql/12/main/postgresql.conf",
+        "sudo cp ~/project/.freeCodeCamp/pg_hba.conf /etc/postgresql/12/main/pg_hba.conf",
+        "sudo service postgresql start",
+        "sudo -u postgres psql -c \"CREATE USER freecodecamp WITH CREATEDB;\""
       ],
       "commits": [
-        "e7b50ed7e3fb4203a9cf497bfcd46aa33fe260d6"
+        "5f75621bcb34394ace989c7f69527ac93db23af3"
       ]
     },
     "testRunner": {
@@ -43,13 +49,829 @@
           "id": "10.1",
           "setup": {
             "watchers": [
-              "../.bash_history"
+              "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "91bac9ead6035eb3fc994d13b2fb5508251e1fcd"
+              "dc528de67d34957f73a796dc83019f943d079098"
             ]
           },
           "content": "**The first thing you need to do is start the terminal.** Do that by clicking the \"hamburger\" menu at the top left of the screen, going to the \"terminal\" section, and clicking \"new terminal\". Once you open a new one, type `echo hello terminal` into the terminal and press enter.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Log in to PostgreSQL",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "20.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "a94c8a2c9eb0285f0960cadffd880ac4e2684b6b"
+            ]
+          },
+          "content": "You are going to build a bike rental shop for these lessons. It will have a database with bikes, customers, and rentals. Use the terminal to connect to PostgreSQL with Psql. The command is `psql -U freecodecamp postgres`.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "title": "List Databases",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "30.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "1bb8ebd29d9f61f435663c3daecce77488befd87"
+            ]
+          },
+          "content": "List databases",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "title": "Create Database `bikes`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "40.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "5479fe0a656a18a8dc2a7c5fad06ab956f6ba1b3"
+            ]
+          },
+          "content": "create database `bikes`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "title": "List Databases",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "50.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "bf0902807c5bb0b70992434ea4dc5d9d0ee7d0a5"
+            ]
+          },
+          "content": "List databases",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "title": "Connect to `bikes`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "60.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "b5aef247ba8036056dae4e2d32948cd69d848ea2"
+            ]
+          },
+          "content": "Connect to bikes",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "title": "Create table `bikes`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "70.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "cec0d88234d562c1db68be91ac2729556d4ae81e"
+            ]
+          },
+          "content": "Create table `bikes`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "title": "Display the tables",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "80.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "52984ec18f69e752f1eac32551d75249869b03b7"
+            ]
+          },
+          "content": "Display the tables",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "90",
+      "title": "Add column `bike_id`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "90.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "14e3074a78fa74b8573e3d1ec23b4e444cc0de63"
+            ]
+          },
+          "content": "Add column bike_id serial primary key",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "100",
+      "title": "Display `bikes` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "100.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "fe1807d9f34e1f359a29dde2007e7353c1e463f0"
+            ]
+          },
+          "content": "Display `bikes` details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "110",
+      "title": "Add `type` column",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "110.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "0d7db2b475dcabd5eb03450e7354f29a57d6b66d"
+            ]
+          },
+          "content": "Add type varchar(50) not null",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "120",
+      "title": "Display `bikes` details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "120.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "9802a53ccb6fcb872df50aa75cd3b44c0ca5b3fb"
+            ]
+          },
+          "content": "Display `bikes` details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "130",
+      "title": "Add Column `size`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "130.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "8dfcf2a418805444c533fcc0ef543402a4b428af"
+            ]
+          },
+          "content": "Add column size int not null",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "140",
+      "title": "Add Column `available`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "140.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "543396571e05065fa450c48d41e00a931dfa0bcb"
+            ]
+          },
+          "content": "alter table bikes add column available boolean not null default TRUE;",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "150",
+      "title": "Display `bikes` details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "150.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "943bef17d29f3bc00fd7918465b42831b384a238"
+            ]
+          },
+          "content": "Display `bikes` details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "160",
+      "title": "Create Table `customers`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "160.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "e030364d4f9e7ce24b3e518975da6e147dee0c29"
+            ]
+          },
+          "content": "Create table `customers`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "170",
+      "title": "Add Column `customer_id`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "170.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "21c5c43f9452654d3a888d80f91e73f17caf77c6"
+            ]
+          },
+          "content": "Add column customer_id serial not null primary key",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "180",
+      "title": "Display `customers` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "180.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "283791daf84455065d64037f897f9757e6a6430f"
+            ]
+          },
+          "content": "Display `customers` details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "190",
+      "title": "Add Column `phone`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "190.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "9111eb219c9b0890f0c946d96e327cb6abefa00d"
+            ]
+          },
+          "content": "Add column phone varchar(15) unique;",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200",
+      "title": "Add Column `name`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "200.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "13bd6ee033e220771e4f5500efd474580c402438"
+            ]
+          },
+          "content": "Add column `name` varchar(40)",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "210",
+      "title": "Display `customers` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "210.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "f38b63b806883b5c6d6e3f54c548dad943d1934e"
+            ]
+          },
+          "content": "Display `customers` details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "220",
+      "title": "Create Table `rentals`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "220.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "937d4266b1e29a03b12a819614773ea8cf2ba92d"
+            ]
+          },
+          "content": "Create table `rentals`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "230",
+      "title": "Add Column `rental_id`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "230.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "fcd6872ade830184c34397354a6748878c85a7df"
+            ]
+          },
+          "content": "Add column rental_id serial not null primary key",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "240",
+      "title": "Display `rentals` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "240.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "487a725e822cf95ae4e323a38e6619d0823cd715"
+            ]
+          },
+          "content": "Display `rentals` Details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "250",
+      "title": "Add Column `customer_id`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "250.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "48523806cbc3783bcebdb059ab086275412b730a"
+            ]
+          },
+          "content": "Add column `customer_id` int not null",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "260",
+      "title": "Set `customer_id` Foreign Key",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "260.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "0828779b4f2317b54cc64d3f56d8c4b61d201a02"
+            ]
+          },
+          "content": "alter table rentals add foreign key (customer_id) references customers(customer_id);",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "270",
+      "title": "Display `rentals` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "270.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "e1da48d5d6c040e0276684207c008d88dfd5149b"
+            ]
+          },
+          "content": "Display `rentals` Details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "280",
+      "title": "Add Column `bike_id`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "280.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "a803d5561f00507acea79a763503ef401adaaa48"
+            ]
+          },
+          "content": "Add column bike_id int not null",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "290",
+      "title": "Add `bike_id` Foreign Key",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "290.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "3d85a8d189e40330c45ac200b56f7e6585969fa6"
+            ]
+          },
+          "content": "alter table rentals add foreign key (bike_id) references bikes(bike_id);",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "300",
+      "title": "Display `rentals` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "300.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "66deab6b2796f13e493e77531f6785389f0afd54"
+            ]
+          },
+          "content": "Display `rentals` Details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "310",
+      "title": "Add `date_rented` Column",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "310.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "237b4efecdccdc62daa82623427ee6fea0a94fe8"
+            ]
+          },
+          "content": "date_rented date not null default = now()",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "320",
+      "title": "Display `rentals` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "320.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "66b72a3de146845df013268f50453d5fdf343182"
+            ]
+          },
+          "content": "Display `rentals` Details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "330",
+      "title": "Add Column `date_returned`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "330.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "68e32ced7f2f9ef46023cc011210e679e647269d"
+            ]
+          },
+          "content": "Add column `date_returned` date;",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "340",
+      "title": "Display `rentals` Details",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "340.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "efc51c9a6d204c32045e18b2cb37d56311c81027"
+            ]
+          },
+          "content": "Display `rentals` details",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "350",
+      "title": "Display Tables",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "350.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "16ac370dbf79990584dcdd963ccc0173514f9d74"
+            ]
+          },
+          "content": "Display Tables",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
