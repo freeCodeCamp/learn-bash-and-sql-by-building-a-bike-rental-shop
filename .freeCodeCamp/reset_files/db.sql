@@ -245,6 +245,14 @@ ALTER TABLE ONLY public.rentals
 
 
 --
+-- Name: rentals rentals_customer_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.rentals
+    ADD CONSTRAINT rentals_customer_id_fkey FOREIGN KEY (customer_id) REFERENCES public.customers(customer_id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
