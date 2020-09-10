@@ -186,6 +186,9 @@ INSERT INTO public.bikes VALUES (3, 'Mountain', 29, true);
 INSERT INTO public.bikes VALUES (4, 'Road', 27, true);
 INSERT INTO public.bikes VALUES (5, 'Road', 28, true);
 INSERT INTO public.bikes VALUES (6, 'Road', 29, true);
+INSERT INTO public.bikes VALUES (7, 'BMX', 19, true);
+INSERT INTO public.bikes VALUES (8, 'BMX', 20, true);
+INSERT INTO public.bikes VALUES (9, 'BMX', 21, true);
 
 
 --
@@ -204,7 +207,7 @@ INSERT INTO public.bikes VALUES (6, 'Road', 29, true);
 -- Name: bikes_bike_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.bikes_bike_id_seq', 6, true);
+SELECT pg_catalog.setval('public.bikes_bike_id_seq', 9, true);
 
 
 --
