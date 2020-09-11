@@ -879,6 +879,222 @@
           ]
         }
       ]
+    },
+    {
+      "id": "360",
+      "title": "Insert 27 inch Mountain Bike",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "360.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "6aafc2cca16a1f6dbf391d367aa741a0772152d7"
+            ]
+          },
+          "content": "I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `mountain` and a `size` of `27`. The other columns will automatically be filled in, so don't worry about those.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "370",
+      "title": "Select all from Bikes",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "370.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "701f88f9d1ca4569d0d2394f42d83156a21767b8"
+            ]
+          },
+          "content": "Select * from bikes;",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "380",
+      "title": "Insert 28 inch Mountain Bike",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "380.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "f8646b986152eb969fc9ad736e1f6f78ae4c5291"
+            ]
+          },
+          "content": "Insert 28 inch Mountain Bike",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "390",
+      "title": "Insert 29 inch Mountain Bike",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "390.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "8f81588cedf087bb0661f1c4620730a284e36785"
+            ]
+          },
+          "content": "Insert 29 inch Mountain Bike",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "400",
+      "title": "Insert 27 inch Road Bike",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "400.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "d160906f40402d2b6a79558c78112cdaf90ad777"
+            ]
+          },
+          "content": "Insert 27 inch Road Bike",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "410",
+      "title": "Select all from Bikes",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "410.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "d5fe4af11b710110778e73a1b4461c46a1ff6a9b"
+            ]
+          },
+          "content": "Select * from bikes;",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "420",
+      "title": "Insert 28 and 29 inch Road Bikes",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "420.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "832f76f4ac89378b5e42d156f3644913b7f9b687"
+            ]
+          },
+          "content": "Insert 28 and 29 inch Road Bikes",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "430",
+      "title": "Insert 19, 20, 21 inch BMX Bikes",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "430.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "3257b61bdd2ba3eb14bac946b0017c0e3b578259"
+            ]
+          },
+          "content": "Insert 23, 24 and 25 inch BMX Bikes",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "440",
+      "title": "Select all from Bikes",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "440.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commits": [
+              "6f1d69697a9a40193e2c632816de158a7b5ba929"
+            ]
+          },
+          "content": "Select * from bikes;",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
     }
   ]
 }
