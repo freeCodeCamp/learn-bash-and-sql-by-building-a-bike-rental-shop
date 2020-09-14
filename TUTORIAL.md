@@ -215,7 +215,7 @@ Add column phone varchar(15) not null unique;
 
 ### 200.1
 
-Add column `name` varchar(40)
+Add column `name` varchar(40) not null
 
 #### HINTS
 
@@ -519,11 +519,22 @@ Add `echo "~~~~~ Bike Rental Shop ~~~~~"` and save the file
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 480. Run the file
+## 480. Change file permissions
 
 ### 480.1
 
-Run the file
+chmod +x bike-shop.sh
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 490. Run the file
+
+### 490.1
+
+Run the file with `./bike-shop.sh`
 
 #### HINTS
 
