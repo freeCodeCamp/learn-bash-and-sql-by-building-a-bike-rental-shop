@@ -1,4 +1,4 @@
 #! /bin/bash
 
-# Add your code below this line
+echo "~~~~~ Bike Rental Shop ~~~~~"
 
