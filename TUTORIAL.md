@@ -485,3 +485,47 @@ Select * from bikes;
 
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 450. Split Terminal
+
+### 450.1
+
+Open a second terminal, and use touch to create `bike-shop.sh` in the `project` folder.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 460. Add shebang!
+
+### 460.1
+
+Add a `shebang!`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 470. Add Title
+
+### 470.1
+
+Add `echo "~~~~~ Bike Rental Shop ~~~~~"` and save the file
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 480. Run the file
+
+### 480.1
+
+Run the file
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
