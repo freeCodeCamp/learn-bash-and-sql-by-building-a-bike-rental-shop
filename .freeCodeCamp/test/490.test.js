@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getLastCommand } = require('./utils');
 
 describe('You', () => {
@@ -7,7 +7,7 @@ describe('You', () => {
     lastCommand = await getLastCommand();
   });
 
-  it('should use "touch" to create "castle.sh"', async () => {
-    assert(lastCommand[0] === 'chmod');
+  it('should run your script with "./bike-shop.sh"', async () => {
+    assert(lastCommand[0] === './bikes.sh');
   });
-});*/
+});
