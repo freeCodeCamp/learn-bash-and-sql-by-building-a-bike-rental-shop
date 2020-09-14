@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your script', () => {
@@ -7,7 +7,7 @@ describe('Your script', () => {
     scriptFile = await getFileContents('../bike-shop.sh');
   });
 
-  it('should have the correct "shebang"', async () => {
-    assert(/^#! \/bin\/bash/.test(scriptFile));
+  it('should have the correct code', async () => {
+    assert(/echo "~~~~~ Bike Rental Shop ~~~~~"/.test(scriptFile));
   });
-});*/
+});
