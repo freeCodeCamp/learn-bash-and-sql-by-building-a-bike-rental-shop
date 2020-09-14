@@ -1208,7 +1208,11 @@
               "5eed53f2a00d1aac984388cde03ff67bf7ab8e30"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`"
+          "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
         }
       ]
     }
