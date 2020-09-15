@@ -540,3 +540,267 @@ Run the file with `./bike-shop.sh`
 
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 500. Echo Title
+
+### 500.1
+
+echo "~~~~~ Bike Rental Shop ~~~~~"
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 510. Create Main Menu
+
+### 510.1
+
+Create MAIN_MENU function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 520. Add Greeting
+
+### 520.1
+
+Echo "How may I help you" to function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 530. Call `MAIN_MENU` Function
+
+### 530.1
+
+Call MAIN_MENU function at the bottom
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 540. Run the file
+
+### 540.1
+
+Run the file with `./bike-shop.sh`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 550. Add `clear`
+
+### 550.1
+
+Add `clear` at the top
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 560. Add Line Break
+
+### 560.1
+
+Add a line break at the end of the greeting
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 570. Run the file
+
+### 570.1
+
+Run the file with `./bike-shop.sh`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 580. View the `echo` manual
+
+### 580.1
+
+View the `man echo`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 590. Add `-e` Flag
+
+### 590.1
+
+Add `-e` flag to greeting
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 600. Run the file
+
+### 600.1
+
+Run the file with `./bike-shop.sh`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 610. Prettify the Title
+
+### 610.1
+
+Add `-e` and two a line breaks at the beginning and end of the title
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 620. Run the file
+
+### 620.1
+
+Run the file with `./bike-shop.sh`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 630. Add `MAIN_MENU` Options
+
+### 630.1
+
+Add echo -e "1. Rent a bike\n2. Return a bike\n3. Exit" to main menu
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 640. Run the file
+
+### 640.1
+
+Run the file with `./bike-shop.sh`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 650. Read `MAIN_MENU_SELECTION`
+
+### 650.1
+
+read `MAIN_MENU_SELECTION`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 660. Add `RENT_MENU`
+
+### 660.1
+
+Add an empty `RENT_MENU` function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 670. Add `RENT_MENU` text
+
+### 670.1
+
+Add echo "Rent Menu"
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 680. Add `RETURN_MENU` function
+
+### 680.1
+
+Add an empty `RETURN_MENU` function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 690. Add `RETURN_MENU` text
+
+### 690.1
+
+Add echo "Return Menu"
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 700. Add `EXIT` function
+
+### 700.1
+
+Add EXIT function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 710. Add `EXIT` Message
+
+### 710.1
+
+Add echo "Thank you for stopping in"
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 720. Add case Statement to `MAIN_MENU`
+
+### 720.1
+
+Add case Statement to `MAIN_MENU`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 730. Test the `MAIN_MENU` Options
+
+### 730.1
+
+Run the script three times in the terminal and try picking the three different menu items to see if they work.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
