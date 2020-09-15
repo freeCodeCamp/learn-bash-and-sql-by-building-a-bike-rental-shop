@@ -468,7 +468,7 @@ Insert 28 and 29 inch Road Bikes
 
 ### 430.1
 
-Insert 23, 24 and 25 inch BMX Bikes
+Insert 19, 20, and 21 inch `BMX` Bikes
 
 #### HINTS
 
