@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "summary": {
     "title": "Learn Bash and SQL by Building a Bike Rental Shop",
     "description": "> Welcome to the Bash and SQL lessons!"
@@ -30,7 +30,7 @@
     },
     "repo": {
       "uri": "https://github.com/moT01/learn-bash-and-sql-by-building-a-bike-rental-shop",
-      "branch": "v0.1.2"
+      "branch": "v0.1.3"
     },
     "dependencies": [
       {
@@ -1209,6 +1209,534 @@
             ]
           },
           "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "500",
+      "title": "Echo Title",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "500.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "echo \"~~~~~ Bike Rental Shop ~~~~~\"",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "510",
+      "title": "Create Main Menu",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "510.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Create MAIN_MENU function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "520",
+      "title": "Add Greeting",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "520.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Echo \"How may I help you\" to function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "530",
+      "title": "Call `MAIN_MENU` Function",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "530.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Call MAIN_MENU function at the bottom",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "540",
+      "title": "Run the file",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "540.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "550",
+      "title": "Add `clear`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "550.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add `clear` at the top",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "560",
+      "title": "Add Line Break",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "560.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add a line break at the end of the greeting",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "570",
+      "title": "Run the file",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "570.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "580",
+      "title": "View the `echo` manual",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "580.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "View the `man echo`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "590",
+      "title": "Add `-e` Flag",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "590.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add `-e` flag to greeting",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "600",
+      "title": "Run the file",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "600.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "610",
+      "title": "Prettify the Title",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "610.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add `-e` and two a line breaks at the beginning and end of the title",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "620",
+      "title": "Run the file",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "620.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "630",
+      "title": "Add `MAIN_MENU` Options",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "630.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add echo -e \"1. Rent a bike\\n2. Return a bike\\n3. Exit\" to main menu",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "640",
+      "title": "Run the file",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "640.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "Run the file with `./bike-shop.sh`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "650",
+      "title": "Read `MAIN_MENU_SELECTION`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "650.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "read `MAIN_MENU_SELECTION`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "660",
+      "title": "Add `RENT_MENU`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "660.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add an empty `RENT_MENU` function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "670",
+      "title": "Add `RENT_MENU` text",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "670.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add echo \"Rent Menu\"",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "680",
+      "title": "Add `RETURN_MENU` function",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "680.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add an empty `RETURN_MENU` function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "690",
+      "title": "Add `RETURN_MENU` text",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "690.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add echo \"Return Menu\"",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "700",
+      "title": "Add `EXIT` function",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "700.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add EXIT function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "710",
+      "title": "Add `EXIT` Message",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "710.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add echo \"Thank you for stopping in\"",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "720",
+      "title": "Add case Statement to `MAIN_MENU`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "720.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commits": []
+          },
+          "content": "Add case Statement to `MAIN_MENU`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "730",
+      "title": "Test the `MAIN_MENU` Options",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "730.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commits": []
+          },
+          "content": "Run the script three times in the terminal and try picking the three different menu items to see if they work.",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
