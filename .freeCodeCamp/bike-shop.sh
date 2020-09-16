@@ -2,5 +2,9 @@
 
 echo "~~~~~ Bike Rental Shop ~~~~~"
 
-# Add your code below this line
+MAIN_MENU () {
+	# Add your code below this line
 
+
+	# Add your code above this line
+}
