@@ -541,17 +541,6 @@ Run the file with `./bike-shop.sh`
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 500. Echo Title
-
-### 500.1
-
-echo "~~~~~ Bike Rental Shop ~~~~~"
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
 ## 510. Create Main Menu
 
 ### 510.1
