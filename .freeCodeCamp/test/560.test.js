@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your script', () => {
@@ -8,6 +8,6 @@ describe('Your script', () => {
   });
 
   it('should clear the console at the beginning', async () => {
-    assert(/#![ \t]+\/bin\/bash\s*clear\s*echo/.test(scriptFile));
+    assert(/echo[ \t]+('|")~~~~~ Bike Rental Shop ~~~~~\\n\1/.test(scriptFile));
   });
-});*/
+});
