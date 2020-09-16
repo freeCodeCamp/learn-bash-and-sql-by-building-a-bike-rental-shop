@@ -1,12 +1,12 @@
 #! /bin/bash
 
-# Add your code below this line
+clear
 
-
-
-# Add your code above this line
+# Change code below this line
 
 echo "~~~~~ Bike Rental Shop ~~~~~"
+
+# Change code above this line
 
 MAIN_MENU () {
 	echo "How may I help you?"
