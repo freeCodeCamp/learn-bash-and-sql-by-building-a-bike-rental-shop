@@ -1,12 +1,7 @@
 #! /bin/bash
 
 clear
-
-# Change code below this line
-
-echo "~~~~~ Bike Rental Shop ~~~~~\n"
-
-# Change code above this line
+echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
 
 MAIN_MENU () {
 	echo "How may I help you?"
