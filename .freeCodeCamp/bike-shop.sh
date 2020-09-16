@@ -5,10 +5,7 @@ echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
 
 MAIN_MENU () {
 	echo -e "How may I help you?\n"
-	# Change code below this line
-
-
-	# Change code above this line
+	echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"
 }
 
 MAIN_MENU
