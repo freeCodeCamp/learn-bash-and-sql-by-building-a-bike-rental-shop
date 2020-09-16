@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "summary": {
     "title": "Learn Bash and SQL by Building a Bike Rental Shop",
     "description": "> Welcome to the Bash and SQL lessons!"
@@ -18,7 +18,7 @@
         "sudo -u postgres psql -c \"CREATE USER freecodecamp WITH CREATEDB;\""
       ],
       "commits": [
-        "a0259cbf6677510de9e3a15662fe245e11ec9ef7"
+        "e6ad004f4eeaa0431a5cb42f59072d8997f7b8d4"
       ]
     },
     "testRunner": {
@@ -30,7 +30,7 @@
     },
     "repo": {
       "uri": "https://github.com/moT01/learn-bash-and-sql-by-building-a-bike-rental-shop",
-      "branch": "v0.1.3"
+      "branch": "v0.1.4"
     },
     "dependencies": [
       {
@@ -53,7 +53,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "b6a26f700cffdc06ec7884cc089d455211401f6d"
+              "cbdef5481dd971e48b838bb88299adf4df1d9e6c"
             ]
           },
           "content": "**The first thing you need to do is start the terminal.** Do that by clicking the \"hamburger\" menu at the top left of the screen, going to the \"terminal\" section, and clicking \"new terminal\". Once you open a new one, type `echo hello terminal` into the terminal and press enter.",
@@ -77,7 +77,7 @@
               "./.freeCodeCamp/test/pg.log"
             ],
             "commits": [
-              "cf403704f3175b5bb174b0ef23f1d2b4ad1d4745"
+              "81c3d3a7140fd70d39271da851a5d9846bba9a60"
             ]
           },
           "content": "You are going to build a bike rental shop for these lessons. It will have a database with bikes, customers, and rentals. Use the terminal to connect to PostgreSQL with Psql. The command is `psql -U freecodecamp postgres`.",
@@ -101,7 +101,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "91ed61ecf1c878558dc4d15605110fba8da73c6c"
+              "9ca714a336add28414856a90ee02a1aa49af248a"
             ]
           },
           "content": "List databases",
@@ -125,7 +125,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "686d006002b627d9f487ae93fc8e0ad6d5ddc68c"
+              "87880ac41e4970e9694c682fef8e2b4476c35888"
             ]
           },
           "content": "create database `bikes`",
@@ -149,7 +149,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "76ac3d0f0cb0cfc4f8a0f5049ed59e7ab603a910"
+              "a0f784ce0917ff780a91cf349dc1241ae0958135"
             ]
           },
           "content": "List databases",
@@ -173,7 +173,7 @@
               "./.freeCodeCamp/test/pg.log"
             ],
             "commits": [
-              "19aaa062f24ab20e12a5e2f01b7635a58a8f5ade"
+              "d6824715c1b9829d55d23c778c8e9493b14a05c2"
             ]
           },
           "content": "Connect to bikes",
@@ -197,7 +197,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "7c1bdfc05d12534d743fdcfe2563a72f74b7a000"
+              "01b466b8c1f193f94f57de4af513b5959863b15f"
             ]
           },
           "content": "Create table `bikes`",
@@ -221,7 +221,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "138972553e46b518b22162c6f4657e52deb8d582"
+              "7859efe9b1302da06076f5fc38e012e9fec38b98"
             ]
           },
           "content": "Display the tables",
@@ -245,7 +245,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "bef56587872e703af323bc60271850c6a289ea34"
+              "7a1ec13e6fca131839a15957f62eda6d83a62e0e"
             ]
           },
           "content": "Add column bike_id serial primary key",
@@ -269,7 +269,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "c2f19598034d8180554f4a280cb6d449f5d44547"
+              "ffb15f711745dc3a25d1f85e0066c1e4e3ef9f3b"
             ]
           },
           "content": "Display `bikes` details",
@@ -293,7 +293,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "52555f7409f85b8072c7f6be116087c334d5f568"
+              "48b8449193d8e3e52435efecbe744065f2661e54"
             ]
           },
           "content": "Add type varchar(50) not null",
@@ -317,7 +317,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "a81af607e493051deaf5aff24b8a30cfc9c03775"
+              "dbcaae93eb557b0ecec14d3c51ae4840497926e2"
             ]
           },
           "content": "Display `bikes` details",
@@ -341,7 +341,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "7dcf7e69f3bafe329a2a5d7606b1dc097b7ac965"
+              "4aade8ac1580270961c1b800039cd8bca8c3ddff"
             ]
           },
           "content": "Add column size int not null",
@@ -365,7 +365,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "b630a54baf1934aabb5b9b23506cafa15083ffc0"
+              "65cc75d6b9bc4154386ce96f49ff7306fbba8996"
             ]
           },
           "content": "alter table bikes add column available boolean not null default TRUE;",
@@ -389,7 +389,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "4dcf5b4edc474f2ab75a7407db0d8911114ce915"
+              "3979555b6c08c9e39db33d3c5e8b9e2d64d5b9ac"
             ]
           },
           "content": "Display `bikes` details",
@@ -413,7 +413,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "909a70e895f1cacb60706278c6ba9381aeaa8346"
+              "2494b1fbf1f00c25f1698e8c67cc42b238912dd5"
             ]
           },
           "content": "Create table `customers`",
@@ -437,7 +437,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "fae6788f4304ed6473d6ff0e087c1ede55a66951"
+              "0727098472d89dd638a7952f9ecb1d5c501957aa"
             ]
           },
           "content": "Add column customer_id serial primary key",
@@ -461,7 +461,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "5b24b77dfa7ff8d19822e217941aec487875068c"
+              "050e4954b775cccb93d0a1930d3d2c2b90724fc3"
             ]
           },
           "content": "Display `customers` details",
@@ -485,7 +485,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "94e6cacd42e6f11d833e58e20770940e34acda4b"
+              "25cb2e391b153c44232a29fbab790aaa91e9162c"
             ]
           },
           "content": "Add column phone varchar(15) not null unique;",
@@ -509,7 +509,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "3c3ff9c36f06e917f4a310659139b93c1d7fc6e0"
+              "11731ef42e69f9f0cae144dc14ad9bf2e48036bc"
             ]
           },
           "content": "Add column `name` varchar(40) not null",
@@ -533,7 +533,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "7a24de557d68c2ccecefa4c205921a858d8242fb"
+              "cb424858d9710684ef292c9ab68dcd5dc1ec8a50"
             ]
           },
           "content": "Display `customers` details",
@@ -557,7 +557,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "d90ea27ef0f71f0265d70f097ce825c3f6bfb230"
+              "d2ac0b6b1ec9fd3ba144cc6716a7d4e6b85f8943"
             ]
           },
           "content": "Create table `rentals`",
@@ -581,7 +581,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "9d68318d4fb06ccef69567615991271a143b61e7"
+              "fe506f86901683203a55910d8283804bade4b553"
             ]
           },
           "content": "Add column rental_id serial primary key",
@@ -605,7 +605,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "c6d99b64404ac261aa1a0eadd6dee363af1bda41"
+              "ee4dc272e3bcf25c8241323bc8efbeaca20e7bae"
             ]
           },
           "content": "Display `rentals` Details",
@@ -629,7 +629,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "4f15605958da2261f141abe63de5bb5e5ad06c6e"
+              "f39e4d18347c940f2e611cf51e2a75ffbc8d3904"
             ]
           },
           "content": "Add column `customer_id` int not null",
@@ -653,7 +653,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "56b2fd876f3758d7555182df4eec74898017cbb6"
+              "34d9793779212bfa484aa6b55378c61854598be5"
             ]
           },
           "content": "alter table rentals add foreign key (customer_id) references customers(customer_id);",
@@ -677,7 +677,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "db2fc100da8623fe1be2b6c25fc3fa9530fa9649"
+              "8cb218235e9cc5c6192769cd313c6b73af2ff25a"
             ]
           },
           "content": "Display `rentals` Details",
@@ -701,7 +701,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "f03774b2a85f6e3266d9bcaf1f73797dc597a4ef"
+              "9dffb8fd26edf50077b2f07fd5890bb6f6d8fefd"
             ]
           },
           "content": "Add column bike_id int not null",
@@ -725,7 +725,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "d5765aeab2c48e18be578d0419a392ed93a76a5c"
+              "4588ab88c7b7115287d5b5d7c214535fb76f9ea0"
             ]
           },
           "content": "alter table rentals add foreign key (bike_id) references bikes(bike_id);",
@@ -749,7 +749,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "b337f0cec572a2ac996542a28bc1f5f63bed68ce"
+              "bf33ad78cf3797ac7306089b9eced9bc4c78289f"
             ]
           },
           "content": "Display `rentals` Details",
@@ -773,7 +773,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "7c1f4e7adae42d2839b9379bf863d04146f6bb03"
+              "c3158079f22f99fc364f316d22dabd0a963157b6"
             ]
           },
           "content": "date_rented date not null default = now()",
@@ -797,7 +797,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "4bdeb07c03472454d9c17c1c33dc9c3639bce395"
+              "0c938480057f19572342c450482aee833886352e"
             ]
           },
           "content": "Display `rentals` Details",
@@ -821,7 +821,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "9a50e21c3e228b37b838f3d396fbd0b69f9fd9fa"
+              "9c189dbec8cfe0301d02d564a02b0342d292bb3a"
             ]
           },
           "content": "Add column `date_returned` date;",
@@ -845,7 +845,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "a8c7dc43b6ec7fe7ce78c802fb4fe2a57b2e1ee6"
+              "99c7e6e04e45b948b4b7d9f4ca3483dab8868272"
             ]
           },
           "content": "Display `rentals` details",
@@ -869,7 +869,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "a57065a176ec24c31c0ae85397b0254d9b9c43d4"
+              "18d2fbfea965d120208d70bab56e2ee4fbfd7ff4"
             ]
           },
           "content": "Display Tables",
@@ -893,7 +893,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "209b1be5f6a075acdc354790da1fc4ace052deac"
+              "667a555403de7f85114235fd367765ddb89a1783"
             ]
           },
           "content": "I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `mountain` and a `size` of `27`. The other columns will automatically be filled in, so don't worry about those.",
@@ -917,7 +917,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "6c8ce5f51b2f5b1fc5dc2691644be0f94b2e33ff"
+              "417865ab3c727074b89fa2699e108789f91ee705"
             ]
           },
           "content": "Select * from bikes;",
@@ -941,7 +941,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "7bdd3fff25d50872c9a9c3853693be57fa374225"
+              "9ec9796f90026e930c7da3b9cc6a69c6c189324a"
             ]
           },
           "content": "Insert 28 inch Mountain Bike",
@@ -965,7 +965,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "bdf24c116f5cc002503db67e83e83021d725af04"
+              "d47e9804055344640c9160aa34fad2da23500f0b"
             ]
           },
           "content": "Insert 29 inch Mountain Bike",
@@ -989,7 +989,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "b01c7fbd4e108775d9b068009bf4da227608db1b"
+              "eca2aa0449ebb5be22e684f53a8b95a01f219a10"
             ]
           },
           "content": "Insert 27 inch Road Bike",
@@ -1013,7 +1013,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "13ebd0757ecb78fde4f72f58036c901bebbff592"
+              "a61da789d400ed6c0af8a9e1fdd323f939bd010a"
             ]
           },
           "content": "Select * from bikes;",
@@ -1037,7 +1037,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "ff5fa4c13c3d2e31e71609dc7387bcfa645268c1"
+              "a473d1dff34f0a87775a56609f3b03a9389e09c3"
             ]
           },
           "content": "Insert 28 and 29 inch Road Bikes",
@@ -1061,7 +1061,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "ae3e3882f7403afbaf88d0314d4ba3a411cf6e19"
+              "3fd2f8235984dad055016c96dfcd850d2067c5e0"
             ]
           },
           "content": "Insert 19, 20, and 21 inch `BMX` Bikes",
@@ -1085,7 +1085,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "24cf6accec8899423502702e99cbe3a03d16bfb2"
+              "4d3867779bbbbf15b9424ca00be519b16450befb"
             ]
           },
           "content": "Select * from bikes;",
@@ -1109,7 +1109,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "ebea79a85e26bcd88544427929094759adcdbc19"
+              "b7f47d95eac66f5ed2937e955bfd0fa62af769b4"
             ]
           },
           "content": "Open a second terminal, and use touch to create `bike-shop.sh` in the `project` folder.",
@@ -1133,7 +1133,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "5a83c42cd64dfdeb6d65d450f3c496ce8bc4a307"
+              "bc821e2f0b4a5d1e6fcda0c8ef07b84e85b8c425"
             ]
           },
           "content": "Add a `shebang!`",
@@ -1157,7 +1157,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "b28d2a7c8831370348c6538a85c72b8943fc74b6"
+              "a7dadf2366b9ce0474605ee15377ffbad638bb4c"
             ]
           },
           "content": "Add `echo \"~~~~~ Bike Rental Shop ~~~~~\"` and save the file",
@@ -1181,7 +1181,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "d9f4a611d2e286c61068dcdbe024c3057f5f4087"
+              "7f0d601a0a4438c18de491d0d433ea75570760e5"
             ]
           },
           "content": "chmod +x bike-shop.sh",
@@ -1205,32 +1205,10 @@
               "../.bash_history"
             ],
             "commits": [
-              "782fa33c58eb40e82f440c3cb248d19a36d2cdd8"
+              "2087de5b26b9363f48bcb5b800310f9e466f71f5"
             ]
           },
           "content": "Run the file with `./bike-shop.sh`",
-          "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "500",
-      "title": "Echo Title",
-      "summary": "",
-      "content": "",
-      "steps": [
-        {
-          "id": "500.1",
-          "setup": {
-            "watchers": [
-              "./bike-shop.sh"
-            ],
-            "commits": []
-          },
-          "content": "echo \"~~~~~ Bike Rental Shop ~~~~~\"",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
