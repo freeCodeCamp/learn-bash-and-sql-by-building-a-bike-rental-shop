@@ -8,6 +8,12 @@ MAIN_MENU () {
 	echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"
 
 	read MAIN_MENU_SELECTION
+
+	# Add your code below this line
+
+
+
+	# Add your code above this line
 }
 
 RENT_MENU () {
@@ -19,11 +25,7 @@ RETURN_MENU () {
 }
 
 EXIT () {
-	# Add your code below this line
-
-
-
-	# Add your code above this line
+	echo "Thank you for stopping in"
 }
 
 MAIN_MENU
