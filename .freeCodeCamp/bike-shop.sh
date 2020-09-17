@@ -18,9 +18,11 @@ RETURN_MENU () {
 	echo "Return Menu"
 }
 
-# Add your code below this line
+EXIT () {
+	# Add your code below this line
 
 
-# Add your code above this line
+	# Add your code above this line
+}
 
 MAIN_MENU
