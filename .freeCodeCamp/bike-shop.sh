@@ -10,10 +10,12 @@ MAIN_MENU () {
 	read MAIN_MENU_SELECTION
 }
 
-# Add your code below this line
+RENT_MENU () {
+	# Add your code below this line
 
 
 
-# Add your code above this line
+	# Add your code above this line
+}
 
 MAIN_MENU
