@@ -11,11 +11,13 @@ MAIN_MENU () {
 }
 
 RENT_MENU () {
-	# Add your code below this line
-
-
-
-	# Add your code above this line
+	echo "Rent Menu"
 }
+
+# Add your code below this line
+
+
+
+# Add your code above this line
 
 MAIN_MENU
