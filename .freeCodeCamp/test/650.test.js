@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -10,4 +10,4 @@ describe('You', () => {
   it('should read user input into a "MAIN_MENU_SELECTION" variable', async () => {
     assert(/read[ \t]+MAIN_MENU_SELECTION\s+/.test(scriptFile));
   });
-});
+});*/
