@@ -9,10 +9,12 @@ MAIN_MENU () {
 
 	read MAIN_MENU_SELECTION
 
-	# Add your code below this line
-
-
-	# Add your code above this line
+  case $MAIN_MENU_SELECTION in
+    1) RENT_MENU ;;
+    2) RETURN_MENU ;;
+    3) EXIT ;;
+    *) MAIN_MENU ;;
+  esac
 }
 
 RENT_MENU () {
