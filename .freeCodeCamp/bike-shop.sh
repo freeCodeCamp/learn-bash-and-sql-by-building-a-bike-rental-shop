@@ -14,10 +14,12 @@ RENT_MENU () {
 	echo "Rent Menu"
 }
 
-# Add your code below this line
+RETURN_MENU () {
+	# Add your code below this line
 
 
 
-# Add your code above this line
+	# Add your code above this line
+}
 
 MAIN_MENU
