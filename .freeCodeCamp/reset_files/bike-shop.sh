@@ -8,4 +8,8 @@ MAIN_MENU() {
   read MAIN_MENU_SELECTION
 }
 
+RENT_MENU() {
+
+}
+
 MAIN_MENU
