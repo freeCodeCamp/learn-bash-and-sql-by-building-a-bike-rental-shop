@@ -12,7 +12,7 @@ config:
       - sudo service postgresql start
       - sudo -u postgres psql -c "CREATE USER freecodecamp WITH CREATEDB;"
   testRunner:
-    command: ./node_modules/.bin/mocha
+    command: npm run programmatic-test
     args:
       tap: --reporter=mocha-tap-reporter
     directory: .freeCodeCamp
