@@ -1156,6 +1156,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "48a2619542b1ecff84bda18314586193d508632a"
             ]
@@ -1179,6 +1182,9 @@
           "setup": {
             "watchers": [
               "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "8de72939befd0690ed5e8bd6a286bc64cde8b767"
@@ -1204,6 +1210,9 @@
             "watchers": [
               "../.bash_history"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "a120d03117c9001b99ae4ea3992ba45d2a8473c5"
             ]
@@ -1227,6 +1236,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "c4d3c289ff2cb1823802552de5d25f7c8cd59007"
@@ -1252,6 +1264,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "4e181e82122359173295679eed48b846996fc734"
             ]
@@ -1275,6 +1290,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "8b40d4a19cfc1de4edfdba7afcbb3205a427ca75"
@@ -1300,6 +1318,9 @@
             "watchers": [
               "../.bash_history"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "16c46f2d0b106b99e3884ee9c3f42e0ca330f4f3"
             ]
@@ -1323,6 +1344,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "2a2b2ddd58b554a13cdc885dcf3083d7cf92f4fd"
@@ -1348,6 +1372,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "4762c2f24b37e1095630573f8b63761f089acfc9"
             ]
@@ -1371,6 +1398,9 @@
           "setup": {
             "watchers": [
               "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "7a6a9d9875afab547796bd69421d0aadb81a41f3"
@@ -1396,6 +1426,9 @@
             "watchers": [
               "../.bash_history"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "9fc87893c691075bde3fc6c480d62d1931bb56a8"
             ]
@@ -1419,6 +1452,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "3fd82b31442ad26f22c7189475e458df43c5e67e"
@@ -1444,6 +1480,9 @@
             "watchers": [
               "../.bash_history"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "ab4846462e5fa6b405f9a29a5b76e6ca952db877"
             ]
@@ -1467,6 +1506,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "9a8c1b4f12ded5dd296bac2112b9913eb94d9a6c"
@@ -1492,6 +1534,9 @@
             "watchers": [
               "../.bash_history"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "02c55860557e40b7cc272190d8d624c7afcbc48a"
             ]
@@ -1515,6 +1560,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "677b7e93971f77bdeacebdbc47a0824c425a0cc9"
@@ -1540,6 +1588,9 @@
             "watchers": [
               "../.bash_history"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "48077e63a046c228af90dd9466ce91afacff8589"
             ]
@@ -1563,6 +1614,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "aca61c74c508967d5c92c207db62f41b6ca82e84"
@@ -1588,6 +1642,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "bfdaf1debd982610a44dd3aa5ffd579fcb2c77d3"
             ]
@@ -1611,6 +1668,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "7d8b84d39116541c46d6416fd8dbcfc30b4b9360"
@@ -1636,6 +1696,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "a614015b0e06c1296b0a39856b78750c85b354bb"
             ]
@@ -1659,6 +1722,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "1e31eca91fc984ab9e98d684ad3bd8b3befb3dc5"
@@ -1684,6 +1750,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "4ed5e43a432baa54323ceb711c3dcee52e0855e1"
             ]
@@ -1707,6 +1776,9 @@
           "setup": {
             "watchers": [
               "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "f22dc31bc9c14fdffb6dc830009b51647145d065"
@@ -1732,6 +1804,9 @@
             "watchers": [
               "./bike-shop.sh"
             ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
             "commits": [
               "86e8da702cc41ab490d01f807ee52acd5aca50cd"
             ]
@@ -1755,6 +1830,9 @@
           "setup": {
             "watchers": [
               "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
               "44129bf7f9ef2bd48899081b9648832d2b9d3a35"
