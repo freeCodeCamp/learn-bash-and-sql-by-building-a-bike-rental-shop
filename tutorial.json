@@ -66,7 +66,7 @@
     },
     {
       "id": "20",
-      "title": "Log in to PostgreSQL",
+      "title": "Log in to Psql",
       "summary": "",
       "content": "",
       "steps": [
@@ -80,10 +80,10 @@
               "669ec7801adb27beabccc59fe1bfefdf97daa788"
             ]
           },
-          "content": "You are going to build a bike rental shop for these lessons. It will have a database with bikes, customers, and rentals. Use the terminal to connect to PostgreSQL with Psql. The command is `psql -U freecodecamp postgres`.",
+          "content": "You are going to build a bike rental shop. There will be a database for your shop and a bash script to interact with it. First, you need to create the database. Use the terminal to connect to it by entering `psql --username=freecodecamp --dbname=postgres`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Type the above command into the terminal and press enter",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal and press enter"
           ]
         }
       ]
@@ -104,10 +104,11 @@
               "5c955c230c2446d5ffbfa495a4d90f8ecaf00e4a"
             ]
           },
-          "content": "List databases",
+          "content": "List the databases with `\\l` to what databases are all here.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Type `\\l` into the psql prompt and press enter",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -128,10 +129,13 @@
               "20b0087e2477f2ba7d5643cabbb3425d8342ce49"
             ]
           },
-          "content": "create database `bikes`",
+          "content": "You are going to build a system for a bike rental shop. First, you need to create the database. Create a new database named `bikes`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `CREATE DATABASE` keywords",
+            "Here's an example: `CREATE DATABASE database_name;`",
+            "Type `CREATE DATABASE bikes;` into the psql prompt and press enter",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -152,10 +156,12 @@
               "9f914feb7701950274185b38c932c800a461136a"
             ]
           },
-          "content": "List databases",
+          "content": "List databases again to make sure your database got created.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **l**ist shortcut command",
+            "Type `\\l` into the psql prompt",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -176,10 +182,15 @@
               "b7b2e6a4d1e0af2d44413bc8bb612e74b3aa9fce"
             ]
           },
-          "content": "Connect to bikes",
+          "content": "**C**onnect to the `bikes` database so you can start building the structure.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **c**onnect shortcut command",
+            "Add the database name to the command",
+            "It's the `\\c` command",
+            "Here's an example: `\\c database_name`",
+            "Try entering `\\c bikes` into the psql prompt",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -200,10 +211,14 @@
               "0555ecfb31fc7b1c2f05d20ee8c67a432b267f2b"
             ]
           },
-          "content": "Create table `bikes`",
+          "content": "The database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your new database.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `CREATE TABLE` keywords",
+            "Don't forget the parenthesis",
+            "Here's an example: `CREATE TABLE table_name();`",
+            "Try entering `CREATE TABLE bikes();`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -224,10 +239,12 @@
               "87344058964d67d65130e54978ba42779118d9b9"
             ]
           },
-          "content": "Display the tables",
+          "content": "**D**isplay the tables to make sure your table got created.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "It's the `\\d` command",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -248,10 +265,14 @@
               "b559662be211c484bdac389224c28060ceb83d7e"
             ]
           },
-          "content": "Add column bike_id serial primary key",
+          "content": "The table will have a few columns for bike information. Add a column to the `bikes` table named `bike_id`. Give it a type of `serial` and make it a `primary key`",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE bikes ADD COLUMN bike_id SERIAL PRIMARY KEY;`",
+            "You can drop a column with `ALTER TABLE bikes DROP COLUMN bike_id;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -272,10 +293,13 @@
               "454be683d9fbcfa6296bfd3acee17d301db2bad9"
             ]
           },
-          "content": "Display `bikes` details",
+          "content": "Use the **d**isplay command to view the details of the `bikes` table.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "It's the `\\d` command",
+            "Add the table name to the command",
+            "Try entering `\\d bikes`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -296,10 +320,14 @@
               "6b273d6150faad1695964b319d7d213bb5a8b02f"
             ]
           },
-          "content": "Add type varchar(50) not null",
+          "content": "Add a column named `type` so you know what type of bike you have. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR(50)`, and `PRIMARY KEY` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE bikes ADD COLUMN type VARCHAR(50) NOT NULL;`",
+            "You can drop a column with `ALTER TABLE bikes DROP COLUMN type;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -320,10 +348,14 @@
               "631f2659052e01c4bb61faab1b9088bf47b4a2a6"
             ]
           },
-          "content": "Display `bikes` details",
+          "content": "Display the details of the `bikes` table again.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d bikes`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -344,10 +376,14 @@
               "5853a05816a1541513656868d779319108087df8"
             ]
           },
-          "content": "Add column size int not null",
+          "content": "Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE bikes ADD COLUMN size INT NOT NULL;`",
+            "You can drop a column with `ALTER TABLE bikes DROP COLUMN size;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -368,10 +404,14 @@
               "f1d77807d662b43621d92f8852b82d9b7c292caf"
             ]
           },
-          "content": "alter table bikes add column available boolean not null default TRUE;",
+          "content": "Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, and `DEFAULT TRUE` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE DEFAULT;`",
+            "Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN DEFAULT TRUE;`",
+            "You can drop a column with `ALTER TABLE bikes DROP COLUMN available;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -392,10 +432,14 @@
               "2f1ba9463541736d82fa5e994b7f9685f032f330"
             ]
           },
-          "content": "Display `bikes` details",
+          "content": "Display the details of the `bikes` table again so you can make sure it's how you want it.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d bikes`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -416,10 +460,14 @@
               "fe7d6e446c3bbecee9f9e8dff21a9e1b3338b7da"
             ]
           },
-          "content": "Create table `customers`",
+          "content": "Looks like it all worked. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `CREATE TABLE` keywords",
+            "Don't forget the parenthesis",
+            "Here's an example: `CREATE TABLE table_name();`",
+            "Try entering `CREATE TABLE customers();`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -440,10 +488,14 @@
               "27a920507f62f3ff79a1bf62d6cc7a81ae4af22f"
             ]
           },
-          "content": "Add column customer_id serial primary key",
+          "content": "Add a `customer_id` column to your new table that is a type of `SERIAL` and make it a `PRIMARY KEY`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE customers ADD COLUMN customer_id SERIAL PRIMARY KEY;`",
+            "You can drop a column with `ALTER TABLE customers DROP COLUMN customer_id;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -464,10 +516,14 @@
               "4391b054514dfac94fd375cf73c707a3d258c704"
             ]
           },
-          "content": "Display `customers` details",
+          "content": "Display the details of the customers table so you can make sure your new column is there.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d customers`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -488,10 +544,14 @@
               "f95f31be6c928075e373659d41ec300d62de94ae"
             ]
           },
-          "content": "Add column phone varchar(15) not null unique;",
+          "content": "Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of 15 character. Also make sure it can't be null, and that it has to be unique.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, `NOT NULL`, and `UNIQUE` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE customers ADD COLUMN phone VARCHAR(15) NOT NULL UNIQUE;`",
+            "You can drop a column with `ALTER TABLE customers DROP COLUMN phone;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -512,10 +572,14 @@
               "b5167076715b73ad36a5f84d73bdfff6fd6b83a9"
             ]
           },
-          "content": "Add column `name` varchar(40) not null",
+          "content": "Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be null.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE customers ADD COLUMN name VARCHAR(40) NOT NULL;`",
+            "You can drop a column with `ALTER TABLE customers DROP COLUMN name;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -536,10 +600,14 @@
               "a261c7858a489751300b6b0acd441a89170924dc"
             ]
           },
-          "content": "Display `customers` details",
+          "content": "Display the details of the `customers` table.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d customers`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -560,10 +628,14 @@
               "e9f98e91887e0d9d43fc4a2adef2fcc60ff1b64d"
             ]
           },
-          "content": "Create table `rentals`",
+          "content": "I think that table is finished. Lastly, you need a table to store which bikes are rented and to whom. Create a new table named `rentals`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `CREATE TABLE` keywords",
+            "Don't forget the parenthesis",
+            "Here's an example: `CREATE TABLE table_name();`",
+            "Try entering `CREATE TABLE rentals();`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -584,10 +656,15 @@
               "db6270f0c63373cdda4386543c82f64b40369db9"
             ]
           },
-          "content": "Add column rental_id serial primary key",
+          "content": "Add a `rental_id` column to your new table. Give it the same two properties that you gave the other two \"id\" columns.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "The other two properties are `SERIAL` and `PRIMARY KEY`",
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE rentals ADD COLUMN rental_id SERIAL PRIMARY KEY;`",
+            "You can drop a column with `ALTER TABLE rentals DROP COLUMN rental_id;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -608,10 +685,14 @@
               "bcf9a94482682b7ba856f7a25a173fb8adda865b"
             ]
           },
-          "content": "Display `rentals` Details",
+          "content": "Display the details of the `rentals` table.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d rentals`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -632,10 +713,14 @@
               "5ed82ba69a5b34917fc93189d975b43eb35ad5df"
             ]
           },
-          "content": "Add column `customer_id` int not null",
+          "content": "It looks good so far. Add column named `customer_id`. This will have the id of the customer that is renting a bike. Make the column an `INT` and `NOT NULL` to start.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE rentals ADD COLUMN customer_id INT NOT NULL;`",
+            "You can drop a column with `ALTER TABLE rentals DROP COLUMN customer_id;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -656,10 +741,12 @@
               "912fc4d17489cc153cc31dd47a37307340304dd7"
             ]
           },
-          "content": "alter table rentals add foreign key (customer_id) references customers(customer_id);",
+          "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table so you know what customer is renting a bike. Here's an example of how you can do that:\n\n```sql\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\n```",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Without the keywords, it looks like tihs: `rentals customer_id customers(customer_id)`",
+            "Try entering `ALTER TABLE rentals ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -680,10 +767,14 @@
               "ca29247190d9ccb61458a9d839317c91226f2418"
             ]
           },
-          "content": "Display `rentals` Details",
+          "content": "Display the details of the `rentals` table to make sure your key is set.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d rentals`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -704,10 +795,14 @@
               "39a63a24ea8308e7529bd181ed02a9047211b218"
             ]
           },
-          "content": "Add column bike_id int not null",
+          "content": "Alright, you need another column so you know what bike a customer is renting. Add a column named `bike_id` and make it an `INT` and `NOT NULL`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE rentals ADD COLUMN bike_id INT NOT NULL;`",
+            "You can drop a column with `ALTER TABLE rentals DROP COLUMN bike_id;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -728,10 +823,13 @@
               "6a49a54bbf17ea8fd2cea2ed618418d71d0305e6"
             ]
           },
-          "content": "alter table rentals add foreign key (bike_id) references bikes(bike_id);",
+          "content": "Make that column a foreign key that references the `bike_id` column from the `bikes` table so you know what bike the id is for.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Here's the example again: `ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);`",
+            "Without the keywords, it looks like tihs: `rentals bike_id bikes(bike_id)`",
+            "Try entering `ALTER TABLE rentals ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -752,10 +850,14 @@
               "aafa2501b3f23adc9b75e76805e09d738c3a6220"
             ]
           },
-          "content": "Display `rentals` Details",
+          "content": "Display the details of the `rentals` table so you can make sure the key it correct.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d rentals`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -776,10 +878,14 @@
               "a3b12759d108d16476dee43de73358884af0d078"
             ]
           },
-          "content": "date_rented date not null default = now()",
+          "content": "Moving along. You want to know when a customer rented the bike, and when they returned it. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `DATE`, `NOT NULL`, and `DEFAULT NOW()` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
+            "Try entering `ALTER TABLE rentals ADD COLUMN date_rented DATE NOT NULL DEFAULT NOW();`",
+            "You can drop a column with `ALTER TABLE rentals DROP COLUMN date_rented;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -800,10 +906,14 @@
               "3fa15bd4180465159b75de904ccb84ce0849b217"
             ]
           },
-          "content": "Display `rentals` Details",
+          "content": "Display the details of the `rentals` table again.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d rentals`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -824,10 +934,14 @@
               "99acef71762486a07b03356d51c974b194becd65"
             ]
           },
-          "content": "Add column `date_returned` date;",
+          "content": "Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`;",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `DATE` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE;`",
+            "Try entering `ALTER TABLE rentals ADD COLUMN date_returned DATE;`",
+            "You can drop a column with `ALTER TABLE rentals DROP COLUMN date_rented;` if you need to try again.",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -848,10 +962,15 @@
               "1f69065c0ac58651876e07758cc2473923ea9a2d"
             ]
           },
-          "content": "Display `rentals` details",
+          "content": "View the details of the table again.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "It's the `rentals` table",
+            "Use the **d**isplay shortcut command",
+            "Add the table name to the command",
+            "Here's an example: `\\d table_name`",
+            "Try entering `\\d rentals`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -872,10 +991,12 @@
               "b7a71965f81d81f1f477f2fa51494ea59e591239"
             ]
           },
-          "content": "Display Tables",
+          "content": "Okay, I think it looks good. Display all the tables so you can see what you ended up with.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the **d**isplay shortcut command",
+            "It's the `\\d` command",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -896,10 +1017,13 @@
               "ed93b192b6f24814bba7b8e7bd80bc8e7e83bad0"
             ]
           },
-          "content": "I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `mountain` and a `size` of `27`. The other columns will automatically be filled in, so don't worry about those.",
+          "content": "I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `Mountain` and a `size` of `27`. Make sure to put your `VARCHAR` values in single quotes. The `bike_id` and `available` columns should be filled in automatically, so you don't need to worry about those.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `INSERT INTO` and `VALUES` keywords",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 27);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -920,10 +1044,12 @@
               "a4970d4bb20b91238c22dd279f08cf129c8cddc8"
             ]
           },
-          "content": "Select * from bikes;",
+          "content": "View all the columns in your bikes table with `SELECT`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use `*` to view all the columns",
+            "Here's an example: `SELECT * FROM table_name;`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -944,10 +1070,14 @@
               "8556fb6862e71c6ae7b60b81bd0c8a14e8528b5d"
             ]
           },
-          "content": "Insert 28 inch Mountain Bike",
+          "content": "Looks like it's all working, the `bike_id` and `available` columns were filled in automatically. Insert another bike. Give it a `type` of `Mountain` and a `size` of `28`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Make sure to put your `VARCHAR` values in single quotes",
+            "Use the `INSERT INTO` and `VALUES` keywords",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 28);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -968,10 +1098,14 @@
               "247bc308afc73f898210085a4d0cd359da36d78f"
             ]
           },
-          "content": "Insert 29 inch Mountain Bike",
+          "content": "Add another `Mountain` bike to your inventory. Make it a `29` inch bike.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `INSERT INTO` and `VALUES` keywords",
+            "Make sure to put your `VARCHAR` values in single quotes",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 29);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -992,10 +1126,14 @@
               "697a14e528de9b49ebd27fae407489665af7d87c"
             ]
           },
-          "content": "Insert 27 inch Road Bike",
+          "content": "Add another bike. Make it a `27` inch `Road` bike.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `INSERT INTO` and `VALUES` keywords",
+            "Make sure to put your `VARCHAR` values in single quotes",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Try entering `INSERT INTO bikes(type, size) VALUES('Road', 27);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -1016,10 +1154,12 @@
               "4c7d5f14bfb81b3212868ec5ecd6caba040ff301"
             ]
           },
-          "content": "Select * from bikes;",
+          "content": "Use `SELECT` to view all the data in the `bikes` table again.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use `*` to view all the columns",
+            "Here's an example: `SELECT * FROM table_name;`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -1839,6 +1979,1106 @@
             ]
           },
           "content": "Run the script three times in the terminal and try picking the three different menu items to see if they work.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "740",
+      "title": "Create `SHOW_TITLE` function",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "740.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Create `SHOW_TITLE` function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "750",
+      "title": "Add title screen to all menus",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "750.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Add `SHOW_TITLE` function to the top of each menu.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "760",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "760.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script and check that the title is showing up in the menus",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "770",
+      "title": "Make your exit function sleep",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "770.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Add sleep 2 to the exit function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "780",
+      "title": "Make your exit function sleep",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "780.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "add a clear to the exit function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "790",
+      "title": "Make your exit function sleep",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "790.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "add exit to the function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "800",
+      "title": "Test the `EXIT` function",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "800.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Test the exit function",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "810",
+      "title": "View the psql help menu",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "810.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "psql --help",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "820",
+      "title": "Enter a psql command from the terminal",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "820.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "enter `psql -X --username=freecodecamp --dbname=bikes -c \"select * from bikes;\"` in the terminal.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "830",
+      "title": "Enter a psql command from your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "830.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Echo that command at the top of your script so you can see if it works.\necho `psql -X --username=freecodecamp --dbname=bikes -c \"select * from bikes;\"` at the top.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "840",
+      "title": "Run your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "840.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script to see what you get",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "850",
+      "title": "Enter the command in a subprocess",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "850.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Something isn't quite working. Put the command in a subprocess\n$(command);",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "860",
+      "title": "Run your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "860.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script to see if the new command works",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "870",
+      "title": "Add quotes to echo",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "870.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "That's better, at least you're getting the info but it's a little messed up. Put quotes around the whole things you're echoing",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "880",
+      "title": "Run your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "880.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script to see if the output.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "890",
+      "title": "View psql help menu",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "890.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Okay, now it's really close. Check the psql --help menu again",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "900",
+      "title": "Add flags to psql command",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "900.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "add --no-align --tuples-only flags",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "910",
+      "title": "Run your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "910.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script to see what it looks like now.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "920",
+      "title": "Create `PSQL` Variable",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "920.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Create psql variable. eg \nPSQL=\"psql -X --username=freecodecamp --dbname=bikes -c\"",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "930",
+      "title": "Use `PSQL` Variable",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "930.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Use PSQL variable.\nPSQL=\"psql -X --username=freecodecamp --dbname=bikes --no-align --tuples-only -c\"",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "940",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "940.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "950",
+      "title": "Use `PSQL` Variable",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "950.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Okay, now you can connect to the database and interact with it in your script using that PQSL variable.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "960",
+      "title": "Delete the `echo` line",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "960.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Delete the echo line",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "970",
+      "title": "Create `AVAILABLE_BIKES` Variable",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "970.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Here's the command you used to get them before. `\"$($PSQL \"select * from bikes;\")\"`\nCreate available bikes variable = select Where avaiable = 't'",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "980",
+      "title": "Echo `AVAILABLE_BIKES`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "980.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Echo your available bikes variable so you can see what it outputs.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "990",
+      "title": "Run your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "990.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run your script and enter `2` to go to the `RENT_MENU` and make sure it's working.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1000",
+      "title": "Select Columns from Bikes in psql Prompt",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1000.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "You don't want to show all the rows and columns in your script. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and and the columns for the id, type, and size.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1010",
+      "title": "Add the command to your script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1010.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "That's the query you want in your script to only display the info needed. Add that query in place of your query in AVAILABLE_BIKES.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1020",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1020.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script and go to the rent menu to see the output.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1030",
+      "title": "Set available to false",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1030.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Okay, now you can see the bike_id and the info you need. Set available to false for all the bikes in the psql prompt.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1040",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1040.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script and go to the rent menu",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1050",
+      "title": "Add if condition",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1050.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "add \n```\nif [[ -z $BIKES_AVAILABLE ]]\nthen \n\tMAIN_MENU\nfi\n```",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1060",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1060.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script and go to the rent menu to see if you are sent back to the main menu when there's no bikes available.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1070",
+      "title": "Add argument to `MAIN_MENU`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1070.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "It looks like it works, but we could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.\nadd `MAIN_MENU \"Sorry, we don't have any bikes available right now.\"`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1080",
+      "title": "Add error message to `MAIN_MENU`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1080.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Add this to `MAIN_MENU`\n```\n  if [[ $1 ]]\n  then\n    echo -e \"$1\\n\"\n  fi\n```",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1090",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1090.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script and go to the rent menu. It should take you to the main menu and give a message.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1100",
+      "title": "Add else to `RENT_MENU`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1100.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Add an else condition to the `RENT_MENU` for when there are bikes available.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1110",
+      "title": "Echo Bikes Available Text",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1110.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "add `echo -e \"Here are the bikes we have available:\\n\"` in your else condition",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1120",
+      "title": "Echo List of Bikes Available",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1120.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "add `echo $AVAILABLE_BIKES`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1130",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1130.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script and go to the rent menu to see the bikes.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1140",
+      "title": "Set bike availiabity to true",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1140.1",
+          "setup": {
+            "watchers": [
+              "./.freeCodeCamp/test/queryResults.log"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Set bike availability to true on psql",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1150",
+      "title": "Run the script",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1150.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the script again to see if they show up this time.",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1160",
+      "title": "Ask for Bike To Rent",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1160.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Okay, that seems to be working.\nadd `echo -e \"\\nWhich one would you like to rent?\"`",
+          "hints": [
+            "Capitalization matters",
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1170",
+      "title": "read `BIKE_AVAILABILITY`",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "1170.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "read `BIKE_AVAILABILITY`",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
