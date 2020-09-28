@@ -13,445 +13,589 @@
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 20. Log in to PostgreSQL
+## 20. Log in to Psql
 
 ### 20.1
 
-You are going to build a bike rental shop for these lessons. It will have a database with bikes, customers, and rentals. Use the terminal to connect to PostgreSQL with Psql. The command is `psql -U freecodecamp postgres`.
+You are going to build a bike rental shop. There will be a database for your shop and a bash script to interact with it. First, you need to create the database. Use the terminal to connect to it by entering `psql --username=freecodecamp --dbname=postgres`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Type the above command into the terminal and press enter
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal and press enter
 
 ## 30. List Databases
 
 ### 30.1
 
-List databases
+List the databases with `\l` to what databases are all here.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Type `\l` into the psql prompt and press enter
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 40. Create Database `bikes`
 
 ### 40.1
 
-create database `bikes`
+You are going to build a system for a bike rental shop. First, you need to create the database. Create a new database named `bikes`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `CREATE DATABASE` keywords
+- Here's an example: `CREATE DATABASE database_name;`
+- Type `CREATE DATABASE bikes;` into the psql prompt and press enter
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 50. List Databases
 
 ### 50.1
 
-List databases
+List databases again to make sure your database got created.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **l**ist shortcut command
+- Type `\l` into the psql prompt
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 60. Connect to `bikes`
 
 ### 60.1
 
-Connect to bikes
+**C**onnect to the `bikes` database so you can start building the structure.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **c**onnect shortcut command
+- Add the database name to the command
+- It's the `\c` command
+- Here's an example: `\c database_name`
+- Try entering `\c bikes` into the psql prompt
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 70. Create table `bikes`
 
 ### 70.1
 
-Create table `bikes`
+The database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your new database.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `CREATE TABLE` keywords
+- Don't forget the parenthesis
+- Here's an example: `CREATE TABLE table_name();`
+- Try entering `CREATE TABLE bikes();`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 80. Display the tables
 
 ### 80.1
 
-Display the tables
+**D**isplay the tables to make sure your table got created.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- It's the `\d` command
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 90. Add column `bike_id`
 
 ### 90.1
 
-Add column bike_id serial primary key
+The table will have a few columns for bike information. Add a column to the `bikes` table named `bike_id`. Give it a type of `serial` and make it a `primary key`
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE bikes ADD COLUMN bike_id SERIAL PRIMARY KEY;`
+- You can drop a column with `ALTER TABLE bikes DROP COLUMN bike_id;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 100. Display `bikes` Details
 
 ### 100.1
 
-Display `bikes` details
+Use the **d**isplay command to view the details of the `bikes` table.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- It's the `\d` command
+- Add the table name to the command
+- Try entering `\d bikes`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 110. Add `type` column
 
 ### 110.1
 
-Add type varchar(50) not null
+Add a column named `type` so you know what type of bike you have. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR(50)`, and `PRIMARY KEY` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE bikes ADD COLUMN type VARCHAR(50) NOT NULL;`
+- You can drop a column with `ALTER TABLE bikes DROP COLUMN type;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 120. Display `bikes` details
 
 ### 120.1
 
-Display `bikes` details
+Display the details of the `bikes` table again.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d bikes`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 130. Add Column `size`
 
 ### 130.1
 
-Add column size int not null
+Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE bikes ADD COLUMN size INT NOT NULL;`
+- You can drop a column with `ALTER TABLE bikes DROP COLUMN size;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 140. Add Column `available`
 
 ### 140.1
 
-alter table bikes add column available boolean not null default TRUE;
+Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, and `DEFAULT TRUE` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE DEFAULT;`
+- Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN DEFAULT TRUE;`
+- You can drop a column with `ALTER TABLE bikes DROP COLUMN available;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 150. Display `bikes` details
 
 ### 150.1
 
-Display `bikes` details
+Display the details of the `bikes` table again so you can make sure it's how you want it.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d bikes`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 160. Create Table `customers`
 
 ### 160.1
 
-Create table `customers`
+Looks like it all worked. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `CREATE TABLE` keywords
+- Don't forget the parenthesis
+- Here's an example: `CREATE TABLE table_name();`
+- Try entering `CREATE TABLE customers();`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 170. Add Column `customer_id`
 
 ### 170.1
 
-Add column customer_id serial primary key
+Add a `customer_id` column to your new table that is a type of `SERIAL` and make it a `PRIMARY KEY`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE customers ADD COLUMN customer_id SERIAL PRIMARY KEY;`
+- You can drop a column with `ALTER TABLE customers DROP COLUMN customer_id;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 180. Display `customers` Details
 
 ### 180.1
 
-Display `customers` details
+Display the details of the customers table so you can make sure your new column is there.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d customers`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 190. Add Column `phone`
 
 ### 190.1
 
-Add column phone varchar(15) not null unique;
+Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of 15 character. Also make sure it can't be null, and that it has to be unique.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, `NOT NULL`, and `UNIQUE` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE customers ADD COLUMN phone VARCHAR(15) NOT NULL UNIQUE;`
+- You can drop a column with `ALTER TABLE customers DROP COLUMN phone;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 200. Add Column `name`
 
 ### 200.1
 
-Add column `name` varchar(40) not null
+Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be null.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE customers ADD COLUMN name VARCHAR(40) NOT NULL;`
+- You can drop a column with `ALTER TABLE customers DROP COLUMN name;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 210. Display `customers` Details
 
 ### 210.1
 
-Display `customers` details
+Display the details of the `customers` table.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d customers`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 220. Create Table `rentals`
 
 ### 220.1
 
-Create table `rentals`
+I think that table is finished. Lastly, you need a table to store which bikes are rented and to whom. Create a new table named `rentals`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `CREATE TABLE` keywords
+- Don't forget the parenthesis
+- Here's an example: `CREATE TABLE table_name();`
+- Try entering `CREATE TABLE rentals();`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 230. Add Column `rental_id`
 
 ### 230.1
 
-Add column rental_id serial primary key
+Add a `rental_id` column to your new table. Give it the same two properties that you gave the other two "id" columns.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The other two properties are `SERIAL` and `PRIMARY KEY`
+- Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE rentals ADD COLUMN rental_id SERIAL PRIMARY KEY;`
+- You can drop a column with `ALTER TABLE rentals DROP COLUMN rental_id;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 240. Display `rentals` Details
 
 ### 240.1
 
-Display `rentals` Details
+Display the details of the `rentals` table.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d rentals`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 250. Add Column `customer_id`
 
 ### 250.1
 
-Add column `customer_id` int not null
+It looks good so far. Add column named `customer_id`. This will have the id of the customer that is renting a bike. Make the column an `INT` and `NOT NULL` to start.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE rentals ADD COLUMN customer_id INT NOT NULL;`
+- You can drop a column with `ALTER TABLE rentals DROP COLUMN customer_id;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 260. Set `customer_id` Foreign Key
 
 ### 260.1
 
-alter table rentals add foreign key (customer_id) references customers(customer_id);
+Make the column you just added a foreign key that references the `customer_id` column from the `customers` table so you know what customer is renting a bike. Here's an example of how you can do that:
+
+```sql
+ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);
+```
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Without the keywords, it looks like tihs: `rentals customer_id customers(customer_id)`
+- Try entering `ALTER TABLE rentals ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 270. Display `rentals` Details
 
 ### 270.1
 
-Display `rentals` Details
+Display the details of the `rentals` table to make sure your key is set.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d rentals`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 280. Add Column `bike_id`
 
 ### 280.1
 
-Add column bike_id int not null
+Alright, you need another column so you know what bike a customer is renting. Add a column named `bike_id` and make it an `INT` and `NOT NULL`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE rentals ADD COLUMN bike_id INT NOT NULL;`
+- You can drop a column with `ALTER TABLE rentals DROP COLUMN bike_id;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 290. Add `bike_id` Foreign Key
 
 ### 290.1
 
-alter table rentals add foreign key (bike_id) references bikes(bike_id);
+Make that column a foreign key that references the `bike_id` column from the `bikes` table so you know what bike the id is for.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Here's the example again: `ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);`
+- Without the keywords, it looks like tihs: `rentals bike_id bikes(bike_id)`
+- Try entering `ALTER TABLE rentals ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 300. Display `rentals` Details
 
 ### 300.1
 
-Display `rentals` Details
+Display the details of the `rentals` table so you can make sure the key it correct.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d rentals`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 310. Add `date_rented` Column
 
 ### 310.1
 
-date_rented date not null default = now()
+Moving along. You want to know when a customer rented the bike, and when they returned it. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `DATE`, `NOT NULL`, and `DEFAULT NOW()` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
+- Try entering `ALTER TABLE rentals ADD COLUMN date_rented DATE NOT NULL DEFAULT NOW();`
+- You can drop a column with `ALTER TABLE rentals DROP COLUMN date_rented;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 320. Display `rentals` Details
 
 ### 320.1
 
-Display `rentals` Details
+Display the details of the `rentals` table again.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d rentals`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 330. Add Column `date_returned`
 
 ### 330.1
 
-Add column `date_returned` date;
+Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`;
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `ALTER TABLE`, `ADD COLUMN`, `DATE` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE;`
+- Try entering `ALTER TABLE rentals ADD COLUMN date_returned DATE;`
+- You can drop a column with `ALTER TABLE rentals DROP COLUMN date_rented;` if you need to try again.
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 340. Display `rentals` Details
 
 ### 340.1
 
-Display `rentals` details
+View the details of the table again.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- It's the `rentals` table
+- Use the **d**isplay shortcut command
+- Add the table name to the command
+- Here's an example: `\d table_name`
+- Try entering `\d rentals`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 350. Display Tables
 
 ### 350.1
 
-Display Tables
+Okay, I think it looks good. Display all the tables so you can see what you ended up with.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the **d**isplay shortcut command
+- It's the `\d` command
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 360. Insert 27 inch Mountain Bike
 
 ### 360.1
 
-I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `mountain` and a `size` of `27`. The other columns will automatically be filled in, so don't worry about those.
+I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `Mountain` and a `size` of `27`. Make sure to put your `VARCHAR` values in single quotes. The `bike_id` and `available` columns should be filled in automatically, so you don't need to worry about those.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `INSERT INTO` and `VALUES` keywords
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 27);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 370. Select all from Bikes
 
 ### 370.1
 
-Select * from bikes;
+View all the columns in your bikes table with `SELECT`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use `*` to view all the columns
+- Here's an example: `SELECT * FROM table_name;`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 380. Insert 28 inch Mountain Bike
 
 ### 380.1
 
-Insert 28 inch Mountain Bike
+Looks like it's all working, the `bike_id` and `available` columns were filled in automatically. Insert another bike. Give it a `type` of `Mountain` and a `size` of `28`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Make sure to put your `VARCHAR` values in single quotes
+- Use the `INSERT INTO` and `VALUES` keywords
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 28);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 390. Insert 29 inch Mountain Bike
 
 ### 390.1
 
-Insert 29 inch Mountain Bike
+Add another `Mountain` bike to your inventory. Make it a `29` inch bike.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `INSERT INTO` and `VALUES` keywords
+- Make sure to put your `VARCHAR` values in single quotes
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 29);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 400. Insert 27 inch Road Bike
 
 ### 400.1
 
-Insert 27 inch Road Bike
+Add another bike. Make it a `27` inch `Road` bike.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `INSERT INTO` and `VALUES` keywords
+- Make sure to put your `VARCHAR` values in single quotes
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Try entering `INSERT INTO bikes(type, size) VALUES('Road', 27);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 410. Select all from Bikes
 
 ### 410.1
 
-Select * from bikes;
+Use `SELECT` to view all the data in the `bikes` table again.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use `*` to view all the columns
+- Here's an example: `SELECT * FROM table_name;`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 420. Insert 28 and 29 inch Road Bikes
 
@@ -788,6 +932,508 @@ Add case Statement to `MAIN_MENU`
 ### 730.1
 
 Run the script three times in the terminal and try picking the three different menu items to see if they work.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 740. Create `SHOW_TITLE` function
+
+### 740.1
+
+Create `SHOW_TITLE` function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 750. Add title screen to all menus
+
+### 750.1
+
+Add `SHOW_TITLE` function to the top of each menu.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 760. Run the script
+
+### 760.1
+
+Run the script and check that the title is showing up in the menus
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 770. Make your exit function sleep
+
+### 770.1
+
+Add sleep 2 to the exit function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 780. Make your exit function sleep
+
+### 780.1
+
+add a clear to the exit function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 790. Make your exit function sleep
+
+### 790.1
+
+add exit to the function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 800. Test the `EXIT` function
+
+### 800.1
+
+Test the exit function
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 810. View the psql help menu
+
+### 810.1
+
+psql --help
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 820. Enter a psql command from the terminal
+
+### 820.1
+
+enter `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` in the terminal.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 830. Enter a psql command from your script
+
+### 830.1
+
+Echo that command at the top of your script so you can see if it works.
+echo `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` at the top.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 840. Run your script
+
+### 840.1
+
+Run the script to see what you get
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 850. Enter the command in a subprocess
+
+### 850.1
+
+Something isn't quite working. Put the command in a subprocess
+$(command);
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 860. Run your script
+
+### 860.1
+
+Run the script to see if the new command works
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 870. Add quotes to echo
+
+### 870.1
+
+That's better, at least you're getting the info but it's a little messed up. Put quotes around the whole things you're echoing
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 880. Run your script
+
+### 880.1
+
+Run the script to see if the output.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 890. View psql help menu
+
+### 890.1
+
+Okay, now it's really close. Check the psql --help menu again
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 900. Add flags to psql command
+
+### 900.1
+
+add --no-align --tuples-only flags
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 910. Run your script
+
+### 910.1
+
+Run the script to see what it looks like now.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 920. Create `PSQL` Variable
+
+### 920.1
+
+Create psql variable. eg 
+PSQL="psql -X --username=freecodecamp --dbname=bikes -c"
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 930. Use `PSQL` Variable
+
+### 930.1
+
+Use PSQL variable.
+PSQL="psql -X --username=freecodecamp --dbname=bikes --no-align --tuples-only -c"
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 940. Run the script
+
+### 940.1
+
+Run the script
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 950. Use `PSQL` Variable
+
+### 950.1
+
+Okay, now you can connect to the database and interact with it in your script using that PQSL variable.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 960. Delete the `echo` line
+
+### 960.1
+
+Delete the echo line
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 970. Create `AVAILABLE_BIKES` Variable
+
+### 970.1
+
+Here's the command you used to get them before. `"$($PSQL "select * from bikes;")"`
+Create available bikes variable = select Where avaiable = 't'
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 980. Echo `AVAILABLE_BIKES`
+
+### 980.1
+
+Echo your available bikes variable so you can see what it outputs.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 990. Run your script
+
+### 990.1
+
+Run your script and enter `2` to go to the `RENT_MENU` and make sure it's working.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1000. Select Columns from Bikes in psql Prompt
+
+### 1000.1
+
+You don't want to show all the rows and columns in your script. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and and the columns for the id, type, and size.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1010. Add the command to your script
+
+### 1010.1
+
+That's the query you want in your script to only display the info needed. Add that query in place of your query in AVAILABLE_BIKES.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1020. Run the script
+
+### 1020.1
+
+Run the script and go to the rent menu to see the output.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1030. Set available to false
+
+### 1030.1
+
+Okay, now you can see the bike_id and the info you need. Set available to false for all the bikes in the psql prompt.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1040. Run the script
+
+### 1040.1
+
+Run the script and go to the rent menu
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1050. Add if condition
+
+### 1050.1
+
+add 
+```
+if [[ -z $BIKES_AVAILABLE ]]
+then 
+	MAIN_MENU
+fi
+```
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1060. Run the script
+
+### 1060.1
+
+Run the script and go to the rent menu to see if you are sent back to the main menu when there's no bikes available.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1070. Add argument to `MAIN_MENU`
+
+### 1070.1
+
+It looks like it works, but we could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.
+add `MAIN_MENU "Sorry, we don't have any bikes available right now."`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1080. Add error message to `MAIN_MENU`
+
+### 1080.1
+
+Add this to `MAIN_MENU`
+```
+  if [[ $1 ]]
+  then
+    echo -e "$1\n"
+  fi
+```
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1090. Run the script
+
+### 1090.1
+
+Run the script and go to the rent menu. It should take you to the main menu and give a message.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1100. Add else to `RENT_MENU`
+
+### 1100.1
+
+Add an else condition to the `RENT_MENU` for when there are bikes available.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1110. Echo Bikes Available Text
+
+### 1110.1
+
+add `echo -e "Here are the bikes we have available:\n"` in your else condition
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1120. Echo List of Bikes Available
+
+### 1120.1
+
+add `echo $AVAILABLE_BIKES`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1130. Run the script
+
+### 1130.1
+
+Run the script and go to the rent menu to see the bikes.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1140. Set bike availiabity to true
+
+### 1140.1
+
+Set bike availability to true on psql
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1150. Run the script
+
+### 1150.1
+
+Run the script again to see if they show up this time.
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1160. Ask for Bike To Rent
+
+### 1160.1
+
+Okay, that seems to be working.
+add `echo -e "\nWhich one would you like to rent?"`
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1170. read `BIKE_AVAILABILITY`
+
+### 1170.1
+
+read `BIKE_AVAILABILITY`
 
 #### HINTS
 
