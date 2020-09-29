@@ -363,6 +363,14 @@ levels:
             - ./bike-shop.sh
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
+  - id: '555'
+    steps:
+      - id: '555.1'
+        setup:
+          watchers:
+            - ../.bash_history
+          commands:
+            - cp ./.freeCodeCamp/bike-shop.sh .            
   - id: '560'
     steps:
       - id: '560.1'

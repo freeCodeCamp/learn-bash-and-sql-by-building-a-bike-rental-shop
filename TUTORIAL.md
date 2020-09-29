@@ -17,7 +17,7 @@
 
 ### 20.1
 
-You are going to build a bike rental shop. There will be a database for your shop and a bash script to interact with it. First, you need to create the database. Use the terminal to connect to it by entering `psql --username=freecodecamp --dbname=postgres`.
+You are going to build a bike rental shop. It will have a database, and a bash script to interact with the database. Use the terminal to connect to PostgreSQL by entering `psql --username=freecodecamp --dbname=postgres`.
 
 #### HINTS
 
@@ -28,7 +28,7 @@ You are going to build a bike rental shop. There will be a database for your sho
 
 ### 30.1
 
-List the databases with `\l` to what databases are all here.
+List the databases with `\l` to see what databases are here.
 
 #### HINTS
 
@@ -40,7 +40,7 @@ List the databases with `\l` to what databases are all here.
 
 ### 40.1
 
-You are going to build a system for a bike rental shop. First, you need to create the database. Create a new database named `bikes`.
+You need your own database for the bike shop. Create a new database named `bikes`.
 
 #### HINTS
 
@@ -67,7 +67,7 @@ List databases again to make sure your database got created.
 
 ### 60.1
 
-**C**onnect to the `bikes` database so you can start building the structure.
+Yup, there it is. **C**onnect to it so you can start building the structure.
 
 #### HINTS
 
@@ -83,7 +83,7 @@ List databases again to make sure your database got created.
 
 ### 70.1
 
-The database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your new database.
+Your database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your database for the inventory.
 
 #### HINTS
 
@@ -104,6 +104,7 @@ The database needs three tables. One for your bike inventory, one for your custo
 
 - Use the **d**isplay shortcut command
 - It's the `\d` command
+- Type `\d` into the psql prompt and press enter
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
 
@@ -111,14 +112,14 @@ The database needs three tables. One for your bike inventory, one for your custo
 
 ### 90.1
 
-The table will have a few columns for bike information. Add a column to the `bikes` table named `bike_id`. Give it a type of `serial` and make it a `primary key`
+The table will have a few columns for bike information. First, is a unique ID column. Add a column to the `bikes` table named `bike_id`. Give it a type of `SERIAL` and make it a `PRIMARY KEY`.
 
 #### HINTS
 
 - Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
 - Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
 - Try entering `ALTER TABLE bikes ADD COLUMN bike_id SERIAL PRIMARY KEY;`
-- You can drop a column with `ALTER TABLE bikes DROP COLUMN bike_id;` if you need to try again.
+- You can drop a column with `ALTER TABLE bikes DROP COLUMN bike_id;` if you need to try again
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
 
@@ -140,7 +141,7 @@ Use the **d**isplay command to view the details of the `bikes` table.
 
 ### 110.1
 
-Add a column named `type` so you know what type of bike you have. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.
+Looks like first column is set. Add a column named `type` for the type of bike. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.
 
 #### HINTS
 
@@ -170,7 +171,7 @@ Display the details of the `bikes` table again.
 
 ### 130.1
 
-Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint.
+Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint. This will be for the size of each bike.
 
 #### HINTS
 
@@ -185,7 +186,7 @@ Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT
 
 ### 140.1
 
-Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`.
+Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.
 
 #### HINTS
 
@@ -215,7 +216,7 @@ Display the details of the `bikes` table again so you can make sure it's how you
 
 ### 160.1
 
-Looks like it all worked. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.
+It's looking good. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.
 
 #### HINTS
 
@@ -245,7 +246,7 @@ Add a `customer_id` column to your new table that is a type of `SERIAL` and make
 
 ### 180.1
 
-Display the details of the customers table so you can make sure your new column is there.
+Display the details of the `customers` table so you can make sure your new column is there.
 
 #### HINTS
 
@@ -260,7 +261,7 @@ Display the details of the customers table so you can make sure your new column 
 
 ### 190.1
 
-Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of 15 character. Also make sure it can't be null, and that it has to be unique.
+Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.
 
 #### HINTS
 
@@ -320,7 +321,7 @@ I think that table is finished. Lastly, you need a table to store which bikes ar
 
 ### 230.1
 
-Add a `rental_id` column to your new table. Give it the same two properties that you gave the other two "id" columns.
+Add a `rental_id` column to your new table. Make it automatically increment with `SERIAL` and make it the primary key for this table.
 
 #### HINTS
 
@@ -351,7 +352,7 @@ Display the details of the `rentals` table.
 
 ### 250.1
 
-It looks good so far. Add column named `customer_id`. This will have the id of the customer that is renting a bike. Make the column an `INT` and `NOT NULL` to start.
+Next, you need a column for the customer who is renting a bike. Add column named `customer_id`. This will have an id of a customer from the customers table. Make the column an `INT` and `NOT NULL` to start.
 
 #### HINTS
 
@@ -366,7 +367,7 @@ It looks good so far. Add column named `customer_id`. This will have the id of t
 
 ### 260.1
 
-Make the column you just added a foreign key that references the `customer_id` column from the `customers` table so you know what customer is renting a bike. Here's an example of how you can do that:
+Make the column you just added a foreign key that references the `customer_id` column from the `customers` table. Here's an example of how you can do that:
 
 ```sql
 ALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);
@@ -427,7 +428,7 @@ Make that column a foreign key that references the `bike_id` column from the `bi
 
 ### 300.1
 
-Display the details of the `rentals` table so you can make sure the key it correct.
+Display the details of the `rentals` table so you can make sure the key is correct.
 
 #### HINTS
 
@@ -442,7 +443,7 @@ Display the details of the `rentals` table so you can make sure the key it corre
 
 ### 310.1
 
-Moving along. You want to know when a customer rented the bike, and when they returned it. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.
+Moving along. You want to know when a customer rents a bike, and when it gets returned. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.
 
 #### HINTS
 
@@ -472,7 +473,7 @@ Display the details of the `rentals` table again.
 
 ### 330.1
 
-Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`;
+Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.
 
 #### HINTS
 
@@ -521,7 +522,7 @@ I think the structure of your database is set. You have nine bikes in your inven
 #### HINTS
 
 - Use the `INSERT INTO` and `VALUES` keywords
-- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`
 - Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 27);`
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
@@ -536,6 +537,7 @@ View all the columns in your bikes table with `SELECT`.
 
 - Use `*` to view all the columns
 - Here's an example: `SELECT * FROM table_name;`
+- Try entering `SELECT * from bikes;`
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
 
@@ -549,7 +551,7 @@ Looks like it's all working, the `bike_id` and `available` columns were filled i
 
 - Make sure to put your `VARCHAR` values in single quotes
 - Use the `INSERT INTO` and `VALUES` keywords
-- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`
 - Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 28);`
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
@@ -564,7 +566,7 @@ Add another `Mountain` bike to your inventory. Make it a `29` inch bike.
 
 - Use the `INSERT INTO` and `VALUES` keywords
 - Make sure to put your `VARCHAR` values in single quotes
-- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`
 - Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 29);`
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
@@ -573,13 +575,13 @@ Add another `Mountain` bike to your inventory. Make it a `29` inch bike.
 
 ### 400.1
 
-Add another bike. Make it a `27` inch `Road` bike.
+Add a `27` inch `Road` bike to the table.
 
 #### HINTS
 
 - Use the `INSERT INTO` and `VALUES` keywords
 - Make sure to put your `VARCHAR` values in single quotes
-- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`
 - Try entering `INSERT INTO bikes(type, size) VALUES('Road', 27);`
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
@@ -594,6 +596,7 @@ Use `SELECT` to view all the data in the `bikes` table again.
 
 - Use `*` to view all the columns
 - Here's an example: `SELECT * FROM table_name;`
+- Try entering `SELECT * from bikes;`
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
 - If the tests aren't running automatically, quit psql with \q and try logging in again
 
@@ -601,423 +604,469 @@ Use `SELECT` to view all the data in the `bikes` table again.
 
 ### 420.1
 
-Insert 28 and 29 inch Road Bikes
+Add `28` and `29` inch `Road` bikes to your inventory. Try to add them both with one command.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value), (value, value);`
+- Make sure to put your `VARCHAR` values in single quotes
+- Try entering `INSERT INTO bikes(type, size) VALUES('Road', 28), ('Road', 29);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 430. Insert 19, 20, 21 inch BMX Bikes
 
 ### 430.1
 
-Insert 19, 20, and 21 inch `BMX` Bikes
+There's three more bikes. Add `19`, `20`, and `21` inch `BMX` bikes to your table. Try to add them with one command.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value), (value, value), (value, value);`
+- Make sure to put your `VARCHAR` values in single quotes
+- Try entering `INSERT INTO bikes(type, size) VALUES('BMX', 19), ('BMX', 20), ('BMX', 21);`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 440. Select all from Bikes
 
 ### 440.1
 
-Select * from bikes;
+View all the data in your bikes table.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use `SELECT` with `*` to view all the col
+- Here's an example: `SELECT * FROM table_name;`
+- Try entering `SELECT * from bikes;`
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first
+- If the tests aren't running automatically, quit psql with \q and try logging in again
 
 ## 450. Split Terminal
 
 ### 450.1
 
-Open a second terminal, and use touch to create `bike-shop.sh` in the `project` folder.
+Okay, you have a database structure and your inventory is added. For the rest of the tutorial, I recommend leaving that terminal open and connected and that you should "split" the terminal so you have a second one that you can use for bash commands. Do that by clicking the "hamburger" menu at the top left of the window, going to the "terminal" section, and clicking "split terminal". After you have opened it, use the `touch` command to create a file named `bike-shop.sh` in the `project` folder.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Try entering `touch bike-shop.sh` in the terminal
+- Make sure you are in the `project` folder first
+- If you opened a new terminal instead of splitting it, you can close it by entering `exit` and try again
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you want
 
 ## 460. Add shebang!
 
 ### 460.1
 
-Add a `shebang!`
+The file you created is a shell file that you will create a script with to rent and return bikes to customers. Open your file in the editor and make it and CodeRoad visible. Then, and add a "shebang" at the top of the file that uses the `bash`. If you don't remember, it looks like this: `#! /bin/bash`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `#! /bin/bash` to the top of your `bike-shop.sh` file
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you need to
 
 ## 470. Add Title
 
 ### 470.1
 
-Add `echo "~~~~~ Bike Rental Shop ~~~~~"` and save the file
+You should now have two terminals, your `bike-shop.sh` file, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it's will be easier for figuring out if your commands and things are working. You want a title screen in your script. Add `echo "~~~~~ Bike Rental Shop ~~~~~"` below the "shebang".
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add the suggested text to your `bike-shop.sh` file
+- Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you need to
 
 ## 480. Change file permissions
 
 ### 480.1
 
-chmod +x bike-shop.sh
+Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add `+x` and `bike-shop.sh` to the command and press enter.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Try entering `chmod +x bike-shop.sh` in the terminal
+- Make sure you are in the `project` folder first
 
 ## 490. Run the file
 
 ### 490.1
 
-Run the file with `./bike-shop.sh`
+Type `./bike-shop.sh` in the terminal to run your script.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Make sure you are in the `project` folder first
 
 ## 510. Create Main Menu
 
 ### 510.1
 
-Create MAIN_MENU function
+:smile: Create an empty function named `MAIN_MENU` in the specified area. This will have a few options to enter when the script runs to rent or return a bike.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `MAIN_MENU() {}` to the script
 
 ## 520. Add Greeting
 
 ### 520.1
 
-Echo "How may I help you" to function
+In your function, echo the text `How may I help you?` so that there's a greeting when you go to the menu.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `echo "How may I help you?"` in the designated area
 
 ## 530. Call `MAIN_MENU` Function
 
 ### 530.1
 
-Call MAIN_MENU function at the bottom
+Call your `MAIN_MENU` at the bottom of the file so the function runs when you start the script.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `MAIN_MENU` at the bottom of the file
 
 ## 540. Run the file
 
 ### 540.1
 
-Run the file with `./bike-shop.sh`
+Run the file in the terminal again so you can see what it is outputting.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 550. Add `clear`
 
 ### 550.1
 
-Add `clear` at the top
+Okay, you are getting somewhere. Add `clear` at the top of the file so that when you run the script, you don't see all the old terminal prompts.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `clear` in the designated area
+
+## 555. Run the file
+
+### 555.1
+
+Run the file in the terminal again to see it now.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 560. Add Line Break
 
 ### 560.1
 
-Add a line break at the end of the greeting
+That's pretty slick, but it could use some spacing. Add the line break code (`\n`) at the end of the title so it adds a space between the title and greeting.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Make the title line look like this: `echo "~~~~~ Bike Rental Shop ~~~~~\n"`
 
 ## 570. Run the file
 
 ### 570.1
 
-Run the file with `./bike-shop.sh`
+Run the file again to see if it worked.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 580. View the `echo` manual
 
 ### 580.1
 
-View the `man echo`
+Hmm. That's not what I was hoping for. Use the terminal to view the manual of the `echo` commmand to see if you can find anything to help.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Type `man echo` into the terminal and press enter
 
 ## 590. Add `-e` Flag
 
 ### 590.1
 
-Add `-e` flag to greeting
+The `-e` flag says, "enable interpretation of backslash escapes". Add that flag to the echo command of the title.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Make the title line look like this: `echo -e "~~~~~ Bike Rental Shop ~~~~~\n"`
 
 ## 600. Run the file
 
 ### 600.1
 
-Run the file with `./bike-shop.sh`
+Run the file again to see if it's working now.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
-## 610. Prettify the Title
+## 610. Prettify the Greeting
 
 ### 610.1
 
-Add `-e` and two a line breaks at the beginning and end of the title
+Add the `-e` flag to the greeting and put a new line at the end of that command as well.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The greeting is the `How may I help you?` line
+- Make the line look like this: `echo -e "How may I help you?\n"`
 
 ## 620. Run the file
 
 ### 620.1
 
-Run the file with `./bike-shop.sh`
+Run the file again.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 630. Add `MAIN_MENU` Options
 
 ### 630.1
 
-Add echo -e "1. Rent a bike\n2. Return a bike\n3. Exit" to main menu
+Okay, it's coming along. Add another `echo` command to function. Make it so that your output will look like this:
+
+```sh
+1. Rent a bike
+2. Return a bike
+3. Exit
+```
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `echo` command with the `-e` flag and line breaks (`\n`) in designated area to produce the suggested output
+- Without the options, it looks like this: `echo -e "1. \n2. \n3. "`
+- Add `echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"` to your function
 
 ## 640. Run the file
 
 ### 640.1
 
-Run the file with `./bike-shop.sh`
+Run the file to make sure it worked.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 650. Read `MAIN_MENU_SELECTION`
 
 ### 650.1
 
-read `MAIN_MENU_SELECTION`
+Okay, you have some options to enter. Next, you need to someone enter one of those options. Use the `read` command to read input into a variable called `MAIN_MENU_SELECTION`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Here's what the code looks like: `read MAIN_MENU_SELECTION`
+- Add the code in the designated area
 
 ## 660. Add `RENT_MENU`
 
 ### 660.1
 
-Add an empty `RENT_MENU` function
+When an option gets enter, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function in the designated area for when a user enters the option to rent a bike.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `RENT_MENU() {}` in the designated area
 
 ## 670. Add `RENT_MENU` text
 
 ### 670.1
 
-Add echo "Rent Menu"
+For the time being, just echo out `Rent Menu` in the function so you can see if it's working.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `echo "Rent Menu"` in the designated area
 
 ## 680. Add `RETURN_MENU` function
 
 ### 680.1
 
-Add an empty `RETURN_MENU` function
+Add an empty `RETURN_MENU` function to your script for when a user enters the option to return a bike.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `RETURN_MENU() {}` in the designated area
 
 ## 690. Add `RETURN_MENU` text
 
 ### 690.1
 
-Add echo "Return Menu"
+echo `Return Menu` in the function you just added. You will probably change these later.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `echo "Return Menu"` in the designated area
 
 ## 700. Add `EXIT` function
 
 ### 700.1
 
-Add EXIT function
+Add an empty `EXIT` fuction to the script for when a user wants to exit the program.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `EXIT() {}` in the designated area
 
 ## 710. Add `EXIT` Message
 
 ### 710.1
 
-Add echo "Thank you for stopping in"
+This one probably doesn't need a placeholder message. echo the text `Thank you for stopping in.` in the `EXIT` function.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `echo "Thank you for stopping in."` in the designated area
 
 ## 720. Add case Statement to `MAIN_MENU`
 
 ### 720.1
 
-Add case Statement to `MAIN_MENU`
+You added the functions you want users to go to, but you need a way to take them there. A `case` statement is perfect for this. Here's an example:
+
+```sh
+case EXPRESSION in
+  PATTERN) STATEMENTS ;;
+  PATTERN) STATEMENTS ;;
+  *) STATEMENTS ;;
+esac
+```
+
+The expression you want is the `$MAIN_MENU_SELECTION` variable. You are expecting it to be a `1`, `2`, or `3` for your various menus. Add a `case` statement that takes users to their corresponding menus, and back to the `MAIN_MENU` when the variable isn't a `1`, `2`, or `3`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- | 
+  Here's a start:
+  ```sh
+  case $MAIN_MENU_SELECTION in
+    1) RENT_MENU ;;
+  ```
+- |
+  Add this case statement;
+  ```sh
+  case $MAIN_MENU_SELECTION in
+    1) RENT_MENU ;;
+    2) RETURN_MENU ;;
+    3) EXIT ;;
+    *) MAIN_MENU ;;
+  ```
 
 ## 730. Test the `MAIN_MENU` Options
 
 ### 730.1
 
-Run the script three times in the terminal and try picking the three different menu items to see if they work.
+Run the script a few times and try out the different menus.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 740. Create `SHOW_TITLE` function
 
 ### 740.1
 
-Create `SHOW_TITLE` function
+It looks good, but I think that title screen should be at the top of each menu. Wrap two title commands in a function named `SHOW_TITLE` so you can just call the function to display title when you want.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Put the `clear` and `echo` commands in the function you are supposed to create
+- |
+  It should look like this:
+  ```
+  SHOW_TITLE() {
+    clear
+    echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
+  }
+  ```
 
 ## 750. Add title screen to all menus
 
 ### 750.1
 
-Add `SHOW_TITLE` function to the top of each menu.
+Call the `SHOW_TITLE` function at the top of each of the four menus.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The four functions are `MAIN_MENU`, `RENT_MENU`, `RETURN_MENU`, and `EXIT`
+- Place the text `SHOW_TITLE` at the top of each function to display the title screen
 
 ## 760. Run the script
 
 ### 760.1
 
-Run the script and check that the title is showing up in the menus
+Run the script to make sure the title is showing up in the menus. Be sure to check the `EXIT` option.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 770. Make your exit function sleep
 
 ### 770.1
 
-Add sleep 2 to the exit function
+I want you to add a few commands to make exiting a little more pleasant. First, make the `EXIT` function `sleep` for `2` seconds.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `sleep` command
+- Add the number of seconds to the command
+- Add `sleep 2` at the bottom of the `EXIT` function
 
-## 780. Make your exit function sleep
+## 780. Clear before exiting
 
 ### 780.1
 
-add a clear to the exit function
+Next, `clear` the screen after sleep commmand you just entered.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add the `clear` command in the designated area
 
 ## 790. Make your exit function sleep
 
 ### 790.1
 
-add exit to the function
+Finally, run the `exit` command at the end of the function to make the program exit.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add `exit` in the designated area
 
 ## 800. Test the `EXIT` function
 
 ### 800.1
 
-Test the exit function
+Run the script and test out the `EXIT` menu.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 810. View the psql help menu
 
 ### 810.1
+
+Okay, the exit menu looks real good. Now you need to finish up the other two menus.
 
 psql --help
 
@@ -1142,12 +1191,13 @@ Run the script to see what it looks like now.
 
 ### 920.1
 
+You are going to need to query the database a number of times throughout the rest of this project so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database.
 Create psql variable. eg 
 PSQL="psql -X --username=freecodecamp --dbname=bikes -c"
 
 #### HINTS
 
-- Capitalization matters
+- The part you want the variable to be is `"psql -X --username=freecodecamp --dbname=bikes -c"`
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
 ## 930. Use `PSQL` Variable
@@ -1315,7 +1365,7 @@ Run the script and go to the rent menu to see if you are sent back to the main m
 
 ### 1070.1
 
-It looks like it works, but we could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.
+It looks like it works, but you could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.
 add `MAIN_MENU "Sorry, we don't have any bikes available right now."`
 
 #### HINTS
