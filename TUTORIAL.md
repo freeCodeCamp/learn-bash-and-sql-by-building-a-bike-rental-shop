@@ -659,7 +659,7 @@ Okay, you have a database structure and your inventory is added. For the rest of
 
 ### 460.1
 
-The file you created is a shell file that you will create a script with to rent and return bikes to customers. Open your file in the editor and make it and CodeRoad visible. Then, and add a "shebang" at the top of the file that uses the `bash`. If you don't remember, it looks like this: `#! /bin/bash`.
+You will create a script in file that is an interface for your bike rental shop. Open your file in the editor, and make it and CodeRoad visible. Then, and add a "shebang" at the top of the file that uses `bash`. If you don't remember, it looks like this: `#! /bin/bash`.
 
 #### HINTS
 
@@ -670,11 +670,12 @@ The file you created is a shell file that you will create a script with to rent 
 
 ### 470.1
 
-You should now have two terminals, your `bike-shop.sh` file, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it's will be easier for figuring out if your commands and things are working. You want a title screen in your script. Add `echo "~~~~~ Bike Rental Shop ~~~~~"` below the "shebang".
+You should now have two terminals, your `bike-shop.sh` file, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it will be easier for figuring out if things are working. You want a title screen in your program. Use `echo` to output `~~~~~ Bike Rental Shop ~~~~~`.
 
 #### HINTS
 
 - Add the suggested text to your `bike-shop.sh` file
+- Add `echo "~~~~~ Bike Rental Shop ~~~~~"` in the designated area
 - Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you need to
 
 ## 480. Change file permissions
@@ -764,7 +765,7 @@ Run the file in the terminal again to see it now.
 
 ### 560.1
 
-That's pretty slick, but it could use some spacing. Add the line break code (`\n`) at the end of the title so it adds a space between the title and greeting.
+That's pretty slick, but it could use some spacing. Add the line break characters (`\n`) at the end of the title so it adds a space between the title and greeting.
 
 #### HINTS
 
@@ -795,7 +796,7 @@ Hmm. That's not what I was hoping for. Use the terminal to view the manual of th
 
 ### 590.1
 
-The `-e` flag says, "enable interpretation of backslash escapes". Add that flag to the echo command of the title.
+Do you see any flags that might help in there? The `-e` flag says, "enable interpretation of backslash escapes". That sounds promising. Add that flag to the echo command of the title.
 
 #### HINTS
 
@@ -816,18 +817,17 @@ Run the file again to see if it's working now.
 
 ### 610.1
 
-Add the `-e` flag to the greeting and put a new line at the end of that command as well.
+It worked :smile: Add the `-e` flag to the greeting command and put a new line at the end of that text as well. The greeting is the `How may I help you?` line.
 
 #### HINTS
 
-- The greeting is the `How may I help you?` line
 - Make the line look like this: `echo -e "How may I help you?\n"`
 
 ## 620. Run the file
 
 ### 620.1
 
-Run the file again.
+Run the file again to see the spacing.
 
 #### HINTS
 
@@ -838,7 +838,7 @@ Run the file again.
 
 ### 630.1
 
-Okay, it's coming along. Add another `echo` command to function. Make it so that your output will look like this:
+Okay, it's coming along. Add another `echo` command to the function. Make it will output text that looks like this:
 
 ```sh
 1. Rent a bike
@@ -848,8 +848,9 @@ Okay, it's coming along. Add another `echo` command to function. Make it so that
 
 #### HINTS
 
-- Use the `echo` command with the `-e` flag and line breaks (`\n`) in designated area to produce the suggested output
-- Without the options, it looks like this: `echo -e "1. \n2. \n3. "`
+- Use the `echo` command with the `-e` flag and line breaks (`\n`) to produce the suggested output
+- Without the words, it looks like this: `echo -e "1. \n2. \n3. "`
+- Run your script if you need to see if the output matches
 - Add `echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"` to your function
 
 ## 640. Run the file
@@ -867,7 +868,7 @@ Run the file to make sure it worked.
 
 ### 650.1
 
-Okay, you have some options to enter. Next, you need to someone enter one of those options. Use the `read` command to read input into a variable called `MAIN_MENU_SELECTION`.
+Okay, you have some options displaying. Next, you need to get input from whoever is using the program. Use the `read` command to read input into a variable called `MAIN_MENU_SELECTION`.
 
 #### HINTS
 
@@ -878,7 +879,7 @@ Okay, you have some options to enter. Next, you need to someone enter one of tho
 
 ### 660.1
 
-When an option gets enter, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function in the designated area for when a user enters the option to rent a bike.
+When an option gets entered, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function in the designated area for when a user enters the option to rent a bike.
 
 #### HINTS
 
