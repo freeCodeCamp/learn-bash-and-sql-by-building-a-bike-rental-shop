@@ -80,7 +80,7 @@
               "669ec7801adb27beabccc59fe1bfefdf97daa788"
             ]
           },
-          "content": "You are going to build a bike rental shop. There will be a database for your shop and a bash script to interact with it. First, you need to create the database. Use the terminal to connect to it by entering `psql --username=freecodecamp --dbname=postgres`.",
+          "content": "You are going to build a bike rental shop. It will have a database, and a bash script to interact with the database. Use the terminal to connect to PostgreSQL by entering `psql --username=freecodecamp --dbname=postgres`.",
           "hints": [
             "Type the above command into the terminal and press enter",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal and press enter"
@@ -104,7 +104,7 @@
               "5c955c230c2446d5ffbfa495a4d90f8ecaf00e4a"
             ]
           },
-          "content": "List the databases with `\\l` to what databases are all here.",
+          "content": "List the databases with `\\l` to see what databases are here.",
           "hints": [
             "Type `\\l` into the psql prompt and press enter",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
@@ -129,7 +129,7 @@
               "20b0087e2477f2ba7d5643cabbb3425d8342ce49"
             ]
           },
-          "content": "You are going to build a system for a bike rental shop. First, you need to create the database. Create a new database named `bikes`.",
+          "content": "You need your own database for the bike shop. Create a new database named `bikes`.",
           "hints": [
             "Use the `CREATE DATABASE` keywords",
             "Here's an example: `CREATE DATABASE database_name;`",
@@ -182,7 +182,7 @@
               "b7b2e6a4d1e0af2d44413bc8bb612e74b3aa9fce"
             ]
           },
-          "content": "**C**onnect to the `bikes` database so you can start building the structure.",
+          "content": "Yup, there it is. **C**onnect to it so you can start building the structure.",
           "hints": [
             "Use the **c**onnect shortcut command",
             "Add the database name to the command",
@@ -211,7 +211,7 @@
               "0555ecfb31fc7b1c2f05d20ee8c67a432b267f2b"
             ]
           },
-          "content": "The database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your new database.",
+          "content": "Your database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your database for the inventory.",
           "hints": [
             "Use the `CREATE TABLE` keywords",
             "Don't forget the parenthesis",
@@ -243,6 +243,7 @@
           "hints": [
             "Use the **d**isplay shortcut command",
             "It's the `\\d` command",
+            "Type `\\d` into the psql prompt and press enter",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
@@ -265,12 +266,12 @@
               "b559662be211c484bdac389224c28060ceb83d7e"
             ]
           },
-          "content": "The table will have a few columns for bike information. Add a column to the `bikes` table named `bike_id`. Give it a type of `serial` and make it a `primary key`",
+          "content": "The table will have a few columns for bike information. First, is a unique ID column. Add a column to the `bikes` table named `bike_id`. Give it a type of `SERIAL` and make it a `PRIMARY KEY`.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
             "Try entering `ALTER TABLE bikes ADD COLUMN bike_id SERIAL PRIMARY KEY;`",
-            "You can drop a column with `ALTER TABLE bikes DROP COLUMN bike_id;` if you need to try again.",
+            "You can drop a column with `ALTER TABLE bikes DROP COLUMN bike_id;` if you need to try again",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
@@ -320,7 +321,7 @@
               "6b273d6150faad1695964b319d7d213bb5a8b02f"
             ]
           },
-          "content": "Add a column named `type` so you know what type of bike you have. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.",
+          "content": "Looks like first column is set. Add a column named `type` for the type of bike. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR(50)`, and `PRIMARY KEY` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
@@ -376,7 +377,7 @@
               "5853a05816a1541513656868d779319108087df8"
             ]
           },
-          "content": "Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint.",
+          "content": "Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint. This will be for the size of each bike.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
@@ -404,7 +405,7 @@
               "f1d77807d662b43621d92f8852b82d9b7c292caf"
             ]
           },
-          "content": "Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`.",
+          "content": "Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, and `DEFAULT TRUE` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE DEFAULT;`",
@@ -460,7 +461,7 @@
               "fe7d6e446c3bbecee9f9e8dff21a9e1b3338b7da"
             ]
           },
-          "content": "Looks like it all worked. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.",
+          "content": "It's looking good. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.",
           "hints": [
             "Use the `CREATE TABLE` keywords",
             "Don't forget the parenthesis",
@@ -516,7 +517,7 @@
               "4391b054514dfac94fd375cf73c707a3d258c704"
             ]
           },
-          "content": "Display the details of the customers table so you can make sure your new column is there.",
+          "content": "Display the details of the `customers` table so you can make sure your new column is there.",
           "hints": [
             "Use the **d**isplay shortcut command",
             "Add the table name to the command",
@@ -544,7 +545,7 @@
               "f95f31be6c928075e373659d41ec300d62de94ae"
             ]
           },
-          "content": "Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of 15 character. Also make sure it can't be null, and that it has to be unique.",
+          "content": "Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, `NOT NULL`, and `UNIQUE` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
@@ -656,7 +657,7 @@
               "db6270f0c63373cdda4386543c82f64b40369db9"
             ]
           },
-          "content": "Add a `rental_id` column to your new table. Give it the same two properties that you gave the other two \"id\" columns.",
+          "content": "Add a `rental_id` column to your new table. Make it automatically increment with `SERIAL` and make it the primary key for this table.",
           "hints": [
             "The other two properties are `SERIAL` and `PRIMARY KEY`",
             "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
@@ -713,7 +714,7 @@
               "5ed82ba69a5b34917fc93189d975b43eb35ad5df"
             ]
           },
-          "content": "It looks good so far. Add column named `customer_id`. This will have the id of the customer that is renting a bike. Make the column an `INT` and `NOT NULL` to start.",
+          "content": "Next, you need a column for the customer who is renting a bike. Add column named `customer_id`. This will have an id of a customer from the customers table. Make the column an `INT` and `NOT NULL` to start.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `INT`, and `NOT NULL` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
@@ -741,7 +742,7 @@
               "912fc4d17489cc153cc31dd47a37307340304dd7"
             ]
           },
-          "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table so you know what customer is renting a bike. Here's an example of how you can do that:\n\n```sql\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\n```",
+          "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table. Here's an example of how you can do that:\n\n```sql\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\n```",
           "hints": [
             "Without the keywords, it looks like tihs: `rentals customer_id customers(customer_id)`",
             "Try entering `ALTER TABLE rentals ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);`",
@@ -850,7 +851,7 @@
               "aafa2501b3f23adc9b75e76805e09d738c3a6220"
             ]
           },
-          "content": "Display the details of the `rentals` table so you can make sure the key it correct.",
+          "content": "Display the details of the `rentals` table so you can make sure the key is correct.",
           "hints": [
             "Use the **d**isplay shortcut command",
             "Add the table name to the command",
@@ -878,7 +879,7 @@
               "a3b12759d108d16476dee43de73358884af0d078"
             ]
           },
-          "content": "Moving along. You want to know when a customer rented the bike, and when they returned it. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.",
+          "content": "Moving along. You want to know when a customer rents a bike, and when it gets returned. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `DATE`, `NOT NULL`, and `DEFAULT NOW()` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
@@ -934,7 +935,7 @@
               "99acef71762486a07b03356d51c974b194becd65"
             ]
           },
-          "content": "Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`;",
+          "content": "Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `DATE` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE;`",
@@ -1020,7 +1021,7 @@
           "content": "I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `Mountain` and a `size` of `27`. Make sure to put your `VARCHAR` values in single quotes. The `bike_id` and `available` columns should be filled in automatically, so you don't need to worry about those.",
           "hints": [
             "Use the `INSERT INTO` and `VALUES` keywords",
-            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`",
             "Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 27);`",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
@@ -1048,6 +1049,7 @@
           "hints": [
             "Use `*` to view all the columns",
             "Here's an example: `SELECT * FROM table_name;`",
+            "Try entering `SELECT * from bikes;`",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
@@ -1074,7 +1076,7 @@
           "hints": [
             "Make sure to put your `VARCHAR` values in single quotes",
             "Use the `INSERT INTO` and `VALUES` keywords",
-            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`",
             "Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 28);`",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
@@ -1102,7 +1104,7 @@
           "hints": [
             "Use the `INSERT INTO` and `VALUES` keywords",
             "Make sure to put your `VARCHAR` values in single quotes",
-            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`",
             "Try entering `INSERT INTO bikes(type, size) VALUES('Mountain', 29);`",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
@@ -1126,11 +1128,11 @@
               "697a14e528de9b49ebd27fae407489665af7d87c"
             ]
           },
-          "content": "Add another bike. Make it a `27` inch `Road` bike.",
+          "content": "Add a `27` inch `Road` bike to the table.",
           "hints": [
             "Use the `INSERT INTO` and `VALUES` keywords",
             "Make sure to put your `VARCHAR` values in single quotes",
-            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUE(value, value);`",
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value);`",
             "Try entering `INSERT INTO bikes(type, size) VALUES('Road', 27);`",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
@@ -1158,6 +1160,7 @@
           "hints": [
             "Use `*` to view all the columns",
             "Here's an example: `SELECT * FROM table_name;`",
+            "Try entering `SELECT * from bikes;`",
             "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
             "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
@@ -1180,10 +1183,13 @@
               "d7cda8fa58e75ca247542f30733b0d0bb0062607"
             ]
           },
-          "content": "Insert 28 and 29 inch Road Bikes",
+          "content": "Add `28` and `29` inch `Road` bikes to your inventory. Try to add them both with one command.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value), (value, value);`",
+            "Make sure to put your `VARCHAR` values in single quotes",
+            "Try entering `INSERT INTO bikes(type, size) VALUES('Road', 28), ('Road', 29);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -1204,10 +1210,13 @@
               "059fe7f6a6c06a12701334d3924b83578ffdb74e"
             ]
           },
-          "content": "Insert 19, 20, and 21 inch `BMX` Bikes",
+          "content": "There's three more bikes. Add `19`, `20`, and `21` inch `BMX` bikes to your table. Try to add them with one command.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Here's an example: `INSERT INTO table_name(column_name, column_name) VALUES(value, value), (value, value), (value, value);`",
+            "Make sure to put your `VARCHAR` values in single quotes",
+            "Try entering `INSERT INTO bikes(type, size) VALUES('BMX', 19), ('BMX', 20), ('BMX', 21);`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -1228,10 +1237,13 @@
               "3ede4073bb3e14c4e667a2f94d81c6d3e380e631"
             ]
           },
-          "content": "Select * from bikes;",
+          "content": "View all the data in your bikes table.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use `SELECT` with `*` to view all the col",
+            "Here's an example: `SELECT * FROM table_name;`",
+            "Try entering `SELECT * from bikes;`",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you aren't logged in first",
+            "If the tests aren't running automatically, quit psql with \\q and try logging in again"
           ]
         }
       ]
@@ -1252,10 +1264,12 @@
               "4de116bfe1f93441a8488f52c7f7f590fea5740e"
             ]
           },
-          "content": "Open a second terminal, and use touch to create `bike-shop.sh` in the `project` folder.",
+          "content": "Okay, you have a database structure and your inventory is added. For the rest of the tutorial, I recommend leaving that terminal open and connected and that you should \"split\" the terminal so you have a second one that you can use for bash commands. Do that by clicking the \"hamburger\" menu at the top left of the window, going to the \"terminal\" section, and clicking \"split terminal\". After you have opened it, use the `touch` command to create a file named `bike-shop.sh` in the `project` folder.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Try entering `touch bike-shop.sh` in the terminal",
+            "Make sure you are in the `project` folder first",
+            "If you opened a new terminal instead of splitting it, you can close it by entering `exit` and try again",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you want"
           ]
         }
       ]
@@ -1276,10 +1290,10 @@
               "271bf3c037231cc129b496af86eeae991487d10f"
             ]
           },
-          "content": "Add a `shebang!`",
+          "content": "The file you created is a shell file that you will create a script with to rent and return bikes to customers. Open your file in the editor and make it and CodeRoad visible. Then, and add a \"shebang\" at the top of the file that uses the `bash`. If you don't remember, it looks like this: `#! /bin/bash`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `#! /bin/bash` to the top of your `bike-shop.sh` file",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you need to"
           ]
         }
       ]
@@ -1303,10 +1317,10 @@
               "50ec22ac66429afda260f7dcecda3d8c4bfe590a"
             ]
           },
-          "content": "Add `echo \"~~~~~ Bike Rental Shop ~~~~~\"` and save the file",
+          "content": "You should now have two terminals, your `bike-shop.sh` file, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it's will be easier for figuring out if your commands and things are working. You want a title screen in your script. Add `echo \"~~~~~ Bike Rental Shop ~~~~~\"` below the \"shebang\".",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add the suggested text to your `bike-shop.sh` file",
+            "Type `psql --username=freecodecamp --dbname=postgres` into the terminal to log in to psql if you need to"
           ]
         }
       ]
@@ -1330,10 +1344,10 @@
               "22e79cd6d2d64b2942f1b27606d0bf1a983aae18"
             ]
           },
-          "content": "chmod +x bike-shop.sh",
+          "content": "Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add `+x` and `bike-shop.sh` to the command and press enter.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Try entering `chmod +x bike-shop.sh` in the terminal",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1357,10 +1371,9 @@
               "1fce5795cba938952f9a09981b5c72f38a429c99"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`",
+          "content": "Type `./bike-shop.sh` in the terminal to run your script.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1384,10 +1397,9 @@
               "a03adb97dea3ead328e9600a8f9bcb0a86691a8b"
             ]
           },
-          "content": "Create MAIN_MENU function",
+          "content": ":smile: Create an empty function named `MAIN_MENU` in the specified area. This will have a few options to enter when the script runs to rent or return a bike.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `MAIN_MENU() {}` to the script"
           ]
         }
       ]
@@ -1411,10 +1423,9 @@
               "ed21fe08cd26fa043589e525dbddf1ba5acc29f2"
             ]
           },
-          "content": "Echo \"How may I help you\" to function",
+          "content": "In your function, echo the text `How may I help you?` so that there's a greeting when you go to the menu.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `echo \"How may I help you?\"` in the designated area"
           ]
         }
       ]
@@ -1438,10 +1449,9 @@
               "7dff07add4e5121589525e8c951b7806a73cf2fd"
             ]
           },
-          "content": "Call MAIN_MENU function at the bottom",
+          "content": "Call your `MAIN_MENU` at the bottom of the file so the function runs when you start the script.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `MAIN_MENU` at the bottom of the file"
           ]
         }
       ]
@@ -1465,10 +1475,10 @@
               "53fe0c7f6f8e8be26fbda57271f511f70337464d"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`",
+          "content": "Run the file in the terminal again so you can see what it is outputting.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1492,10 +1502,34 @@
               "218531c99a8cbdbd70a1cd0e372451c9c1bd8af8"
             ]
           },
-          "content": "Add `clear` at the top",
+          "content": "Okay, you are getting somewhere. Add `clear` at the top of the file so that when you run the script, you don't see all the old terminal prompts.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `clear` in the designated area"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "555",
+      "title": "Run the file",
+      "summary": "",
+      "content": "",
+      "steps": [
+        {
+          "id": "555.1",
+          "setup": {
+            "watchers": [
+              "../.bash_history"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": []
+          },
+          "content": "Run the file in the terminal again to see it now.",
+          "hints": [
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1519,10 +1553,9 @@
               "5eab93f007240552eaa3ce24ffa46722061beb8e"
             ]
           },
-          "content": "Add a line break at the end of the greeting",
+          "content": "That's pretty slick, but it could use some spacing. Add the line break code (`\\n`) at the end of the title so it adds a space between the title and greeting.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Make the title line look like this: `echo \"~~~~~ Bike Rental Shop ~~~~~\\n\"`"
           ]
         }
       ]
@@ -1546,10 +1579,10 @@
               "88e19faddf29192e7c330069a24997ee65cf1e4a"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`",
+          "content": "Run the file again to see if it worked.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1573,10 +1606,9 @@
               "31621628224260cc2fd07c3aa45657cc1b5a746d"
             ]
           },
-          "content": "View the `man echo`",
+          "content": "Hmm. That's not what I was hoping for. Use the terminal to view the manual of the `echo` commmand to see if you can find anything to help.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Type `man echo` into the terminal and press enter"
           ]
         }
       ]
@@ -1600,10 +1632,9 @@
               "0ce12ba7c68467b282a4c8737d3ef4d4aee14b62"
             ]
           },
-          "content": "Add `-e` flag to greeting",
+          "content": "The `-e` flag says, \"enable interpretation of backslash escapes\". Add that flag to the echo command of the title.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Make the title line look like this: `echo -e \"~~~~~ Bike Rental Shop ~~~~~\\n\"`"
           ]
         }
       ]
@@ -1627,17 +1658,17 @@
               "e4eda809a27544115c3b5472f959f041930cda9c"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`",
+          "content": "Run the file again to see if it's working now.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
     },
     {
       "id": "610",
-      "title": "Prettify the Title",
+      "title": "Prettify the Greeting",
       "summary": "",
       "content": "",
       "steps": [
@@ -1654,10 +1685,10 @@
               "2a2f3c54ed4081554a66aa92686c3a8e64a8176c"
             ]
           },
-          "content": "Add `-e` and two a line breaks at the beginning and end of the title",
+          "content": "Add the `-e` flag to the greeting and put a new line at the end of that command as well.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "The greeting is the `How may I help you?` line",
+            "Make the line look like this: `echo -e \"How may I help you?\\n\"`"
           ]
         }
       ]
@@ -1681,10 +1712,10 @@
               "ae4a238086df20ad7bbbe48e1303529f13ebaeb7"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`",
+          "content": "Run the file again.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1708,10 +1739,11 @@
               "967945d461fef2a8ff70e4baab0b146542290019"
             ]
           },
-          "content": "Add echo -e \"1. Rent a bike\\n2. Return a bike\\n3. Exit\" to main menu",
+          "content": "Okay, it's coming along. Add another `echo` command to function. Make it so that your output will look like this:\n\n```sh\n1. Rent a bike\n2. Return a bike\n3. Exit\n```",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `echo` command with the `-e` flag and line breaks (`\\n`) in designated area to produce the suggested output",
+            "Without the options, it looks like this: `echo -e \"1. \\n2. \\n3. \"`",
+            "Add `echo -e \"1. Rent a bike\\n2. Return a bike\\n3. Exit\"` to your function"
           ]
         }
       ]
@@ -1735,10 +1767,10 @@
               "683de21d7981ad17100e9c4ffb5cc32b22d05a27"
             ]
           },
-          "content": "Run the file with `./bike-shop.sh`",
+          "content": "Run the file to make sure it worked.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -1762,10 +1794,10 @@
               "4860569187a53626faf9fa7d3574757682790a3d"
             ]
           },
-          "content": "read `MAIN_MENU_SELECTION`",
+          "content": "Okay, you have some options to enter. Next, you need to someone enter one of those options. Use the `read` command to read input into a variable called `MAIN_MENU_SELECTION`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Here's what the code looks like: `read MAIN_MENU_SELECTION`",
+            "Add the code in the designated area"
           ]
         }
       ]
@@ -1789,10 +1821,9 @@
               "f90ce90ad4f2bcf626e2a76cb4155811fdd997e9"
             ]
           },
-          "content": "Add an empty `RENT_MENU` function",
+          "content": "When an option gets enter, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function in the designated area for when a user enters the option to rent a bike.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `RENT_MENU() {}` in the designated area"
           ]
         }
       ]
@@ -1816,10 +1847,9 @@
               "28ed4a6c85dc887899df405309fa6be73bc07155"
             ]
           },
-          "content": "Add echo \"Rent Menu\"",
+          "content": "For the time being, just echo out `Rent Menu` in the function so you can see if it's working.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `echo \"Rent Menu\"` in the designated area"
           ]
         }
       ]
@@ -1843,10 +1873,9 @@
               "5315e74ca2502271c85ba8614b7dd9a93a821e93"
             ]
           },
-          "content": "Add an empty `RETURN_MENU` function",
+          "content": "Add an empty `RETURN_MENU` function to your script for when a user enters the option to return a bike.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `RETURN_MENU() {}` in the designated area"
           ]
         }
       ]
@@ -1870,10 +1899,9 @@
               "221e2de82ef4ef2008e1116f956bcb757a396dbc"
             ]
           },
-          "content": "Add echo \"Return Menu\"",
+          "content": "echo `Return Menu` in the function you just added. You will probably change these later.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `echo \"Return Menu\"` in the designated area"
           ]
         }
       ]
@@ -1897,10 +1925,9 @@
               "8c75b826caab75f9c6181a0f93b6d3f1f44faea9"
             ]
           },
-          "content": "Add EXIT function",
+          "content": "Add an empty `EXIT` fuction to the script for when a user wants to exit the program.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `EXIT() {}` in the designated area"
           ]
         }
       ]
@@ -1924,10 +1951,9 @@
               "2b984a1914c36e5da9bd5c59cabdd4b9dca99b1b"
             ]
           },
-          "content": "Add echo \"Thank you for stopping in\"",
+          "content": "This one probably doesn't need a placeholder message. echo the text `Thank you for stopping in.` in the `EXIT` function.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `echo \"Thank you for stopping in.\"` in the designated area"
           ]
         }
       ]
@@ -1951,10 +1977,10 @@
               "8f428d026b4e8df4849e57354fb046fa92317ed0"
             ]
           },
-          "content": "Add case Statement to `MAIN_MENU`",
+          "content": "You added the functions you want users to go to, but you need a way to take them there. A `case` statement is perfect for this. Here's an example:\n\n```sh\ncase EXPRESSION in\n  PATTERN) STATEMENTS ;;\n  PATTERN) STATEMENTS ;;\n  *) STATEMENTS ;;\nesac\n```\n\nThe expression you want is the `$MAIN_MENU_SELECTION` variable. You are expecting it to be a `1`, `2`, or `3` for your various menus. Add a `case` statement that takes users to their corresponding menus, and back to the `MAIN_MENU` when the variable isn't a `1`, `2`, or `3`.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "| \n  Here's a start:\n  ```sh\n  case $MAIN_MENU_SELECTION in\n    1) RENT_MENU ;;\n  ```",
+            "|\n  Add this case statement;\n  ```sh\n  case $MAIN_MENU_SELECTION in\n    1) RENT_MENU ;;\n    2) RETURN_MENU ;;\n    3) EXIT ;;\n    *) MAIN_MENU ;;\n  ```"
           ]
         }
       ]
@@ -1978,10 +2004,10 @@
               "5667a75c2697cf83a9b1ed37df3986fc82465339"
             ]
           },
-          "content": "Run the script three times in the terminal and try picking the three different menu items to see if they work.",
+          "content": "Run the script a few times and try out the different menus.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -2003,10 +2029,10 @@
             ],
             "commits": []
           },
-          "content": "Create `SHOW_TITLE` function",
+          "content": "It looks good, but I think that title screen should be at the top of each menu. Wrap two title commands in a function named `SHOW_TITLE` so you can just call the function to display title when you want.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Put the `clear` and `echo` commands in the function you are supposed to create",
+            "|\n  It should look like this:\n  ```\n  SHOW_TITLE() {\n    clear\n    echo -e \"~~~~~ Bike Rental Shop ~~~~~\\n\"\n  }\n  ```"
           ]
         }
       ]
@@ -2028,10 +2054,10 @@
             ],
             "commits": []
           },
-          "content": "Add `SHOW_TITLE` function to the top of each menu.",
+          "content": "Call the `SHOW_TITLE` function at the top of each of the four menus.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "The four functions are `MAIN_MENU`, `RENT_MENU`, `RETURN_MENU`, and `EXIT`",
+            "Place the text `SHOW_TITLE` at the top of each function to display the title screen"
           ]
         }
       ]
@@ -2053,10 +2079,10 @@
             ],
             "commits": []
           },
-          "content": "Run the script and check that the title is showing up in the menus",
+          "content": "Run the script to make sure the title is showing up in the menus. Be sure to check the `EXIT` option.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -2078,17 +2104,18 @@
             ],
             "commits": []
           },
-          "content": "Add sleep 2 to the exit function",
+          "content": "I want you to add a few commands to make exiting a little more pleasant. First, make the `EXIT` function `sleep` for `2` seconds.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Use the `sleep` command",
+            "Add the number of seconds to the command",
+            "Add `sleep 2` at the bottom of the `EXIT` function"
           ]
         }
       ]
     },
     {
       "id": "780",
-      "title": "Make your exit function sleep",
+      "title": "Clear before exiting",
       "summary": "",
       "content": "",
       "steps": [
@@ -2103,10 +2130,9 @@
             ],
             "commits": []
           },
-          "content": "add a clear to the exit function",
+          "content": "Next, `clear` the screen after sleep commmand you just entered.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add the `clear` command in the designated area"
           ]
         }
       ]
@@ -2128,10 +2154,9 @@
             ],
             "commits": []
           },
-          "content": "add exit to the function",
+          "content": "Finally, run the `exit` command at the end of the function to make the program exit.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Add `exit` in the designated area"
           ]
         }
       ]
@@ -2153,10 +2178,10 @@
             ],
             "commits": []
           },
-          "content": "Test the exit function",
+          "content": "Run the script and test out the `EXIT` menu.",
           "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
+            "Enter `./bike-shop.sh` in the terminal and press enter",
+            "Make sure you are in the `project` folder first"
           ]
         }
       ]
@@ -2178,7 +2203,7 @@
             ],
             "commits": []
           },
-          "content": "psql --help",
+          "content": "Okay, the exit menu looks real good. Now you need to finish up the other two menus.\n\npsql --help",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
@@ -2453,9 +2478,9 @@
             ],
             "commits": []
           },
-          "content": "Create psql variable. eg \nPSQL=\"psql -X --username=freecodecamp --dbname=bikes -c\"",
+          "content": "You are going to need to query the database a number of times throughout the rest of this project so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database.\nCreate psql variable. eg \nPSQL=\"psql -X --username=freecodecamp --dbname=bikes -c\"",
           "hints": [
-            "Capitalization matters",
+            "The part you want the variable to be is `\"psql -X --username=freecodecamp --dbname=bikes -c\"`",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
           ]
         }
@@ -2828,7 +2853,7 @@
             ],
             "commits": []
           },
-          "content": "It looks like it works, but we could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.\nadd `MAIN_MENU \"Sorry, we don't have any bikes available right now.\"`",
+          "content": "It looks like it works, but you could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.\nadd `MAIN_MENU \"Sorry, we don't have any bikes available right now.\"`",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
