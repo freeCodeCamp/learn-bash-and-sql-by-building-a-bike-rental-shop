@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your "RENT_MENU" function', () => {
@@ -12,4 +12,4 @@ describe('Your "RENT_MENU" function', () => {
 
     assert(/if[ \t]+\[\[[ \t]+-z[ \t]+\$AVAILABLE_BIKES[ \t]+\]\]([ \t]*;[ \t]*|\s*\v+)then\s+MAIN_MENU[ \t]+("|)Sorry, we don't have any bikes available right now\.\2([ \t]*;[ \t]*|\s*\v+)fi/.test(rentMenuFunction));
   });
-});
+});*/
