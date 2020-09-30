@@ -38,7 +38,11 @@ RENT_MENU () {
   else
     echo -e "Here are the bikes we have available:\n"
 
+    # Change code below this line
     echo "$AVAILABLE_BIKES"
+
+
+		# Change code above this line
   fi
 }
 
