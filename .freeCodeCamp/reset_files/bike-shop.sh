@@ -21,7 +21,7 @@ MAIN_MENU() {
 }
 
 RENT_MENU() {
-  echo "Rent Menu"
+
 }
 
 RETURN_MENU() {
