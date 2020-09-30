@@ -1,13 +1,16 @@
 #! /bin/bash
 
-# Add your code below this line
-
-  clear
-  echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
-
-# Add your code above this line
+SHOW_TITLE() {
+	clear
+	echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
+}
 
 MAIN_MENU () {
+	# Add your code below this line
+
+
+	# Add your code above this line
+
 	echo -e "How may I help you?\n"
 	echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"
 
@@ -22,14 +25,29 @@ MAIN_MENU () {
 }
 
 RENT_MENU () {
+	# Add your code below this line
+
+
+	# Add your code above this line
+
 	echo "Rent Menu"
 }
 
 RETURN_MENU () {
+	# Add your code below this line
+
+
+	# Add your code above this line
+
 	echo "Return Menu"
 }
 
 EXIT () {
+	# Add your code below this line
+
+
+	# Add your code above this line
+
 	echo "Thank you for stopping in."
 }
 
