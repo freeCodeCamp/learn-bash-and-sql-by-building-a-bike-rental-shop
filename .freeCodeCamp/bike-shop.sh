@@ -26,7 +26,10 @@ MAIN_MENU () {
 RENT_MENU () {
   SHOW_TITLE
 
+	# Change code below this line
   echo $($PSQL "SELECT * FROM bikes;")
+
+	# Change code above this line
 }
 
 RETURN_MENU () {
