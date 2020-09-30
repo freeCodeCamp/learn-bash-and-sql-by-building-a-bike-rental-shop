@@ -1,5 +1,10 @@
 #! /bin/bash
 
+# Add your code below this line
+
+
+# Add your code above this line
+
 SHOW_TITLE() {
 	clear
 	echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
