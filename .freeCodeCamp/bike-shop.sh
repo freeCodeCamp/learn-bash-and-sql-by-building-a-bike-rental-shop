@@ -39,10 +39,7 @@ EXIT () {
 	echo "Thank you for stopping in."
 	sleep 2
   clear
-	# Add your code below this line
-
-
-	# Add your code above this line
+  exit
 }
 
 MAIN_MENU
