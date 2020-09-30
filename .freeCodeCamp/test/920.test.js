@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your script', () => {
@@ -13,4 +13,4 @@ describe('Your script', () => {
 
     assert(re);
   });
-});
+});*/
