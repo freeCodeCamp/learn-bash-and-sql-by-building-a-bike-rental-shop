@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -8,6 +8,7 @@ describe('You', () => {
   });
 
   it('should add the correct case statement to your "MAIN_MENU" function', async () => {
-    assert(/sleep 2[^m]s?/.test(scriptFile));
+    const exitFunction = scriptFile.match(/EXIT\s*\(\s*\)\s*{[\s\S]+?[^}]}/g)[0]
+    assert(/clear/.test(exitFunction));
   });
-});*/
+});
