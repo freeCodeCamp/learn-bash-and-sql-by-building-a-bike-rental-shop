@@ -67,7 +67,7 @@ List databases again to make sure your database got created.
 
 ### 60.1
 
-Yup, there it is. **C**onnect to it so you can start building the structure.
+Yup, there it is. **C**onnect to it so you can start building the structure of your bike shop database.
 
 #### HINTS
 
@@ -659,7 +659,7 @@ Okay, you have a database structure and your inventory is added. For the rest of
 
 ### 460.1
 
-You will create a script in file that is an interface for your bike rental shop. Open your file in the editor, and make it and CodeRoad visible. Then, and add a "shebang" at the top of the file that uses `bash`. If you don't remember, it looks like this: `#! /bin/bash`.
+This `bike-shop.sh` will be the program for your bike rental shop. Open the file in the editor, making it and CodeRoad visible. Then, and add a "shebang" at the top of the file so it uses `bash` when it's executed. If you don't remember, it looks like this: `#! /bin/bash`.
 
 #### HINTS
 
@@ -670,7 +670,7 @@ You will create a script in file that is an interface for your bike rental shop.
 
 ### 470.1
 
-You should now have two terminals, your `bike-shop.sh` file, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it will be easier for figuring out if things are working. You want a title screen in your program. Use `echo` to output `~~~~~ Bike Rental Shop ~~~~~`.
+You should now have two terminals open, your `bike-shop.sh` file open, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it will be easier for working with things later on. The first thing you want your program to do is display a title. Use `echo` to output `~~~~~ Bike Rental Shop ~~~~~` in your script file.
 
 #### HINTS
 
@@ -682,7 +682,7 @@ You should now have two terminals, your `bike-shop.sh` file, and CodeRoad opened
 
 ### 480.1
 
-Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add `+x` and `bike-shop.sh` to the command and press enter.
+Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add `+x` and `bike-shop.sh` to the command so your file can be executed.
 
 #### HINTS
 
@@ -786,7 +786,7 @@ Run the file again to see if it worked.
 
 ### 580.1
 
-Hmm. That's not what I was hoping for. Use the terminal to view the manual of the `echo` commmand to see if you can find anything to help.
+Hmm. That's not what I was hoping for. Use the terminal to view the **man**ual of the `echo` commmand to see if you can find anything to help.
 
 #### HINTS
 
@@ -838,7 +838,7 @@ Run the file again to see the spacing.
 
 ### 630.1
 
-Okay, it's coming along. Add another `echo` command to the function. Make it will output text that looks like this:
+Okay, it's coming along. Add another `echo` command to the function. Make it output text that looks like this:
 
 ```sh
 1. Rent a bike
@@ -929,7 +929,7 @@ Add an empty `EXIT` fuction to the script for when a user wants to exit the prog
 
 ### 710.1
 
-This one probably doesn't need a placeholder message. echo the text `Thank you for stopping in.` in the `EXIT` function.
+This one probably doesn't need a placeholder message. Echo the text `Thank you for stopping in.` in the `EXIT` function.
 
 #### HINTS
 
@@ -939,7 +939,7 @@ This one probably doesn't need a placeholder message. echo the text `Thank you f
 
 ### 720.1
 
-You added the functions you want users to go to, but you need a way to take them there. A `case` statement is perfect for this. Here's an example:
+When a user enters an option at the main menu, you want to take them to the appropraite sub-menu. A `case` statement is perfect for this. Here's an example:
 
 ```sh
 case EXPRESSION in
