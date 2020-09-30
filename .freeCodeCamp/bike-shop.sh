@@ -38,6 +38,7 @@ EXIT () {
 
 	echo "Thank you for stopping in."
 	sleep 2
+  clear
 	# Add your code below this line
 
 

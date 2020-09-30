@@ -1,14 +1,14 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getFileContents } = require('./utils');
 
-describe('Your "EXIT" function', () => {
+describe('You "EXIT" function', () => {
   let scriptFile;
   before(async () => {
     scriptFile = await getFileContents('../bike-shop.sh');
   });
 
-  it('should clear the terminal', async () => {
+  it('should exit the program', async () => {
     const exitFunction = scriptFile.match(/EXIT\s*\(\s*\)\s*{[\s\S]+?[^}]}/g)[0]
-    assert(/clear/.test(exitFunction));
+    assert(/exit/.test(exitFunction));
   });
-});*/
+});
