@@ -27,10 +27,7 @@ RENT_MENU () {
   SHOW_TITLE
 	AVAILABLE_BIKES=$($PSQL "SELECT * FROM bikes;")
 
-	# Add your code below this line
-
-
-	# Add your code above this line
+	echo "$AVAILABLE_BIKES"
 }
 
 RETURN_MENU () {
