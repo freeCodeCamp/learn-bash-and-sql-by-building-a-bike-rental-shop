@@ -37,6 +37,10 @@ EXIT () {
   SHOW_TITLE
 
 	echo "Thank you for stopping in."
+	# Add your code below this line
+
+
+	# Add your code above this line
 }
 
 MAIN_MENU
