@@ -1,9 +1,6 @@
 #! /bin/bash
 
-# Add your code below this line
-
-
-# Add your code above this line
+PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"
 
 SHOW_TITLE() {
 	clear
@@ -29,7 +26,10 @@ MAIN_MENU () {
 RENT_MENU () {
   SHOW_TITLE
 
-	echo $(psql -X --username=freecodecamp --dbname=bikes --tuples-only -c "SELECT * FROM bikes;")
+  # Change code below this line
+  echo $(psql -X --username=freecodecamp --dbname=bikes --tuples-only -c "SELECT * FROM bikes;")
+
+  # Change code above this line
 }
 
 RETURN_MENU () {
