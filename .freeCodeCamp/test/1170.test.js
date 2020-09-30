@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your "RENT_MENU" function', () => {
@@ -7,9 +7,9 @@ describe('Your "RENT_MENU" function', () => {
     scriptFile = await getFileContents('../bike-shop.sh');
   });
 
-  it('should echo the suggested text', async () => {
+  it('should correctly read input into a "BIKE_ID_TO_RENT" variable', async () => {
     const rentMenuFunction = scriptFile.match(/RENT_MENU\s*\(\s*\)\s*{[\s\S]+?[^}]}/g)[0]
     
-    assert(/echo[ \t]+-e[ \t]+('|"|)\\nWhich one would you like to rent\?\1/.test(rentMenuFunction));
+    assert(/read[ \t]+BIKE_ID_TO_RENT/.test(rentMenuFunction));
   });
-});*/
+});
