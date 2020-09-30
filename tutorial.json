@@ -18,7 +18,7 @@
         "sudo -u postgres psql -c \"CREATE USER freecodecamp WITH CREATEDB;\""
       ],
       "commits": [
-        "f191d679e1aa7b3d6592b163c568ebf187518e86"
+        "36085d72a9a2c832c5c55e2876267ddb6052de3f"
       ]
     },
     "testRunner": {
@@ -53,7 +53,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "b4fba31515b4bde4f08eb607ba06acd86b71a7b6"
+              "3dddc4336f0f8ca399fa54df8f5c51d93f1fcbe7"
             ]
           },
           "content": "**The first thing you need to do is start the terminal.** Do that by clicking the \"hamburger\" menu at the top left of the screen, going to the \"terminal\" section, and clicking \"new terminal\". Once you open a new one, type `echo hello terminal` into the terminal and press enter.",
@@ -77,7 +77,7 @@
               "./.freeCodeCamp/test/pg.log"
             ],
             "commits": [
-              "7f71d4b835fc74bc35429f06785f56a82e3bbe36"
+              "1eb84163fc16db848cbc0b2834545df5b4217eeb"
             ]
           },
           "content": "You are going to build a bike rental shop. It will have a database, and a bash script to interact with the database. Use the terminal to connect to PostgreSQL by entering `psql --username=freecodecamp --dbname=postgres`.",
@@ -101,7 +101,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "eb5774b606b41a61ea7d12600269db1296e4261b"
+              "00d4d9e1d2313f61d500659e011a5d331f16e059"
             ]
           },
           "content": "List the databases with `\\l` to see what databases are here.",
@@ -126,7 +126,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "cfb56f174d4b0cb1a92335f86ea34668a9533958"
+              "008e0945b365df6fb7ce34ff8cadb14d88dfed62"
             ]
           },
           "content": "You need your own database for the bike shop. Create a new database named `bikes`.",
@@ -153,7 +153,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "72adb159e6a7537e4be31c65b5c5fd58d763ada7"
+              "e2b80a1f07681d1d606e6aafb453efdb30e83303"
             ]
           },
           "content": "List databases again to make sure your database got created.",
@@ -179,7 +179,7 @@
               "./.freeCodeCamp/test/pg.log"
             ],
             "commits": [
-              "a37e217a0af8e31ff1b81a4f94bc7523998cd810"
+              "e18ec5e4c3173a8e05e2c5a033b50122d976c0a6"
             ]
           },
           "content": "Yup, there it is. **C**onnect to it so you can start building the structure of your bike shop database.",
@@ -208,7 +208,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "78c87d0382e323d19d1768bab396a3df178061bd"
+              "50d96c15e97016e28d8137fed6f6adf5e2d80b4a"
             ]
           },
           "content": "Your database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your database for the inventory.",
@@ -236,7 +236,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "d9a343b9c995b8ccb3ceda44c6fd94be98a55556"
+              "1959b7773ec6ae5869361e71cd52def987514233"
             ]
           },
           "content": "**D**isplay the tables to make sure your table got created.",
@@ -263,7 +263,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "89aff03c4b4e2caa3ec2635dcb5015be7587c71f"
+              "671084b2ccd76ad4ea5d85ef9d71f3c48ce6f041"
             ]
           },
           "content": "The table will have a few columns for bike information. First, is a unique ID column. Add a column to the `bikes` table named `bike_id`. Give it a type of `SERIAL` and make it a `PRIMARY KEY`.",
@@ -291,7 +291,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "971a9ae1b836aa7635a7925dad5d9bce521f854d"
+              "bf7a805464a387664b2fe2f8d775c224aec79603"
             ]
           },
           "content": "Use the **d**isplay command to view the details of the `bikes` table.",
@@ -318,7 +318,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "ff328b53a2594da01a9bfb27949b887db7b7aa76"
+              "72c1d114594177e55f78e8aea2ad57fb022283e4"
             ]
           },
           "content": "Looks like first column is set. Add a column named `type` for the type of bike. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.",
@@ -346,7 +346,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "655c094b170f68aebbc7afa817972ac3a9e1dc77"
+              "36e0c1e143ab986fb6e3d765577d6637153715e1"
             ]
           },
           "content": "Display the details of the `bikes` table again.",
@@ -374,7 +374,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "aaba40211bcc879dc3ee8e2c0fecc6d21c26fe92"
+              "17c28bb9594065bd6ccd83f64723f844ed0959ac"
             ]
           },
           "content": "Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint. This will be for the size of each bike.",
@@ -402,7 +402,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "f7e103f529261a5ea0129f110ad39f824ac1ce8d"
+              "7586dcfb586f67cf79f330a7fffc14346a133c7e"
             ]
           },
           "content": "Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.",
@@ -430,7 +430,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "ef2d4646e16cf948ff47a650e5dfc412a8e0429f"
+              "18a4c77c2707c9158ef4c8db0a0ed6efe6338a05"
             ]
           },
           "content": "Display the details of the `bikes` table again so you can make sure it's how you want it.",
@@ -458,7 +458,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "f889bf7b8a78f1ab6a5b4659650a75695e40baaf"
+              "37149ba9903a687762ddeec9bd3f88e2dec2cf31"
             ]
           },
           "content": "It's looking good. Create another table named `customers`. It will store a name and phone number for each customer that wants to rent a bike.",
@@ -486,7 +486,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "0bd792572c2b6012b85a67960d7341dd212ddab1"
+              "486c19e1f01d8f7553ba7e6b53c9833f5ef03db3"
             ]
           },
           "content": "Add a `customer_id` column to your new table that is a type of `SERIAL` and make it a `PRIMARY KEY`.",
@@ -514,7 +514,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "24127cc48083ca7fb941a1b4e7fe9f73d1e040ef"
+              "7c701e027e8aeb9b3a03f5780653ea0d5b770a25"
             ]
           },
           "content": "Display the details of the `customers` table so you can make sure your new column is there.",
@@ -542,7 +542,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "ef9b7b3aab5a0f4c65079b3add2f23eb3d3dc63a"
+              "d5abd4c905e4ab424d13230e3ad11099eac94337"
             ]
           },
           "content": "Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.",
@@ -570,7 +570,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "beb4eb2f3423e7fbd3251afa2b083efaf8877874"
+              "2279d449c1a280ae51b2ec4959f19ddb42ab5b63"
             ]
           },
           "content": "Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be null.",
@@ -598,7 +598,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "07ef13950423533ffef39f7249bc0ecfcf4215d2"
+              "cc3ce04868c6f8e096029ca055e530ec13afe9fe"
             ]
           },
           "content": "Display the details of the `customers` table.",
@@ -626,7 +626,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "5a98376c93c69633a9d818eb7cdcd5a5b7ea13b4"
+              "ace946939b5d31f1d43c70369b13374af7c766b6"
             ]
           },
           "content": "I think that table is finished. Lastly, you need a table to store which bikes are rented and to whom. Create a new table named `rentals`.",
@@ -654,7 +654,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "b79f5f5be7e8f1c6951469e541190f58dff02fe7"
+              "e81984e7d1d7b5ac9d2089c252ef3e12f7675c4c"
             ]
           },
           "content": "Add a `rental_id` column to your new table. Make it automatically increment with `SERIAL` and make it the primary key for this table.",
@@ -683,7 +683,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "c74196219492793a1a8cccaeafc51d0116030dd3"
+              "cf9ac2cc3c1510b5573ec6f6a31346893d4281e7"
             ]
           },
           "content": "Display the details of the `rentals` table.",
@@ -711,7 +711,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "83ce80d1ace99bebd754990b6e171b3834dc322a"
+              "67852fc13bfe6853da7a6a9a7cb57e4412a13a4c"
             ]
           },
           "content": "Next, you need a column for the customer who is renting a bike. Add column named `customer_id`. This will have an id of a customer from the customers table. Make the column an `INT` and `NOT NULL` to start.",
@@ -739,7 +739,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "2e5e48645c494b8f4ab6901d7ed26002e260e41c"
+              "30ac219e9cd4c644d5efb9f80feedf629be37f5b"
             ]
           },
           "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table. Here's an example of how you can do that:\n\n```sql\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\n```",
@@ -765,7 +765,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "f177e7e4e3e520c2bb8376f14f83eec9510ca6dc"
+              "e9c2fac1f119e99bf1cd9c15b987e382f4916217"
             ]
           },
           "content": "Display the details of the `rentals` table to make sure your key is set.",
@@ -793,7 +793,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "140ad3ff596f4e4327b1f8c46146ad74a7a91a4c"
+              "d2829fa13c471311bee94487e3124b3ca6eaa521"
             ]
           },
           "content": "Alright, you need another column so you know what bike a customer is renting. Add a column named `bike_id` and make it an `INT` and `NOT NULL`.",
@@ -821,7 +821,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "127604c8714b4ffe3634e85a39f1a948cb9145f3"
+              "b187a7bce531b9631dd63f618bc06a4ce6c0951f"
             ]
           },
           "content": "Make that column a foreign key that references the `bike_id` column from the `bikes` table so you know what bike the id is for.",
@@ -848,7 +848,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "ef377ff88e831aec8ccc2c42a4572b31da3130d3"
+              "effcf8137ae39f715dabaf9d8fe43bd2b52c4646"
             ]
           },
           "content": "Display the details of the `rentals` table so you can make sure the key is correct.",
@@ -876,7 +876,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "28b3ba153cc92328cda25a70c0f785cb08b7d874"
+              "7a2a605e30196be7e42b8a0ae6ed377ecb87d6ac"
             ]
           },
           "content": "Moving along. You want to know when a customer rents a bike, and when it gets returned. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.",
@@ -904,7 +904,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "682428114c82e389250b0fec77796203a53bed16"
+              "fad041b59ca9b8196a921ec3b00e0d088e2cae5f"
             ]
           },
           "content": "Display the details of the `rentals` table again.",
@@ -932,7 +932,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "89ea76dde3498686fee93710f8fa5a8bd1422fff"
+              "a2cdbf23c5f3cb5026df96b73efb36c301dabd9b"
             ]
           },
           "content": "Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.",
@@ -960,7 +960,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "74d7e18b22928467974ffae2837552d54a35c747"
+              "b31458c85813bcf3e3aeb4f36fb990f3edba96cb"
             ]
           },
           "content": "View the details of the table again.",
@@ -989,7 +989,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "cbc4a50ca8e8a379a58a6e84cda4b20e152808f6"
+              "9eca131f0ce46718834f3001e661d34fb7e5bbb0"
             ]
           },
           "content": "Okay, I think it looks good. Display all the tables so you can see what you ended up with.",
@@ -1015,7 +1015,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "0ed8c30afee183b54d181f91531d9da16e20deca"
+              "868ab9ceac2d7fc8412bf5754fe987b6a605c704"
             ]
           },
           "content": "I think the structure of your database is set. You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `Mountain` and a `size` of `27`. Make sure to put your `VARCHAR` values in single quotes. The `bike_id` and `available` columns should be filled in automatically, so you don't need to worry about those.",
@@ -1042,7 +1042,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "d3e2eedefa42709e2ce4bc72abb3cc12419a2e64"
+              "afcbdd5a8d8ad37e9147d7f8fa496c8f7cd69959"
             ]
           },
           "content": "View all the columns in your bikes table with `SELECT`.",
@@ -1069,7 +1069,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "d0c6cf8188449bc2adfd48ed964afe4dd62b8133"
+              "a52f5d7ce07d22c235cd9f1c70db75d0650fa555"
             ]
           },
           "content": "Looks like it's all working, the `bike_id` and `available` columns were filled in automatically. Insert another bike. Give it a `type` of `Mountain` and a `size` of `28`.",
@@ -1097,7 +1097,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "a416b93df2d016b2358bce460ac673a616a33a7b"
+              "c1a67408e3819f4e0815736c02d8a588e7cde0a3"
             ]
           },
           "content": "Add another `Mountain` bike to your inventory. Make it a `29` inch bike.",
@@ -1125,7 +1125,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "4c6d7c3249d513fd1387a612d95db4da31e049ca"
+              "73ce53b06432f18ef15de361382023d5f4f8c6e5"
             ]
           },
           "content": "Add a `27` inch `Road` bike to the table.",
@@ -1153,7 +1153,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "36f2062562a7a11e9fe4d4ab77bd61117f7c279d"
+              "9283159df82f29e5b5cdd47a7133d39c43e812aa"
             ]
           },
           "content": "Use `SELECT` to view all the data in the `bikes` table again.",
@@ -1180,7 +1180,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "9c4dc1d8ebbfc79f86aa988bcbf417ef192379fd"
+              "76879158dce80efa7605f8c644f3dee9e00c65b7"
             ]
           },
           "content": "Add `28` and `29` inch `Road` bikes to your inventory. Try to add them both with one command.",
@@ -1207,7 +1207,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "46fa6462270d7b16fee95f95f79bfbcd92efc8c4"
+              "80c041288fce1500e9ced8a8e4d9bed178bb0bff"
             ]
           },
           "content": "There's three more bikes. Add `19`, `20`, and `21` inch `BMX` bikes to your table. Try to add them with one command.",
@@ -1234,7 +1234,7 @@
               "./.freeCodeCamp/test/queryResults.log"
             ],
             "commits": [
-              "9b8e19e2246a89a249407f078895bd853f0dfb20"
+              "2ad1027dc39f5ca6fb64b03d62502227d1e21a85"
             ]
           },
           "content": "View all the data in your bikes table.",
@@ -1261,7 +1261,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "4d8ddeb4b070d4a04c6d2812e22f233b10c85529"
+              "b9b63ab96cb1f27e5c34106e16f8071774b0f952"
             ]
           },
           "content": "Okay, you have a database structure and your inventory is added. For the rest of the tutorial, I recommend leaving that terminal open and connected and that you should \"split\" the terminal so you have a second one that you can use for bash commands. Do that by clicking the \"hamburger\" menu at the top left of the window, going to the \"terminal\" section, and clicking \"split terminal\". After you have opened it, use the `touch` command to create a file named `bike-shop.sh` in the `project` folder.",
@@ -1287,7 +1287,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "a85b3c544defdc66f50ffe209cd1aba0f4e5310c"
+              "cb924d3a0e752c327f19a0bc50d2180a405f7a26"
             ]
           },
           "content": "This `bike-shop.sh` will be the program for your bike rental shop. Open the file in the editor, making it and CodeRoad visible. Then, and add a \"shebang\" at the top of the file so it uses `bash` when it's executed. If you don't remember, it looks like this: `#! /bin/bash`.",
@@ -1314,7 +1314,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "2e9bd0724f443526160649fdcd6dda387d70d940"
+              "c7cfc3625bfed1b83e6fe2a3dd746491bd9c1f99"
             ]
           },
           "content": "You should now have two terminals open, your `bike-shop.sh` file open, and CodeRoad opened in your environment and they should all be visible. It makes for a lot on the screen, but it will be easier for working with things later on. The first thing you want your program to do is display a title. Use `echo` to output `~~~~~ Bike Rental Shop ~~~~~` in your script file.",
@@ -1342,7 +1342,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "9aa42489562a9bd161f300b4a89f7c7bc09569de"
+              "874c27179200374ad1e3e2a68f1ec854b1eddf10"
             ]
           },
           "content": "Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add `+x` and `bike-shop.sh` to the command so your file can be executed.",
@@ -1369,7 +1369,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "fdf95a61463a980a9a67236fd63704aad5e4a224"
+              "a36f6bb238e24a61c1ff9323657ee2f6dcf8a5af"
             ]
           },
           "content": "Type `./bike-shop.sh` in the terminal to run your script.",
@@ -1395,7 +1395,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "bb04fa90e1074fb53df53beec25e72d448da5230"
+              "5bd06177df1544e2ea90bf387b1a1bfc00e591b7"
             ]
           },
           "content": ":smile: Create an empty function named `MAIN_MENU` in the specified area. This will have a few options to enter when the script runs to rent or return a bike.",
@@ -1421,7 +1421,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "f66b21826374a69e3d444843a4cd471251bf97aa"
+              "eee9b06000e0b9385605da3f6018161ac6cfeb7d"
             ]
           },
           "content": "In your function, echo the text `How may I help you?` so that there's a greeting when you go to the menu.",
@@ -1447,7 +1447,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "bb219a07066a5f9a6f9ee1e2621481c9117f403a"
+              "0c03261d4a68b24ca3ce3b564470fa863af6ca7a"
             ]
           },
           "content": "Call your `MAIN_MENU` at the bottom of the file so the function runs when you start the script.",
@@ -1473,7 +1473,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "9524db4c68d6632fce3e169abfb398c92bfc2330"
+              "9f1a5a4c8d5f79ec0e4e58cacfcc224c66346096"
             ]
           },
           "content": "Run the file in the terminal again so you can see what it is outputting.",
@@ -1500,7 +1500,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "6f6bc8461d11f92ae374ebd5cc0a0e405364898b"
+              "d76142a6e4eb7355f8f6492e4556265aa84bcbca"
             ]
           },
           "content": "Okay, you are getting somewhere. Add `clear` at the top of the file so that when you run the script, you don't see all the old terminal prompts.",
@@ -1526,7 +1526,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "c29b6210d026f348aeb02fd791ec9280254866ac"
+              "ad83b17e59c96468b2f2da9bf34f04e96590aabd"
             ]
           },
           "content": "Run the file in the terminal again to see it now.",
@@ -1553,7 +1553,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "f1f6de2747187035be5c53c8d403159dfb6d1e62"
+              "52da6c0a7289013e532288879879881c3d5b1ffd"
             ]
           },
           "content": "That's pretty slick, but it could use some spacing. Add the line break characters (`\\n`) at the end of the title so it adds a space between the title and greeting.",
@@ -1579,7 +1579,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "27cf5bd09bc5222512f375c029d5c60f970ee12d"
+              "0377c5f09e3aa5201dbf204d5fb7e71151601d45"
             ]
           },
           "content": "Run the file again to see if it worked.",
@@ -1606,7 +1606,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "3b94347be27ff746ad45e3388338d584dbb309b2"
+              "47fb6d2e7adbf8610913801d57931e692ded173f"
             ]
           },
           "content": "Hmm. That's not what I was hoping for. Use the terminal to view the **man**ual of the `echo` commmand to see if you can find anything to help.",
@@ -1632,7 +1632,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "24d77bd405aa49b188352273ecd7c0b058de2eed"
+              "f4de4409af37bc27bc1833abcd71d65d6a89d860"
             ]
           },
           "content": "Do you see any flags that might help in there? The `-e` flag says, \"enable interpretation of backslash escapes\". That sounds promising. Add that flag to the echo command of the title.",
@@ -1658,7 +1658,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "5196cc9e78854b365970730616ade0f0185bcb0c"
+              "f6004a9800b1e5e80c0c00e45c2ac5ff520978cf"
             ]
           },
           "content": "Run the file again to see if it's working now.",
@@ -1685,7 +1685,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "94f0ff1ab62263271e136d9a09c9150cc94f598f"
+              "d5e50c1e81a5eecd0e1f788563d283962751af42"
             ]
           },
           "content": "It worked :smile: Add the `-e` flag to the greeting command and put a new line at the end of that text as well. The greeting is the `How may I help you?` line.",
@@ -1711,7 +1711,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "cf8252a53a15dd2892e4c99f3b58d258aea0ab60"
+              "ca229d225e038c6b79fe9edce12ea42a525aed4f"
             ]
           },
           "content": "Run the file again to see the spacing.",
@@ -1738,7 +1738,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "491aece090449e1f968554bfff1bed8a214a3f0b"
+              "6d86c84b00959375731da735e2ec0702273c0e7a"
             ]
           },
           "content": "Okay, it's coming along. Add another `echo` command to the function. Make it output text that looks like this:\n\n```sh\n1. Rent a bike\n2. Return a bike\n3. Exit\n```",
@@ -1767,7 +1767,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "8fc5a9ffd0b36307f5a9e8425d4b2c8777483e49"
+              "743a40e6c712e430846174d02cb3bfad3168fc93"
             ]
           },
           "content": "Run the file to make sure it worked.",
@@ -1794,7 +1794,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "8003db9ac2d5baf28af22cd34a2426e9b3c7d00a"
+              "1a2eefe9bde31dde8d3b767783e0954707ca37d4"
             ]
           },
           "content": "Okay, you have some options displaying. Next, you need to get input from whoever is using the program. Use the `read` command to read input into a variable called `MAIN_MENU_SELECTION`.",
@@ -1821,7 +1821,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "7e862c7c15bbb88a2b0d7a20a188f41e89c587eb"
+              "af0b010fab751ec464187827059ebcb3d3842cf7"
             ]
           },
           "content": "When an option gets entered, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function in the designated area for when a user enters the option to rent a bike.",
@@ -1847,7 +1847,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "55b37523b084d575db9b84dd39cf0d04c8174ec3"
+              "68b03a7c7748d5049d46ea2151ea0aee44fa121c"
             ]
           },
           "content": "For the time being, just echo out `Rent Menu` in the function so you can see if it's working.",
@@ -1873,7 +1873,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "cc19be4cb80ea436debacd9aaf45c9353f8f0571"
+              "249ac6409be8b7a87008fb53e45082d0cc4123ee"
             ]
           },
           "content": "Add an empty `RETURN_MENU` function to your script for when a user enters the option to return a bike.",
@@ -1899,7 +1899,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "065ecc8cda9e0d991d52dc6e119ee0cfa9d6af30"
+              "95a6407797c4991930c67e3089bdff4dd007c71b"
             ]
           },
           "content": "echo `Return Menu` in the function you just added. You will probably change these later.",
@@ -1925,7 +1925,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "93d15acba4fb0b4b13c868a5a608f5248966319c"
+              "9c61eb2d57edd27c515960dfec03fe7870293848"
             ]
           },
           "content": "Add an empty `EXIT` fuction to the script for when a user wants to exit the program.",
@@ -1951,7 +1951,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "8dca124724430815aad898732cf4886f5a44b254"
+              "0db2289a75bf985a45d817f44ec2a3202e26782a"
             ]
           },
           "content": "This one probably doesn't need a placeholder message. Echo the text `Thank you for stopping in.` in the `EXIT` function.",
@@ -1977,7 +1977,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "86f204de0ad3dccc651910d561f288b62102955d"
+              "045acb757b68351d712bf0837fde6326ef1e6568"
             ]
           },
           "content": "When a user enters an option at the main menu, you want to take them to the appropraite sub-menu. A `case` statement is perfect for this. Here's an example:\n\n```sh\ncase EXPRESSION in\n  PATTERN) STATEMENTS ;;\n  PATTERN) STATEMENTS ;;\n  *) STATEMENTS ;;\nesac\n```\n\nThe expression you want is the `$MAIN_MENU_SELECTION` variable. You are expecting it to be a `1`, `2`, or `3` for your various menus. Add a `case` statement that takes users to their corresponding menus, and back to the `MAIN_MENU` when the variable isn't a `1`, `2`, or `3`.",
@@ -2004,7 +2004,7 @@
               "cp ./.freeCodeCamp/bike-shop.sh ."
             ],
             "commits": [
-              "c262e9949aeab2ebe8aba64dce78d15bd23a055d"
+              "0f07d9e731a50fd346a1cc091abb6e694fc3670b"
             ]
           },
           "content": "Run the script a few times and try out the different menus.",
