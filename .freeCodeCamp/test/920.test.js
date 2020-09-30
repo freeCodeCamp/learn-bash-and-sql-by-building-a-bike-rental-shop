@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your script', () => {
@@ -7,4 +7,4 @@ describe('Your script', () => {
 
     assert(/\/bash\s*\n+\s*PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"[ \t]*;?\s*$/m.test(scriptFile));
   });
-});
+});*/
