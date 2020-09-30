@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your "RENT_MENU" function', () => {
@@ -7,7 +7,7 @@ describe('Your "RENT_MENU" function', () => {
     scriptFile = await getFileContents('../bike-shop.sh');
   });
 
-  it('should echo the suggested text', async () => {
+  it('should correctly read input into a "BIKE_ID_TO_RENT" variable', async () => {
     assert(false);
   });
-});*/
+});
