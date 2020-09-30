@@ -11,7 +11,7 @@ MAIN_MENU() {
     1) RENT_MENU ;;
     2) RETURN_MENU ;;
     3) EXIT ;;
-    *) MAIN_MENU ;;
+    *) MAIN_MENU "Please enter a valid option." ;;
   esac
 }
 
