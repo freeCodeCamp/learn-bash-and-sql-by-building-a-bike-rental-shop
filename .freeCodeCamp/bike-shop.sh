@@ -10,10 +10,10 @@ SHOW_TITLE() {
 MAIN_MENU () {
   SHOW_TITLE
 
-  # Add your code below this line
-
-
-  # Add your code above this line
+  if [[ $1 ]]
+  then
+    echo $1
+  fi
 
 	echo -e "How may I help you?\n"
 	echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"
