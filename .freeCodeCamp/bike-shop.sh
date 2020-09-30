@@ -25,9 +25,14 @@ MAIN_MENU () {
 
 RENT_MENU () {
   SHOW_TITLE
-	AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available='t';")
+  AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available='t';")
 
-	echo "$AVAILABLE_BIKES"
+  # Add your code below this line
+
+
+  # Add your code above this line
+
+  echo "$AVAILABLE_BIKES"
 }
 
 RETURN_MENU () {
