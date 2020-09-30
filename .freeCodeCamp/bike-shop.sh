@@ -37,6 +37,7 @@ EXIT () {
   SHOW_TITLE
 
 	echo "Thank you for stopping in."
+	sleep 2
 	# Add your code below this line
 
 
