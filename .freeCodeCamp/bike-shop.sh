@@ -26,10 +26,7 @@ MAIN_MENU () {
 RENT_MENU () {
   SHOW_TITLE
 
-  # Change code below this line
-  echo $(psql -X --username=freecodecamp --dbname=bikes --tuples-only -c "SELECT * FROM bikes;")
-
-  # Change code above this line
+  echo $($PSQL "SELECT * FROM bikes;")
 }
 
 RETURN_MENU () {
