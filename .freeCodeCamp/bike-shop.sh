@@ -43,10 +43,11 @@ RENT_MENU () {
 			echo "$BIKE_ID) $SIZE\" $TYPE Bike"
 		done
 
-		# Add your code below this line
+		echo -e "\nWhich one would you like to rent?"
+    # Add your code below this line
 
 
-		# Add your code above this line
+    # Add your code above this line
   fi
 }
 
