@@ -32,12 +32,16 @@ RENT_MENU () {
   SHOW_TITLE
   AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available='t';")
 
+  # Change code below this line  
+
   if [[ -z $AVAILABLE_BIKES ]]
   then
     MAIN_MENU "Sorry, we don't have any bikes available right now."
   fi
 
   echo "$AVAILABLE_BIKES"
+
+  # Change code above this line
 }
 
 RETURN_MENU () {
