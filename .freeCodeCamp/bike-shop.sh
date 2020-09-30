@@ -36,11 +36,8 @@ RENT_MENU () {
   then
     MAIN_MENU "Sorry, we don't have any bikes available right now."
   else
+    echo -e "Here are the bikes we have available:\n"
 
-    # Add your code below this line
-
-
-    # Add your code above this line
     echo "$AVAILABLE_BIKES"
   fi
 }
