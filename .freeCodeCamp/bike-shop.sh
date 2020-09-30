@@ -10,6 +10,11 @@ SHOW_TITLE() {
 MAIN_MENU () {
   SHOW_TITLE
 
+  # Add your code below this line
+
+
+  # Add your code above this line
+
 	echo -e "How may I help you?\n"
 	echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"
 
@@ -27,14 +32,10 @@ RENT_MENU () {
   SHOW_TITLE
   AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available='t';")
 
-  # Change code below this line
-
   if [[ -z $AVAILABLE_BIKES ]]
   then
-    MAIN_MENU
+    MAIN_MENU "Sorry, we don't have any bikes available right now."
   fi
-
-  # Change code above this line
 
   echo "$AVAILABLE_BIKES"
 }
