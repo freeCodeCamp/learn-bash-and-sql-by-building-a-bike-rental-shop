@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your script', () => {
@@ -12,4 +12,4 @@ describe('Your script', () => {
 
     assert(/echo[ \t]+"\$AVAILABLE_BIKES"/.test(rentMenuFunction));
   });
-});
+});*/
