@@ -24,10 +24,7 @@ MAIN_MENU () {
 RENT_MENU () {
   SHOW_TITLE
 
-	# Change code below this line
-	echo "Rent Menu"
-
-	# Change code above this line
+	echo $(psql -X --username=freecodecamp --dbname=bikes -c "SELECT * FROM bikes;")
 }
 
 RETURN_MENU () {
