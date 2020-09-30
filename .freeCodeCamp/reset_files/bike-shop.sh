@@ -28,9 +28,10 @@ RENT_MENU() {
   echo "$AVAILABLE_BIKES"
 
   # if no bikes available
-
-  # send to main menu
-
+  if [[ -z $AVAILABLE_BIKES ]]
+  then
+    # send to main menu
+  fi
 }
 
 RETURN_MENU() {
