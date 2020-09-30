@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getLastCommand } = require('./utils');
 
 describe('You', () => {
@@ -10,4 +10,4 @@ describe('You', () => {
   it('should view the psql help menu', async () => {
     assert(lastCommand[0] === 'psql' && lastCommand[1] === '--help');
   });
-});
+});*/
