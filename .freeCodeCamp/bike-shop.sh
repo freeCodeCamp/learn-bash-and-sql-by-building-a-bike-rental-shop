@@ -1,7 +1,11 @@
 #! /bin/bash
 
+# Add your code below this line
+
 clear
 echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
+
+# Add your code above this line
 
 MAIN_MENU () {
 	echo -e "How may I help you?\n"
