@@ -6,10 +6,7 @@ SHOW_TITLE() {
 }
 
 MAIN_MENU () {
-	# Add your code below this line
-
-
-	# Add your code above this line
+  SHOW_TITLE
 
 	echo -e "How may I help you?\n"
 	echo -e "1. Rent a bike\n2. Return a bike\n3. Exit"
@@ -25,28 +22,19 @@ MAIN_MENU () {
 }
 
 RENT_MENU () {
-	# Add your code below this line
-
-
-	# Add your code above this line
+  SHOW_TITLE
 
 	echo "Rent Menu"
 }
 
 RETURN_MENU () {
-	# Add your code below this line
-
-
-	# Add your code above this line
+  SHOW_TITLE
 
 	echo "Return Menu"
 }
 
 EXIT () {
-	# Add your code below this line
-
-
-	# Add your code above this line
+  SHOW_TITLE
 
 	echo "Thank you for stopping in."
 }
