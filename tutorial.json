@@ -2501,56 +2501,6 @@
       ]
     },
     {
-      "id": "950",
-      "title": "Use `PSQL` Variable",
-      "summary": "",
-      "content": "",
-      "steps": [
-        {
-          "id": "950.1",
-          "setup": {
-            "watchers": [
-              "./bike-shop.sh"
-            ],
-            "commands": [
-              "cp ./.freeCodeCamp/bike-shop.sh ."
-            ],
-            "commits": []
-          },
-          "content": "Okay, now you can connect to the database and interact with it in your script using that PQSL variable.",
-          "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "960",
-      "title": "Delete the `echo` line",
-      "summary": "",
-      "content": "",
-      "steps": [
-        {
-          "id": "960.1",
-          "setup": {
-            "watchers": [
-              "./bike-shop.sh"
-            ],
-            "commands": [
-              "cp ./.freeCodeCamp/bike-shop.sh ."
-            ],
-            "commits": []
-          },
-          "content": "Delete the echo line",
-          "hints": [
-            "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
-          ]
-        }
-      ]
-    },
-    {
       "id": "970",
       "title": "Create `AVAILABLE_BIKES` Variable",
       "summary": "",
@@ -2560,7 +2510,7 @@
           "id": "970.1",
           "setup": {
             "watchers": [
-              "../.bash_history"
+              "./bike-shop.sh"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2587,7 +2537,7 @@
           "id": "980.1",
           "setup": {
             "watchers": [
-              "./.freeCodeCamp/test/queryResults.log"
+              "./bike-shop.sh"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2614,7 +2564,7 @@
           "id": "990.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "../.bash_history"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2641,7 +2591,7 @@
           "id": "1000.1",
           "setup": {
             "watchers": [
-              "../.bash_history"
+              "./.freeCodeCamp/test/queryResults.log"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2668,7 +2618,7 @@
           "id": "1010.1",
           "setup": {
             "watchers": [
-              "./.freeCodeCamp/test/queryResults.log"
+              "./bike-shop.sh"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2722,7 +2672,7 @@
           "id": "1030.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "./.freeCodeCamp/test/queryResults.log"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2857,7 +2807,7 @@
           "id": "1080.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "../.bash_history"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2938,7 +2888,7 @@
           "id": "1110.1",
           "setup": {
             "watchers": [
-              "../.bash_history"
+              "./bike-shop.sh"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2965,7 +2915,7 @@
           "id": "1120.1",
           "setup": {
             "watchers": [
-              "./.freeCodeCamp/test/queryResults.log"
+              "./bike-shop.sh"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -3019,7 +2969,7 @@
           "id": "1140.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "./.freeCodeCamp/test/queryResults.log"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -3046,7 +2996,7 @@
           "id": "1150.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "../.bash_history"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -3071,6 +3021,17 @@
       "steps": [
         {
           "id": "1160.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": [
+              "4f2fe3382be0459654ecfa33164d9772f9297d4e"
+            ]
+          },
           "content": "Okay, that seems to be working.\nadd `echo -e \"\\nWhich one would you like to rent?\"`",
           "hints": [
             "Capitalization matters",
@@ -3087,6 +3048,17 @@
       "steps": [
         {
           "id": "1170.1",
+          "setup": {
+            "watchers": [
+              "./bike-shop.sh"
+            ],
+            "commands": [
+              "cp ./.freeCodeCamp/bike-shop.sh ."
+            ],
+            "commits": [
+              "90fb63ec6bc64c65e01551f108c36ed8bc7ce0ac"
+            ]
+          },
           "content": "read `BIKE_AVAILABILITY`",
           "hints": [
             "Capitalization matters",
