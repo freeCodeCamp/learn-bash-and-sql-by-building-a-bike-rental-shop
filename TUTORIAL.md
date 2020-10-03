@@ -1191,28 +1191,6 @@ Run the script
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 950. Use `PSQL` Variable
-
-### 950.1
-
-Okay, now you can connect to the database and interact with it in your script using that PQSL variable.
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 960. Delete the `echo` line
-
-### 960.1
-
-Delete the echo line
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
 ## 970. Create `AVAILABLE_BIKES` Variable
 
 ### 970.1
