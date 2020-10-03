@@ -1080,7 +1080,29 @@ psql --help
 
 ### 820.1
 
-enter `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` in the terminal.
+ `psql --username=freecodecamp --dbname=bikes -c "select * from bikes;"` - watch bash_history and check pglog for SELECT * FROM bikes;
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 823. Enter a psql command from the terminal
+
+### 823.1
+
+enter `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` in the terminal
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 825. Enter a psql command from the terminal
+
+### 825.1
+
+enter `psql -X —username=freecodecamp --dbname=bikes —-tuples-only -c "select * from bikes;"` in the terminal.
 
 #### HINTS
 
@@ -1091,8 +1113,8 @@ enter `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"`
 
 ### 830.1
 
-Echo that command at the top of your script so you can see if it works.
-echo `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` at the top.
+Echo that command instead of Rent Menu
+echo `psql -X --username=freecodecamp --dbname=bikes --tuples-only -c "select * from bikes;"`
 
 #### HINTS
 
@@ -1103,7 +1125,7 @@ echo `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` 
 
 ### 840.1
 
-Run the script to see what you get
+Run the script and go to the rent menu to see what you get
 
 #### HINTS
 
@@ -1127,61 +1149,6 @@ $(command);
 ### 860.1
 
 Run the script to see if the new command works
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 870. Add quotes to echo
-
-### 870.1
-
-That's better, at least you're getting the info but it's a little messed up. Put quotes around the whole things you're echoing
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 880. Run your script
-
-### 880.1
-
-Run the script to see if the output.
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 890. View psql help menu
-
-### 890.1
-
-Okay, now it's really close. Check the psql --help menu again
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 900. Add flags to psql command
-
-### 900.1
-
-add --no-align --tuples-only flags
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 910. Run your script
-
-### 910.1
-
-Run the script to see what it looks like now.
 
 #### HINTS
 

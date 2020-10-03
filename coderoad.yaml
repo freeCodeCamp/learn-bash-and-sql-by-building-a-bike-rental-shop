@@ -587,6 +587,22 @@ levels:
             - ./bike-shop.sh
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
+  - id: '823'
+    steps:
+      - id: '823.1'
+        setup:
+          watchers:
+            - ../.bash_history
+          commands:
+            - cp ./.freeCodeCamp/bike-shop.sh .
+  - id: '825'
+    steps:
+      - id: '825.1'
+        setup:
+          watchers:
+            - ../.bash_history
+          commands:
+            - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '830'
     steps:
       - id: '830.1'
@@ -619,46 +635,6 @@ levels:
             - ../.bash_history
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '870'
-    steps:
-      - id: '870.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '880'
-    steps:
-      - id: '880.1'
-        setup:
-          watchers:
-            - ../.bash_history
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '890'
-    steps:
-      - id: '890.1'
-        setup:
-          watchers:
-            - ../.bash_history
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '900'
-    steps:
-      - id: '900.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '910'
-    steps:
-      - id: '910.1'
-        setup:
-          watchers:
-            - ../.bash_history
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '920'
     steps:
       - id: '920.1'
@@ -681,22 +657,6 @@ levels:
         setup:
           watchers:
             - ../.bash_history
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '950'
-    steps:
-      - id: '950.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '960'
-    steps:
-      - id: '960.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '970'
