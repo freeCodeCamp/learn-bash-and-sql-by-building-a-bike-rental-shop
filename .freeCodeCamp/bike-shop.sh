@@ -40,7 +40,10 @@ RENT_MENU () {
 
 		echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR1 TYPE BAR2 SIZE
 		do
+			# Change code below this line
 			echo $BIKE_ID $TYPE $SIZE
+
+			# Change code above this line
 		done
   fi
 }
