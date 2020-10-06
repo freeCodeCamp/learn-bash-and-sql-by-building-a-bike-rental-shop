@@ -2731,7 +2731,7 @@
               "6bbb3722e20f033bfd8ae23a6bea347edf7b64f3"
             ]
           },
-          "content": "add \n```\nif [[ -z $BIKES_AVAILABLE ]]\nthen \n\tMAIN_MENU\nfi\n```",
+          "content": "add \n```sh\nif [[ -z $BIKES_AVAILABLE ]]\nthen \n\tMAIN_MENU\nfi\n```",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
@@ -2812,7 +2812,7 @@
               "399df2f73a2b4dec30f09fedbe5997625a4d5639"
             ]
           },
-          "content": "Add this to `MAIN_MENU`\n```\n  if [[ $1 ]]\n  then\n    echo -e \"$1\\n\"\n  fi\n```",
+          "content": "Add this to `MAIN_MENU`\n```sh\n  if [[ $1 ]]\n  then\n    echo -e \"$1\\n\"\n  fi\n```",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
@@ -3001,7 +3001,7 @@
               "67579e4d9aa9ec3cb45fb3ae743afd89053ab51a"
             ]
           },
-          "content": "That doesn't look very user friendly.\n    echo \"$AVAILABLE_BIKES\" | while IFS=\"|\" read BIKE_ID TYPE SIZE\n    do\n      echo $BIKE_ID $TYPE $SIZE\n    done",
+          "content": "That doesn't look very user friendly.\n```sh\necho \"$AVAILABLE_BIKES\" | while IFS=\"|\" read BIKE_ID TYPE SIZE\ndo\n  echo $BIKE_ID $TYPE $SIZE\ndone\n```",
           "hints": [
             "Capitalization matters",
             "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
