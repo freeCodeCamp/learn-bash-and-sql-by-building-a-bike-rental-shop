@@ -1204,7 +1204,6 @@ Okay, what's next. Instead of echoing all that data, why don't you put it in a v
 
 That actually looks pretty clean. Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken.
 
-
 #### HINTS
 
 - `echo $AVAILABLE_BIKES`
@@ -1280,7 +1279,7 @@ Run the script and go to the rent menu
 ### 1050.1
 
 add 
-```
+```sh
 if [[ -z $BIKES_AVAILABLE ]]
 then 
 	MAIN_MENU
@@ -1319,7 +1318,7 @@ add `MAIN_MENU "Sorry, we don't have any bikes available right now."`
 ### 1080.1
 
 Add this to `MAIN_MENU`
-```
+```sh
   if [[ $1 ]]
   then
     echo -e "$1\n"
@@ -1402,10 +1401,12 @@ Run the script and go to the rent menu to see the bikes.
 ### 1140.1
 
 That doesn't look very user friendly.
-    echo "$AVAILABLE_BIKES" | while IFS="|" read BIKE_ID TYPE SIZE
-    do
-      echo $BIKE_ID $TYPE $SIZE
-    done
+```sh
+echo "$AVAILABLE_BIKES" | while IFS="|" read BIKE_ID TYPE SIZE
+do
+  echo $BIKE_ID $TYPE $SIZE
+done
+```
 
 #### HINTS
 
