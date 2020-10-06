@@ -984,11 +984,11 @@ Run the script a few times and try out the different menus.
 
 ### 740.1
 
-It looks good, but I think that title screen should be at the top of each menu. Wrap two title commands in a function named `SHOW_TITLE` so you can just call the function to display title when you want.
+It’s looking good :smile: I want to clear the text at each menu so the old options aren’t there, but still display the title. Wrap the two commands to clear the screen and show the title in a function named `SHOW_TITLE`.
 
 #### HINTS
 
-- Put the `clear` and `echo` commands in the function you are supposed to create
+- Put the `clear` and `echo` commands at the top in a function named `SHOW_TITLE`
 - |
   It should look like this:
   ```
@@ -1002,7 +1002,7 @@ It looks good, but I think that title screen should be at the top of each menu. 
 
 ### 750.1
 
-Call the `SHOW_TITLE` function at the top of each of the four menus.
+Call the `SHOW_TITLE` function at the top of each of the four menus so it clear the screen at each menu.
 
 #### HINTS
 
@@ -1024,7 +1024,7 @@ Run the script to make sure the title is showing up in the menus. Be sure to che
 
 ### 770.1
 
-I want you to add a few commands to make exiting a little more pleasant. First, make the `EXIT` function `sleep` for `2` seconds.
+I want you to add a few commands to make exiting a little more pleasant. First, make the `EXIT` function pause for `2` seconds with the `sleep` command.
 
 #### HINTS
 
@@ -1056,7 +1056,7 @@ Finally, run the `exit` command at the end of the function to make the program e
 
 ### 800.1
 
-Run the script and test out the `EXIT` menu.
+Run the script and test out the `EXIT` menu. It should give a nicer experience now :smile:
 
 #### HINTS
 
@@ -1067,152 +1067,147 @@ Run the script and test out the `EXIT` menu.
 
 ### 810.1
 
-Okay, the exit menu looks real good. Now you need to finish up the other two menus.
-
-psql --help
+Okay, the exit menu looks good. Now you need to finish up the other two menus. When you go to the "rent" menu, you will need to display the bikes available so you can pick one to rent. How on earth can you do that? In your bash terminal, view the `help` menu of the `psql` command to see if there's anything in there.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `--help` flag with the command
+- Enter `psql --help` into the terminal
 
 ## 820. Enter a psql command from the terminal
 
 ### 820.1
 
- `psql --username=freecodecamp --dbname=bikes -c "select * from bikes;"` - watch bash_history and check pglog for SELECT * FROM bikes;
+At the top of the menu there's a `-c` option to run a command and exit. That might help you out. Why don't you try it in the terminal first. Here's how I think that might look:
+
+```sh
+psql --username=your_username --dbname=database_name -c "SQL COMMAND;"
+```
+
+Your username is `freecodecamp` and the database name is `bikes`. In the terminal (not the psql one), run the command `SELECT * FROM bikes;` using the example above to see if you can get all the bikes from your database.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `psql --username=freecodecamp --dbname=bikes -c "select * from bikes;"` into the terminal
 
 ## 823. Enter a psql command from the terminal
 
 ### 823.1
 
-enter `psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;"` in the terminal
+Impressive. Except there's some settings or something that came back with the result. I saw a `-X` flag in that menu. Run the same command except add that flag right after `psql`. It should ignore those settings.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
-## 825. Enter a psql command from the terminal
-
-### 825.1
-
-enter `psql -X —username=freecodecamp --dbname=bikes —-tuples-only -c "select * from bikes;"` in the terminal.
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- That's a capital `X`
+- Enter `psql -X --username=freecodecamp --dbname=bikes -c "SELECT * FROM bikes;"` in the terminal
 
 ## 830. Enter a psql command from your script
 
 ### 830.1
 
-Echo that command instead of Rent Menu
-echo `psql -X --username=freecodecamp --dbname=bikes --tuples-only -c "select * from bikes;"`
+Okay, so now you know the command to get data from the database. Back in your script file, `echo` that command instead of `Rent Menu`. Put the command in a subprocess (`$(COMMAND)`) so it will run the command and then echo the result.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Change suggested line to this: `echo $(psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;")`
 
 ## 840. Run your script
 
 ### 840.1
 
-Run the script and go to the rent menu to see what you get
+Run your script and go to the rent menu to see what you get.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
-## 850. Enter the command in a subprocess
+## 845. View the psql Help Menu
+
+### 845.1
+
+Awesome! Check the `psql` help menu again. I want to see if there's a way to remove the top and bottom rows from the result. You won't need to display those.
+
+#### HINTS
+
+- Enter `psql --help` in the terminal
+
+## 850. Add tuples-only Flag
 
 ### 850.1
 
-Something isn't quite working. Put the command in a subprocess
-$(command);
+There's a flag that says "print rows only". Add that flag to your command.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The flag is `--tuples-only`
+- Add the flag between your database and `-c`
+- Make it look like this: `echo $(psql -X --username=freecodecamp --dbname=bikes --tuples-only -c "select * from bikes;")`
 
 ## 860. Run your script
 
 ### 860.1
 
-Run the script to see if the new command works
+Run the script again and go to the rent menu to see if those two rows are gone.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 920. Create `PSQL` Variable
 
 ### 920.1
 
-You are going to need to query the database a number of times throughout the rest of this project so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database.
-Create psql variable. eg 
-PSQL="psql -X --username=freecodecamp --dbname=bikes -c"
+You are going to need to query the database many more times so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database. Basically, it should be everything except the actual query so you can use it like this `$PSQL "SELECT * FROM bikes;"`
 
 #### HINTS
 
-- The part you want the variable to be is `"psql -X --username=freecodecamp --dbname=bikes -c"`
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The part you want the variable to be is `"psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
+- Add this at the of the file: `PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
 
 ## 930. Use `PSQL` Variable
 
 ### 930.1
 
-Use PSQL variable.
-PSQL="psql -X --username=freecodecamp --dbname=bikes --no-align --tuples-only -c"
+In your script, replace the first part of your `psql` command with your new variable.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- It should look like this: `$($PSQL "SELECT * FROM bikes;")`
 
 ## 940. Run the script
 
 ### 940.1
 
-Run the script
+Run the script and go to the rent menu to make sure it's still working.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 970. Create `AVAILABLE_BIKES` Variable
 
 ### 970.1
 
-Here's the command you used to get them before. `"$($PSQL "select * from bikes;")"`
-Create available bikes variable = select Where avaiable = 't'
+Okay, what's next. Instead of echoing all that data, why don't you put it in a variable named `AVAILABLE BIKES`. 
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Give it another try
+- Adjust the suggested line to this: `AVAILABLE_BIKES=$($PSQL "SELECT * FROM bikes;")`
 
 ## 980. Echo `AVAILABLE_BIKES`
 
 ### 980.1
 
-Echo your available bikes variable so you can see what it outputs.
+That actually looks pretty clean. Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken.
+
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- `echo $AVAILABLE_BIKES`
 
 ## 990. Run your script
 
@@ -1229,7 +1224,7 @@ Run your script and enter `2` to go to the `RENT_MENU` and make sure it's workin
 
 ### 1000.1
 
-You don't want to show all the rows and columns in your script. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and and the columns for the id, type, and size.
+You don't want to show all the rows and columns in your script. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the id, type, and size.
 
 #### HINTS
 
@@ -1347,6 +1342,17 @@ Run the script and go to the rent menu. It should take you to the main menu and 
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
+## 1095. Set bike availiabity to true
+
+### 1095.1
+
+Set bike availability back to true on psql terminal
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
 ## 1100. Add else to `RENT_MENU`
 
 ### 1100.1
@@ -1391,11 +1397,26 @@ Run the script and go to the rent menu to see the bikes.
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 1140. Set bike availiabity to true
+## 1140. Pipe Available Bikes into While loop
 
 ### 1140.1
 
-Set bike availability to true on psql
+That doesn't look very user friendly.
+    echo "$AVAILABLE_BIKES" | while IFS="|" read BIKE_ID TYPE SIZE
+    do
+      echo $BIKE_ID $TYPE $SIZE
+    done
+
+#### HINTS
+
+- Capitalization matters
+- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+
+## 1145. Adjust Available Bikes Display
+
+### 1145.1
+
+      echo "$BIKE_ID) $SIZE\" $TYPE Bike"
 
 #### HINTS
 
@@ -1406,7 +1427,7 @@ Set bike availability to true on psql
 
 ### 1150.1
 
-Run the script again to see if they show up this time.
+Run the script again to see what it looks like now.
 
 #### HINTS
 
@@ -1425,11 +1446,11 @@ add `echo -e "\nWhich one would you like to rent?"`
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 1170. read `BIKE_AVAILABILITY`
+## 1170. read `BIKE_ID_TO_RENT`
 
 ### 1170.1
 
-read `BIKE_AVAILABILITY`
+read `BIKE_ID_TO_RENT`
 
 #### HINTS
 
