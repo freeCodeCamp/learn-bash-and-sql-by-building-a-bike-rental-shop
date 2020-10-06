@@ -1416,7 +1416,7 @@ That doesn't look very user friendly.
 
 ### 1145.1
 
-      echo "$BIKE_ID) $SIZE\" $TYPE Bike"
+echo "$BIKE_ID) $SIZE\" $TYPE Bike"
 
 #### HINTS
 
