@@ -1164,7 +1164,7 @@ You are going to need to query the database many more times so I want you to mak
 #### HINTS
 
 - The part you want the variable to be is `"psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
-- Add this at the of the file: `PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
+- Add this at the top of the file: `PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
 
 ## 930. Use `PSQL` Variable
 
