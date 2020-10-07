@@ -1094,7 +1094,7 @@ Your username is `freecodecamp` and the database name is `bikes`. In the termina
 
 ### 823.1
 
-Impressive. Except there's some settings or something that came back with the result. I saw a `-X` flag in that menu. Run the same command except add that flag right after `psql`. It should ignore those settings.
+Impressive. Except there's some settings or something that came back with the result at the top there. I saw a `-X` flag in that menu. Run the same command except add that flag right after `psql`. It should ignore those settings.
 
 #### HINTS
 
@@ -1105,11 +1105,11 @@ Impressive. Except there's some settings or something that came back with the re
 
 ### 830.1
 
-Okay, so now you know the command to get data from the database. Back in your script file, `echo` that command instead of `Rent Menu`. Put the command in a subprocess (`$(COMMAND)`) so it will run the command and then echo the result.
+Okay, that's the command you can use to get data from the database. Back in your script file, `echo` that command instead of `Rent Menu`. Put the command in a subprocess, like this: `$(COMMAND)`, so it will run the command and then echo the result.
 
 #### HINTS
 
-- Change suggested line to this: `echo $(psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;")`
+- Change the suggested line to this: `echo $(psql -X --username=freecodecamp --dbname=bikes -c "select * from bikes;")`
 
 ## 840. Run your script
 
@@ -1126,7 +1126,7 @@ Run your script and go to the rent menu to see what you get.
 
 ### 845.1
 
-Awesome! Check the `psql` help menu again. I want to see if there's a way to remove the top and bottom rows from the result. You won't need to display those.
+Awesome! It’s all on one line, but I think you can work with that if you can just get rid of titles and that last part that says the number of rows. Check the `psql` help menu again.
 
 #### HINTS
 
