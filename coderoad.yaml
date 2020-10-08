@@ -803,6 +803,14 @@ levels:
             - ./bike-shop.sh
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
+  - id: '1142'
+    steps:
+      - id: '1142.1'
+        setup:
+          watchers:
+            - ../.bash_history
+          commands:
+            - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '1145'
     steps:
       - id: '1145.1'

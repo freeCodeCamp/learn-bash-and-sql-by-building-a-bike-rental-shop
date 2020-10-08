@@ -1159,10 +1159,12 @@ Run the script again and go to the rent menu to see if those two rows are gone.
 
 ### 920.1
 
-You are going to need to query the database many more times so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database. Basically, it should be everything except the actual query so you can use it like this `$PSQL "SELECT * FROM bikes;"`
+You are going to need to query the database times so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database. Basically, it should be everything except the actual query so you can use it like this `$PSQL "SELECT * FROM bikes;"` Be sure to put the variable in double quotes.
 
 #### HINTS
 
+- You want the variable to be everything from `psql` to `-c`
+- Be sure to put it all in double quotes
 - The part you want the variable to be is `"psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
 - Add this at the top of the file: `PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c"`
 
@@ -1191,10 +1193,11 @@ Run the script and go to the rent menu to make sure it's still working.
 
 ### 970.1
 
-Okay, what's next. Instead of echoing all that data, why don't you put it in a variable named `AVAILABLE BIKES`. 
+Okay, what's next. Instead of echoing all that data, why don't you put it in a variable named `AVAILABLE_BIKES`.
 
 #### HINTS
 
+- Don't use `echo`, put the result in a variable named `AVAILABLE_BIKES`
 - Give it another try
 - Adjust the suggested line to this: `AVAILABLE_BIKES=$($PSQL "SELECT * FROM bikes;")`
 
@@ -1202,7 +1205,7 @@ Okay, what's next. Instead of echoing all that data, why don't you put it in a v
 
 ### 980.1
 
-That actually looks pretty clean. Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken.
+Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken.
 
 #### HINTS
 
@@ -1212,34 +1215,37 @@ That actually looks pretty clean. Why don't you echo the variable now below that
 
 ### 990.1
 
-Run your script and enter `2` to go to the `RENT_MENU` and make sure it's working.
+Run your script and go to the rent menu to make sure it's still working.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1000. Select Columns from Bikes in psql Prompt
 
 ### 1000.1
 
-You don't want to show all the rows and columns in your script. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the id, type, and size.
+You only want to show the rows and columns that matter. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the bike_id, type, and size. Be sure to use single quotes where needed.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
+- Use the `SELECT`, `FROM`, and `WHERE` keywords
+- The `WHERE` condition should be `available='t'`
+- Enter `SELECT bike_id, type, size FROM bikes WHERE available='t';` in the psql prompt
 
 ## 1010. Add the command to your script
 
 ### 1010.1
 
-That's the query you want in your script to only display the info needed. Add that query in place of your query in AVAILABLE_BIKES.
+That's the query you want in your script to only display the info needed. Add it in place of your query for the `AVAILABLE_BIKES`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Change the query in the `AVAILABLE_BIKES` variable to the one you just entered
+- Make the suggested line look like this: `AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available='t';")`
 
 ## 1020. Run the script
 
@@ -1249,46 +1255,61 @@ Run the script and go to the rent menu to see the output.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1030. Set available to false
 
 ### 1030.1
 
-Okay, now you can see the bike_id and the info you need. Set available to false for all the bikes in the psql prompt.
+Okay, now you can see the `bike_id` and the info you need. Back in the psql terminal, set `available` to `false` for all the bikes so you can see what happens if there's no bikes available.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `UPDATE`, `SET` and `WHERE` keywords
+- You want to `SET` available to false `WHERE` available is true
+- Enter `UPDATE bikes SET available='f' WHERE available='t';` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1040. Run the script
 
 ### 1040.1
 
-Run the script and go to the rent menu
+Run the script and go to the rent menu.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1050. Add if condition
 
 ### 1050.1
 
-add 
+Now there's nothing showing. You could probably add a condition for when there's no bikes available. Add an `if` condition that checks if the `AVAILABLE_BIKES` variable is empty and, if it is, go to the `MAIN_MENU`. Here's how that looks:
+
 ```sh
-if [[ -z $BIKES_AVAILABLE ]]
-then 
-	MAIN_MENU
+if [[ CONDITION ]]
+then
+  STATEMENTS
 fi
 ```
+
+Use `-z` to check if your variable is empty.
+
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`
+- You want to run `MAIN_MENU` if the condition is true
+- |
+  Add this code in the suggested area:
+  ```sh
+  if [[ -z $AVAILABLE_BIKES ]]
+  then
+    MAIN_MENU
+  fi
+  ```
 
 ## 1060. Run the script
 
@@ -1298,26 +1319,25 @@ Run the script and go to the rent menu to see if you are sent back to the main m
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1070. Add argument to `MAIN_MENU`
 
 ### 1070.1
 
-It looks like it works, but you could use a message there. I would like the `MAIN_MENU` to display a message if there's a problem. I think you should have an option when you go to the main menu to display a message. You can add a parameter after the function.
-add `MAIN_MENU "Sorry, we don't have any bikes available right now."`
+It looks like it works, but I think you should have an option when you go to the main menu to display a message. Add a paramenter to where you call `MAIN_MENU` that says `"Sorry, we don't have any bikes available right now."`. Basically, just put that text after the call. You will adjust the function to print that parameter in the next step.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Make the suggested line look like this: `MAIN_MENU "Sorry, we don't have any bikes available right now."`
 
 ## 1080. Add error message to `MAIN_MENU`
 
 ### 1080.1
 
-Add this to `MAIN_MENU`
+Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` condition to your `MAIN_MENU` function that checks if there's a parameter. If there is, `echo` it and a new line (`\n`).
+
 ```sh
   if [[ $1 ]]
   then
@@ -1327,52 +1347,80 @@ Add this to `MAIN_MENU`
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The condition you want is `if [[ $1 ]]`
+- In the `then`, echo `"$1\n"`
+- Be sure to use the correct flag with the echo command
+- Run your script and go to the rent menu if you want to see if it's working
+- |
+  Add this code in the suggested area:
+  ```sh
+  if [[ $1 ]]
+  then
+    echo -e "$1\n"
+  fi
+  ```
 
 ## 1090. Run the script
 
 ### 1090.1
 
-Run the script and go to the rent menu. It should take you to the main menu and give a message.
+Run the script and go to the rent menu. It should take you to the main menu and give your message.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1095. Set bike availiabity to true
 
 ### 1095.1
 
-Set bike availability back to true on psql terminal
+Excellent :smile: In the psql prompt, set the bike availability back to true for all the bikes so you can continue on with the rest of the program.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `UPDATE`, `SET` and `WHERE` keywords
+- You want to `SET` available to true `WHERE` available is false
+- Enter `UPDATE bikes SET available='t' WHERE available='f';` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1100. Add else to `RENT_MENU`
 
 ### 1100.1
 
-Add an else condition to the `RENT_MENU` for when there are bikes available.
+So you added an `if` to send people to the main menu if there's no bikes. Add an `else` to that `if` statement for when there is bikes. Put that existing command to echo the bikes in the else area.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- |
+  Here's an example:
+  ```sh
+  if [[ CONDITION ]]
+  then
+    STATEMENTS
+  else
+    STATEMENTS
+  fi
+- 
+- |
+  Make the else area look like this:
+  ```sh
+  else
+    echo "$AVAILABLE_BIKES"
+  fi
+  ```
 
 ## 1110. Echo Bikes Available Text
 
 ### 1110.1
 
-add `echo -e "Here are the bikes we have available:\n"` in your else condition
+Right before you echo all the bikes, echo this message `Here are the bikes we have available:`. Put a new line at the end of messsage.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Don't forget the `-e` flag and the new line at the end
+- Add this code in the suggested area: `echo -e "Here are the bikes we have available:\n"`
 
 ## 1130. Run the script
 
@@ -1382,36 +1430,51 @@ Run the script and go to the rent menu to see the bikes.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1140. Pipe Available Bikes into While loop
 
 ### 1140.1
 
-That doesn't look very user friendly.
+Okay, this isn't bad. I wonder if you can make this a little prettier. Instead of directly echoing your bikes to the screen, `pipe` the output into a `while` loop that reads each word. Here's how that looks:
+
 ```sh
-echo "$AVAILABLE_BIKES" | while IFS="|" read BIKE_ID TYPE SIZE
+echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR1 TYPE BAR2 SIZE
 do
   echo $BIKE_ID $TYPE $SIZE
 done
 ```
 
+It will read the first line of your results into those five variables for you to use in the `do` area. When it gets to a new line, it reads the next five words into the variables again.
+
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add the code above to the suggested area
+
+## 1142. Run the script
+
+### 1142.1
+
+Run the script to see if your information is being printed to the screen.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1145. Adjust Available Bikes Display
 
 ### 1145.1
 
-echo "$BIKE_ID) $SIZE\" $TYPE Bike"
+That looks pretty good. Adjust the echo command so that each line looks like this: `BIKE_ID) SIZE" TYPE Bike`. Here's what the first one would look like: `1) 27" Mountain Bike`. You don't need any new line characters.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Run your script and check the output if you want to see if it matches the suggestion
+- Don't forget to escape characters if you need to
+- You can do this! Give it another try
+- Make the suggested line look like this: `echo "$BIKE_ID) $SIZE\" $TYPE Bike"`
 
 ## 1150. Run the script
 
@@ -1421,28 +1484,27 @@ Run the script again to see what it looks like now.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1160. Ask for Bike To Rent
 
 ### 1160.1
 
-Okay, that seems to be working.
-add `echo -e "\nWhich one would you like to rent?"`
+Awesome, add another echo command after your loop with the message: `"Which one would you like to rent?"`. Put a new line character at the beginning of the message.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Use the `echo` command with `-e` flag
+- Be sure to add the new line at the beginning of the message
+- Add this to the suggested area: `echo -e "\nWhich one would you like to rent?"`
 
 ## 1170. read `BIKE_ID_TO_RENT`
 
 ### 1170.1
 
-read `BIKE_ID_TO_RENT`
+Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`.
 
 #### HINTS
 
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
