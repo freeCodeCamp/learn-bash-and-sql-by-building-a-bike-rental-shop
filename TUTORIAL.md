@@ -1506,5 +1506,5 @@ Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`.
 
 #### HINTS
 
+- Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
-- Hint 2
