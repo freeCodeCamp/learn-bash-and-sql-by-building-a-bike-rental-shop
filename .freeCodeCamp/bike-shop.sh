@@ -38,11 +38,10 @@ RENT_MENU () {
   else
     echo -e "Here are the bikes we have available:\n"
 
-    # Change code below this line
-    echo "$AVAILABLE_BIKES"
-
-
-		# Change code above this line
+		echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR1 TYPE BAR2 SIZE
+		do
+			echo $BIKE_ID $TYPE $SIZE
+		done
   fi
 }
 

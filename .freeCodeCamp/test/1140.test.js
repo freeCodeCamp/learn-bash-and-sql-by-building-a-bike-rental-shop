@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your "RENT_MENU" function', () => {
@@ -10,4 +10,4 @@ describe('Your "RENT_MENU" function', () => {
   it('should pipe the "AVAILABLE" bikes variable to the correct "while" loop', async () => {
     assert(false);
   });
-});
+});*/
