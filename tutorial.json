@@ -2548,7 +2548,7 @@
           },
           "content": "Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken.",
           "hints": [
-            "`echo $AVAILABLE_BIKES`"
+            "Add this to the suggested area: `echo $AVAILABLE_BIKES`"
           ]
         }
       ]
@@ -2911,7 +2911,6 @@
           "content": "So you added an `if` to send people to the main menu if there's no bikes. Add an `else` to that `if` statement for when there is bikes. Put that existing command to echo the bikes in the else area.",
           "hints": [
             "|\n  Here's an example:\n  ```sh\n  if [[ CONDITION ]]\n  then\n    STATEMENTS\n  else\n    STATEMENTS\n  fi",
-            "",
             "|\n  Make the else area look like this:\n  ```sh\n  else\n    echo \"$AVAILABLE_BIKES\"\n  fi\n  ```"
           ]
         }
