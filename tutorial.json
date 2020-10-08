@@ -2744,7 +2744,7 @@
           "hints": [
             "The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`",
             "You want to run `MAIN_MENU` if the condition is true",
-            "|\n  Add this code in the suggested area:\n  ```sh\n  if [[ -z $AVAILABLE_BIKES ]]\n  then\n    MAIN_MENU\n  fi\n  ```"
+            "test"
           ]
         }
       ]
@@ -2827,7 +2827,7 @@
             "In the `then`, echo `\"$1\\n\"`",
             "Be sure to use the correct flag with the echo command",
             "Run your script and go to the rent menu if you want to see if it's working",
-            "|\n  Add this code in the suggested area:\n  ```sh\n  if [[ $1 ]]\n  then\n    echo -e \"$1\\n\"\n  fi\n  ```"
+            "test"
           ]
         }
       ]
@@ -2910,8 +2910,7 @@
           },
           "content": "So you added an `if` to send people to the main menu if there's no bikes. Add an `else` to that `if` statement for when there is bikes. Put that existing command to echo the bikes in the else area.",
           "hints": [
-            "|\n  Here's an example:\n  ```sh\n  if [[ CONDITION ]]\n  then\n    STATEMENTS\n  else\n    STATEMENTS\n  fi",
-            "|\n  Make the else area look like this:\n  ```sh\n  else\n    echo \"$AVAILABLE_BIKES\"\n  fi\n  ```"
+            "test"
           ]
         }
       ]

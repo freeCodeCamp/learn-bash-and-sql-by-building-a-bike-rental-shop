@@ -1302,7 +1302,14 @@ Use `-z` to check if your variable is empty.
 
 - The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`
 - You want to run `MAIN_MENU` if the condition is true
-- test
+- |
+  Add this code in the suggested area:
+  ```sh
+  if [[ -z $AVAILABLE_BIKES ]]
+  then
+    MAIN_MENU
+  fi
+  ```
 
 ## 1060. Run the script
 
@@ -1344,7 +1351,14 @@ Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` co
 - In the `then`, echo `"$1\n"`
 - Be sure to use the correct flag with the echo command
 - Run your script and go to the rent menu if you want to see if it's working
-- test
+- |
+  Add this code in the suggested area:
+  ```sh
+  if [[ $1 ]]
+  then
+    echo -e "$1\n"
+  fi
+  ```
 
 ## 1090. Run the script
 
@@ -1379,7 +1393,22 @@ So you added an `if` to send people to the main menu if there's no bikes. Add an
 
 #### HINTS
 
-- test
+- |
+  Here's an example:
+  ```sh
+  if [[ CONDITION ]]
+  then
+    STATEMENTS
+  else
+    STATEMENTS
+  fi
+- |
+  Make the else area look like this:
+  ```sh
+  else
+    echo "$AVAILABLE_BIKES"
+  fi
+  ```
 
 ## 1110. Echo Bikes Available Text
 
