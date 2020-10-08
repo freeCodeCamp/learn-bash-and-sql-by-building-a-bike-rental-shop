@@ -1209,7 +1209,7 @@ Why don't you echo the variable now below that. This is finicky stuff, so you wa
 
 #### HINTS
 
-- `echo $AVAILABLE_BIKES`
+- Add this to the suggested area: `echo $AVAILABLE_BIKES`
 
 ## 990. Run your script
 
@@ -1402,7 +1402,6 @@ So you added an `if` to send people to the main menu if there's no bikes. Add an
   else
     STATEMENTS
   fi
-- 
 - |
   Make the else area look like this:
   ```sh
