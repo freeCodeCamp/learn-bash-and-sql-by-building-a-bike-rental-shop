@@ -1374,17 +1374,6 @@ add `echo -e "Here are the bikes we have available:\n"` in your else condition
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
 
-## 1120. Echo List of Bikes Available
-
-### 1120.1
-
-add `echo $AVAILABLE_BIKES`
-
-#### HINTS
-
-- Capitalization matters
-- If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-
 ## 1130. Run the script
 
 ### 1130.1

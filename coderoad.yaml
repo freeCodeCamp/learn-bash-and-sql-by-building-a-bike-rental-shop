@@ -787,14 +787,6 @@ levels:
             - ./bike-shop.sh
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
-  - id: '1120'
-    steps:
-      - id: '1120.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-          commands:
-            - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '1130'
     steps:
       - id: '1130.1'
