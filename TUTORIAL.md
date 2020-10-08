@@ -1336,27 +1336,19 @@ It looks like it works, but I think you should have an option when you go to the
 
 ### 1080.1
 
-Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` condition to your `MAIN_MENU` function that checks if there's a parameter. If there is, `echo` it and a new line (`\n`).
-
-```sh
-  if [[ $1 ]]
-  then
-    echo -e "$1\n"
-  fi
-```
+Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` condition to your `MAIN_MENU` function that checks if there's a parameter. If there is, `echo` it. Don't use and quotes or flags in the echo command.
 
 #### HINTS
 
 - The condition you want is `if [[ $1 ]]`
-- In the `then`, echo `"$1\n"`
-- Be sure to use the correct flag with the echo command
+- In the `then`, echo `$1`
 - Run your script and go to the rent menu if you want to see if it's working
 - |
   Add this code in the suggested area:
   ```sh
   if [[ $1 ]]
   then
-    echo -e "$1\n"
+    echo $1
   fi
   ```
 
@@ -1508,3 +1500,72 @@ Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`.
 
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1180. Create `BIKE_AVAILABILITY` Variable
+
+### 1180.1
+
+add
+```sh
+BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
+```
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1190. Echo `BIKE_AVAILABILITY` Variable
+
+### 1190.1
+
+add
+```sh
+BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
+```
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1200. Run the script
+
+### 1200.1
+
+Run the script and enter a bike that is available.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1210. Add catch for unavailable bikes
+
+### 1210.1
+
+So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` sends users to the `MAIN_MAIN` with the message
+
+add
+```sh
+if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]
+then
+  MAIN_MENU "That bike is not available."
+fi
+```
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1220. Ask for phone number
+
+### 1220.1
+
+Add an else to your if statement for when the bike entered is available. Echo the text `"What's your phone number?"`
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
