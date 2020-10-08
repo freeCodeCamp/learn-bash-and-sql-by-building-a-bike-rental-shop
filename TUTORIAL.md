@@ -1205,11 +1205,11 @@ Okay, what's next. Instead of echoing all that data, why don't you put it in a v
 
 ### 980.1
 
-Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken.
+Why don't you echo the variable now below that. This is finicky stuff, so you want to make sure it hasn't broken. Make sure to put it in double quotes.
 
 #### HINTS
 
-- Add this to the suggested area: `echo $AVAILABLE_BIKES`
+- Add this to the suggested area: `echo "$AVAILABLE_BIKES"`
 
 ## 990. Run your script
 
