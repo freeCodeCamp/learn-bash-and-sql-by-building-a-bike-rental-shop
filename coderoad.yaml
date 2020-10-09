@@ -19,6 +19,9 @@ config:
   repo:
     uri: https://github.com/moT01/learn-bash-and-sql-by-building-a-bike-rental-shop
     branch: v0.1.9
+  reset:
+    commands:
+      - 'cp ./.freeCodeCamp/bike-shop.sh .'
   dependencies:
     - name: node
       version: '>=10'
