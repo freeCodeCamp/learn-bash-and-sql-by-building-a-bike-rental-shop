@@ -1226,7 +1226,7 @@ Run your script and go to the rent menu to make sure it's still working.
 
 ### 1000.1
 
-I guess the double quotes made it display better :smile: You only want to show the rows and columns that matter. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the bike_id, type, and size. Be sure to use single quotes where needed.
+I guess the double quotes made it display better :smile: You only want to show the rows and columns that matter. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the `bike_id`, `type`, and `size`.
 
 #### HINTS
 
@@ -1302,8 +1302,7 @@ Use `-z` to check if your variable is empty.
 
 - The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`
 - You want to run `MAIN_MENU` if the condition is true
-- |
-  Add this code in the suggested area:
+- Add this code in the suggested area:
   ```sh
   if [[ -z $AVAILABLE_BIKES ]]
   then
@@ -1315,7 +1314,7 @@ Use `-z` to check if your variable is empty.
 
 ### 1060.1
 
-Run the script and go to the rent menu to see if you are sent back to the main menu when there's no bikes available.
+Run the script and go to the rent menu to see if you are sent back to the main menu when there's no bikes available. Stop the script when you are done with `control+c` or using the `Exit` option.
 
 #### HINTS
 
@@ -1343,8 +1342,7 @@ Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` co
 - The condition you want is `if [[ $1 ]]`
 - In the `then`, echo `$1`
 - Run your script and go to the rent menu if you want to see if it's working
-- |
-  Add this code in the suggested area:
+- Add this code in the suggested area:
   ```sh
   if [[ $1 ]]
   then
@@ -1385,8 +1383,7 @@ So you added an `if` to send people to the main menu if there's no bikes. Add an
 
 #### HINTS
 
-- |
-  Here's an example:
+- Here's an example:
   ```sh
   if [[ CONDITION ]]
   then
@@ -1394,8 +1391,7 @@ So you added an `if` to send people to the main menu if there's no bikes. Add an
   else
     STATEMENTS
   fi
-- |
-  Make the else area look like this:
+- Make the else area look like this:
   ```sh
   else
     echo "$AVAILABLE_BIKES"
@@ -1558,9 +1554,31 @@ fi
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1220. Ask for phone number
+## 1220. Remove echo `BIKE_AVAILABILITY`
 
 ### 1220.1
+
+Remove the line where you echo if the bike is available or not since you don't actually want to display that.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1230. Run the script
+
+### 1230.1
+
+Run the script and go to the rent menu, put in a bike that doesn't exist.
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1240. Ask for phone number
+
+### 1240.1
 
 Add an else to your if statement for when the bike entered is available. Echo the text `"What's your phone number?"`
 
@@ -1569,9 +1587,9 @@ Add an else to your if statement for when the bike entered is available. Echo th
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1230. read `PHONE_NUMBER`
+## 1250. read `PHONE_NUMBER`
 
-### 1230.1
+### 1250.1
 
 Read user input into a `PHONE_NUMBER` variable.
 
@@ -1580,9 +1598,9 @@ Read user input into a `PHONE_NUMBER` variable.
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1240. Look for customer name
+## 1260. Look for customer name
 
-### 1240.1
+### 1260.1
 
 Okay, you have their phone number, now you need to see if they are an existing customer. Create a `CUSTOMER_NAME` variable...
 
@@ -1593,9 +1611,9 @@ Okay, you have their phone number, now you need to see if they are an existing c
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1250. Ask for new customers name
+## 1270. Ask for new customers name
 
-### 1250.1
+### 1270.1
 
 If they aren't an existing customer, you need to add a new entry in the database. Ask for their name.
 ```sh
@@ -1610,9 +1628,9 @@ If they aren't an existing customer, you need to add a new entry in the database
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1260. read `CUSTOMER_NAME`
+## 1280. read `CUSTOMER_NAME`
 
-### 1260.1
+### 1280.1
 
 read `CUSTOMER_NAME` variable
 
@@ -1621,12 +1639,12 @@ read `CUSTOMER_NAME` variable
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1270. Insert new customer into the database
+## 1290. Insert new customer into the database
 
-### 1270.1
+### 1290.1
 
 ```sh
-$($PSQL "INSERT INTO customers(name, phone) values('$CUSTOMER_NAME', '$PHONE_NUMBER');")
+INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) values('$CUSTOMER_NAME', '$PHONE_NUMBER');")
 ```
 
 #### HINTS
@@ -1634,9 +1652,9 @@ $($PSQL "INSERT INTO customers(name, phone) values('$CUSTOMER_NAME', '$PHONE_NUM
 - Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
 
-## 1280. Run the script
+## 1300. Run the script
 
-### 1280.1
+### 1300.1
 
 Run the script and go to the rent menu. Enter a phone number and customer name.
 
@@ -1645,36 +1663,38 @@ Run the script and go to the rent menu. Enter a phone number and customer name.
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1290. Check for new customer in psql prompt
-
-### 1290.1
-
-In your psql prompt, view all the data in the customers table to see if your new customer got created.
-
-#### HINTS
-
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
-
-## 1300. Get `CUSTOMER_ID`
-
-### 1300.1
-
-Back in your script, Now that you know a customer has been created. You need to find out their ID so you can add it to the rentals table.
-
-#### HINTS
-
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
-
-## 1310. Add rental to the database
+## 1310. Check for new customer in psql prompt
 
 ### 1310.1
+
+View all the data in the customers table to see if your new customer got created.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1320. Get `CUSTOMER_ID`
+
+### 1320.1
+
+Looks like the customer got inserted. Back in your script, Now that you know a customer has been created. You need to find out their ID so you can add it to the rentals table.
+add:
+`CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER';")`
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1330. Add rental to the database
+
+### 1330.1
 
 You have the customer_id and the bike_id they want to rent. Time to add their rental to the databse. Create `ADD_RENTAL_RESULT`
 
 ```sh
-ADD_RENTAL_RESULT=$($CONNECT "INSERT INTO rentals(customer_id, bike_id) values($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
+ADD_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) values($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
 ```
 
 #### HINTS
@@ -1682,20 +1702,9 @@ ADD_RENTAL_RESULT=$($CONNECT "INSERT INTO rentals(customer_id, bike_id) values($
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1320. Echo `ADD_RENTAL_RESULT`
+## 1340. Run the script
 
-### 1320.1
-
-Echo `ADD_RENTAL_RESULT` so you can see what you get
-
-#### HINTS
-
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
-
-## 1330. Run the script
-
-### 1330.1
+### 1340.1
 
 Run the script and go to the rent menu again. Enter a phone number and customer name so you can see if it gets added to the database.
 
@@ -1704,40 +1713,22 @@ Run the script and go to the rent menu again. Enter a phone number and customer 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1340. Check database for new rental
-
-### 1340.1
-
-"INSERT 0 1". That must be it worked. In the psql prompt, take a look at all the data in the `rentals` table to make sure your new rental is there.
-
-#### HINTS
-
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
-
-## 1350. Add condition for failed rental insert
+## 1350. Check database for new rental
 
 ### 1350.1
 
-Awesome. Just some insurance, put an `if` condition in there that checks if your `ADD_RENTAL_RESULT` is not equal to `INSERT 0 1`. If it's not equal to that, send them to the `MAIN_MENU` with the message `Something went wrong trying to add the rental to the database.`
-
-```sh
-if [[ $ADD_RENTAL_RESULT != "INSERT 0 1" ]]
-then
-  MAIN_MENU "Something went wrong trying to add the rental to the database."
-fi
-```
+In the psql prompt, take a look at all the data in the `rentals` table to make sure your new rental is
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1360. Delete echo `ADD_RENTAL_RESULT`
+## 1360. View all in bikes table
 
 ### 1360.1
 
-Delete the echo $ADD_RENTAL_RESULT line
+In the psql prompt, view all the data in the bikes table
 
 #### HINTS
 
@@ -1748,7 +1739,7 @@ Delete the echo $ADD_RENTAL_RESULT line
 
 ### 1370.1
 
-Now that the rental has been added, the bike should no longer be available.
+The available row didn't get set to false for the bike you rented so you need to set that to false next. Add a command to do that.
 
 ```sh
 SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available=false WHERE bike_id=$BIKE_ID_TO_RENT;")
@@ -1759,31 +1750,9 @@ SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available=false WHERE bike_id=$BIK
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1380. echo `SET_TO_FALSE_RESULT`
+## 1380. Run the script
 
 ### 1380.1
-
-Echo `SET_TO_FALSE_RESULT`
-
-#### HINTS
-
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
-
-## 1390. Remove all rentals
-
-### 1390.1
-
-Before you test out your script. Go in the psql prompt and delete the rental that was added before.
-
-#### HINTS
-
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
-
-## 1400. Run the script
-
-### 1400.1
 
 Run the script and go to the rent menu again. You should have a customer record in the database now, so you can use that phone number or create a new one :smile:
 
@@ -1792,9 +1761,20 @@ Run the script and go to the rent menu again. You should have a customer record 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1410. Select all from bikes
+## 1390. Select all from rentals
 
-### 1410.1
+### 1390.1
+
+In the psql prompt, take a look at all the data in your rentals table. There should be another new rental.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1400. Select all from bikes
+
+### 1400.1
 
 In the psql prompt, take a look at all the data in your bikes table. There should now be a bike that's false.
 
@@ -1803,42 +1783,401 @@ In the psql prompt, take a look at all the data in your bikes table. There shoul
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1420. Run the script
+## 1410. Run the script
+
+### 1410.1
+
+Run the script again and go to the rent menu, there should now be one less bike that is displayed, since it is not available. Be sure to exit the script when you are done.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1420. Get `BIKE_TYPE`
 
 ### 1420.1
 
-Run the script again and go to the rent menu, there should now be one less bike there.
+Get `BIKE_TYPE=$($PSQL "SELECT type FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;"`
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1430. Delete echo 
+## 1430. Get `BIKE_SIZE`
 
 ### 1430.1
 
-Delete the echo $ADD_RENTAL_RESULT line
+Get `BIKE_SIZE=$($PSQL "SELECT size FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")`
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1440. Add condition for failed update
+## 1440. Successful rent message
 
 ### 1440.1
 
-Add a condition for...
+add:
+`MIN_MENU "I have put you down for the $BIKE_SIZE\" $BIKE_TYPE Bike, $CUSTOMER_NAME."`
 
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1450. Run the script
+
+### 1450.1
+
+Run the script and rent a bike. Make sure it takes you to the main menu and gives the message. When you're done, exit the program.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1460. Run the script
+
+### 1460.1
+
+Okay, I think the renting part is looking good. Last is the ability to return a bike. I suppose the logic for that would be to get their phone number, check if they have any rentals, ask them what bike to return, and update the rental and bike records. First, change that placeholder message still in your `RETURN_MENU` function with `What's your phone number?` 
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1470. Read `PHONE_NUMBER`
+
+### 1470.1
+
+Use `read` to get input into a `PHONE_NUMBER` variable.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1480. Select All from bikes
+
+### 1480.1
+
+Okay, so how can you find out what rentals a person has from their phone number? You need their `customer_id` since that's what is stored in the `rentals` table to find out what rentals they have. And once you find that out, you need to get the bike info for the bikes they have rented. :astonished: :cold_sweat: In the psql prompt, enter a command to select all the rows and columns from the bikes table.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1490. Left outer join bikes on rentals
+
+### 1490.1
+
+You need to use `JOIN` to add info from another table to that command. Add this to the end of the command you just entered: `LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id;`. That will get all the columns from the bikes and rentals table.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1500. Left outer join bikes on rentals
+
+### 1500.1
+
+So you can get info from those two tables, but you need the column for the customers phone number from the third table. You can add another join for that. `Add LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id` to the end of the last command. You may need to make the window a little wider to see the output.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1510. Add conditions to the query
+
+### 1510.1
+
+Now you're getting the info from all three tables :smile: But you only need the current rentals for the customer who's phone number you are looking for. Add two `WHERE` conditions to the end of the last command. One should phone number, use one of the phone numbers shown. The second should be to only show items where the bike hasn't been returned yet. You can do that with `date_returned IS NULL`
+`SELECT * FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='$PHONE_NUMBER' AND date_returned is null;`
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1520. Select only specific columns
+
+### 1520.1
+
+That's a big query, but you're not done yet. You only need a few of those columns, select just the `bike_id`, `type`, and `size` columns. Since there's two `bike_id` columns, PostgreSQL needs to know what table you want that column from. Tell it to use the bikes table like this: `bikes.bike_id`
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1530. Add `CUSTOMER_RENTALS`
+
+### 1530.1
+
+Take that giant query and put it in a variable named `CUSTOMER_RENTALS` in your `RETURN_MENU` function. In the condition of the query, use the `PHONE_NUMBER` variable instead of the hard-coded value.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1540. Echo `CUSTOMER_RENTALS`
+
+### 1540.1
+
+Echo the `CUSTOMER_RENTALS` variable.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1550. Run the script
+
+### 1550.1
+
+Run the script and go to the return menu. Enter `555-5555` for the phone number to see the rentals for me.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1560. Add `if` for no rentals found
+
+### 1560.1
+
+Okay, it looks like it's working. Add and `if` condition after your variable that sends users to the main menu if the variable is empty. Add the message, `I could not find any rentals for that phone number`
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1570. Add else to the if
+
+### 1570.1
+
+Add an `else` to the if statement. Keep the echo in it.
 ```sh
-      if [[ $UPDATE_AVAILABILITY_RESULT != "UPDATE 1" ]]
-      then
-        MAIN_MENU "Something went wrong trying to update the bike availability"
-      fi
+else
+    echo "$CUSTOMERS_RENTALS"
+fi
 ```
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1580. Pipe and Loop
+
+### 1580.1
+
+You need to pipe those results into a while loop again and read the info into a variable so you can make it pretty.
+add
+```sh
+echo "$CUSTOMERS_RENTALS" | while read BIKE_ID BAR1 TYPE BAR2 SIZE
+do
+  echo "$BIKE_ID) $SIZE\" $TYPE Bike"
+done
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1590. Ask which bike to return
+
+### 1590.1
+
+```sh
+    echo -e "\nWhich bike would you like to return?"
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1600. read `BIKE_ID_TO_RETURN`
+
+### 1600.1
+
+```sh
+read BIKE_ID_TO_RETURN
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1610. Select with Left outer join
+
+### 1610.1
+
+```sql
+SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id;
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1620. Add conditions to the query
+
+### 1620.1
+
+```sh
+WHERE phone='555-5555' AND date_returned IS NULL AND bike_id=1;")
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1630. Create BIKE_RENTED
+
+### 1630.1
+
+```sh
+BIKE_IS_RENTED=$($PSQL "SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='$PHONE_NUMBER' AND date_returned is null AND bike_id=$BIKE_ID_TO_RETURN;")
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1640. echo BIKE_RENTED
+
+### 1640.1
+
+echo `BIKE_RENTED`
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1650. Run the script
+
+### 1650.1
+
+Run the script and go to the return menu. Enter 555-5555 when asked for a phone number and pick a bike to return. so you can see if the query is working.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1660. Run the script
+
+### 1660.1
+
+Run the script and go to the return menu. Enter 555-5555 when asked for a phone number so you can see if the query is working. Try running it twice, once with the bike I have rented and once without.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1670. Add if for when customer enters wrong bike to return
+
+### 1670.1
+
+Add if for when customer enters wrong bike to return.
+```sh
+MAIN_MENU "You do not have that bike."
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1680. Add Else
+
+### 1680.1
+
+add else.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1690. Add `RETURN_BIKE_RESULT`
+
+### 1690.1
+
+Remove the echo, and add RETURN_BIKE_RESULT
+```sh
+RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned=now() WHERE bike_id=$BIKE_ID_TO_RETURN;")
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1700. Add `RETURN_BIKE_RESULT`
+
+### 1700.1
+
+Remove the echo, and add RETURN_BIKE_RESULT
+```sh
+RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned=now() WHERE bike_id=$BIKE_ID_TO_RETURN;")
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1710. Add `SET_TO_TRUE_RESULT`
+
+### 1710.1
+
+Add
+```sh
+SET_TO_TRUE_RESULT=$($PSQL "UPDATE bikes SET available=true WHERE $BIKE_ID_TO_RETURN)
+```
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1720. Add `SET_TO_TRUE_RESULT`
+
+### 1720.1
+
+Finally, send them to the main menu with the message "Thank you for returning your bike."
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Make sure you are in the `project` folder first
+
+## 1730. Add `SET_TO_TRUE_RESULT`
+
+### 1730.1
+
+This is the last step :smile: Run the script, try renting a bike and returning a bike. Verify that it's all working.
+
+#### HINTS
+
+- Be sure to use a subprocess and your `PSQL` variable like the other queries
 - Make sure you are in the `project` folder first
