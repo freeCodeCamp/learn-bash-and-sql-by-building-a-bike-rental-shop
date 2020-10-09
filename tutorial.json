@@ -3125,10 +3125,7 @@
               "6bebcdbd900384bf6ef8dfedaa1547492aade1cb"
             ]
           },
-          "content": "Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`.",
-          "hints": [
-            "Add this to the suggested area: `read BIKE_ID_TO_RENT`"
-          ]
+          "content": "Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`."
         }
       ]
     }

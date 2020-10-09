@@ -1498,4 +1498,347 @@ Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`.
 
 #### HINTS
 
+- Use the `read` command to get input
 - Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1180. Create `BIKE_AVAILABILITY` Variable
+
+### 1180.1
+
+add
+```sh
+BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
+```
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1190. Echo `BIKE_AVAILABILITY` Variable
+
+### 1190.1
+
+add
+```sh
+BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
+```
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1200. Run the script
+
+### 1200.1
+
+Run the script and enter a bike that is available.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1210. Add catch for unavailable bikes
+
+### 1210.1
+
+So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` sends users to the `MAIN_MAIN` with the message
+
+add
+```sh
+if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]
+then
+  MAIN_MENU "That bike is not available."
+fi
+```
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1220. Ask for phone number
+
+### 1220.1
+
+Add an else to your if statement for when the bike entered is available. Echo the text `"What's your phone number?"`
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1230. read `PHONE_NUMBER`
+
+### 1230.1
+
+Read user input into a `PHONE_NUMBER` variable.
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1240. Look for customer name
+
+### 1240.1
+
+Okay, you have their phone number, now you need to see if they are an existing customer. Create a `CUSTOMER_NAME` variable...
+
+`CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone='$PHONE_NUMBER';")`
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1250. Ask for new customers name
+
+### 1250.1
+
+If they aren't an existing customer, you need to add a new entry in the database. Ask for their name.
+```sh
+      if [[ -z $CUSTOMER_NAME ]]
+      then
+        echo -e "What's your name?"
+      fi
+```
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1260. read `CUSTOMER_NAME`
+
+### 1260.1
+
+read `CUSTOMER_NAME` variable
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1270. Insert new customer into the database
+
+### 1270.1
+
+```sh
+$($PSQL "INSERT INTO customers(name, phone) values('$CUSTOMER_NAME', '$PHONE_NUMBER');")
+```
+
+#### HINTS
+
+- Use the `read` command to get input
+- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+
+## 1280. Run the script
+
+### 1280.1
+
+Run the script and go to the rent menu. Enter a phone number and customer name.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1290. Check for new customer in psql prompt
+
+### 1290.1
+
+In your psql prompt, view all the data in the customers table to see if your new customer got created.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1300. Get `CUSTOMER_ID`
+
+### 1300.1
+
+Back in your script, Now that you know a customer has been created. You need to find out their ID so you can add it to the rentals table.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1310. Add rental to the database
+
+### 1310.1
+
+You have the customer_id and the bike_id they want to rent. Time to add their rental to the databse. Create `ADD_RENTAL_RESULT`
+
+```sh
+ADD_RENTAL_RESULT=$($CONNECT "INSERT INTO rentals(customer_id, bike_id) values($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
+```
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1320. Echo `ADD_RENTAL_RESULT`
+
+### 1320.1
+
+Echo `ADD_RENTAL_RESULT` so you can see what you get
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1330. Run the script
+
+### 1330.1
+
+Run the script and go to the rent menu again. Enter a phone number and customer name so you can see if it gets added to the database.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1340. Check database for new rental
+
+### 1340.1
+
+"INSERT 0 1". That must be it worked. In the psql prompt, take a look at all the data in the `rentals` table to make sure your new rental is there.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1350. Add condition for failed rental insert
+
+### 1350.1
+
+Awesome. Just some insurance, put an `if` condition in there that checks if your `ADD_RENTAL_RESULT` is not equal to `INSERT 0 1`. If it's not equal to that, send them to the `MAIN_MENU` with the message `Something went wrong trying to add the rental to the database.`
+
+```sh
+if [[ $ADD_RENTAL_RESULT != "INSERT 0 1" ]]
+then
+  MAIN_MENU "Something went wrong trying to add the rental to the database."
+fi
+```
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1360. Delete echo `ADD_RENTAL_RESULT`
+
+### 1360.1
+
+Delete the echo $ADD_RENTAL_RESULT line
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1370. Set available to false
+
+### 1370.1
+
+Now that the rental has been added, the bike should no longer be available.
+
+```sh
+SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available=false WHERE bike_id=$BIKE_ID_TO_RENT;")
+```
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1380. echo `SET_TO_FALSE_RESULT`
+
+### 1380.1
+
+Echo `SET_TO_FALSE_RESULT`
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1390. Remove all rentals
+
+### 1390.1
+
+Before you test out your script. Go in the psql prompt and delete the rental that was added before.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1400. Run the script
+
+### 1400.1
+
+Run the script and go to the rent menu again. You should have a customer record in the database now, so you can use that phone number or create a new one :smile:
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1410. Select all from bikes
+
+### 1410.1
+
+In the psql prompt, take a look at all the data in your bikes table. There should now be a bike that's false.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1420. Run the script
+
+### 1420.1
+
+Run the script again and go to the rent menu, there should now be one less bike there.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1430. Delete echo 
+
+### 1430.1
+
+Delete the echo $ADD_RENTAL_RESULT line
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1440. Add condition for failed update
+
+### 1440.1
+
+Add a condition for...
+
+```sh
+      if [[ $UPDATE_AVAILABILITY_RESULT != "UPDATE 1" ]]
+      then
+        MAIN_MENU "Something went wrong trying to update the bike availability"
+      fi
+```
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
