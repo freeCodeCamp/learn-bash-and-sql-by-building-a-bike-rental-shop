@@ -1226,7 +1226,7 @@ Run your script and go to the rent menu to make sure it's still working.
 
 ### 1000.1
 
-You only want to show the rows and columns that matter. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the bike_id, type, and size. Be sure to use single quotes where needed.
+I guess the double quotes made it display better :smile: You only want to show the rows and columns that matter. In your psql prompt that is still connected to the database. Enter a command to get only the columns and rows you would want to show a customer. You only want the rows where the bike is available, and the columns for the bike_id, type, and size. Be sure to use single quotes where needed.
 
 #### HINTS
 
