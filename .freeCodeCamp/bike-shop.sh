@@ -45,6 +45,8 @@ RENT_MENU () {
 
 		echo -e "\nWhich one would you like to rent?"
     read BIKE_ID_TO_RENT
+
+    BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
     # Add your code below this line
 
 
