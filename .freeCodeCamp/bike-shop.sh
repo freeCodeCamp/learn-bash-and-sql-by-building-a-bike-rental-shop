@@ -65,6 +65,8 @@ RENT_MENU () {
 
       INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER');")
     fi
+
+    CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER';")
     # Add your code below this line
 
 
