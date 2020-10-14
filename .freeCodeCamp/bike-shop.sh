@@ -53,6 +53,7 @@ RENT_MENU () {
       MAIN_MENU "That bike is not available."
     fi
 
+    echo "What's your phone number?"
     # Add your code below this line
 
 
