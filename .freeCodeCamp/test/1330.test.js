@@ -1,5 +1,5 @@
-/*const assert = require('assert');
-const { getScriptOutput, getLastLog } = require('./utils');
+const assert = require('assert');
+const { getScriptOutput } = require('./utils');
 
 const { Client } = require('pg');
 
@@ -10,25 +10,27 @@ const client = new Client({
 });
 
 describe('You', () => {
-  let scriptOutput, lastLog;
+  let scriptOutput;
   before(async () => {
     scriptOutput = await getScriptOutput('../bike-shop.sh', '1', '6', '55555555', 'Tom');
-    lastLog = await getLastLog(true);
   });;
 
   it('should run your script with "./bike-shop.sh"', async () => {
-    const query = `DELETE FROM customers WHERE phone='55555555';`;
+    const query = `SELECT * FROM rentals WHERE bike_id=6;`;
+    const query2 = `DELETE FROM rentals WHERE bike_id=6;`;
+    const query3 = `DELETE FROM customers WHERE phone='55555555';`;
 
     try {
       await client.connect();
-      await client.query(query);
+      const res = await client.query(query);
+      await client.query(query2);
+      await client.query(query3);
+
+      assert(res.rows.length >= 1);
     } catch (err) {
       assert(false);
     } finally {
       await client.end();
     }
-
-    const select = /statement:SELECTcustomer_idFROMcustomersWHEREphone='55555555';?/i;
-    assert(select.test(lastLog));
   });
-});*/
+});
