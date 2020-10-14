@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -8,4 +8,4 @@ describe('You', () => {
 
     assert(re.test(scriptFile) && /INSERT_RENTAL_RESULT=\$\(\s*\$PSQL[\s\S]*(\$CUSTOMER_ID[\s\S]*\$BIKE_ID_TO_RENT|\$BIKE_ID_TO_RENT[\s\S]*\$CUSTOMER_ID)/.test(scriptFile));
   });
-});
+});*/
