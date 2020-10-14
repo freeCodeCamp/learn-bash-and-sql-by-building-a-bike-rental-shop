@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -8,6 +8,4 @@ describe('You', () => {
 
     assert(re.test(scriptFile) && /SET_TO_FALSE_RESULT=\$\(\s*\$PSQL[\s\S]*\$BIKE_ID_TO_RENT/.test(scriptFile));
   });
-});
-
-
+});*/
