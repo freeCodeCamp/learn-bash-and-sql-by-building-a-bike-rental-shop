@@ -80,10 +80,7 @@ RETURN_MENU () {
   SHOW_TITLE
 
 	echo "What's your phone number?"
-  # Add your code below this line
-
-
-  # Add your code above this line
+  read PHONE_NUMBER
 }
 
 EXIT () {
