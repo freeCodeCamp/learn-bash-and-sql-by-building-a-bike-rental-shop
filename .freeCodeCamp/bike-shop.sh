@@ -78,10 +78,12 @@ RENT_MENU () {
 
 RETURN_MENU () {
   SHOW_TITLE
-  # Change code below this line
-	echo "Return Menu"
 
-  # Change code above this line
+	echo "What's your phone number?"
+  # Add your code below this line
+
+
+  # Add your code above this line
 }
 
 EXIT () {
