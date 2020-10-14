@@ -83,10 +83,8 @@ RETURN_MENU () {
   read PHONE_NUMBER
 
   CUSTOMER_RENTALS=$($PSQL "SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='$PHONE_NUMBER' AND date_returned IS NULL;")
-  # Add your code below this line
 
-
-  # Add your code above this line
+  echo $CUSTOMER_RENTALS
 }
 
 EXIT () {
