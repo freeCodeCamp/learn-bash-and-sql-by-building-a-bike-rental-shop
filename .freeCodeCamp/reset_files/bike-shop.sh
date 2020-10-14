@@ -147,7 +147,8 @@ RETURN_MENU() {
           RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned = NOW() WHERE rental_id = $RENTAL_ID")
           
           # set bike availability to true
-
+          SET_TO_TRUE_RESULT=$($PSQL "UPDATE bikes SET available = true WHERE bike_id = $BIKE_ID_TO_RETURN")
+          
           # send to main menu
 
         fi
