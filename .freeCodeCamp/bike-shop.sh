@@ -54,10 +54,11 @@ RENT_MENU () {
     fi
 
     echo "What's your phone number?"
+    read PHONE_NUMBER
     # Add your code below this line
 
 
-    # Add you code above this line
+    # Add your code above this line
   fi
 }
 
