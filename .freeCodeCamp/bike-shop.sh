@@ -68,6 +68,10 @@ RENT_MENU () {
 
     CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER';")
     ADD_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) values($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
+    # Add your code below this line
+
+
+    # Add your code above this line
   fi
 }
 
