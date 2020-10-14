@@ -52,6 +52,11 @@ RENT_MENU () {
     then
       MAIN_MENU "That bike is not available."
     fi
+
+    # Add your code below this line
+
+
+    # Add you code above this line
   fi
 }
 
