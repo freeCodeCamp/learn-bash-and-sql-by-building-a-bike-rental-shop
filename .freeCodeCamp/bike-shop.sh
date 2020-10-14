@@ -61,6 +61,7 @@ RENT_MENU () {
     if [[ -z $CUSTOMER_NAME ]]
     then
       echo -e "What's your name?"
+      read CUSTOMER_NAME
       # Add your code below this line
 
 
