@@ -103,10 +103,17 @@ RETURN_MENU() {
   CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'")
 
   # if not found
-  if [[ -z $CUSTOMER_ID ]]
+  if [[ -z $CUSTOMER_ID  ]]
   then
     # send to main menu
-    MAIN_MENU "I could not find a record for that phone number." 
+    MAIN_MENU "I could not find a record for that phone number."
+  else
+    # get customer's rentals
+
+    # if no rentals
+
+    # send to main menu
+
   fi
 }
 
