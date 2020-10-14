@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getLastLog } = require('./utils');
 
 describe('You', () => {
@@ -8,7 +8,7 @@ describe('You', () => {
   });
 
   it('should view all the data in the "customers" table', () => {
-    const selectAll = /statement:select\*fromrentals;/i;
+    const selectAll = /statement:select\*frombikes;/i;
     assert(selectAll.test(lastLog));
   });
-});*/
+});
