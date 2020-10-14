@@ -44,6 +44,7 @@ RENT_MENU () {
 		done
 
 		echo -e "\nWhich one would you like to rent?"
+    read BIKE_ID_TO_RENT
     # Add your code below this line
 
 
