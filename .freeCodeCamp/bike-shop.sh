@@ -47,11 +47,15 @@ RENT_MENU () {
     read BIKE_ID_TO_RENT
 
     BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
+    # Change code below this line
     echo $BIKE_AVAILABILITY
-    # Add your code below this line
 
+    # Change code above this line
 
-    # Add your code above this line
+    if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]
+    then
+      MAIN_MENU "That bike is not available."
+    fi
   fi
 }
 
