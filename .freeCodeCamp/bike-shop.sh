@@ -48,6 +48,10 @@ RENT_MENU () {
 
     BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
     echo $BIKE_AVAILABILITY
+    # Add your code below this line
+
+
+    # Add your code above this line
   fi
 }
 
