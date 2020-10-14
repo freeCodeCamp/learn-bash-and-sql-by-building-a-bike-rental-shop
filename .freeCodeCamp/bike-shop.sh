@@ -57,10 +57,15 @@ RENT_MENU () {
     read PHONE_NUMBER
 
     CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone='$PHONE_NUMBER';")
-    # Add your code below this line
+    
+    if [[ -z $CUSTOMER_NAME ]]
+    then
+      echo -e "What's your name?"
+      # Add your code below this line
 
 
-    # Add your code above this line
+      # Add your code above this line
+    fi
   fi
 }
 
