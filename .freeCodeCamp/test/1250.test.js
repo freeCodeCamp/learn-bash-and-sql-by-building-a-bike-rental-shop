@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -7,4 +7,4 @@ describe('You', () => {
 
     assert(/What's your phone number\?"([ \t]*;\s*|\s*\n+\s*)read[ \t]+PHONE_NUMBER/.test(scriptFile));
   });
-});
+});*/
