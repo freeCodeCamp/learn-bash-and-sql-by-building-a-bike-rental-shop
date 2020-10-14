@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -7,4 +7,4 @@ describe('You', () => {
 
     assert(/BIKE_ID_TO_RETURN[\s\S]*else\s*\n+\s*#[ \t]*check if input is rented\s*\n+\s*#[ \t]*if input not rented\s*\n+\s*#[ \t]*send to main menu\s*\n+\s*fi([ \t]*;\s*|\s*\n+\s*)fi([ \t]*;\s*|\s*\n+\s*)fi/.test(scriptFile));
   });
-});
+});*/
