@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getScriptOutput } = require('./utils');
 
 const { Client } = require('pg');
@@ -35,4 +35,4 @@ describe('You', () => {
       await client.end();
     }
   });
-});
+});*/
