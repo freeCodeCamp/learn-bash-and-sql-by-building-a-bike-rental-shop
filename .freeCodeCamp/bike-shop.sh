@@ -78,8 +78,10 @@ RENT_MENU () {
 
 RETURN_MENU () {
   SHOW_TITLE
-
+  # Change code below this line
 	echo "Return Menu"
+
+  # Change code above this line
 }
 
 EXIT () {
