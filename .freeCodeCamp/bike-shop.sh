@@ -70,14 +70,9 @@ RENT_MENU () {
     ADD_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) values($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
     SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available=false WHERE bike_id=$BIKE_ID_TO_RENT;")
     BIKE_TYPE=$($PSQL "SELECT type FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
-<<<<<<< HEAD
-=======
     BIKE_SIZE=$($PSQL "SELECT size FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
->>>>>>> 8abae24... 1440.1
-    # Add your code below this line
 
-
-    # Add your code above this line
+    MAIN_MENU "I have put you down for the $BIKE_SIZE\" $BIKE_TYPE Bike, $CUSTOMER_NAME."
   fi
 }
 
