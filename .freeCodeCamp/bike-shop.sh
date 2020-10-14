@@ -55,6 +55,8 @@ RENT_MENU () {
 
     echo "What's your phone number?"
     read PHONE_NUMBER
+
+    CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone='$PHONE_NUMBER';")
     # Add your code below this line
 
 
