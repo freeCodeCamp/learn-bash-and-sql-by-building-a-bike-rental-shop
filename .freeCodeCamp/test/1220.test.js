@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('Your "RENT_MENU" function', () => {
@@ -12,4 +12,4 @@ describe('Your "RENT_MENU" function', () => {
     
     assert(rentMenuFunction.match(/BIKE_AVAILABILITY/g).length < 4);
   });
-});
+});*/
