@@ -2691,7 +2691,7 @@
               "d0db3910bcd524d96ce37b4e374dcdd0474cbcd1"
             ]
           },
-          "content": "Okay, now you can see the `bike_id` and the info you need. Back in the psql terminal, set `available` to `false` for all the bikes so you can see what happens if there's no bikes available.",
+          "content": "Okay, now when you show the available bikes, you don't see the `available` column. Back in the psql terminal, set `available` to `false` for all the bikes so you can see what happens if there's no bikes available.",
           "hints": [
             "Use the `UPDATE`, `SET` and `WHERE` keywords",
             "You want to `SET` available to false `WHERE` available is true",
@@ -2748,11 +2748,11 @@
               "6800d39a301c440c94413e496bdf3f35f806aab8"
             ]
           },
-          "content": "Now there's nothing showing. You could probably add a condition for when there's no bikes available. Add an `if` condition that checks if the `AVAILABLE_BIKES` variable is empty and, if it is, go to the `MAIN_MENU`. Here's how that looks:\n\n```sh\nif [[ CONDITION ]]\nthen\n  STATEMENTS\nfi\n```\n\nUse `-z` to check if your variable is empty.",
+          "content": "Now there's nothing showing. You could probably add a condition for when there's no bikes available. Add an `if` condition that checks if the `AVAILABLE_BIKES` variable is empty and, if it is, go to the `MAIN_MENU`. Here's how that looks:\n\n```sh\nif [[ CONDITION ]]\nthen\n  STATEMENTS\nfi\n```\n\nUse the `-z` operator to check if your variable is empty.",
           "hints": [
             "The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`",
             "You want to run `MAIN_MENU` if the condition is true",
-            "Run your script and see if it's working",
+            "Run your script to see if it's working",
             "Add this code in the suggested area:\n  ```sh\n  if [[ -z $AVAILABLE_BIKES ]]\n  then\n    MAIN_MENU\n  fi\n  ```"
           ]
         }
@@ -2821,7 +2821,7 @@
           "id": "1080.1",
           "setup": {
             "watchers": [
-              "../.bash_history"
+              "./bike-shop.sh"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -2850,7 +2850,7 @@
           "id": "1090.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "../.bash_history"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -3162,10 +3162,14 @@
               "d63b4ec4fe3537c3525cc108c108452b83759af1"
             ]
           },
-          "content": "add\n```sh\nBIKE_AVAILABILITY=$($PSQL \"SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;\")\n```",
+          "content": "A user could enter anything they want there. You need to make sure that what is enter is a `bike_id` and that the bike is available to rent. Create a new variable named `BIKE_AVAILABILITY`. Use it to make a query to your database that selects the `available` column from the `bikes` table for the bike with the id of your `$BIKE_ID_TO_RENT` variable.",
           "hints": [
-            "Use the `read` command to get input",
-            "Add this to the suggested area: `read BIKE_ID_TO_RENT`"
+            "Create a query like you did for the others",
+            "Here's an hint: `BIKE_AVAILABILITY=$($PSQL \"QUERY HERE\")`",
+            "Use the `SELECT`, `FROM` and `WHERE` keywords",
+            "You only want the `available` column",
+            "Use the where condition `bike_id=$BIKE_ID_TO_RENT`",
+            "Add this to the suggested area: `BIKE_AVAILABILITY=$($PSQL \"SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;\")`"
           ]
         }
       ]
@@ -3189,10 +3193,9 @@
               "2202bd3e559c30458cf23218c07e887081e6d67b"
             ]
           },
-          "content": "add\n```sh\nBIKE_AVAILABILITY=$($PSQL \"SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;\")\n```",
+          "content": "Echo your variable so you can see what you are getting.",
           "hints": [
-            "Use the `read` command to get input",
-            "Add this to the suggested area: `read BIKE_ID_TO_RENT`"
+            "Add `echo $BIKE_AVAILABILITY` in the suggested area"
           ]
         }
       ]
@@ -3207,7 +3210,7 @@
           "id": "1200.1",
           "setup": {
             "watchers": [
-              "./bike-shop.sh"
+              "../.bash_history"
             ],
             "commands": [
               "cp ./.freeCodeCamp/bike-shop.sh ."
@@ -3216,7 +3219,7 @@
               "06809225814771d88849cba3a8d219344bd3fb78"
             ]
           },
-          "content": "Run the script and enter a bike that is available.",
+          "content": "Run the script, go to the rent menu, and enter a bike that is available to see if that variable is set to something.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
             "Make sure you are in the `project` folder first"
@@ -3243,10 +3246,13 @@
               "4bdcf2d1bef13930a0d69a8f5fa7f4dfec625e2f"
             ]
           },
-          "content": "So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` sends users to the `MAIN_MAIN` with the message\n\nadd\n```sh\nif [[ $BIKE_AVAILABILITY == \"f\" || -z $BIKE_AVAILABILITY ]]\nthen\n  MAIN_MENU \"That bike is not available.\"\nfi\n```",
+          "content": "So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` statement that sends users to the `MAIN_MAIN` with the message `\"That bike is not available.\"` when your variable is equal to `f` or is empty. Here's an example:\n\n```sh\nif [[ CONDITION1 || CONDITION2 ]]\nthen\n  STATEMENTS\nfi\n```",
           "hints": [
-            "Use the `read` command to get input",
-            "Add this to the suggested area: `read BIKE_ID_TO_RENT`"
+            "Use the `-z` operator to see if something is empty",
+            "Use `== \"f\"` operator to see if something equals `f`",
+            "Send users to the main menu with the suggested message if one of the conditions is met",
+            "The conditions can look like this: `if [[ $BIKE_AVAILABILITY == \"f\" || -z $BIKE_AVAILABILITY ]]`",
+            "Add this to the suggested area:\n  ```\n  if [[ $BIKE_AVAILABILITY == \"f\" || -z $BIKE_AVAILABILITY ]]\n  then\n    MAIN_MENU \"That bike is not available.\"\n  fi\n  ```"
           ]
         }
       ]
