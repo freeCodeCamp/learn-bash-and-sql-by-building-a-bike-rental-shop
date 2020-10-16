@@ -867,7 +867,7 @@ levels:
       - id: '1200.1'
         setup:
           watchers:
-            - ./bike-shop.sh
+            - ../.bash_history
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '1210'

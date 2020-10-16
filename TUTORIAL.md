@@ -1505,34 +1505,32 @@ Add a command to `read` input into a variable named `BIKE_ID_TO_RENT`.
 
 ### 1180.1
 
-add
-```sh
-BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
-```
+A user could enter anything they want there. You need to make sure that what is enter is a `bike_id` and that the bike is available to rent. Create a new variable named `BIKE_AVAILABILITY`. Use it to make a query to your database that selects the `available` column from the `bikes` table for the bike with the id of your `$BIKE_ID_TO_RENT` variable.
+
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Create a query like you did for the others
+- Here's an hint: `BIKE_AVAILABILITY=$($PSQL "QUERY HERE")`
+- Use the `SELECT`, `FROM` and `WHERE` keywords
+- You only want the `available` column
+- Use the where condition `bike_id=$BIKE_ID_TO_RENT`
+- Add this to the suggested area: `BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")`
 
 ## 1190. Echo `BIKE_AVAILABILITY` Variable
 
 ### 1190.1
 
-add
-```sh
-BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
-```
+Echo your variable so you can see what you are getting.
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Add `echo $BIKE_AVAILABILITY` in the suggested area
 
 ## 1200. Run the script
 
 ### 1200.1
 
-Run the script and enter a bike that is available.
+Run the script, go to the rent menu, and enter a bike that is available to see if that variable is set to something.
 
 #### HINTS
 
@@ -1543,20 +1541,28 @@ Run the script and enter a bike that is available.
 
 ### 1210.1
 
-So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` sends users to the `MAIN_MAIN` with the message
+So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` statement that sends users to the `MAIN_MAIN` with the message `"That bike is not available."` when your variable is equal to `f` or is empty. Here's an example:
 
-add
 ```sh
-if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]
+if [[ CONDITION1 || CONDITION2 ]]
 then
-  MAIN_MENU "That bike is not available."
+  STATEMENTS
 fi
 ```
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Use the `-z` operator to see if something is empty
+- Use `== "f"` operator to see if something equals `f`
+- Send users to the main menu with the suggested message if one of the conditions is met
+- The conditions can look like this: `if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]`
+- Add this to the suggested area:
+  ```
+  if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]
+  then
+    MAIN_MENU "That bike is not available."
+  fi
+  ```
 
 ## 1220. Remove echo `BIKE_AVAILABILITY`
 
