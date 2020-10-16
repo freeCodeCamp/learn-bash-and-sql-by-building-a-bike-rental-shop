@@ -682,7 +682,7 @@ You should now have two terminals open, your `bike-shop.sh` file open, and CodeR
 
 ### 480.1
 
-Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add `+x` and `bike-shop.sh` to the command so your file can be executed.
+Use the terminal (not the psql one) to make your file executable. Do that with the `chmod` command. Add the `+x` flag and `bike-shop.sh` to the command so your file can be executed.
 
 #### HINTS
 
@@ -1128,7 +1128,7 @@ Run your script and go to the rent menu to see what you get.
 
 ### 845.1
 
-Awesome! It’s all on one line, but I think you can work with that if you can just get rid of titles and that last part that says the number of rows. Check the `psql` help menu again.
+Awesome! It’s all on one line, but I think you can work with that if you can just get rid of the column titles and that last part that says the number of rows. Check the `psql` help menu again.
 
 #### HINTS
 
@@ -1150,7 +1150,7 @@ There's a flag that says "print rows only". Add that flag to your command.
 
 ### 860.1
 
-Run the script again and go to the rent menu to see if those two rows are gone.
+Run the script again and go to the rent menu to see if those two pieces of information are gone.
 
 #### HINTS
 
@@ -1161,7 +1161,7 @@ Run the script again and go to the rent menu to see if those two rows are gone.
 
 ### 920.1
 
-You are going to need to query the database times so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database. Basically, it should be everything except the actual query so you can use it like this `$PSQL "SELECT * FROM bikes;"` Be sure to put the variable in double quotes.
+You are going to need to query the database many more times so I want you to make a variable for part of the command. At the top of your script, create a variable named `PSQL` and set the value to the part of the command that connects to your database. Basically, it should be everything except the actual query so you can use it like this `$PSQL "SELECT * FROM bikes;"` Be sure to put the variable in double quotes.
 
 #### HINTS
 
@@ -1289,7 +1289,7 @@ Run the script and go to the rent menu.
 
 ### 1050.1
 
-Now there's nothing showing. You could probably add a condition for when there's no bikes available. Add an `if` condition that checks if the `AVAILABLE_BIKES` variable is empty and, if it is, go to the `MAIN_MENU`. Here's how that looks:
+Now there's nothing showing. You could probably add a condition for when there's no bikes available. Add an `if` condition that checks if the `AVAILABLE_BIKES` variable is empty and, if it is, go to the `MAIN_MENU`. Here's an example:
 
 ```sh
 if [[ CONDITION ]]
@@ -1338,7 +1338,7 @@ It looks like it works, but I think you should have an option when you go to the
 
 ### 1080.1
 
-Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` condition to your `MAIN_MENU` function that checks if there's a parameter. If there is, `echo` it. Don't use and quotes or flags in the echo command.
+Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` condition to your `MAIN_MENU` function that checks if there's a parameter. If there is, `echo` it. Don't use any quotes or flags in the echo command.
 
 #### HINTS
 
