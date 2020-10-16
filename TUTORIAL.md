@@ -1590,7 +1590,7 @@ Run the script and go to the rent menu, put in a bike that doesn't exist.
 
 ### 1240.1
 
-Add an else to your if statement for when the bike entered is available. Echo the text `"What's your phone number?"`
+If a bike isn't available or doesn't exist, they will be sent to the main menu. If they enter a bike that is available, you need to find out their phone number so you can see if they exist in the database or not. Echo the text `"What's your phone number?"`
 
 #### HINTS
 
