@@ -1482,7 +1482,7 @@ Run the script again to see what it looks like now.
 
 ### 1160.1
 
-Awesome, add another echo command after your loop with the message: `"Which one would you like to rent?"`. Put a new line character at the beginning of the message.
+Much better. Add another echo command after your loop with the message: `"Which one would you like to rent?"`. Put a new line character at the beginning of the message.
 
 #### HINTS
 
