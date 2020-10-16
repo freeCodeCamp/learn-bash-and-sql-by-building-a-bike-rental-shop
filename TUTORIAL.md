@@ -1264,7 +1264,7 @@ Run the script and go to the rent menu to see the output.
 
 ### 1030.1
 
-Okay, now you can see the `bike_id` and the info you need. Back in the psql terminal, set `available` to `false` for all the bikes so you can see what happens if there's no bikes available.
+Okay, now when you show the available bikes, you don't see the `available` column. Back in the psql terminal, set `available` to `false` for all the bikes so you can see what happens if there's no bikes available.
 
 #### HINTS
 
@@ -1298,13 +1298,13 @@ then
 fi
 ```
 
-Use `-z` to check if your variable is empty.
+Use the `-z` operator to check if your variable is empty.
 
 #### HINTS
 
 - The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`
 - You want to run `MAIN_MENU` if the condition is true
-- Run your script and see if it's working
+- Run your script to see if it's working
 - Add this code in the suggested area:
   ```sh
   if [[ -z $AVAILABLE_BIKES ]]
