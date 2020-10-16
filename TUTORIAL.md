@@ -1505,7 +1505,7 @@ Add a command to `read` input into a variable named `BIKE_ID_TO_RENT`.
 
 ### 1180.1
 
-A user could enter anything they want there. You need to make sure that what is enter is a `bike_id` and that the bike is available to rent. Create a new variable named `BIKE_AVAILABILITY`. Use it to make a query to your database that selects the `available` column from the `bikes` table for the bike with the id of your `$BIKE_ID_TO_RENT` variable.
+A user could enter anything they want there. You need to make sure that what is entered is a `bike_id` and that the bike is available to rent. Create a new variable named `BIKE_AVAILABILITY`. Use it to make a query to your database that selects the `available` column from the `bikes` table for the bike with the id of your `$BIKE_ID_TO_RENT` variable. Use your `$PSQL` variable and a subprocess like you did for your other queries.
 
 #### HINTS
 
