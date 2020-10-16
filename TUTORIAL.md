@@ -893,6 +893,7 @@ For the time being, just echo out `Rent Menu` in the function so you can see if 
 
 #### HINTS
 
+- Don't use any flags with the command
 - Add `echo "Rent Menu"` in the designated area
 
 ## 680. Add `RETURN_MENU` function
@@ -913,6 +914,7 @@ echo `Return Menu` in the function you just added. You will probably change thes
 
 #### HINTS
 
+- Don't use any flags with the command
 - Add `echo "Return Menu"` in the designated area
 
 ## 700. Add `EXIT` function
@@ -933,6 +935,7 @@ This one probably doesn't need a placeholder message. Echo the text `Thank you f
 
 #### HINTS
 
+- Don't use any flags with the command
 - Add `echo "Thank you for stopping in."` in the designated area
 
 ## 720. Add case Statement to `MAIN_MENU`
@@ -953,20 +956,19 @@ The expression you want is the `$MAIN_MENU_SELECTION` variable. You are expectin
 
 #### HINTS
 
-- | 
-  Here's a start:
+- Here's a start:
   ```sh
   case $MAIN_MENU_SELECTION in
     1) RENT_MENU ;;
   ```
-- |
-  Add this case statement;
+- Add this case statement;
   ```sh
   case $MAIN_MENU_SELECTION in
     1) RENT_MENU ;;
     2) RETURN_MENU ;;
     3) EXIT ;;
     *) MAIN_MENU ;;
+  esac
   ```
 
 ## 730. Test the `MAIN_MENU` Options
@@ -1302,6 +1304,7 @@ Use `-z` to check if your variable is empty.
 
 - The condition looks like this `if [[ -z $AVAILABLE_BIKES ]]`
 - You want to run `MAIN_MENU` if the condition is true
+- Run your script and see if it's working
 - Add this code in the suggested area:
   ```sh
   if [[ -z $AVAILABLE_BIKES ]]
@@ -1354,10 +1357,11 @@ Parameters can be accessed with `$`. The first one would be `$1`. Add an `if` co
 
 ### 1090.1
 
-Run the script and go to the rent menu. It should take you to the main menu and give your message.
+Run the script and go to the rent menu. It should take you to the main menu and give your message, be sure to close the script when you are done.
 
 #### HINTS
 
+- You can use `ctrl+c` to close a running script
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
@@ -1365,7 +1369,7 @@ Run the script and go to the rent menu. It should take you to the main menu and 
 
 ### 1095.1
 
-Excellent :smile: In the psql prompt, set the bike availability back to true for all the bikes so you can continue on with the rest of the program.
+Excellent :smile: In the psql prompt, set the bike availability back to true for all the bikes so you can continue on with the rest of the renting functionality.
 
 #### HINTS
 
@@ -1433,7 +1437,7 @@ do
 done
 ```
 
-It will read the first line of your results into those five variables for you to use in the `do` area. When it gets to a new line, it reads the next five words into the variables again.
+It will read the first line of your results into those five variables for you to use in the `do` area. When it gets to a new line, it reads the next five words into the variables again and repeats until there are no new lines left.
 
 #### HINTS
 
@@ -1454,12 +1458,12 @@ Run the script to see if your information is being printed to the screen.
 
 ### 1145.1
 
-That looks pretty good. Adjust the echo command so that each line looks like this: `BIKE_ID) SIZE" TYPE Bike`. Here's what the first one would look like: `1) 27" Mountain Bike`. You don't need any new line characters.
+That looks pretty good. Adjust the echo command so that each line looks like this: `BIKE_ID) SIZE" TYPE Bike`. Here's what the first one would look like: `1) 27" Mountain Bike`. You need to use double quotes so you can escape a certain character.
 
 #### HINTS
 
+- Be sure to use double quotes and escape the `"` after `SIZE`
 - Run your script and check the output if you want to see if it matches the suggestion
-- Don't forget to escape characters if you need to
 - You can do this! Give it another try
 - Make the suggested line look like this: `echo "$BIKE_ID) $SIZE\" $TYPE Bike"`
 
@@ -1490,7 +1494,7 @@ Awesome, add another echo command after your loop with the message: `"Which one 
 
 ### 1170.1
 
-Add a command to `read` input into a varaible named `BIKE_ID_TO_RENT`.
+Add a command to `read` input into a variable named `BIKE_ID_TO_RENT`.
 
 #### HINTS
 
