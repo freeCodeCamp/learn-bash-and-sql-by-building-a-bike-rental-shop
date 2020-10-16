@@ -755,7 +755,7 @@ levels:
       - id: '1080.1'
         setup:
           watchers:
-            - ../.bash_history
+            - ./bike-shop.sh
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '1090'
@@ -763,7 +763,7 @@ levels:
       - id: '1090.1'
         setup:
           watchers:
-            - ./bike-shop.sh
+            - ../.bash_history
           commands:
             - cp ./.freeCodeCamp/bike-shop.sh .
   - id: '1095'
