@@ -1572,8 +1572,7 @@ Remove the line where you echo if the bike is available or not since you don't a
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Remove the `echo $BIKE_AVAILABILITY` line
 
 ## 1230. Run the script
 
@@ -1583,19 +1582,19 @@ Run the script and go to the rent menu, put in a bike that doesn't exist.
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
 
 ## 1240. Ask for phone number
 
 ### 1240.1
 
-If a bike isn't available or doesn't exist, they will be sent to the main menu. If they enter a bike that is available, you need to find out their phone number so you can see if they exist in the database or not. Echo the text `"What's your phone number?"`
+If a bike isn't available or doesn't exist, they will be sent to the main menu. If they enter a bike that is available, you need to find out their phone number so you can see if they are an existing customer or not. Echo the text `"What's your phone number?"`
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Put the command in double quotes so that apostrophe shows up
+- Add this to the suggested area: `echo "What's your phone number?"`
 
 ## 1250. read `PHONE_NUMBER`
 
@@ -1606,61 +1605,72 @@ Read user input into a `PHONE_NUMBER` variable.
 #### HINTS
 
 - Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Add this to the suggested area: `read PHONE_NUMBER`
 
 ## 1260. Look for customer name
 
 ### 1260.1
 
-Okay, you have their phone number, now you need to see if they are an existing customer. Create a `CUSTOMER_NAME` variable...
-
-`CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone='$PHONE_NUMBER';")`
+Okay, you have their phone number, now you need to see if they are an existing customer. Create a `CUSTOMER_NAME` variable that queries the database. You want to get the `name` column from the `customers` table where `phone` is equal to the phone number they input, so use the `PHONE_NUMBER` variable. Be sure to put the variable in single quotes since it is a `VARCHAR` in the database.
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Make a query with the structure you used for the other ones
+- Here's an example: `CUSTOMER_NAME=$($PSQL "COMMAND HERE")`
+- Use the `SELECT`, `FROM` and `WHERE` keywords for your command
+- The condition you want is `phone='$PHONE_NUMBER'`
+- You only want the `name` column from the `customers` table
+- Add this to the suggested area: `CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone='$PHONE_NUMBER';")`
 
 ## 1270. Ask for new customers name
 
 ### 1270.1
 
-If they aren't an existing customer, you need to add a new entry in the database. Ask for their name.
+If they aren't an existing customer, you need to add a new entry in the database. You need to know their so you can do that. Add an if condition that echo's `"What's your name?"` if your `$CUSTOMER_NAME` variable is empty. 
 ```sh
-      if [[ -z $CUSTOMER_NAME ]]
-      then
-        echo -e "What's your name?"
-      fi
+if [[ -z $CUSTOMER_NAME ]]
+then
+  echo -e "What's your name?"
+fi
 ```
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Add an `if` condition the checks `-z $CUSTOMER_NAME`
+- Echo the suggested message in the statements area
+- Add this to the suggested area:
+  ```
+  if [[ -z $CUSTOMER_NAME ]]
+  then
+    echo -e "What's your name?"
+  fi
+  ```
 
 ## 1280. read `CUSTOMER_NAME`
 
 ### 1280.1
 
-read `CUSTOMER_NAME` variable
+Get their name by reading it into a `CUSTOMER_NAME` variable.
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Use the `read` command
+- Add this to the suggested area: `read CUSTOMER_NAME`
 
 ## 1290. Insert new customer into the database
 
 ### 1290.1
 
-```sh
-INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) values('$CUSTOMER_NAME', '$PHONE_NUMBER');")
-```
+Now that you know their name and phone number, you can add them to the database. Create a `INSERT_CUSTOMER_RESULT` variable that inserts a new customer using the `$CUSTOMER_NAME` and `$PHONE_NUMBER` variables. Be sure to put them both in single quotes.
 
 #### HINTS
 
-- Use the `read` command to get input
-- Add this to the suggested area: `read BIKE_ID_TO_RENT`
+- Use same structure for the command that you have used for the other commands
+- Here's an example: `INSERT_CUSTOMER_RESULT=$($PSQL "COMMAND HERE")`
+- The command looks similar to this: `INSERT INTO customers(column1, column2) VALUES('value1', 'value2')`
+- Use your varables to insert their data
+- Here's the command: `INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')`
+- Add this to the suggested area: `INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER');")`
 
 ## 1300. Run the script
 
@@ -1677,46 +1687,48 @@ Run the script and go to the rent menu. Enter a phone number and customer name.
 
 ### 1310.1
 
-View all the data in the customers table to see if your new customer got created.
+You should now have a new customer in the database. In your psql terminal, view all the data in the `customers` table to see if it's there.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use the `SELECT` and `FROM` keywords
+- Use `*` to view all the columns
+- Enter `SELECT * FROM customers;` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1320. Get `CUSTOMER_ID`
 
 ### 1320.1
 
-Looks like the customer got inserted. Back in your script, Now that you know a customer has been created. You need to find out their ID so you can add it to the rentals table.
-add:
-`CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER';")`
+Looks like the customer got inserted. Back in your script, now that you know a customer has been created, you need to find out their ID so you can add the bike they rented to the `rentals` table. Create a variable named `CUSTOMER_ID` that queries the database to get the `customer_id` column for the customer with `$PHONE_NUMBER`.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use same structure for the command that you have used for the other commands
+- Here's an example: `CUSTOMER_ID=$($PSQL "COMMAND HERE")`
+- The command looks similar to this: `SELECT column FROM table WHERE phone='$PHONE_NUMBER';`
+- Add this to the suggested area: `CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER';")`
 
 ## 1330. Add rental to the database
 
 ### 1330.1
 
-You have the customer_id and the bike_id they want to rent. Time to add their rental to the databse. Create `ADD_RENTAL_RESULT`
-
-```sh
-ADD_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) values($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
-```
+You need the `customer_id` and `bike_id` to add a rental to the table. You have two variables that contain those. In your script, create a `ADD_RENTAL_RESULT` variable that adds a new rental to the database.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use same structure for the command that you have used for the other commands
+- Here's an example: `ADD_RENTAL_RESULT=$($PSQL "COMMAND HERE")`
+- The command looks similar to this: `INSERT INTO rentals(column1, column2) VALUES(value1, value2);`
+- You don't need any single quotes for integers
+- Add this to the suggested area: `ADD_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT);")`
 
 ## 1340. Run the script
 
 ### 1340.1
 
-Run the script and go to the rent menu again. Enter a phone number and customer name so you can see if it gets added to the database.
+Run the script and go to the rent menu again. Enter a phone number and customer name so you can see if a new rental gets added.
 
 #### HINTS
 
@@ -1727,44 +1739,49 @@ Run the script and go to the rent menu again. Enter a phone number and customer 
 
 ### 1350.1
 
-In the psql prompt, take a look at all the data in the `rentals` table to make sure your new rental is
+In the psql prompt, take a look at all the data in the `rentals` table to make sure your new rental is there.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use the `SELECT` and `FROM` keywords in the psql prompt
+- Use `*` to view all the columns
+- Enter `SELECT * FROM rentals;` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1360. View all in bikes table
 
 ### 1360.1
 
-In the psql prompt, view all the data in the bikes table
+Looks like the rental got added and the date was automatically set. Check all the data in the bikes table.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use the psql prompt to view all the data in the bikes table
+- Enter `SELECT * FROM bikes;` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1370. Set available to false
 
 ### 1370.1
 
-The available row didn't get set to false for the bike you rented so you need to set that to false next. Add a command to do that.
-
-```sh
-SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available=false WHERE bike_id=$BIKE_ID_TO_RENT;")
-```
+The available row didn't get set to false for the bike you rented so you need to set that to false next. In your script, create a `SET_TO_FALSE_RESULT` variable that sets `available` column in the `bikes` table to `false` for the bike with the `$BIKE_ID_TO_RENT` value.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use same structure for the command that you have used for the other commands
+- Here's an example: `SET_TO_FALSE_RESULT=$($PSQL "COMMAND HERE")`
+- Use the `UPDATE`, `SET`, and `WHERE` keywords
+- The command looks similar to this: `UPDATE table SET column1=value1 WHERE column2=value2;`
+- You want to set `available=false` where `bike_id=$BIKE_ID_TO_RENT`
+- Add this to the suggested area: `SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available=false WHERE bike_id=$BIKE_ID_TO_RENT;")`
 
 ## 1380. Run the script
 
 ### 1380.1
 
-Run the script and go to the rent menu again. You should have a customer record in the database now, so you can use that phone number or create a new one :smile:
+Run the script and go to the rent menu again. You should have a customer record in the database now, so you can use that phone number or create a new one :smile:. Use it to rent a bike. 
 
 #### HINTS
 
@@ -1779,8 +1796,9 @@ In the psql prompt, take a look at all the data in your rentals table. There sho
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Enter `SELECT * FROM rentals;` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1400. Select all from bikes
 
@@ -1790,8 +1808,9 @@ In the psql prompt, take a look at all the data in your bikes table. There shoul
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Enter `SELECT * FROM bikes;` in the psql prompt
+- If you don't have a psql prompt open, I recommend "splitting" the terminal and reconnecting
+- You can reconnect with `psql -U freecodecamp bikes`
 
 ## 1410. Run the script
 
@@ -1808,6 +1827,7 @@ Run the script again and go to the rent menu, there should now be one less bike 
 
 ### 1420.1
 
+Okay, it looks like the ability to rent a bike is working :smile: One last thing to do is send users to the `MAIN_MENU` with a message. I want message to say what bike someone rented so you need to know the type of bike and the size of the bike. Create a new variable named 
 Get `BIKE_TYPE=$($PSQL "SELECT type FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;"`
 
 #### HINTS
