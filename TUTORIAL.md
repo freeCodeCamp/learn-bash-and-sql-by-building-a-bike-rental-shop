@@ -991,9 +991,8 @@ It’s looking good :smile: I want to clear the text at each menu so the old opt
 #### HINTS
 
 - Put the `clear` and `echo` commands at the top in a function named `SHOW_TITLE`
-- |
-  It should look like this:
-  ```
+- It should look like this:
+  ```sh
   SHOW_TITLE() {
     clear
     echo -e "~~~~~ Bike Rental Shop ~~~~~\n"
@@ -1557,7 +1556,7 @@ fi
 - Send users to the main menu with the suggested message if one of the conditions is met
 - The conditions can look like this: `if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]`
 - Add this to the suggested area:
-  ```
+  ```sh
   if [[ $BIKE_AVAILABILITY == "f" || -z $BIKE_AVAILABILITY ]]
   then
     MAIN_MENU "That bike is not available."
@@ -1626,23 +1625,26 @@ Okay, you have their phone number, now you need to see if they are an existing c
 
 ### 1270.1
 
-If they aren't an existing customer, you need to add a new entry in the database. You need to know their so you can do that. Add an if condition that echo's `"What's your name?"` if your `$CUSTOMER_NAME` variable is empty. 
-```sh
-if [[ -z $CUSTOMER_NAME ]]
-then
-  echo -e "What's your name?"
-fi
-```
+If they aren't an existing customer, you need to find out their name so you can add them in the database. Add an if condition that echo's `"What's your name?"` if your `$CUSTOMER_NAME` variable is empty.
 
 #### HINTS
 
-- Add an `if` condition the checks `-z $CUSTOMER_NAME`
+- Add an `if` condition the checks if `-z $CUSTOMER_NAME`
+- Your `echo` command doesn't need any flags
+- It does need double quote though so the apostrophe works
+- Here's an example:
+  ```sh
+  if [[ CONDITION ]]
+  then
+    STATEMENTS
+  fi
+  ```
 - Echo the suggested message in the statements area
 - Add this to the suggested area:
-  ```
+  ```sh
   if [[ -z $CUSTOMER_NAME ]]
   then
-    echo -e "What's your name?"
+    echo "What's your name?"
   fi
   ```
 
@@ -1655,7 +1657,7 @@ Get their name by reading it into a `CUSTOMER_NAME` variable.
 #### HINTS
 
 - Use the `read` command
-- Add this to the suggested area: `read CUSTOMER_NAME`
+- Add `read CUSTOMER_NAME` to the suggested area
 
 ## 1290. Insert new customer into the database
 
