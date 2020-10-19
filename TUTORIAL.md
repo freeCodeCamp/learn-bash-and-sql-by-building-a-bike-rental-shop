@@ -1678,11 +1678,13 @@ Now that you know their name and phone number, you can add them to the database.
 
 ### 1300.1
 
-Run the script and go to the rent menu. Enter a phone number and customer name.
+Run your script and go to the rent menu. Then, enter `1` to pick the first bike that is available. Enter `555-5555` for the phone number, and a customer name of your choosing.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
+- Follow the instructions closely
+- Make sure to use `555-5555` for the phone number
 - Make sure you are in the `project` folder first
 
 ## 1310. Check for new customer in psql prompt
