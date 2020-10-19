@@ -1678,7 +1678,7 @@ Now that you know their name and phone number, you can add them to the database.
 
 ### 1300.1
 
-Run your script and go to the rent menu. Then, enter `1` to pick the first bike that is available. Enter `555-5555` for the phone number, and a customer name of your choosing.
+Run your script and go to the rent menu. Then, enter `1` to rent that bike. Enter `555-5555` for the phone number, and a customer name of your choosing after that.
 
 #### HINTS
 
@@ -1732,7 +1732,7 @@ You need the `customer_id` and `bike_id` to add a rental to the table. You have 
 
 ### 1340.1
 
-Run the script and go to the rent menu again. Enter a phone number and customer name so you can see if a new rental gets added.
+Run the script and go to the rent menu again. Enter `1` for the bike you want to rent, and `555-5555` for the phone number again. You should have a customer for that number now, so it won't ask for a name.
 
 #### HINTS
 
@@ -1757,7 +1757,7 @@ In the psql prompt, take a look at all the data in the `rentals` table to make s
 
 ### 1360.1
 
-Looks like the rental got added and the date was automatically set. Check all the data in the bikes table.
+Looks like the rental got added and the date was automatically set. Check all the data in the `bikes` table.
 
 #### HINTS
 
@@ -1785,12 +1785,12 @@ The available row didn't get set to false for the bike you rented so you need to
 
 ### 1380.1
 
-Run the script and go to the rent menu again. You should have a customer record in the database now, so you can use that phone number or create a new one :smile:. Use it to rent a bike. 
+Run the script and go to the rent menu. Rent bike number `1`. Enter `555-5555` when it asks for a phone number again.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Make sure to enter the correct bike number and phone number
 
 ## 1390. Select all from rentals
 
@@ -1854,8 +1854,7 @@ Get `BIKE_SIZE=$($PSQL "SELECT size FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
 
 ### 1440.1
 
-add:
-`MAIN_MENU "I have put you down for the $BIKE_SIZE\" $BIKE_TYPE Bike, $CUSTOMER_NAME."`
+add: `MAIN_MENU "I have put you down for the $BIKE_SIZE\" $BIKE_TYPE Bike, $CUSTOMER_NAME."`
 
 #### HINTS
 
@@ -1866,7 +1865,7 @@ add:
 
 ### 1450.1
 
-Run the script and rent a bike. Make sure it takes you to the main menu and gives the message. When you're done, exit the program.
+Run the script and rent bike number `2` this time. Use `555-5555` for the phone number again. Make sure it takes you to the main menu and gives the message. When you're done, exit the program.
 
 #### HINTS
 
