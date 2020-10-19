@@ -1853,7 +1853,7 @@ Get `BIKE_SIZE=$($PSQL "SELECT size FROM bikes WHERE bike_id=$BIKE_ID_TO_RENT;")
 ### 1440.1
 
 add:
-`MIN_MENU "I have put you down for the $BIKE_SIZE\" $BIKE_TYPE Bike, $CUSTOMER_NAME."`
+`MAIN_MENU "I have put you down for the $BIKE_SIZE\" $BIKE_TYPE Bike, $CUSTOMER_NAME."`
 
 #### HINTS
 
@@ -1871,7 +1871,7 @@ Run the script and rent a bike. Make sure it takes you to the main menu and give
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
-## 1460. Run the script
+## 1460. Start the Return Bike Functionality
 
 ### 1460.1
 
