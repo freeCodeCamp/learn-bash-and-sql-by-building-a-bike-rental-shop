@@ -1540,7 +1540,7 @@ Run the script, go to the rent menu, and enter a bike that is available to see i
 
 ### 1210.1
 
-So if a bike is available, the variable will be `t`. You can assume that it will be `f` if it's not available. If you enter something that doesn't exist, it will be empty. Add an `if` statement that sends users to the `MAIN_MAIN` with the message `"That bike is not available."` when your variable is equal to `f` or is empty. Here's an example:
+So if a bike is available, the variable will be `t`. It will be `f` if it's not available and empty if you enter something that doesn't exist. Add an `if` statement that sends users to the `MAIN_MAIN` with the message `"That bike is not available."` when your variable `== "f"` or is empty. Here's an example:
 
 ```sh
 if [[ CONDITION1 || CONDITION2 ]]
