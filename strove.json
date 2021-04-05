@@ -1,7 +1,7 @@
 {
   "init": "exit",
   "envVariables": [
-    ["CODEROAD_TUTORIAL_URL", "https://raw.githubusercontent.com/moT01/.learn-bash-and-sql-by-building-a-bike-rental-shop/master/tutorial.json"],
+    ["CODEROAD_TUTORIAL_URL", "https://raw.githubusercontent.com/moT01/.learn-bash-and-sql-by-building-a-bike-rental-shop/main/tutorial.json"],
     ["CODEROAD_DISPLAY_RUN_TEST_BUTTON", "false"]
   ]
 }
