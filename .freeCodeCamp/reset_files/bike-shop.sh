@@ -32,6 +32,15 @@ RENT_MENU() {
   then
     # send to main menu
     MAIN_MENU "Sorry, we don't have any bikes available right now."
+  else
+    # display available bikes
+
+    # ask for bike to rent
+
+    # if input is not a number
+
+    # send to main menu
+
   fi
 }
 
