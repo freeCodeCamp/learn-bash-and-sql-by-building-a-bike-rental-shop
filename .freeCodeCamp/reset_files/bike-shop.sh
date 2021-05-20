@@ -40,6 +40,7 @@ RENT_MENU() {
     done
 
     # ask for bike to rent
+    echo -e "\nWhich one would you like to rent?"
 
     # if input is not a number
 
