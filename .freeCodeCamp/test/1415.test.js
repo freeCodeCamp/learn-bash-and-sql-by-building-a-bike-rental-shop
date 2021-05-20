@@ -1,4 +1,4 @@
-const assert = require('assert');
+/*const assert = require('assert');
 const { getFileContents } = require('./utils');
 
 describe('You', () => {
@@ -7,4 +7,4 @@ describe('You', () => {
 
     assert(/BIKE_INFO[\s\S]*BIKE_INFO_FORMATTED=\$\([ \t]*echo[ \t]+("|)\$BIKE_INFO\1[ \t]*\|[ \t]*sed[ \t]+'s\/ \|\/"\/'[ \t]*\)/.test(scriptFile));
   });
-});
+});*/
