@@ -1,4 +1,4 @@
-version: '0.2.2'
+version: '0.2.3'
 config:
   setup:
     commands:
@@ -18,7 +18,7 @@ config:
     directory: .freeCodeCamp
   repo:
     uri: https://github.com/moT01/.learn-bash-and-sql-by-building-a-bike-rental-shop
-    branch: v0.2.2
+    branch: v0.2.3
   reset:
     commands:
       - 'cp ./.freeCodeCamp/bike-shop.sh .'
@@ -344,60 +344,6 @@ levels:
         setup:
           watchers:
             - ../.bash_history
-  - id: '550'
-    steps:
-      - id: '550.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '555'
-    steps:
-      - id: '555.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '560'
-    steps:
-      - id: '560.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '570'
-    steps:
-      - id: '570.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '580'
-    steps:
-      - id: '580.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '590'
-    steps:
-      - id: '590.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '600'
-    steps:
-      - id: '600.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '610'
-    steps:
-      - id: '610.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '620'
-    steps:
-      - id: '620.1'
-        setup:
-          watchers:
-            - ../.bash_history
   - id: '630'
     steps:
       - id: '630.1'
@@ -482,66 +428,6 @@ levels:
         setup:
           watchers:
             - ../.bash_history
-  - id: '770'
-    steps:
-      - id: '770.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '780'
-    steps:
-      - id: '780.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '790'
-    steps:
-      - id: '790.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '800'
-    steps:
-      - id: '800.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '810'
-    steps:
-      - id: '810.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '820'
-    steps:
-      - id: '820.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '823'
-    steps:
-      - id: '823.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '830'
-    steps:
-      - id: '830.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '840'
-    steps:
-      - id: '840.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '845'
-    steps:
-      - id: '845.1'
-        setup:
-          watchers:
-            - ../.bash_history
   - id: '850'
     steps:
       - id: '850.1'
@@ -560,18 +446,6 @@ levels:
         setup:
           watchers:
             - ./bike-shop.sh
-  - id: '930'
-    steps:
-      - id: '930.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '940'
-    steps:
-      - id: '940.1'
-        setup:
-          watchers:
-            - ../.bash_history
   - id: '970'
     steps:
       - id: '970.1'
@@ -608,54 +482,6 @@ levels:
         setup:
           watchers:
             - ../.bash_history
-  - id: '1030'
-    steps:
-      - id: '1030.1'
-        setup:
-          watchers:
-            - ./.freeCodeCamp/test/queryResults.log
-  - id: '1040'
-    steps:
-      - id: '1040.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '1050'
-    steps:
-      - id: '1050.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '1060'
-    steps:
-      - id: '1060.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '1070'
-    steps:
-      - id: '1070.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '1080'
-    steps:
-      - id: '1080.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '1090'
-    steps:
-      - id: '1090.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '1095'
-    steps:
-      - id: '1095.1'
-        setup:
-          watchers:
-            - ./.freeCodeCamp/test/queryResults.log
   - id: '1100'
     steps:
       - id: '1100.1'
@@ -806,24 +632,6 @@ levels:
         setup:
           watchers:
             - ./bike-shop.sh
-  - id: '1340'
-    steps:
-      - id: '1340.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '1350'
-    steps:
-      - id: '1350.1'
-        setup:
-          watchers:
-            - ./.freeCodeCamp/test/queryResults.log
-  - id: '1360'
-    steps:
-      - id: '1360.1'
-        setup:
-          watchers:
-            - ./.freeCodeCamp/test/queryResults.log
   - id: '1370'
     steps:
       - id: '1370.1'
@@ -926,12 +734,6 @@ levels:
         setup:
           watchers:
             - ./bike-shop.sh
-  - id: '1540'
-    steps:
-      - id: '1540.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
   - id: '1550'
     steps:
       - id: '1550.1'
@@ -998,18 +800,6 @@ levels:
         setup:
           watchers:
             - ../.bash_history
-  - id: '1660'
-    steps:
-      - id: '1660.1'
-        setup:
-          watchers:
-            - ../.bash_history
-  - id: '1670'
-    steps:
-      - id: '1670.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
   - id: '1680'
     steps:
       - id: '1680.1'
@@ -1022,21 +812,9 @@ levels:
         setup:
           watchers:
             - ./bike-shop.sh
-  - id: '1700'
-    steps:
-      - id: '1700.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
   - id: '1710'
     steps:
       - id: '1710.1'
-        setup:
-          watchers:
-            - ./bike-shop.sh
-  - id: '1720'
-    steps:
-      - id: '1720.1'
         setup:
           watchers:
             - ./bike-shop.sh
