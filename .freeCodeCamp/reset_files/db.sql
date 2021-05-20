@@ -180,15 +180,15 @@ ALTER TABLE ONLY public.rentals ALTER COLUMN rental_id SET DEFAULT nextval('publ
 -- Data for Name: bikes; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.bikes VALUES (7, 'BMX', 19, false);
-INSERT INTO public.bikes VALUES (8, 'BMX', 20, false);
-INSERT INTO public.bikes VALUES (9, 'BMX', 21, false);
 INSERT INTO public.bikes VALUES (1, 'Mountain', 27, true);
 INSERT INTO public.bikes VALUES (2, 'Mountain', 28, true);
 INSERT INTO public.bikes VALUES (3, 'Mountain', 29, true);
 INSERT INTO public.bikes VALUES (4, 'Road', 27, true);
 INSERT INTO public.bikes VALUES (5, 'Road', 28, true);
 INSERT INTO public.bikes VALUES (6, 'Road', 29, true);
+INSERT INTO public.bikes VALUES (7, 'BMX', 19, true);
+INSERT INTO public.bikes VALUES (8, 'BMX', 20, true);
+INSERT INTO public.bikes VALUES (9, 'BMX', 21, true);
 
 
 --
