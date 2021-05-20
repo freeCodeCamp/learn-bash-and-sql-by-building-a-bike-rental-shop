@@ -119,7 +119,10 @@ RETURN_MENU() {
     else
       # display rented bikes
       echo -e "\nHere are your rentals:"
-      echo "$CUSTOMER_RENTALS"
+      echo "$CUSTOMER_RENTALS" | while read BIKE_ID BAR TYPE BAR SIZE
+      do
+        echo "$BIKE_ID) $SIZE\" $TYPE Bike"
+      done
 
       # ask for bike to return
 
