@@ -21,7 +21,7 @@ config:
     branch: v0.2.3
   reset:
     commands:
-      - 'cp ./.freeCodeCamp/bike-shop.sh .'
+      - './.freeCodeCamp/reset.sh'
   dependencies:
     - name: node
       version: '>=10'
