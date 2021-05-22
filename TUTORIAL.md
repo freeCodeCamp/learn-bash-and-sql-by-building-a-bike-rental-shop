@@ -908,7 +908,6 @@ Add comments to rent menu
 	# get available bikes
 	# if no bikes available
 	# send to main menu
-	# display available bikes
 ```
 
 #### HINTS
@@ -1032,7 +1031,7 @@ Run the script.
 Add else with comments:
 	display available bikes
 	ask for bike to rent
-	if input not a number
+	if input is not a number
 	send to main menu
 
 #### HINTS
@@ -1244,10 +1243,7 @@ fi
 
 ### 1177.1
 
-Add if [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]
-then
-send to main menu
-fi
+Add MAIN_MENU "That is not a valid number"
 
 #### HINTS
 
