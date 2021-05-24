@@ -1916,9 +1916,9 @@ Delete echo Return Menu
 ### 1457.1
 
 Add comments to RETURN_MENU:
-	get customer’s rentals
-	if no rentals
-	send to main menu
+get customer info
+if not found
+send to main menu
 
 #### HINTS
 
@@ -2076,6 +2076,18 @@ That's a big query, but you're not done yet. You only need a few of those column
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
+## 1525. psql SELECT ORDER BY
+
+### 1525.1
+
+order the results by bike_id
+
+That's a big query, but you're not done yet. You only need a few of those columns, select just the `bike_id`, `type`, and `size` columns. Since there's two `bike_id` columns, PostgreSQL needs to know what table you want that column from. Tell it to use the bikes table like this: `bikes.bike_id`
+
+#### HINTS
+
+- Hint
+
 ## 1530. Add CUSTOMER_RENTALS
 
 ### 1530.1
@@ -2088,6 +2100,16 @@ Take that giant query and put it in a variable named `CUSTOMER_RENTALS` in your 
 
 - Be sure to use a subprocess and your `PSQL` variable like the other queries
 - Make sure you are in the `project` folder first
+
+## 1540. Add echo CUSTOMER_RENTALS
+
+### 1540.1
+
+Add echo "$CUSTOMER_RENTALS"
+
+#### HINTS
+
+- Hint
 
 ## 1550. ./bike-shop.sh
 
@@ -2152,7 +2174,7 @@ Add echo -e "\nHere are your rentals:\n"
 
 ### 1575.1
 
-Add echo "$CUSTOMER_RENTALS"
+move the echo "$CUSTOMER_RENTALS"
 
 #### HINTS
 
@@ -2279,27 +2301,27 @@ WHERE phone='555-5555' AND date_returned IS NULL AND bike_id=1;")
 
 ### 1625.1
 
-psql only get columns needed
+psql only get rental_id column needed
 
 #### HINTS
 
 - Hint
 
-## 1630. Add CHECK_FOR_RENTAL_RESULT
+## 1630. Add RENTAL_ID
 
 ### 1630.1
 
-Add `CHECK_FOR_RENTAL_RESULT=$($PSQL "SELECT bike_id FROM rentals INNER JOIN customers USING(customer_id) WHERE customer_id = $CUSTOMER_ID AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")`
+Add `RENTAL_ID=$($PSQL "SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE customer_id = $CUSTOMER_ID AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")`
 
 #### HINTS
 
 - Hint
 
-## 1640. Add if -z CHECK_FOR_RENTAL_RESULT
+## 1640. Add if -z RENTAL_ID
 
 ### 1640.1
 
-add if [[ -z $CHECK_FOR_RENTAL_RESULT ]]
+add if [[ -z $RENTAL_ID ]]
 then
 send to main menu
 fi
@@ -2347,7 +2369,8 @@ add else with comments:
 
 ### 1690.1
 
-Add `RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned = NOW() WHERE customer_id = $CUSTOMER_ID AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")`
+Add `RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned = NOW() WHERE rental_id=$RENTAL_ID")`
+
 
 #### HINTS
 

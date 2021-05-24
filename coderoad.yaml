@@ -1022,9 +1022,21 @@ levels:
         setup:
           watchers:
             - ./.freeCodeCamp/test/pg.log
+  - id: '1525'
+    steps:
+      - id: '1525.1'
+        setup:
+          watchers:
+            - ./.freeCodeCamp/test/pg.log
   - id: '1530'
     steps:
       - id: '1530.1'
+        setup:
+          watchers:
+            - ./bike-shop.sh
+  - id: '1540'
+    steps:
+      - id: '1540.1'
         setup:
           watchers:
             - ./bike-shop.sh
