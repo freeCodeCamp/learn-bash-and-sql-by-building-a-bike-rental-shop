@@ -1779,25 +1779,25 @@ And you still need to set the `available` column to false for the bike after it'
 - The comments should be below (not in) the `if [[ -z $CUSTOMER_NAME ]]` `if` statement
 - The comments should look like this:
 ```sh
-if [[ -z $CUSTOMER_NAME ]]
-then
-  # get new customer name
-  echo -e "\nWhat's your name?"
-  read CUSTOMER_NAME
+  if [[ -z $CUSTOMER_NAME ]]
+  then
+    # get new customer name
+    echo -e "\nWhat's your name?"
+    read CUSTOMER_NAME
 
-  # insert new customer
-  INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')")
-fi
+    # insert new customer
+    INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')")
+  fi
 
-# get customer_id
+  # get customer_id
 
-# insert bike rental
+  # insert bike rental
 
-# set bike availability to false
+  # set bike availability to false
 
-# get bike info
+  # get bike info
 
-# send to main menu
+  # send to main menu
 
 ```
 
