@@ -3134,7 +3134,7 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be below (not in) the `if [[ -z $CUSTOMER_NAME ]]` `if` statement",
-            "The comments should look like this:\n```sh\nif [[ -z $CUSTOMER_NAME ]]\nthen\n  # get new customer name\n  echo -e \"\\nWhat's your name?\"\n  read CUSTOMER_NAME\n\n  # insert new customer\n  INSERT_CUSTOMER_RESULT=$($PSQL \"INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')\")\nfi"
+            "The comments should look like this:\n```sh\n  if [[ -z $CUSTOMER_NAME ]]\n  then\n    # get new customer name\n    echo -e \"\\nWhat's your name?\"\n    read CUSTOMER_NAME\n\n    # insert new customer\n    INSERT_CUSTOMER_RESULT=$($PSQL \"INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')\")\n  fi\n\n  # get customer_id\n\n  # insert bike rental\n\n  # set bike availability to false\n\n  # get bike info\n\n  # send to main menu\n\n```"
           ]
         }
       ]
