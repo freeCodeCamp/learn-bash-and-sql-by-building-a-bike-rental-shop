@@ -1055,8 +1055,8 @@ levels:
   - id: '1550'
     steps:
       - id: '1550.1'
-          watchers:
         setup:
+          watchers:
             - ../.bash_history
   - id: '1560'
     steps:
