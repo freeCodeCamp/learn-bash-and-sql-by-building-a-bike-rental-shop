@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getLastCommand } = require('./utils');
 const { Client } = require('pg');
 
@@ -17,11 +17,11 @@ describe('You', () => {
       await client.connect();
       const res = await client.query(query);
 
-      assert(res.rowCount > 0 && lastCommand[0] === './bike-shop.sh' && (lastCommand[1] === undefined || lastCommand[1].op === ';'));
+      assert(res.rowCount > 1 && lastCommand[0] === './bike-shop.sh' && (lastCommand[1] === undefined || lastCommand[1].op === ';'));
     } catch (err) {
       assert(false);
     } finally {
       await client.end();
     }
   });
-});*/
+});
