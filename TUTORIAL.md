@@ -1109,7 +1109,7 @@ fi
 
 ### 1020.1
 
-Run the script and go to the rent menu. When you are done, close the program.
+Run the script and go to the rent menu. When you are done, exit the program.
 
 #### HINTS
 
@@ -1126,6 +1126,15 @@ If no bikes are available, you will get that message. Add an `else` to the `if` 
 
 - Here's an example of a single line comment: `# <comment_here>`
 - Make sure the comments are in the same order listed
+- An `if/else` statement looks like this:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+else
+  <STATEMENTS>
+fi
+```
 - The `else` should look like this:
 ```sh
 else
@@ -1243,12 +1252,14 @@ Run the script and go to the rent menu again to see if it's working.
 
 ### 1145.1
 
-It's working. Adjust the echo command that prints the bike info so that each line looks like this: `<BIKE_ID>) <SIZE>" <TYPE> Bike`. Here's what the first one would look like: `1) 27" Mountain Bike`. Make sure to escape any characters you need to.
+It's working. Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
 
 #### HINTS
 
 - Be sure to use double quotes and escape the `"` after `SIZE`
 - Run your script and check the output if you want to see if it matches the suggestion
+- Escape a `"` with `\"`
+- Here's an example: `echo "<bike_id>) <size>" <type> Bike"`
 - Make the suggested line look like this: `echo "$BIKE_ID) $SIZE\" $TYPE Bike"`
 - The whole loop should look like this:
 ```sh
@@ -1297,7 +1308,7 @@ Just below that, add a command to `read` input into a variable named `BIKE_ID_TO
 
 ### 1164.1
 
-Next, you want to find out how to test if the user input is a number. In the terminal, enter `[[ a =~ [0-9] ]]; echo $?` to see if `a` is a number. The condition expression will run, and `echo $?` will print the exit code of it (the last command).
+Next, you want to find out how to test if the user input is a number. In the terminal, enter `[[ a =~ [0-9] ]]; echo $?` to see if `a` is a number. The conditional expression will run, and `echo $?` will print the exit code of it (the last command).
 
 #### HINTS
 
@@ -1414,7 +1425,7 @@ If the `$BIKE_ID_TO_RENT` variable is not a number, add the code to send users t
 
 ### 1178.1
 
-Run the script, go to the rent menu, and enter something that isn't a number to make sure it is working. When you are done, close the program.
+Run the script, go to the rent menu, and enter something that isn't a number to make sure it is working. When you are done, exit the program.
 
 #### HINTS
 
@@ -1431,6 +1442,15 @@ Add an `else` area for when the input is a number. Add these three single line c
 
 - Here's an example of a single line comment: `# <comment_here>`
 - Make sure the comments are in the same order listed
+- An `if/else` statement looks like this:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+else
+  <STATEMENTS>
+fi
+```
 - The `else` area should look like this:
 ```sh
 else
@@ -1470,7 +1490,7 @@ Below the `get bike availability` comment you just added, create a `BIKE_AVAILAB
 - Here's an example of the query: `SELECT <column> FROM <table> WHERE <condition1> AND <condition2>`
 - You only want the `available` column for the bike with a `bike_id` equal to the `$BIKE_ID_TO_RENT` variable and only if the bike is available
 - You want two conditions, `WHERE bike_id = $BIKE_ID_TO_RENT AND available = true`
-- Add this to the suggested area: `BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT")`
+- Add this to the suggested area: `BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true")`
 
 ## 1190. Add echo BIKE_AVAILABILITY
 
@@ -1536,7 +1556,7 @@ In the `if` condition you just added, send users to the main menu with the messa
 
 ### 1220.1
 
-Remove the line where you print the `BIKE_AVAILABILITY` variable. You are done with it.
+Remove the line where you print the `BIKE_AVAILABILITY` variable. You don't need it anymore.
 
 #### HINTS
 
@@ -1546,7 +1566,7 @@ Remove the line where you print the `BIKE_AVAILABILITY` variable. You are done w
 
 ### 1230.1
 
-Run the script and go to the rent menu, enter a bike that isn't available to make sure it's working. When you are done, close the program.
+Run the script and go to the rent menu, enter a bike that isn't available to make sure it's working. When you are done, exit the program.
 
 #### HINTS
 
@@ -1578,6 +1598,15 @@ In your script, add an `else` for when a bike is available. Add these four comme
 
 - Here's an example of a single line comment: `# <comment_here>`
 - Make sure the comments are in the same order listed
+- An `if/else` statement looks like this:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+else
+  <STATEMENTS>
+fi
+```
 - The `else` area should look like this:
 ```sh
 else
@@ -1805,7 +1834,7 @@ And you still need to set the `available` column to false for the bike after it'
 
 ### 1320.1
 
-Getting close to done with the rent function. To add a rental to the database, you need the customer ID. Below the `get customer_id` comment, create a `CUSTOMER_ID` variable that gets the `customer_id` using the phone number.
+You're getting close to done with the rent functionality. To add a rental to the database, you need the customer ID. Below the `get customer_id` comment, create a `CUSTOMER_ID` variable that gets the `customer_id` using the phone number.
 
 #### HINTS
 
@@ -1813,7 +1842,7 @@ Getting close to done with the rent function. To add a rental to the database, y
 - You want to get the `customer_id` column from the customers table using the `PHONE_NUMBER` variable in your condition to get it
 - The condition you want is `WHERE phone = '$PHONE_NUMBER'`
 - The query looks like this: `SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'`
-- Add `CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER'")` below the `get customer_id` comment
+- Add `CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'")` below the `get customer_id` comment
 
 ## 1330. Add INSERT_RENTAL_RESULT
 
@@ -1828,18 +1857,13 @@ Now that you have the bike ID and customer ID, you can add the rental to the dat
 - The query looks similar to this: `INSERT INTO rentals(column1, column2) VALUES(value1, value2)`
 - You want to insert the `BIKE_ID_TO_RENT` and `CUSTOMER_ID` variables into the `bike_id` and `customer_id` columns
 - The query should look like this: `INSERT INTO rentals(bike_id, customer_id) VALUES($BIKE_ID_TO_RENT, $CUSTOMER_ID)`
-- Add this to the suggested area: `ADD_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT);")`
+- Add this to the suggested area: `INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT)")`
 
 ## 1370. Add SET_TO_FALSE_RESULT
 
 ### 1370.1
 
 That should add the row to the rentals table. The last thing to change in the database is to set `available` to false for the bike. Below the `set bike availability to false` comment, create a `SET_TO_FALSE_RESULT` variable that does that.
-
-
-Add `SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available = false WHERE bike_id = $BIKE_ID_TO_RENT")`
-
-The available row didn't get set to false for the bike you rented so you need to set that to false next. In your script, create a `SET_TO_FALSE_RESULT` variable that sets `available` column in the `bikes` table to `false` for the bike with the `$BIKE_ID_TO_RENT` value.
 
 #### HINTS
 
@@ -1870,7 +1894,7 @@ In the psql prompt, view all the data in the `rentals` table. There should be a 
 #### HINTS
 
 - Use the `SELECT` and `FROM` keywords with `*` to view all the data
-- Enter `SELECT * FROM bikes;` in the psql prompt
+- Enter `SELECT * FROM rentals;` in the psql prompt
 - You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1400. psql SELECT * FROM bikes ORDER BY bike_id
@@ -1891,8 +1915,6 @@ The rental was added and the `date_rented` was filled in automatically. :smile: 
 
 The bike at the top was set to false. The last thing you want to do is give a nice message about the rental. Below the `get bike info` comment, create a `BIKE_INFO` variable that gets the `size` and `type`, in that order, of the bike rented.
 
-Add `BIKE_INFO=$($PSQL "SELECT size, type FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT")`
-
 #### HINTS
 
 - Here's an example: `BIKE_INFO=$($PSQL "<query_here>")`
@@ -1912,8 +1934,8 @@ Below the variable you just created, use `echo` to print it.
 #### HINTS
 
 - Print a variable like this: `echo $<VARIABLE_NAME>`
-- The variable you want is `BIKE_AVAILABILITY`
-- Add `echo $BIKE_AVAILABILITY` in the suggested area
+- The variable you want is `BIKE_INFO`
+- Add `echo $BIKE_INFO` in the suggested area
 
 ## 1403. ./bike-shop.sh
 
@@ -1926,348 +1948,499 @@ Run the script again and go to the rent menu, there should now be one less bike 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure to rent a second bike using the customer with the phone number `555-5555`
 
-## 1404. echo '28 | Mountain' | sed 's/ /=/'
+## 1404. echo '28 | Mountain' | sed 's/ /=/g'
 
 ### 1404.1
 
-The message you want to print will say something like, `I have put you down for the 28" Mountain Bike, Me.`. You need to format that variable for the message. In the terminal, enter `echo '28 | Mountain' | sed 's/ /=/'`
+It should have printed `28 | Mountain`. The message you want to print will say `I have put you down for the 28" Mountain Bike, Me.`. You need to format that variable for the message. The `sed` command can be used to replace characters and patterns in text. It looks like this: `sed s/<pattern_to_replace>/<characters_to_replace_with>/<regex_flags>`. In the terminal, enter `echo '28 | Mountain' | sed 's/ /=/g'`.
 
 #### HINTS
 
 - Enter the suggested command in the terminal
 - Not the psql one
 
-## 1405. echo '28 | Mountain' | sed 's/ /=/g'
+## 1405. echo '28 | Mountain' | sed 's/ //g'
 
 ### 1405.1
 
-The `sed` command can be used to replace characters and patterns in a string. It looks like this: `sed s/<pattern_to_replace>/<characters_to_replace_with>/`. The `sed s/ /=/` you used in the last command, replaced the first space in the string you passed to it with `=`.
-
-terminal:
-echo '28 | Mountain' | sed 's/ /=/g'
+The command you used, "piped" a string (`28 | Mountain`) to the `sed` command, where it replaced all the spaces with `=`. Enter the same command, but replace all the spaces with nothing.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo '28 | Mountain' | sed 's/ /=/g'`
+- Remove the `=` from the previous command
+- Enter `echo '28 | Mountain' | sed 's/ //g'`
 
-## 1407. echo '28 | Mountain' | sed 's/ //g'
+## 1407. echo '28 | Mountain' | sed 's/ //'
 
 ### 1407.1
 
-terminal:
-echo '28 | Mountain' | sed 's/ //g'
+The `g` regex flag stands for "global". It will replace all instance of the pattern. In this case, a space. Enter the same command but remove that flag.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo '28 | Mountain' | sed 's/ //g`
+- Remove the `g` flag from the previous command
+- Enter `echo '28 | Mountain' | sed 's/ //'`
 
-## 1408. echo '28 | Mountain' | sed 's/ |//g'
+## 1408. echo '28 | Mountain' | sed 's/ |//'
 
 ### 1408.1
 
-terminal:
-echo '28 | Mountain' | sed 's/ |//g'
+That time, only the first instance of the pattern was replaced. The first space was replaced with nothing. Enter the same command, but replace the first instance of ` |` (`<space>|`) with nothing.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo '28 | Mountain' | sed 's/ //`
+- You want to replace the space in the pattern of the last command with ` |`
+- Enter `echo '28 | Mountain' | sed 's/ |//'`
 
 ## 1410. echo '28 | Mountain' | sed 's/ |/"/'
 
 ### 1410.1
 
-terminal:
-echo '28 | Mountain' | sed 's/ |/"/'
+Enter the same command, but make the output look like how you want in the message, `28" Mountain`.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo '28 | Mountain' | sed 's/ |//`
+- Use `"` as the character to replace ` |` with
+- Enter `echo '28 | Mountain' | sed 's/ |/"/'`
 
 ## 1411. Add echo BIKE_INFO | sed 's/ |/"/'
 
 ### 1411.1
 
-Add echo BIKE_INFO | sed 's/ |/"/'
+Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces ` |` with `"` so the text will read <SIZE>" <TYPE>. `28 | Mountain` would become `28" Mountain`, for instance.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo '28 | Mountain' | sed 's/ |/"/'`
+- You want to add the `| sed 's/ |/"/'` part of the previous command after your `echo $BIKE_INFO` line
+- Make the suggested area look like this:
+```sh
+echo $BIKE_INFO | sed 's/ |/"/'
+```
 
 ## 1413. ./bike-shop.sh
 
 ### 1413.1
 
-run script. rent a bike
+Run the script and rent the next bike on the list. Use the same customer that's already in the database.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- The customer with phone number `555-5555` should have the first three bikes rented
 
 ## 1415. Add BIKE_INFO_FORMATTED
 
 ### 1415.1
 
-Add BIKE_INFO_FORMATTED=$(...)
+Now it is formatted for the message. Take that `echo` command and the part that formats it, put it in a sub shell, and set the output into a variable named `BIKE_INFO_FORMATTED`. Here's an example: `BIKE_INFO_FORMATTED=$(<formatted info here>)`
 
 #### HINTS
 
-- Hint
+- You want to put the `echo $BIKE_INFO | sed 's/ |/"/'` part in the subshell
+- It should look like this: `BIKE_INFO_FORMATTED=$(echo $BIKE_INFO | sed 's/ |/"/')`
 
 ## 1417. Add MAIN_MENU I have put you down for bike
 
 ### 1417.1
 
-add `MAIN_MENU "I have put you down for the $BIKE_INFO_FORMATTED Bike, $CUSTOMER_NAME."`
+What you put the in subshell (`$(...)`) will be executed, and the result of it will replace the subshell. In this case, the formatted bike info was printed when you ran the script before, so the `BIKE_INFO_FORMATTED` variable will be set to that. Below the `send to main menu` comment, send users to the main menu with a message that would print `I have put you down for the 28" Mountain Bike, Me.` if `Me` rented the 28 inch Mountain Bike.
 
 #### HINTS
 
-- Hint
+- Use dynamic info for the bike info and the customer's name
+- You want to use the `BIKE_INFO_FORMATTED` and `CUSTOMER_NAME`
+- The message should look like this: `I have put you down for the $BIKE_INFO_FORMATTED Bike, $CUSTOMER_NAME.`
+- Add `MAIN_MENU "I have put you down for the $BIKE_INFO_FORMATTED Bike, $CUSTOMER_NAME."` below the `send to main menu` comment
 
 ## 1418. ./bike-shop.sh
 
 ### 1418.1
 
-run script. rent a bike
+Run the script and rent the next bike on the list. Use the customer with `555-5555` as their phone number.
 
 #### HINTS
 
-- Hint
+- Enter `./bike-shop.sh` in the terminal and press enter
+- The customer with phone number `555-5555` should have the first four bikes rented
 
 ## 1420. echo ' M e '
 
 ### 1420.1
 
-terminal echo ' M e '
+There's an extra space around the customer's name. You can use `sed` again to fix that. In the terminal, enter `echo ' M e '` to print `M e` with spaces around it to see if you can find out how.
 
 #### HINTS
 
-- Hint
+- Enter the `echo ' M e '` in the terminal
+- Not the psql one
 
 ## 1422. echo "$(echo ' M e ')."
 
 ### 1422.1
 
-terminal
-echo "$(echo ' M e ')."
+It printed, but you can only assume there's a space at the end. Place the last command in a subshell with quotes around it. Put a period right after the subshell and echo the whole thing in the terminal. Here's how it looks: `echo "$(echo ' M e ')."`
 
 #### HINTS
 
-- Hint
+- Enter `echo "$(echo ' M e ')."` in the terminal
 
 ## 1424. echo "$(echo ' M e ' | sed 's/ //')."
 
 ### 1424.1
 
-terminal
-echo "$(echo ' M e ' | sed 's/ //')."
+Now you can be certain there's a space at the end. Within the subshell of the last command, use a pipe and the `sed` command to replace the first space with no space. Here's the `sed` replacement pattern you want: `'s/ //'`.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo ' M e ')."`
+- Here's an example of how the subshell should look: `$(echo ' M e ' | sed <pattern>)`
+- This is the exact subshell: `$(echo ' M e ' | sed <pattern>)`
+- Enter `echo "$(echo ' M e ' | sed 's/ //')."` in the terminal
 
 ## 1425. echo "$(echo ' M e ' | sed 's/ //g')."
 
 ### 1425.1
 
-echo "$(echo ' M e ' | sed 's/ //g')."
+That removed only the first space it found. Change the previous command to replace all instances of a space instead of just the first one.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo ' M e ' | sed 's/ //')."`
+- Use a regex flag to make the suggested modification
+- You want to add the `g` flag to the `sed` replacement pattern.
+- The `sed` pattern should look like this: `'s/ //g'`
+- Enter `echo "$(echo ' M e ' | sed 's/ //g')."` in the terminal
 
 ## 1427. echo "$(echo ' M e ' | sed 's/^ //g')."
 
 ### 1427.1
 
-terminal
-echo "$(echo ' M e ' | sed 's/^ //g')."
+That replaced all the spaces. You only had an extra space at the beginning of the customer name. Add a `^` in front of the space in the replacement pattern of the last command to only replace a space at the beginning of the text.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo ' M e ' | sed 's/ //g')."`
+- You want to change the matching pattern to `^ ` (`^<space>`)
+- The matching pattern is between the first and second forward slashes
+- The `sed` pattern should look like this: `s/^ //g`
+- Enter `echo "$(echo ' M e ' | sed 's/^ //g')."` in the terminal
 
 ## 1428. echo "$(echo '   M e ' | sed 's/^ //g')."
 
 ### 1428.1
 
+The caret you added means that's the start of the text. So it will replace a space only if it's the first character. Enter the last command, but add two more spaces (three total) at the beginning of the text.  
 terminal 
 echo "$(echo '   M e ' | sed 's/^ //g')."
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo ' M e ' | sed 's/^ //g')."`
+- Change the `' M e '` part to include the suggestion
+- The new text should be `'   M e '`
+- Enter `echo "$(echo '   M e ' | sed 's/^ //g')."` in the terminal
 
 ## 1430. echo "$(echo '   M e ' | sed 's/^ *//g')."
 
 ### 1430.1
 
+The caret, space pattern (`^ `), only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.
 echo "$(echo '   M e ' | sed 's/^ *//g')."
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo '   M e ' | sed 's/^ //g')."`
+- The matching pattern is between the first and second forward slash
+- The new pattern is: `'s/^ *//g'`
+- Enter `echo "$(echo '   M e ' | sed 's/^ *//g')."` in the terminal
 
 ## 1432. echo "$(echo '   M e ' | sed 's/ $//g')."
 
 ### 1432.1
 
-echo "$(echo '   M e ' | sed 's/ $//g')."
+The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is ` $` (`<space>$`).
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo '   M e ' | sed 's/^ *//g')."`
+- The matching pattern is between the first and second forward slash
+- Change the matching pattern to the suggestion
+- Enter `echo "$(echo '   M e ' | sed 's/ $//g')."` in the terminal
 
 ## 1433. echo "$(echo '   M e   ' | sed 's/ $//g')."
 
 ### 1433.1
 
-echo "$(echo '   M e   ' | sed 's/ $//g')."
+Add two more spaces to the end of text in the previous command (three total).
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo '   M e ' | sed 's/ $//g')."`
+- The matching pattern is between the first and second forward slash
+- Change the matching pattern to the suggestion
+- Enter `echo "$(echo '   M e   ' | sed 's/ $//g')."` in the terminal
 
 ## 1435. echo "$(echo '   M e   ' | sed 's/ *$//g')."
 
 ### 1435.1
 
-echo "$(echo '   M e   ' | sed 's/ *$//g')."
+The pattern only replaces a single space at the end. Change the last command so it replaces all spaces at the end of the text.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo '   M e   ' | sed 's/ $//g')."`
+- Use `*` in a pattern after a character to replace zero or more of that character
+- The matching pattern you want is ` *$` (`<space>*$`)
+- Change the matching pattern to the suggestion
+- Enter `echo "$(echo '   M e   ' | sed 's/ *$//g')."` in the terminal
 
 ## 1436. echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."
 
 ### 1436.1
 
-echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."
+That replaced all the spaces at the end of the text. You can use `|` as an "or" operator in a matching pattern to replace one pattern or another. Use it to change the matching pattern so it would replace any amount of spaces at the beginning and any amount of spaces at the end of the text.
 
 #### HINTS
 
-- Hint
+- The previous command was `echo "$(echo '   M e   ' | sed 's/ *$//g')."`
+- The two patterns you want to replace are `^ *` or ` *$`
+- The matching pattern should look like this: `'s/^ *| *$//g'`
+- Enter `echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."` in the terminal
+
+## 1437. man sed
+
+### 1437.1
+
+That didn't work. It doesn't like that "or" (`|`) operator for some reason. Check the manual of the `sed` command to see if you can find anything.
+
+#### HINTS
+
+- Here's an example of how to see a manual: `man <command>`
+- Enter `man sed` in the terminal
+- Press enter until you have seen the whole manual
 
 ## 1438. echo "$(echo '   M e   ' | sed -r 's/^ *| *$//g')."
 
 ### 1438.1
 
-echo "$(echo '   M e   ' | sed -r 's/^ *| *$//g')."
+Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the `echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."` command that didn't work to find out.
 
 #### HINTS
 
-- Hint
+- :point_down:
 
 ## 1440. Change to trim CUSTOMER_NAME
 
 ### 1440.1
 
+I knew you could do it. That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.
+
+rom the front or back of text. In 
 change $CUSTOMER_NAME to $(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')
 
 #### HINTS
 
-- Hint
+- Here's an example: `$(echo $CUSTOMER_NAME | sed ...)`
+- `^ *` will match all spaces at the beginning of text, and ` *$` will match spaces at the end
+- The previous command was `echo "$(echo '   M e   ' | sed -r 's/^ *| *$//g')."`
+- Change the `$CUSTOMER_NAME` variable in the last message to `$(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')`
 
-## 1450. Run the script
+## 1442. Run the script
 
-### 1450.1
+### 1442.1
 
-Run the script and rent a bike.
+Run the script and rent the next bike on the list. Use the same customer whose phone number is `555-5555`.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- The customer with phone number `555-5555` should have the first five bikes rented
+
+## 1444. Run the script
+
+### 1444.1
+
+Run the script again. Rent the next bike on the list. Use `000-0000` as the phone number, and `I` as the name.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- The customer with phone number `000-0000` should have a bike rented
+
+## 1446. Run the script
+
+### 1446.1
+
+Run the script again. Rent the next bike on the list using the customer with phone number `000-0000` you just created.
+
+#### HINTS
+
+- Enter `./bike-shop.sh` in the terminal and press enter
+- The customer with phone number `000-0000` should have two bikes rented
+
+## 1448. SELECT * FROM bikes ORDER BY bike_id
+
+### 1448.1
+
+View all the data in your bikes table ordered by the `bike_id`.
+
+#### HINTS
+
+- Use the `SELECT`, `FROM`, and `ORDER BY` keywords with `*` to view all the data
+- Enter `SELECT * FROM bikes ORDER BY bike_id;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
+
+## 1449. SELECT * FROM bikes ORDER BY bike_id
+
+### 1449.1
+
+There should be one bike left available to rent. Next, look at all the data in the customers table.
+
+#### HINTS
+
+- Use the `SELECT` and `FROM` keywords with `*` to view all the data
+- Enter `SELECT * FROM customers;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
+
+## 1450. SELECT * FROM bikes ORDER BY bike_id
+
+### 1450.1
+
+There should two customers in that table now. Lastly, look at all the data in the rentals table.
+
+#### HINTS
+
+- Use the `SELECT` and `FROM` keywords with `*` to view all the data
+- Enter `SELECT * FROM rentals;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1453. Delete echo Return Menu
 
 ### 1453.1
 
-Delete echo Return Menu
+Your business is growing. The rent functionality is finally finished. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started on that.
 
 #### HINTS
 
-- Hint
+- The `RETURN_MENU` function should be empty
+- The `RETURN_MENU` function should look like this:
+```sh
+RETURN_MENU() {
+
+}
+```
 
 ## 1457. Add comments to RETURN_MENU
 
 ### 1457.1
 
-Add comments to RETURN_MENU:
-get customer info
-if not found
-send to main menu
+Add three single line comments to the return menu; `get customer info`, `if not found`, and `send to main menu`, in that order.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Here's an example of a single line comment: `# <comment_here>`
+- Make sure the comments are in the same order listed
+- The comments should be in the `RETURN_MENU` function
+- The `RETURN_MENU` function should look like this:
+```sh
+RETURN_MENU() {
+  # get customer info
+
+  # if not found
+
+  # send to main menu
+
+}
+```
 
 ## 1460. Start the Return Bike Functionality
 
 ### 1460.1
 
+Below the `get customer info` comment you just added, print `What's your phone number?` with a new line in front of the sentence.
 Add `echo -e "\nWhat's your phone number?"`
-
-Okay, I think the renting part is looking good. Last is the ability to return a bike. I suppose the logic for that would be to get their phone number, check if they have any rentals, ask them what bike to return, and update the rental and bike records. First, change that placeholder message still in your `RETURN_MENU` function with `What's your phone number?` 
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use `echo` with the `-e` flag and the new line character (`\n`) to print the suggested message
+- Use double quotes around the message
+- Here's an example: `echo -e "\n<message_here>"`
+- Add `echo -e "\nWhat's your phone number?"` below the suggested comment
 
 ## 1470. Read PHONE_NUMBER
 
 ### 1470.1
 
-Use `read` to get input into a `PHONE_NUMBER` variable.
+Just below that, use `read` to get input into a `PHONE_NUMBER` variable.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Here's an example: `read <VARIABLE_NAME>`
+- Add `read PHONE_NUMBER` to the suggested area
+- Add it below where you print `What's your phone numer?`
 
 ## 1472. Add CUSTOMER_ID
 
 ### 1472.1
 
-Add `CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'")`
+Just below that, set the `CUSTOMER_ID` variable to a query that gets the customer ID from the database using the phone number they gave you.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Here's an example: `CUSTOMER_ID=$($PSQL "<query_here>")`
+- You want to get the `customer_id` column from the customers table using the `PHONE_NUMBER` variable in your condition to get it
+- The condition you want is `WHERE phone = '$PHONE_NUMBER'`
+- The query looks like this: `SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'`
+- Add `CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER'")` below the `read PHONE_NUMBER` line in the `RETURN_MENU` function
 
 ## 1474. Add if -z CUSTOMER_ID
 
 ### 1474.1
 
-Add if -z CUSTOMER_ID
-then
-send to main menu
-fi
+If they are in the database, the variable will be their `customer_id`. If not, it will be empty. Below the `if not found` comment, add an `if` statement that checks if it's empty. Put the `send to main menu` comment in the `then` area.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Here's an example:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+fi
+```
+- The condition you want is `-z $CUSTOMER_ID`
+- Place the `# send to main menu` comment in the `<STATEMENTS>` area
+- The `if` condition should look like this:
+```sh
+if [[ -z $CUSTOMER_ID ]]
+then
+  # send to main menu
+
+fi
+```
 
 ## 1475. Add MAIN_MENU I could not find a recond for that phone number
 
 ### 1475.1
 
-Add MAIN_MENU "I could not find a record for that phone number."
+If the customer isn't found, send them to the main menu with the message `I could not find a record for that phone number.`
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- You want to call the `MAIN_MENU` function with the message as an argument
+- Here's an example: `MAIN_MENU "<message_here>"`
+- Add `MAIN_MENU "I could not find a record for that phone number."` below the `send to main menu` comment
 
 ## 1476. ./bike-shop.sh
 
 ### 1476.1
 
-Run script. return menu. enter a number not in the database
+Run the script and go to the return menu. Enter a phone number that is not in the database. When you are done, exit the program.
 
 #### HINTS
 
@@ -2278,191 +2451,293 @@ Run script. return menu. enter a number not in the database
 
 ### 1478.1
 
-Add else with comments:
-	get customer’s rentals
-	if no rentals
-	send to main menu
+Add an `else` to the `if` condition for if the phone number is found in the database. Place `get customer's rentals`, `if no retals`, and `send to main menu` in the `else` area as single line comments.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Here's an example of a single line comment: `# <comment_here>`
+- Make sure the comments are in the same order listed
+- The comments should be in the `else` area of the `if [[ -z CUSTOMER_ID ]]` statement
+- An `if/else` statement looks like this:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+else
+  <STATEMENTS>
+fi
+```
+- The `else` area should look like this:
+```sh
+else
+  # get customer's rentals
+
+  # if no rentals
+
+  # send to main menu
+
+fi
+```
+- The `if` should look like this:
+```sh
+if [[ -z $CUSTOMER_ID  ]]
+then
+  # send to main menu
+  MAIN_MENU "I could not find a record for that phone number."
+else
+  # get customer's rentals
+
+  # if no rentals
+
+  # send to main menu
+
+fi
+```
 
 ## 1480. psql SELECT * FROM bikes
 
 ### 1480.1
 
-psql SELECT * FROM bikes
-
-Okay, so how can you find out what rentals a person has from their phone number? You need their `customer_id` since that's what is stored in the `rentals` table to find out what rentals they have. And once you find that out, you need to get the bike info for the bikes they have rented. :astonished: :cold_sweat: In the psql prompt, enter a command to select all the rows and columns from the bikes table.
+You want to find out what rentals a customer has using their phone number and display them. You will need to join all the tables. Start by using the psql prompt to view all the data in the `bikes` table.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- Use the `SELECT` and `FROM` keywords with `*` to view all the data
+- Enter `SELECT * FROM bikes;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
+
+## 1485. psql SELECT * FROM bikes LEFT JOIN rentals
+
+### 1485.1
+
+Next, use a `LEFT JOIN` with `bikes` as the left table to join the bikes and rentals tables. Use the `USING` keyword to join the two tables.
+
+#### HINTS
+
+- You need the `SELECT`, `FROM`, `LEFT JOIN`, and `USING` keywords
+- Here's an example: `SELECT <column> FROM <table_1> LEFT JOIN <table_2> USING(<foreign_key>)`
+- Enter `\d bikes` or `\d rentals` in the psql prompt to view the details of the table and find the foreign key column
+- It's the `bike_id` column
+- Enter `SELECT * FROM bikes LEFT JOIN rentals USING(bike_id);` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1490. psql SELECT bikes INNER JOIN rentals
 
 ### 1490.1
 
-psql SELECT * FROM bikes INNER JOIN rentals USING(bike_id)
-
-You need to use `JOIN` to add info from another table to that command. Add this to the end of the command you just entered: `LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id;`. That will get all the columns from the bikes and rentals table.
+You only need the bikes that are being rented. Use the appropiate join with the same two tables to only get those. Use the `USING` keyword again.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- It's an `INNER JOIN`
+- You need the `SELECT`, `FROM`, `INNER JOIN`, and `USING` keywords
+- Here's an example: `SELECT <column> FROM <table_1> INNER JOIN <table_2> USING(<foreign_key>)`
+- Enter `SELECT * FROM bikes INNER JOIN rentals USING(bike_id);` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1500. psql SELECT bikes INNER JOIN rentals INNER JOIN customers
 
 ### 1500.1
 
-psql SELECT * FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id)
-
-So you can get info from those two tables, but you need the column for the customers phone number from the third table. You can add another join for that. `Add LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id` to the end of the last command. You may need to make the window a little wider to see the output.
+Add a join to the previous command that joins the last table so you can get the customer information. Use an `INNER JOIN` and the `USING` keyword again.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- The previous query was `SELECT * FROM bikes INNER JOIN rentals USING(bike_id);`
+- Here's an example: `SELECT <column> FROM <table_1> INNER JOIN <table_2> USING(<foreign_key>) INNER JOIN <table_3> USING(foreign_key)`
+- Enter `\d rentals` or `\d customers` in the psql prompt to view the details of the table and find the foreign key column
+- It's the `customer_id` column
+- Enter `SELECT * FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id);` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1510. psql Add conditions to the query
 
 ### 1510.1
 
-Add conditions to last query
-
-Now you're getting the info from all three tables :smile: But you only need the current rentals for the customer who's phone number you are looking for. Add two `WHERE` conditions to the end of the last command. One should phone number, use one of the phone numbers shown. The second should be to only show items where the bike hasn't been returned yet. You can do that with `date_returned IS NULL`
-`SELECT * FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='$PHONE_NUMBER' AND date_returned is null;`
+Add two conditions to the last query to narrow down the results to the bikes that are currently being rented by customer with `555-5555` as their phone number. The second condition should check the `date_returned` column
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- The previous query was `SELECT * FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id);`
+- You want to add a `WHERE <condition_1> AND <condition_2>` to the last query
+- Use the `IS NULL` keyword to check the `date_returned` in one of the conditions
+- The two conditions are `WHERE phone = '555-5555' AND date_returned IS NULL`
+- Enter `SELECT * FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1520. psql SELECT only columns
 
 ### 1520.1
 
-only get the columns you need
-
-That's a big query, but you're not done yet. You only need a few of those columns, select just the `bike_id`, `type`, and `size` columns. Since there's two `bike_id` columns, PostgreSQL needs to know what table you want that column from. Tell it to use the bikes table like this: `bikes.bike_id`
+Now you have all the rentals for one specific customer. Only get the columns you need to display the bike information to them. They are the same three columns you used to display the list of available bikes.
 
 #### HINTS
 
-- Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- The previous query was `SELECT * FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL;`
+- The three columns you want are `bike_id`, `type`, and `size`
+- Enter `SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1525. psql SELECT ORDER BY
 
 ### 1525.1
 
-order the results by bike_id
-
-That's a big query, but you're not done yet. You only need a few of those columns, select just the `bike_id`, `type`, and `size` columns. Since there's two `bike_id` columns, PostgreSQL needs to know what table you want that column from. Tell it to use the bikes table like this: `bikes.bike_id`
+One more thing, order the results of the last query by their `bike_id` column.
 
 #### HINTS
 
-- Hint
+- The previous query was `SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL;`
+- Add `ORDER BY bike_id` to the end of the last query
+- Enter `SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL ORDER BY bike_id;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1530. Add CUSTOMER_RENTALS
 
 ### 1530.1
 
-Add `CUSTOMER_RENTALS=$($PSQL "SELECT bike_id, type, size FROM customers INNER JOIN rentals USING(customer_id) INNER JOIN bikes USING(bike_id) WHERE customer_id = $CUSTOMER_ID AND date_returned IS NULL ORDER BY bike_id")`
-
-Take that giant query and put it in a variable named `CUSTOMER_RENTALS` in your `RETURN_MENU` function. In the condition of the query, use the `PHONE_NUMBER` variable instead of the hard-coded value.
+That's the query you will need to use to get the bikes a customer is renting. In your script below the `get customer's rentals` comment. Create a `CUSTOMER_RENTALS` variable that gets the rentals for the customer.
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
-- Make sure you are in the `project` folder first
+- Here's an example: `CUSTOMER_RENTALS=$($PSQL "<query_here>")`
+- You previously entered `SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL ORDER BY bike_id;` in the psql prompt
+- Make sure to get the columns in this order: `bike_id, type, size` and use the `PHONE_NUMBER` variable in the query
+- The query looks like this: `SELECT bike_id, type, size FROM customers INNER JOIN rentals USING(customer_id) INNER JOIN bikes USING(bike_id) WHERE customer_id = $CUSTOMER_ID AND date_returned IS NULL ORDER BY bike_id`
+- Add `CUSTOMER_RENTALS=$($PSQL "SELECT bike_id, type, size FROM customers INNER JOIN rentals USING(customer_id) INNER JOIN bikes USING(bike_id) WHERE customer_id = $CUSTOMER_ID AND date_returned IS NULL ORDER BY bike_id")` below the `get customer's rentals` comment
 
 ## 1540. Add echo CUSTOMER_RENTALS
 
 ### 1540.1
 
-Add echo "$CUSTOMER_RENTALS"
+Below the variable you just created, use `echo` to print it. Make sure to put double quotes around it.
 
 #### HINTS
 
-- Hint
+- Here's an example: `echo "<variable_here>"`
+- Use the variable with `$CUSTOMER_RENTALS`
+- Add `echo "$CUSTOMER_RENTALS"` to the suggested area
 
 ## 1550. ./bike-shop.sh
 
 ### 1550.1
 
-Run the script and go to the return menu. Enter `555-5555` for the phone number to see the rentals for me.
+Run the script and go to the return menu. Enter `555-5555` for the phone number to see the rentals for `Me`.
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
+- Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure you are in the `project` folder first
 
 ## 1560. Add if -z CUSTOMER_RENTALS
 
 ### 1560.1
 
-Add if -z CUSTOMER_RENTALS
-send to main menu
-
-Okay, it looks like it's working. Add and `if` condition after your variable that sends users to the main menu if the variable is empty. Add the message, `I could not find any rentals for that phone number`
+The query is working. If the customer has no rentals, the variable will be empty. Below the `if no rentals` comment, add an `if` condition that checks if it's empty. Put the `send to main` menu comment in the `then` area again.
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
-- Make sure you are in the `project` folder first
+- Here's an example:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+fi
+```
+- The condition you want is `-z $CUSTOMER_RENTALS`
+- Place the `# send to main menu` comment in the `<STATEMENTS>` area
+- The `if` condition should look like this:
+```sh
+if [[ -z $CUSTOMER_RENTALS ]]
+then
+  # send to main menu
+
+fi
+```
 
 ## 1563. Add MAIN_MENU You do not have any bikes rented
 
 ### 1563.1
 
-add MAIN_MENU "You do not have any bikes rented."
+If the customer has no rentals, send them to the main menu with the message `You do not have any bikes rented.` Add the code below the next comment.
 
 #### HINTS
 
-- Hint
+- You want to call the `MAIN_MENU` function with the message as an argument
+- Here's an example: `MAIN_MENU "<message_here>"`
+- Add `MAIN_MENU "You do not have any bikes rented."` below the `send to main menu` comment
 
 ## 1570. Add else with comments
 
 ### 1570.1
 
-Add else with comments:
-	display rented bikes
-	ask for bike to return
-	if not a number
-	send to main menu
+Add an `else` to the condition for when the customer does have rentals. Place four single line comments in it; `display rented bikes`, `ask for bike to return`, `if not a number`, and `send to main menu`.
 
 #### HINTS
 
-- Hint
+- Here's an example of a single line comment: `# <comment_here>`
+- Make sure the comments are in the same order listed
+- The comments should be in the `else` area of the `if [[ -z CUSTOMER_RENTALS ]]` statement
+- The `else` area should look like this:
+```sh
+else
+  # display rented bikes
+
+  # ask for bike to return
+
+  # if not a number
+
+  # send to main menu
+
+fi
+```
+- The `if` should look like this:
+```sh
+if [[ -z $CUSTOMER_RENTALS  ]]
+then
+  # send to main menu
+  MAIN_MENU "You do not have any bikes rented."
+else
+  # display rented bikes
+
+  # ask for bike to return
+
+  # if not a number
+
+  # send to main menu
+
+fi
+```
 
 ## 1572. Add echo Here are your rentals
 
 ### 1572.1
 
-Add echo -e "\nHere are your rentals:\n"
+Below the `display rented bikes` comment, print `Here are your rentals:` with a new line in front of it.
 
 #### HINTS
 
-- Hint
+- Use `echo` with the `-e` flag and the new line character (`\n`) to print the suggested message
+- Use double quotes around the message
+- Here's an example: `echo -e "\n<message_here>"`
+- Add `echo -e "\nHere are your rentals:"` below the suggested comment
 
 ## 1575. Add echo CUSTOMER_RENTALS
 
 ### 1575.1
 
-move the echo "$CUSTOMER_RENTALS"
+Move the `echo $CUSTOMER_RENTALS` line to below the line you just printed.
 
 #### HINTS
 
-- Hint
+- Move the suggested code below where you print `Here are your rentals:`
+- You should only print the variable in that one spot
+- Place the `echo "$CUSTOMER_RENTALS"` line in the suggested spot
 
 ## 1578. ./bike-shop.sh
 
 ### 1578.1
 
-run the script, go to return menu
+Run the script and go to the return menu. Enter `555-5555` for the phone number to see the rented bikes.
 
 #### HINTS
 
@@ -2473,25 +2748,36 @@ run the script, go to return menu
 
 ### 1580.1
 
+Where you print the list of rented bikes, pipe the command into a `while` loop that reads the data. You should read the data into `BIKE_ID`, `BAR`, `TYPE`, `BAR`, and `SIZE` variables. Make it print each rented bike in the same fashion as the list of available bikes.
+
 add
-```sh
-      echo "$CUSTOMER_RENTALS" | while read BIKE_ID BAR TYPE BAR SIZE
-      do
-        echo "$BIKE_ID) $SIZE\" $TYPE Bike"
-      done
-```
+
 You need to pipe those results into a while loop again and read the info into a variable so you can make it pretty.
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
-- Make sure you are in the `project` folder first
+- Here's an example:
+```sh
+echo "$CUSTOMER_RENTALS" | while read <VARIABLES>
+do
+  echo <RENTED_BIKE_INFORMATION>
+done
+```
+- The first line should look like this: `echo "$CUSTOMER_RENTALS" | while read BIKE_ID BAR TYPE BAR SIZE`
+- The loop should print `1) 27" Mountain Bike` with the appropriate bike info
+- The whole thing looks like this:
+```sh
+echo "$CUSTOMER_RENTALS" | while read BIKE_ID BAR TYPE BAR SIZE
+do
+  echo "$BIKE_ID) $SIZE\" $TYPE Bike"
+done
+```
 
 ## 1585. ./bike-shop.sh
 
 ### 1585.1
 
-run the script, go to return menu
+Run the script and go to the return menu. Enter the same phone number again to make sure the list is showing up correctly.
 
 #### HINTS
 
@@ -2502,220 +2788,376 @@ run the script, go to return menu
 
 ### 1590.1
 
+Below the `ask for bike to return` comment, print `Which one would you like to return?` with a new line in front of it.
 Add `echo -e "\nWhich one would you like to return?"`
 
 #### HINTS
 
-- Hint
+- Use `echo` with the `-e` flag and the new line character (`\n`) to print the suggested message
+- Use double quotes around the message
+- Here's an example: `echo -e "\n<message_here>"`
+- Add `echo -e "\nWhich one would you like to return?"` below the suggested comment
 
 ## 1600. read BIKE_ID_TO_RETURN
 
 ### 1600.1
 
-add read BIKE_ID_TO_RETURN
+Below the line you just printed, read input into a `BIKE_ID_TO_RETURN` variable.
 
 #### HINTS
 
-- Hint
+- Here's an example: `read <VARIABLE_NAME>`
+- Add `read BIKE_ID_TO_RETURN` to the suggested area
+- Add it below where you print `Which one would you like to return?`
 
 ## 1602. Add if BIKE_ID_TO_RETURN not a number
 
 ### 1602.1
 
-Add if [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]
-then
-send to main menu
-fi
+Below the `if not a number` comment, check if the input for the bike ID to return is a number using the same method you did earlier. Place the `send to main menu` comment in the statement.
 
 #### HINTS
 
-- Hint
+- Here's an example:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+fi
+```
+- The condition should check that the `$BIKE_ID_TO_RETURN` variable is not a number using the pattern matching operater (`=~`) and the pattern `^[0-9]+$`
+- The condition you want is `[[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]`
+- Place the `# send to main menu` comment in the `<STATEMENTS>` area
+- The `if` condition should look like this:
+```sh
+if [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]
+then
+  # send to main menu
+
+fi
+```
 
 ## 1605. Add MAIN_MENU That is not a valid bike number
 
 ### 1605.1
 
-Add MAIN_MENU "That is not a valid bike number."
+If they don't input a number, send them to the main menu with `That is not a valid bike number.` as the message.
 
 #### HINTS
 
-- Hint
+- You want to call the `MAIN_MENU` function with the message as an argument
+- Here's an example: `MAIN_MENU "<message_here>"`
+- Add `MAIN_MENU "That is not a valid bike number."` below the `send to main menu` comment
 
 ## 1607. Add else with comments
 
 ### 1607.1
 
-Add else with comments
-	check if input is rented
-	if input not rented
-	send to main menu
+Add an `else` for when they do input a number. Place `check if input is rented`, `if input not rented`, and `send to main menu` single line comments in it.
 
 #### HINTS
 
-- Hint
+- Here's an example of a single line comment: `# <comment_here>`
+- Make sure the comments are in the same order listed
+- The comments should be in the `else` area of the `if [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]` statement
+- The `else` area should look like this:
+```sh
+else
+  # check if input is rented
+
+  # if input not rented
+
+  # send to main menu
+
+fi
+```
+- The `if` should look like this:
+```sh
+if [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]
+then
+  # send to main menu
+  MAIN_MENU "That is not a valid bike number."
+else
+  # display rented bikes
+
+  # ask for bike to return
+
+  # if not a number
+
+  # send to main menu
+
+fi
+```
 
 ## 1610. psql SELECT rentals INNER JOIN customers
 
 ### 1610.1
 
-psql rentals INNER JOIN customers
+You need to check if the input is a `bike_id` rented by the customer so you can return it. In the psql prompt, join the `rentals` and `customers` tables with an `INNER JOIN` using the `USING` keyword.
 
 #### HINTS
 
-- Hint
+- You need the `SELECT`, `FROM`, `INNER JOIN`, and `USING` keywords
+- Here's an example: `SELECT <column> FROM <table_1> INNER JOIN <table_2> USING(<foreign_key>)`
+- Enter `\d rentals` or `\d customers` in the psql prompt to view the details of the table and find the foreign key column
+- It's the `customer_id` column
+- Enter `SELECT * FROM rentals INNER JOIN customers USING(customer_id);` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1620. psql Add conditions to the query
 
 ### 1620.1
 
-```sh
-WHERE phone='555-5555' AND date_returned IS NULL AND bike_id=1;")
-```
+Add three conditions to the previous query. Check the `phone`, `bike_id`, and `date_returned` columns to narrow the results to the first bike you rented.
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
-- Make sure you are in the `project` folder first
+- The previous query was `SELECT * FROM rentals INNER JOIN customers USING(customer_id);`
+- You want to add a `WHERE <condition_1> AND <condition_2> AND <condition_3>` to the last query
+- Use the `IS NULL` keyword to check the `date_returned` in one of the conditions
+- The other two conditions should check the `phone` and `bike_id` of the first rental
+- The three conditions are `WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL`
+- Enter `SELECT * FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1625. psql Only get columns needed
 
 ### 1625.1
 
-psql only get rental_id column needed
+You only need to know what bike is going to be returned. Narrow the columns from the last query to only get the one column you would need for returning a bike.
 
 #### HINTS
 
-- Hint
+- The previous query was `SELECT * FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;`
+- Only column you need is the `rental_id` column
+- Enter `SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1630. Add RENTAL_ID
 
 ### 1630.1
 
-Add `RENTAL_ID=$($PSQL "SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE customer_id = $CUSTOMER_ID AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")`
+Below the `check if input is rented` comment, create a `RENTAL_ID` variable that gets the rental ID of the bike that was input.
 
 #### HINTS
 
-- Hint
+- The input is the `BIKE_ID_TO_RETURN` variable
+- Here's an example: `RENTAL_ID=$($PSQL "<query_here>")`
+- You previously entered `SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;` in the psql prompt
+- Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RENT` variables
+- Add `RENTAL_ID=$($PSQL "SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '$PHONE_NUMBER' AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")` below the `check if input is rented` comment
 
 ## 1640. Add if -z RENTAL_ID
 
 ### 1640.1
 
-add if [[ -z $RENTAL_ID ]]
-then
-send to main menu
-fi
+Below the `if input not rented` comment, add an `if` that checks if the `RENTAL_ID` variable is empty. Place the `send to main menu` comment in the `then` area.
 
 #### HINTS
 
-- Hint
+- Here's an example:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+fi
+```
+- The condition you want is `-z $RENTAL_ID`
+- Place the `# send to main menu` comment in the `<STATEMENTS>` area
+- The `if` condition should look like this:
+```sh
+if [[ -z $RENTAL_ID ]]
+then
+  # send to main menu
+
+fi
+```
 
 ## 1645. Add MAIN_MENU You do not have that bike rented
 
 ### 1645.1
 
-add MAIN_MENU "You do not have that bike rented."
+If the input isn't rented by the given customer, send them to the main menu with `You do not have that bike rented.` as the message.
 
 #### HINTS
 
-- Hint
+- You want to call the `MAIN_MENU` function with the message as an argument
+- Here's an example: `MAIN_MENU "<message_here>"`
+- Add `MAIN_MENU "You do not have that bike rented."` below the `send to main menu` comment
+
+## 1648. Add else echo Rental ID RENTAL_ID found
+
+### 1648.1
+
+Add an `else` to the `if` condition you just added. Use `echo` to print `Rental ID $RENTAL_ID found` in it so you can see if it's all working.
+
+#### HINTS
+
+- Here's an example:
+```sh
+if [[ <CONDITION> ]]
+then
+  <STATEMENTS>
+else
+  <STATEMENTS>
+fi
+```
+- Place `echo "Rental ID $RENTAL_ID found"` in the else area
+- The `if` condition should look like this:
+```sh
+if [[ -z $RENTAL_ID ]]
+then
+  # send to main menu
+  MAIN_MENU "You do not have that bike rented."
+else
+  echo "Rental ID $RENTAL_ID found"
+fi
+```
 
 ## 1650. Run the script
 
 ### 1650.1
 
-go to return, enter the phone, input a bike that doesn’t exist - close the program
-
-Run the script and go to the return menu. Enter 555-5555 when asked for a phone number and pick a bike to return. so you can see if the query is working.
+Run the script and go to the return menu. Enter `555-5555` to see the rented bikes. Input a bike that isn't on the list, then go to the menu again and input a bike that is on the list. 
 
 #### HINTS
 
-- Hint
+- Enter `./bike-shop.sh` in the terminal and press enter
+- Make sure you are in the `project` folder first
+
+## 1660. Delete echo Rental ID RENTAL_ID found
+
+### 1660.1
+
+Looks like it works. Delete the line where you print the rental ID.
+
+#### HINTS
+
+- Delete the `echo "Rental ID $RENTAL_ID found"` line
 
 ## 1680. Add else with comments
 
 ### 1680.1
 
-add else with comments:
-	update date_returned
-	set bike availability to true
-	send to main menu
+Add three single line comments in the `else` area; `update date_returned`, `set bike availability to true`, and `send to main menu`.
 
 #### HINTS
 
-- Hint
+- Here's an example of a single line comment: `# <comment_here>`
+- Make sure the comments are in the same order listed
+- The comments should be in the `else` area of the `if [[ -z $RENTAL_ID ]]` statement
+- The `else` area should look like this:
+```sh
+else
+  # update date_returned
+
+  # set bike availablity to true
+
+  # send to main menu
+
+fi
+```
+- The `if` should look like this:
+```sh
+if [[ -z $RENTAL_ID ]]
+then
+  # send to main menu
+  MAIN_MENU "You do not have that bike rented."
+else
+  # update date_returned
+
+  # set bike availablity to true
+
+  # send to main menu
+
+fi
+```
 
 ## 1690. Add RETURN_BIKE_RESULT
 
 ### 1690.1
 
-Add `RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned = NOW() WHERE rental_id=$RENTAL_ID")`
-
+After a person picks a bike to return and you know that it's a bike they have rented, you need to update all the info in the database to return it. Below the `update date_returned` comment, create a `RETURN_BIKE_RESULT` variable that sets the `date_returned` column to `NOW()` for the bike rented.
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
-- Make sure you are in the `project` folder first
+- Here's an example: `RETURN_BIKE_RESULT=$($PSQL "<query_here>")`
+- You want to use the `UPDATE`, `SET`, `NOW()`, and `WHERE` keywords in the query
+- You want to update the column for the rental using the `RENTAL_ID` variable
+- Here's an example of the query: `UPDATE <table> SET <column> = <value> WHERE <condition>`
+- The query you want is `UPDATE rentals SET date_returned = NOW() WHERE rental_id = $RENTAL_ID`
+- Add `RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned = NOW() WHERE rental_id = $RENTAL_ID")` below the `update date_returned` comment
 
 ## 1710. Add SET_TO_TRUE_RESULT
 
 ### 1710.1
 
+That should update the rentals table. Lastly, you need to make the bike available again. Below the `set bike availability to true` comment, create a `SET_TO_TRUE_RESULT` variable that makes the bike available again.
 Add `SET_TO_TRUE_RESULT=$($PSQL "UPDATE bikes SET available = true WHERE bike_id = $BIKE_ID_TO_RETURN")`
 
 #### HINTS
 
-- Be sure to use a subprocess and your `PSQL` variable like the other queries
-- Make sure you are in the `project` folder first
+- Here's an example: `SET_TO_TRUE_RESULT=$($PSQL "<query_here>")`
+- You want to use the `UPDATE`, `SET`, and `WHERE` keywords in the query
+- You want to update the `available` column to `true` for the bike with `BIKE_ID_TO_RETURN`
+- The query you want is `UPDATE bikes SET available = true WHERE bike_id = $BIKE_ID_TO_RETURN`
+- Add `SET_TO_TRUE_RESULT=$($PSQL "UPDATE bikes SET available = true WHERE bike_id = $BIKE_ID_TO_RETURN")` below the `set bike availability to true` comment
 
 ## 1730. Add MAIN_MENU Thank you for returning your bike
 
 ### 1730.1
 
-add `MAIN_MENU "Thank you for returning your bike."`
+After all that is done, send them to the main menu with `Thank you for returning your bike` as the message.
 
 #### HINTS
 
-- Hint
+- Add the code below the last `send to main menu` comment
+- You want to call the `MAIN_MENU` function with the message as an argument
+- Here's an example: `MAIN_MENU "<message_here>"`
+- Add `MAIN_MENU "Thank you for returning your bike."` below the `send to main menu` comment
 
 ## 1740. ./bike-shop.sh
 
 ### 1740.1
 
-run the script, return the bike you rented
+Run the script and return the first bike you rented. When you are done, exit the program.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- The first bike should be available again.
 
 ## 1750. psql SELECT * FROM rentals
 
 ### 1750.1
 
-psql SELECT * FROM rentals - order by date returned?
+In the psql prompt, view all the data in the `rentals` table.
 
 #### HINTS
 
-- Hint
+- Use the `SELECT` and `FROM` keywords with `*` to view all the data
+- Enter `SELECT * FROM rentals;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1760. psql SELECT * FROM bikes ORDER BY bike_id
 
 ### 1760.1
 
-psql select * from bikes order by bike_id
+Now the rental has been returned. View all the data in the bikes table in order by their `bike_id`.
 
 #### HINTS
 
-- Hint
+- Use the `SELECT` and `FROM` keywords with `*` to view all the data
+- Enter `SELECT * FROM bikes;` in the psql prompt
+- You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1770. ./bike-shop.sh
 
 ### 1770.1
 
-This is the last step. Run the script once more. Feel free to play around, rent and return some bikes. When you are ready to be done, return all the bikes you rented.
+And the bike is available again. This is the last step. Run the script once more. Feel free to play around, rent and return some bikes. When you are ready to be done, return all the bikes you rented.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure you are in the `project` folder first
+- All rentals should have a `date_returned` value, and all bikes should have `available` set to `true`
