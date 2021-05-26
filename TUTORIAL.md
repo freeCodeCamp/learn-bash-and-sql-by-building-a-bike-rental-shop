@@ -172,7 +172,7 @@ The first two columns look good. Add a column named `size` to the `bikes` table 
 
 ### 140.1
 
-Add another column to the table named `available`. Make it a `boolean` and has a constaint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.
+Add another column to the table named `available`. Make it a `boolean` and has a constraint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.
 
 #### HINTS
 
@@ -817,7 +817,7 @@ Use `echo` to print `Return Menu` in the function you just added. You will chang
 
 ### 700.1
 
-Add an empty `EXIT` fuction below the `RETURN_MENU` function for when a user wants to exit the program.
+Add an empty `EXIT` function below the `RETURN_MENU` function for when a user wants to exit the program.
 
 #### HINTS
 
@@ -846,7 +846,7 @@ This one probably doesn't need a placeholder message. In the `EXIT` function, us
 
 ### 720.1
 
-When a user enters an option at the main menu, you want to take them to the appropraite sub-menu. You can use a `case` statement for this. Here's an example:
+When a user enters an option at the main menu, you want to take them to the appropriate sub-menu. You can use a `case` statement for this. Here's an example:
 
 ```sh
 case EXPRESSION in
@@ -1149,7 +1149,7 @@ else
 ```
 - The `if` should look like this:
 ```sh
-if [[ -z $AVILABLE_BIKES ]]
+if [[ -z $AVAILABLE_BIKES ]]
 then
   # send to main menu
   MAIN_MENU "Sorry, we don't have any bikes available right now."
@@ -2382,7 +2382,7 @@ Just below that, use `read` to get input into a `PHONE_NUMBER` variable.
 
 - Here's an example: `read <VARIABLE_NAME>`
 - Add `read PHONE_NUMBER` to the suggested area
-- Add it below where you print `What's your phone numer?`
+- Add it below where you print `What's your phone number?`
 
 ## 1472. Add CUSTOMER_ID
 
@@ -2424,7 +2424,7 @@ then
 fi
 ```
 
-## 1475. Add MAIN_MENU I could not find a recond for that phone number
+## 1475. Add MAIN_MENU I could not find a record for that phone number
 
 ### 1475.1
 
@@ -2451,7 +2451,7 @@ Run the script and go to the return menu. Enter a phone number that is not in th
 
 ### 1478.1
 
-Add an `else` to the `if` condition for if the phone number is found in the database. Place `get customer's rentals`, `if no retals`, and `send to main menu` in the `else` area as single line comments.
+Add an `else` to the `if` condition for if the phone number is found in the database. Place `get customer's rentals`, `if no rentals`, and `send to main menu` in the `else` area as single line comments.
 
 #### HINTS
 
@@ -2525,7 +2525,7 @@ Next, use a `LEFT JOIN` with `bikes` as the left table to join the bikes and ren
 
 ### 1490.1
 
-You only need the bikes that are being rented. Use the appropiate join with the same two tables to only get those. Use the `USING` keyword again.
+You only need the bikes that are being rented. Use the appropriate join with the same two tables to only get those. Use the `USING` keyword again.
 
 #### HINTS
 
@@ -2825,7 +2825,7 @@ then
   <STATEMENTS>
 fi
 ```
-- The condition should check that the `$BIKE_ID_TO_RETURN` variable is not a number using the pattern matching operater (`=~`) and the pattern `^[0-9]+$`
+- The condition should check that the `$BIKE_ID_TO_RETURN` variable is not a number using the pattern matching operator (`=~`) and the pattern `^[0-9]+$`
 - The condition you want is `[[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]`
 - Place the `# send to main menu` comment in the `<STATEMENTS>` area
 - The `if` condition should look like this:
@@ -3051,7 +3051,7 @@ Add three single line comments in the `else` area; `update date_returned`, `set 
 else
   # update date_returned
 
-  # set bike availablity to true
+  # set bike availability to true
 
   # send to main menu
 
@@ -3066,7 +3066,7 @@ then
 else
   # update date_returned
 
-  # set bike availablity to true
+  # set bike availability to true
 
   # send to main menu
 
