@@ -1,4 +1,4 @@
-/*const assert = require('assert');
+const assert = require('assert');
 const { getLastCommand } = require('./utils');
 const { Client } = require('pg');
 
@@ -11,17 +11,17 @@ const client = new Client({
 describe('You', () => {
   it('should run your script by executing it', async () => {
     const lastCommand = await getLastCommand();
-    const query = `SELECT rental_id FROM customers INNER JOIN rentals USING(customer_id) WHERE phone = '555-5555' AND name = 'Me'`;
+    const query = `SELECT rental_id FROM customers INNER JOIN rentals USING(customer_id) WHERE phone = '000-0000' AND name = 'Test'`;
 
     try {
       await client.connect();
       const res = await client.query(query);
 
-      assert(res.rowCount > 4 && lastCommand[0] === './bike-shop.sh' && (lastCommand[1] === undefined || lastCommand[1].op === ';'));
+      assert(res.rowCount > 0 && lastCommand[0] === './bike-shop.sh' && (lastCommand[1] === undefined || lastCommand[1].op === ';'));
     } catch (err) {
       assert(false);
     } finally {
       await client.end();
     }
   });
-});*/
+});
