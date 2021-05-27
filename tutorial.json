@@ -3253,7 +3253,7 @@
               "7e0c34059c19ad0b8257110cc9602ba6f6c117ce"
             ]
           },
-          "content": "Run the script and go to the rent menu. Pick the first bike on the list to rent and enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.",
+          "content": "Run the script and go to the rent menu. Pick the first bike on the list and enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
             "Make sure to enter the correct bike number and phone number",
@@ -3382,7 +3382,7 @@
               "fdbaf72b0927c6b21c3a0a5e0b16ad9ec45d3bf2"
             ]
           },
-          "content": "Run the script again and go to the rent menu, there should now be one less bike displayed. Pick the next bike on the list and rent it with the same customer so you can see the variable.",
+          "content": "Run the script again and go to the rent menu, there should now be one less bike displayed. Pick the next bike on the list and rent it using the customer with phone number `555-5555` again so you can see the variable.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
             "There should be at least two rentals for the customer with phone nummber `555-5555` and name `Me`"
@@ -3480,10 +3480,10 @@
               "cb9097081d1e51515a7a58da59e0ba424f7666b8"
             ]
           },
-          "content": "That time, only the first instance of the pattern was replaced. The first space was removed. Enter the same command, but replace the first instance of `<space>|` with nothing.",
+          "content": "That time, only the first instance of the pattern was replaced. The first space was removed. Enter the same command, but replace the first instance of <code>&nbsp;|</code> (`<space>|`) with nothing.",
           "hints": [
             "The previous command was `echo '28 | Mountain' | sed 's/ //`",
-            "You want to replace the space in the pattern of the last command with `<space_here>|`",
+            "You want to replace the space in the pattern of the last command with <code>&nbsp;|</code> (`<space_here>|`)",
             "Enter `echo '28 | Mountain' | sed 's/ |//'` in the terminal"
           ]
         }
@@ -3508,7 +3508,7 @@
           "content": "Enter the same command, but make the output look like how you want in the message, `28\" Mountain`.",
           "hints": [
             "The previous command was `echo '28 | Mountain' | sed 's/ |//`",
-            "Use `\"` as the character to replace `<space>|` with",
+            "Use `\"` as the character to replace <code>&nbsp;|</code> (`<space>|`) with",
             "Enter `echo '28 | Mountain' | sed 's/ |/\"/'` in the terminal"
           ]
         }
@@ -3530,7 +3530,7 @@
               "e2dd2af61eeff060ac5bebbfd2df46ad60d240c1"
             ]
           },
-          "content": "Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces `<space>|` with `\"` so the text will read `<SIZE>\" <TYPE>`. `28 | Mountain` would become `28\" Mountain`, for instance.",
+          "content": "Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces <code>&nbsp;|</code> (`<space>|`) with `\"` so the text will read `<SIZE>\" <TYPE>`. `28 | Mountain` would become `28\" Mountain`, for instance.",
           "hints": [
             "The previous command was `echo '28 | Mountain' | sed 's/ |/\"/'`",
             "You want to add the `| sed 's/ |/\"/'` part of the previous command after your `echo $BIKE_INFO` line",
@@ -3555,10 +3555,10 @@
               "9b0963290ae755f72c27690f311c478e8abaa1a3"
             ]
           },
-          "content": "Run the script and rent the next bike on the list. Use the customer with phone number `555-5555` again to rent it.",
+          "content": "Run the script and rent another bike using the customer with phone number `555-5555` again. Make sure the bike info printed looks like you want.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
-            "The customer with phone number `555-5555` should have the first three bikes rented"
+            "The customer with phone number `555-5555` and name `Me` should have at least three bikes rented"
           ]
         }
       ]
@@ -3632,7 +3632,7 @@
           "content": "Run the script and rent the next bike on the list. Use the customer with `555-5555` as their phone number. When you are done, exit the program.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
-            "The customer with phone number `555-5555` should have at least four bikes rented"
+            "The customer with phone number `555-5555` and name `Me` should have at least four bikes rented"
           ]
         }
       ]
@@ -3756,7 +3756,7 @@
           "content": "That replaced all the spaces. You only had an extra space at the beginning of the customer name. Add a `^` in front of the space in the replacement pattern of the last command to only replace a space at the beginning of the text.",
           "hints": [
             "The previous command was `echo \"$(echo ' M e ' | sed 's/ //g').\"`",
-            "You want to change the matching pattern to `^<space>`",
+            "You want to change the matching pattern to <code>^&nbsp;</code> (`^<space>`)",
             "The matching pattern is between the first and second forward slashes",
             "The `sed` pattern should look like this: `s/^ //g`",
             "Enter `echo \"$(echo ' M e ' | sed 's/^ //g').\"` in the terminal"
@@ -3780,12 +3780,12 @@
               "6aa7e66ab4c0a251374b25918a73353f0e9f500b"
             ]
           },
-          "content": "The caret you added means that's the start of the text. So it will replace a space only if it's the first character. Enter the last command, but add two more spaces (three total) at the beginning of the text.",
+          "content": "The caret you added means that's the start of the text. So it will replace a space only if it's at the beginning. Enter the last command, but add two more spaces (three total) at the beginning of the text.",
           "hints": [
             "The previous command was `echo \"$(echo ' M e ' | sed 's/^ //g').\"`",
             "Change the `' M e '` part to include the suggestion",
-            "The new text should be `'<three_spaces>M e '`",
-            "In the terminal, enter\n```sh\necho \"$(echo '   M e ' | sed 's/^ //g').\"\n```"
+            "The new text should be <code>'&nbsp;&nbsp;&nbsp;M e&nbsp;'</code> (`'<three_spaces>M e '`)",
+            "In the terminal, enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g').</code>"
           ]
         }
       ]
@@ -3806,12 +3806,12 @@
               "95322f4ce973613120c724fa1bb83466e521b762"
             ]
           },
-          "content": "The caret, space pattern (`^ `), only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.",
+          "content": "The <code>&nbsp;</code> (`^<space>`) pattern only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.",
           "hints": [
-            "The previous command was `echo \"$(echo '   M e ' | sed 's/^ //g').\"`",
+            "The previous command was <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g').\"</code>",
             "The matching pattern is between the first and second forward slash",
             "The new pattern is: `'s/^ *//g'`",
-            "Enter `echo \"$(echo '   M e ' | sed 's/^ *//g').\"` in the terminal"
+            "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g').\"</code> in the terminal"
           ]
         }
       ]
@@ -3832,12 +3832,12 @@
               "db642686ae5cd24aa39ecb6d0ffa94f846c0cb94"
             ]
           },
-          "content": "The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is ` $` (`<space>$`).",
+          "content": "The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is <code>&nbsp;$</code> (`<space>$`).",
           "hints": [
-            "The previous command was `echo \"$(echo '   M e ' | sed 's/^ *//g').\"`",
+            "The previous command was <cdoe>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g').\"</code>",
             "The matching pattern is between the first and second forward slash",
             "Change the matching pattern to the suggestion",
-            "Enter `echo \"$(echo '   M e ' | sed 's/ $//g').\"` in the terminal"
+            "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/ $//g').\"</code> in the terminal"
           ]
         }
       ]
@@ -3858,12 +3858,12 @@
               "b5e6e510f40bcca4af1944dbb197f7665e501006"
             ]
           },
-          "content": "Add two more spaces to the end of **text** in the previous command (three total).",
+          "content": "Add two more spaces to the end of the **text** in the previous command (three spaces total).",
           "hints": [
-            "The previous command was `echo \"$(echo '   M e ' | sed 's/ $//g').\"`",
+            "The previous command was <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/ $//g').\"</code>",
             "The matching pattern is between the first and second forward slash",
             "Change the matching pattern to the suggestion",
-            "Enter `echo \"$(echo '   M e   ' | sed 's/ $//g').\"` in the terminal"
+            "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ $//g').\"</code> in the terminal"
           ]
         }
       ]
@@ -3886,11 +3886,11 @@
           },
           "content": "The pattern only replaces a single space at the end. Change the last command so it replaces all spaces at the end of the text.",
           "hints": [
-            "The previous command was `echo \"$(echo '   M e   ' | sed 's/ $//g').\"`",
+            "The previous command was <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ $//g').\"</code>",
             "Use `*` in a pattern after a character to replace zero or more of that character",
-            "The matching pattern you want is ` *$` (`<space>*$`)",
+            "The matching pattern you want is <code>&nbsp;*$</code> (`<space>*$`)",
             "Change the matching pattern to the suggestion",
-            "Enter `echo \"$(echo '   M e   ' | sed 's/ *$//g').\"` in the terminal"
+            "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ *$//g').\"</code> in the terminal"
           ]
         }
       ]
@@ -3913,10 +3913,11 @@
           },
           "content": "That replaced all the spaces at the end of the text. You can use `|` as an \"or\" operator in a matching pattern to replace one pattern or another. Use it to change the matching pattern so it would replace any amount of spaces at the beginning and any amount of spaces at the end of the text.",
           "hints": [
-            "The previous command was `echo \"$(echo '   M e   ' | sed 's/ *$//g').\"`",
-            "The two patterns you want to replace are `^ *` or ` *$`",
+            "The previous command was <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ *$//g').\"</code>",
+            "You want to replace the <code>^&nbsp;*</code> (`^<space>*`) pattern",
+            "And the <code>&nbsp;*$</code> (`<space>*$`) pattern",
             "The matching pattern should look like this: `'s/^ *| *$//g'`",
-            "Enter `echo \"$(echo '   M e   ' | sed 's/^ *| *$//g').\"` in the terminal"
+            "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g').\"</code>"
           ]
         }
       ]
@@ -3962,7 +3963,7 @@
               "e932f981bb58cd1360dd2318478924051a627b87"
             ]
           },
-          "content": "Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the `echo \"$(echo '   M e   ' | sed 's/^ *| *$//g').\"` command that didn't work to find out.",
+          "content": "Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g').\"</code> command that didn't work to find out.",
           "hints": [
             ":point_down:"
           ]
@@ -3985,11 +3986,11 @@
               "1f9e1fe4da1dc683672014c58bd564ff3e2b7bae"
             ]
           },
-          "content": "I knew you could do it. That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.",
+          "content": ":wink: That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.",
           "hints": [
             "Here's an example: `$(echo $CUSTOMER_NAME | sed ...)`",
-            "`^ *` will match all spaces at the beginning of text, and ` *$` will match spaces at the end",
-            "The previous command was `echo \"$(echo '   M e   ' | sed -r 's/^ *| *$//g').\"`",
+            "`^ *` will match all spaces at the beginning of text, and <code>&nbsp;*$</code> will match spaces at the end",
+            "The previous command was <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed -r 's/^ *| *$//g').\"</code>",
             "Change the `$CUSTOMER_NAME` variable in the last message to `$(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')`"
           ]
         }
@@ -4014,7 +4015,7 @@
           "content": "Run the script and rent the next bike on the list. Use the same customer whose phone number is `555-5555`. When you are done, exit the program.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
-            "The customer with phone number `555-5555` should have at least five bikes rented"
+            "The customer with phone number `555-5555` and name `Me` should have at least five bikes rented"
           ]
         }
       ]
@@ -4035,10 +4036,10 @@
               "7a13e5e0b5149b5f8ab8efb183fc5b7a04fe6ae7"
             ]
           },
-          "content": "Run the script again. Rent the next bike on the list. Use `000-0000` as the phone number, and `Test` as the name. When you are done, exit the program.",
+          "content": "Run the script again. Rent another bike, use `000-0000` as the phone number this time, and `Test` as the name to create a new customer. When you are done, exit the program.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
-            "The customer with phone number `000-0000` should have a bike rented"
+            "The customer with phone number `000-0000` and name `Test` should have at least one bike rented"
           ]
         }
       ]
@@ -4059,10 +4060,10 @@
               "c3b39a84acad7de38f984125a5bc6ca5f118fdf1"
             ]
           },
-          "content": "Run the script again. Rent the next bike on the list using the customer with phone number `000-0000` you just created. When you are done, exit the program.",
+          "content": "Run the script again. Rent another bike with the customer you just created. When you are done, exit the program.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
-            "The customer with phone number `000-0000` should have two bikes rented"
+            "The customer with phone number `000-0000` and name `Test` should have at least two bikes rented"
           ]
         }
       ]
@@ -4083,7 +4084,7 @@
               "00907913e970268cf7726ba761aed45a1eece6bb"
             ]
           },
-          "content": "In the psql prompt, view all the data in your bikes table ordered by the `bike_id`.",
+          "content": "In the psql prompt, view all the data in your bikes table in order by the `bike_id`.",
           "hints": [
             "Use the `SELECT`, `FROM`, and `ORDER BY` keywords with `*` to view all the data",
             "Enter `SELECT * FROM bikes ORDER BY bike_id;` in the psql prompt",
@@ -4158,7 +4159,7 @@
               "d1323bd8972e2295795031d46c1ea30501004cbc"
             ]
           },
-          "content": "The rent functionality is finished. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started on that.",
+          "content": "The rent functionality looks like it all works. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started with that.",
           "hints": [
             "The `RETURN_MENU` function should be empty",
             "The `RETURN_MENU` function should look like this:\n```sh\nRETURN_MENU() {\n\n}\n```"
@@ -4182,7 +4183,7 @@
               "de6ce6e82df4a9f26bf1a0d446635978c309be3a"
             ]
           },
-          "content": "Add three single line comments to the return menu; `get customer info`, `if not found`, and `send to main menu`, in that order.",
+          "content": "Add three single line comments to the return menu function; `get customer info`, `if not found`, and `send to main menu`, in that order.",
           "hints": [
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
@@ -5330,7 +5331,7 @@
           "content": "Run the script and return the first bike you rented. When you are done, exit the program.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
-            "The first bike should be available again."
+            "The customer with phone number `555-5555` and name `Me` should have at least one rental with the `date_returned` column not null"
           ]
         }
       ]

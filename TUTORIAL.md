@@ -12,19 +12,6 @@
 
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
-- The previous command was `echo "$(echo ' M e ' | sed 's/^ //g')."`
-- Change the `' M e '` part to include the suggestion
-- asdf <pre>'   M e '</pre>
-- asdf <code>'   M e '</code>
-- asdf:
-```sh
-'   M e '
-```
-- The new text should be `'<three_spaces>M e '`
-- In the terminal, enter
-```sh
-echo "$(echo '   M e ' | sed 's/^ //g')."
-```
 
 ## 20. Log in to Psql
 
