@@ -64,14 +64,7 @@
           "content": "**The first thing you need to do is start the terminal.** Do that by clicking the \"hamburger\" menu at the top left of the screen, going to the \"terminal\" section, and clicking \"new terminal\". Once you open a new one, type `echo hello terminal` into the terminal and press enter.",
           "hints": [
             "Capitalization matters",
-            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions",
-            "The previous command was `echo \"$(echo ' M e ' | sed 's/^ //g').\"`",
-            "Change the `' M e '` part to include the suggestion",
-            "asdf <pre>'   M e '</pre>",
-            "asdf <code>'   M e '</code>",
-            "asdf:\n```sh\n'   M e '\n```",
-            "The new text should be `'<three_spaces>M e '`",
-            "In the terminal, enter\n```sh\necho \"$(echo '   M e ' | sed 's/^ //g').\"\n```"
+            "If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions"
           ]
         }
       ]
