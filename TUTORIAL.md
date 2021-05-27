@@ -897,11 +897,11 @@ Add an argument to where you call `MAIN_MENU` in the `case` statement. It should
 #### HINTS
 
 - Here's an example: `FUNCTION_CALL "<argument_message>"`
-- Here's how it looks:
+- Here's how the function call should look:
 ```sh
   *) MAIN_MENU "Please enter a valid option." ;;
 ```
-- Add this case statement below the;
+- The whole `case` statement should look like this:
 ```sh
 case $MAIN_MENU_SELECTION in
   1) RENT_MENU ;;
@@ -953,7 +953,7 @@ Run the script and enter an invalid option to see the message. Exit the program 
 
 ### 850.1
 
-Looks good. Delete the `echo "Rent Menu"` from the `RENT_MENU` function so you can start adding the rent functionality.
+Looks good. Delete the `echo "Rent Menu"` from the `RENT_MENU` function so you can start adding the ability to rent a bike from the database.
 
 #### HINTS
 
@@ -994,7 +994,7 @@ To get the bikes available, you need to query the database from your script. Bel
 
 #### HINTS
 
-- Add the suggested variable below the "shebang" and above where print the `Bike Rental Shop` line
+- Add the suggested variable below the "shebang" and above where you print the `Bike Rental Shop` line
 
 ## 970. Add AVAILABLE_BIKES
 
@@ -1004,11 +1004,12 @@ Below the `get available bikes` comment. Create an `AVAILABLE_BIKES` variable th
 
 #### HINTS
 
-- Get the three suggested columns in the same order they are listed; `bike_id, type, size`
 - Use the `SELECT`, `FROM`, `WHERE`, and `ORDER BY` keywords in your query
+- Get the three suggested columns in the same order they are listed; `bike_id, type, size`
 - The condition you want is `WHERE available = true`
-- Without the keywords, it looks like this: `AVAILABLE_BIKES=$($PSQL "bike_id, type, size bikes available = true bike_id")`
-- Here's how it looks: `AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available = true ORDER BY bike_id")`
+- Without the keywords, the query looks like this: `bike_id, type, size bikes available = true bike_id`
+- The query should be `SELECT bike_id, type, size FROM bikes WHERE available = true ORDER BY bike_id`
+- Add `AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available = true ORDER BY bike_id")` below the `get available bikes` comment
 
 ## 980. echo AVAILABLE_BIKES
 
@@ -1064,7 +1065,7 @@ Run your script and go to the rent menu to see the output.
 
 ### 1000.1
 
-So if there's no bike available, the variable will be empty. In the script, below the `if no bikes available` comment, add an `if` condition that checks if the variable is empty. You can use `-z` to check if it's empty. Place the `send to main menu` comment in its `STATEMENTS` area.
+So if there's no bike available, the variable will be empty. In the script, below the `if no bikes available` comment, add an `if` condition that checks if the variable is empty. Use `-z` to check if it's empty. Place the `send to main menu` comment in its `STATEMENTS` area.
 
 #### HINTS
 
@@ -1089,7 +1090,7 @@ fi
 
 ### 1010.1
 
-Below the comment in the `if` you just added. Send users to the main menu, and give them the message `Sorry, we don't have any bikes available right now.`
+Below the comment in the `if` you just added. Send users to the main menu and give them the message, `Sorry, we don't have any bikes available right now.`
 
 #### HINTS
 
@@ -1109,7 +1110,7 @@ fi
 
 ### 1020.1
 
-Run the script and go to the rent menu. When you are done, exit the program.
+Run the script and go to the rent menu to see the message. When you are done, exit the program.
 
 #### HINTS
 
@@ -1147,7 +1148,7 @@ else
   # send to main menu
 
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ -z $AVAILABLE_BIKES ]]
 then
@@ -1252,7 +1253,7 @@ Run the script and go to the rent menu again to see if it's working.
 
 ### 1145.1
 
-It's working. Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
+It's working :smile: Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
 
 #### HINTS
 
@@ -1375,7 +1376,7 @@ That did not match because the pattern only allows a single number. Add a `+` af
 
 ### 1170.1
 
-So that pattern will match any positive integers. You want to check if the input is not a number. Add `!` in front of the string in the previous command to do that.
+So that pattern will match any positive integers. You want to check if the input is not a number. Add `!` in front of the comparison of the previous command to do that.
 
 #### HINTS
 
@@ -1461,7 +1462,7 @@ else
   # send to main menu
 
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]
 then
@@ -1490,7 +1491,7 @@ Below the `get bike availability` comment you just added, create a `BIKE_AVAILAB
 - Here's an example of the query: `SELECT <column> FROM <table> WHERE <condition1> AND <condition2>`
 - You only want the `available` column for the bike with a `bike_id` equal to the `$BIKE_ID_TO_RENT` variable and only if the bike is available
 - You want two conditions, `WHERE bike_id = $BIKE_ID_TO_RENT AND available = true`
-- Add this to the suggested area: `BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true")`
+- Add `BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true")` below the `get bike availability` comment
 
 ## 1190. Add echo BIKE_AVAILABILITY
 
@@ -1577,7 +1578,7 @@ Run the script and go to the rent menu, enter a bike that isn't available to mak
 
 ### 1233.1
 
-In the psql prompt, set all the bikes availability to true.
+In the psql prompt, set all the bikes availability back to true.
 
 #### HINTS
 
@@ -1619,7 +1620,7 @@ else
   # insert new customer
 
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ -z $BIKE_AVAILABILITY  ]]
 then
@@ -1666,16 +1667,17 @@ Below the line you just printed, read input into a `PHONE_NUMBER` variable. Sinc
 
 ### 1260.1
 
-With the customer's phone number, you can get their name. Below where you get the phone number, create a `CUSTOMER_NAME` variable that gets the customers name using the phone number.
+With the customer's phone number, you can get their name. Below where you get the phone number, create a `CUSTOMER_NAME` variable that gets the customers name from the database using the phone number.
 
 #### HINTS
 
 - Query the database to set the `CUSTOMER_NAME` variable
 - Here's an example: `CUSTOMER_NAME=$($PSQL "<query_here>")`
-- Use the `SELECT`, `FROM` and `WHERE` keywords for your command
+- Use the `SELECT`, `FROM` and `WHERE` keywords for your query
+- You want only the `name` column from the `customers` table
 - The condition you want is `phone = '$PHONE_NUMBER'`
-- You only want the `name` column from the `customers` table
-- Add this to the suggested area: `CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone = '$PHONE_NUMBER'")`
+- The query should look like this: `SELECT name FROM customers WHERE phone = '$PHONE_NUMBER'`
+- Add `CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone = '$PHONE_NUMBER'")` below the `read PHONE_NUMBER` line
 
 ## 1265. Add if -z CUSTOMER_NAME
 
@@ -1704,12 +1706,13 @@ then
 
 fi
 ```
+- Make sure it's below the `if customer doesn't exist` comment
 
 ## 1270. Add echo What's your name?
 
 ### 1270.1
 
-Below the `get new customer name` comment, print `What's your name?` with a new line in front of the message.
+If the customer isn't in the database, you need to get their name so you can add them. Below the `get new customer name` comment, print `What's your name?` with a new line in front of the message.
 
 #### HINTS
 
@@ -1799,13 +1802,13 @@ So you still need to add the rental to the rentals table when a bike is picked o
 
 ### 1315.1
 
-And you still need to set the `available` column to false for the bike after it's rented. Below the `if` statement that inserts a new customer, add five more comments: `get customer_id`, `insert bike rental`, `set bike availability to false`, `get bike info`, and `send to main menu`
+And set the `available` column to false for the bike rented. Below the end of the `if` statement that inserts a new customer, add five more comments; `get customer_id`, `insert bike rental`, `set bike availability to false`, `get bike info`, and `send to main menu`
 
 #### HINTS
 
 - Here's an example of a single line comment: `# <comment_here>`
 - Make sure the comments are in the same order listed
-- The comments should be below (not in) the `if [[ -z $CUSTOMER_NAME ]]` `if` statement
+- The comments should be below (not in) the `if [[ -z $CUSTOMER_NAME ]]` statement
 - The comments should look like this:
 ```sh
   if [[ -z $CUSTOMER_NAME ]]
@@ -1857,13 +1860,13 @@ Now that you have the bike ID and customer ID, you can add the rental to the dat
 - The query looks similar to this: `INSERT INTO rentals(column1, column2) VALUES(value1, value2)`
 - You want to insert the `BIKE_ID_TO_RENT` and `CUSTOMER_ID` variables into the `bike_id` and `customer_id` columns
 - The query should look like this: `INSERT INTO rentals(bike_id, customer_id) VALUES($BIKE_ID_TO_RENT, $CUSTOMER_ID)`
-- Add this to the suggested area: `INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT)")`
+- Add `INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT)")` below the `insert bike rental` comment
 
 ## 1370. Add SET_TO_FALSE_RESULT
 
 ### 1370.1
 
-That should add the row to the rentals table. The last thing to change in the database is to set `available` to false for the bike. Below the `set bike availability to false` comment, create a `SET_TO_FALSE_RESULT` variable that does that.
+That should add the rental to the database. The last thing to do is set `available` to false for the bike. Below the `set bike availability to false` comment, create a `SET_TO_FALSE_RESULT` variable that does that.
 
 #### HINTS
 
@@ -1878,12 +1881,13 @@ That should add the row to the rentals table. The last thing to change in the da
 
 ### 1380.1
 
-Run the script and go to the rent menu. Pick the first bike to rent, enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.
+Run the script and go to the rent menu. Pick the first bike on the list to rent and enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
 - Make sure to enter the correct bike number and phone number
+- There should be a rental in the database for customer with phone number `555-5555` and name `Me`
 
 ## 1390. psql SELECT * FROM rentals
 
@@ -1913,7 +1917,7 @@ The rental was added and the `date_rented` was filled in automatically. :smile: 
 
 ### 1401.1
 
-The bike at the top was set to false. The last thing you want to do is give a nice message about the rental. Below the `get bike info` comment, create a `BIKE_INFO` variable that gets the `size` and `type`, in that order, of the bike rented.
+The available column was set to false for the bike you rented. The last to do is give a nice message about the rental. Below the `get bike info` comment, create a `BIKE_INFO` variable that gets the `size` and `type`, in that order, of the bike rented.
 
 #### HINTS
 
@@ -1946,13 +1950,13 @@ Run the script again and go to the rent menu, there should now be one less bike 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- Make sure to rent a second bike using the customer with the phone number `555-5555`
+- There should be at least two rentals for the customer with phone nummber `555-5555` and name `Me`
 
 ## 1404. echo '28 | Mountain' | sed 's/ /=/g'
 
 ### 1404.1
 
-It should have printed `28 | Mountain`. The message you want to print will say `I have put you down for the 28" Mountain Bike, Me.`. You need to format that variable for the message. The `sed` command can be used to replace characters and patterns in text. It looks like this: `sed s/<pattern_to_replace>/<characters_to_replace_with>/<regex_flags>`. In the terminal, enter `echo '28 | Mountain' | sed 's/ /=/g'`.
+It should have printed `28 | Mountain`. The message you want to print after someone rents a bike would have said `I have put you down for the 28" Mountain Bike, Me.`. You need to format that variable for the message. The `sed` command can be used to replace characters and patterns in text. It looks like this: `sed s/<regex_pattern_to_replace>/<characters_to_replace_with>/<regex_flags>`. In the terminal, enter `echo '28 | Mountain' | sed 's/ /=/g'` to practice.
 
 #### HINTS
 
@@ -1975,7 +1979,7 @@ The command you used, "piped" a string (`28 | Mountain`) to the `sed` command, w
 
 ### 1407.1
 
-The `g` regex flag stands for "global". It will replace all instance of the pattern. In this case, a space. Enter the same command but remove that flag.
+The `g` regex flag stands for "global". It will replace all instance of the pattern. In this case, it replaced all the spaces. Enter the same command but without that flag.
 
 #### HINTS
 
@@ -1987,7 +1991,7 @@ The `g` regex flag stands for "global". It will replace all instance of the patt
 
 ### 1408.1
 
-That time, only the first instance of the pattern was replaced. The first space was replaced with nothing. Enter the same command, but replace the first instance of ` |` (`<space>|`) with nothing.
+That time, only the first instance of the pattern was replaced. The first space was removed. Enter the same command, but replace the first instance of `<space>|` with nothing.
 
 #### HINTS
 
