@@ -1894,7 +1894,7 @@ That should add the rental to the database. The last thing to do is set `availab
 
 ### 1380.1
 
-Run the script and go to the rent menu. Pick the first bike on the list to rent and enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.
+Run the script and go to the rent menu. Pick the first bike on the list and enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.
 
 #### HINTS
 
@@ -1958,7 +1958,7 @@ Below the variable you just created, use `echo` to print it.
 
 ### 1403.1
 
-Run the script again and go to the rent menu, there should now be one less bike displayed. Pick the next bike on the list and rent it with the same customer so you can see the variable.
+Run the script again and go to the rent menu, there should now be one less bike displayed. Pick the next bike on the list and rent it using the customer with phone number `555-5555` again so you can see the variable.
 
 #### HINTS
 
@@ -2004,12 +2004,12 @@ The `g` regex flag stands for "global". It will replace all instance of the patt
 
 ### 1408.1
 
-That time, only the first instance of the pattern was replaced. The first space was removed. Enter the same command, but replace the first instance of `<space>|` with nothing.
+That time, only the first instance of the pattern was replaced. The first space was removed. Enter the same command, but replace the first instance of <code>&nbsp;|</code> (`<space>|`) with nothing.
 
 #### HINTS
 
 - The previous command was `echo '28 | Mountain' | sed 's/ //`
-- You want to replace the space in the pattern of the last command with `<space_here>|`
+- You want to replace the space in the pattern of the last command with <code>&nbsp;|</code> (`<space_here>|`)
 - Enter `echo '28 | Mountain' | sed 's/ |//'` in the terminal
 
 ## 1410. echo '28 | Mountain' | sed 's/ |/"/'
@@ -2021,14 +2021,14 @@ Enter the same command, but make the output look like how you want in the messag
 #### HINTS
 
 - The previous command was `echo '28 | Mountain' | sed 's/ |//`
-- Use `"` as the character to replace `<space>|` with
+- Use `"` as the character to replace <code>&nbsp;|</code> (`<space>|`) with
 - Enter `echo '28 | Mountain' | sed 's/ |/"/'` in the terminal
 
 ## 1411. Add echo BIKE_INFO | sed 's/ |/"/'
 
 ### 1411.1
 
-Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces `<space>|` with `"` so the text will read `<SIZE>" <TYPE>`. `28 | Mountain` would become `28" Mountain`, for instance.
+Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces <code>&nbsp;|</code> (`<space>|`) with `"` so the text will read `<SIZE>" <TYPE>`. `28 | Mountain` would become `28" Mountain`, for instance.
 
 #### HINTS
 
@@ -2043,12 +2043,12 @@ echo $BIKE_INFO | sed 's/ |/"/'
 
 ### 1413.1
 
-Run the script and rent the next bike on the list. Use the customer with phone number `555-5555` again to rent it.
+Run the script and rent another bike using the customer with phone number `555-5555` again. Make sure the bike info printed looks like you want.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `555-5555` should have the first three bikes rented
+- The customer with phone number `555-5555` and name `Me` should have at least three bikes rented
 
 ## 1415. Add BIKE_INFO_FORMATTED
 
@@ -2083,7 +2083,7 @@ Run the script and rent the next bike on the list. Use the customer with `555-55
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `555-5555` should have at least four bikes rented
+- The customer with phone number `555-5555` and name `Me` should have at least four bikes rented
 
 ## 1420. echo ' M e '
 
@@ -2142,7 +2142,7 @@ That replaced all the spaces. You only had an extra space at the beginning of th
 #### HINTS
 
 - The previous command was `echo "$(echo ' M e ' | sed 's/ //g')."`
-- You want to change the matching pattern to `^<space>`
+- You want to change the matching pattern to <code>^&nbsp;</code> (`^<space>`)
 - The matching pattern is between the first and second forward slashes
 - The `sed` pattern should look like this: `s/^ //g`
 - Enter `echo "$(echo ' M e ' | sed 's/^ //g')."` in the terminal
@@ -2151,56 +2151,53 @@ That replaced all the spaces. You only had an extra space at the beginning of th
 
 ### 1428.1
 
-The caret you added means that's the start of the text. So it will replace a space only if it's the first character. Enter the last command, but add two more spaces (three total) at the beginning of the text.
+The caret you added means that's the start of the text. So it will replace a space only if it's at the beginning. Enter the last command, but add two more spaces (three total) at the beginning of the text.
 
 #### HINTS
 
 - The previous command was `echo "$(echo ' M e ' | sed 's/^ //g')."`
 - Change the `' M e '` part to include the suggestion
-- The new text should be `'<three_spaces>M e '`
-- In the terminal, enter
-```sh
-echo "$(echo '   M e ' | sed 's/^ //g')."
-```
+- The new text should be <code>'&nbsp;&nbsp;&nbsp;M e&nbsp;'</code> (`'<three_spaces>M e '`)
+- In the terminal, enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g').</code>
 
 ## 1430. echo "$(echo '   M e ' | sed 's/^ *//g')."
 
 ### 1430.1
 
-The caret, space pattern (`^ `), only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.
+The <code>&nbsp;</code> (`^<space>`) pattern only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.
 
 #### HINTS
 
-- The previous command was `echo "$(echo '   M e ' | sed 's/^ //g')."`
+- The previous command was <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g')."</code>
 - The matching pattern is between the first and second forward slash
 - The new pattern is: `'s/^ *//g'`
-- Enter `echo "$(echo '   M e ' | sed 's/^ *//g')."` in the terminal
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g')."</code> in the terminal
 
 ## 1432. echo "$(echo '   M e ' | sed 's/ $//g')."
 
 ### 1432.1
 
-The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is ` $` (`<space>$`).
+The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is <code>&nbsp;$</code> (`<space>$`).
 
 #### HINTS
 
-- The previous command was `echo "$(echo '   M e ' | sed 's/^ *//g')."`
+- The previous command was <cdoe>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g')."</code>
 - The matching pattern is between the first and second forward slash
 - Change the matching pattern to the suggestion
-- Enter `echo "$(echo '   M e ' | sed 's/ $//g')."` in the terminal
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/ $//g')."</code> in the terminal
 
 ## 1433. echo "$(echo '   M e   ' | sed 's/ $//g')."
 
 ### 1433.1
 
-Add two more spaces to the end of **text** in the previous command (three total).
+Add two more spaces to the end of the **text** in the previous command (three spaces total).
 
 #### HINTS
 
-- The previous command was `echo "$(echo '   M e ' | sed 's/ $//g')."`
+- The previous command was <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/ $//g')."</code>
 - The matching pattern is between the first and second forward slash
 - Change the matching pattern to the suggestion
-- Enter `echo "$(echo '   M e   ' | sed 's/ $//g')."` in the terminal
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ $//g')."</code> in the terminal
 
 ## 1435. echo "$(echo '   M e   ' | sed 's/ *$//g')."
 
@@ -2210,11 +2207,11 @@ The pattern only replaces a single space at the end. Change the last command so 
 
 #### HINTS
 
-- The previous command was `echo "$(echo '   M e   ' | sed 's/ $//g')."`
+- The previous command was <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ $//g')."</code>
 - Use `*` in a pattern after a character to replace zero or more of that character
-- The matching pattern you want is ` *$` (`<space>*$`)
+- The matching pattern you want is <code>&nbsp;*$</code> (`<space>*$`)
 - Change the matching pattern to the suggestion
-- Enter `echo "$(echo '   M e   ' | sed 's/ *$//g')."` in the terminal
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ *$//g')."</code> in the terminal
 
 ## 1436. echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."
 
@@ -2224,10 +2221,11 @@ That replaced all the spaces at the end of the text. You can use `|` as an "or" 
 
 #### HINTS
 
-- The previous command was `echo "$(echo '   M e   ' | sed 's/ *$//g')."`
-- The two patterns you want to replace are `^ *` or ` *$`
+- The previous command was <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/ *$//g')."</code>
+- You want to replace the <code>^&nbsp;*</code> (`^<space>*`) pattern
+- And the <code>&nbsp;*$</code> (`<space>*$`) pattern
 - The matching pattern should look like this: `'s/^ *| *$//g'`
-- Enter `echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."` in the terminal
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g')."</code>
 
 ## 1437. man sed
 
@@ -2245,7 +2243,7 @@ That didn't work. It doesn't like that "or" (`|`) operator for some reason. Chec
 
 ### 1438.1
 
-Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the `echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."` command that didn't work to find out.
+Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g')."</code> command that didn't work to find out.
 
 #### HINTS
 
@@ -2255,13 +2253,13 @@ Somewhere in there is a flag for using extended regular expressions with `sed`. 
 
 ### 1440.1
 
-I knew you could do it. That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.
+:wink: That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.
 
 #### HINTS
 
 - Here's an example: `$(echo $CUSTOMER_NAME | sed ...)`
-- `^ *` will match all spaces at the beginning of text, and ` *$` will match spaces at the end
-- The previous command was `echo "$(echo '   M e   ' | sed -r 's/^ *| *$//g')."`
+- `^ *` will match all spaces at the beginning of text, and <code>&nbsp;*$</code> will match spaces at the end
+- The previous command was <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed -r 's/^ *| *$//g')."</code>
 - Change the `$CUSTOMER_NAME` variable in the last message to `$(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')`
 
 ## 1442. Run the script
@@ -2273,35 +2271,35 @@ Run the script and rent the next bike on the list. Use the same customer whose p
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `555-5555` should have at least five bikes rented
+- The customer with phone number `555-5555` and name `Me` should have at least five bikes rented
 
 ## 1444. Run the script
 
 ### 1444.1
 
-Run the script again. Rent the next bike on the list. Use `000-0000` as the phone number, and `Test` as the name. When you are done, exit the program.
+Run the script again. Rent another bike, use `000-0000` as the phone number this time, and `Test` as the name to create a new customer. When you are done, exit the program.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `000-0000` should have a bike rented
+- The customer with phone number `000-0000` and name `Test` should have at least one bike rented
 
 ## 1446. Run the script
 
 ### 1446.1
 
-Run the script again. Rent the next bike on the list using the customer with phone number `000-0000` you just created. When you are done, exit the program.
+Run the script again. Rent another bike with the customer you just created. When you are done, exit the program.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `000-0000` should have two bikes rented
+- The customer with phone number `000-0000` and name `Test` should have at least two bikes rented
 
 ## 1448. SELECT * FROM bikes ORDER BY bike_id
 
 ### 1448.1
 
-In the psql prompt, view all the data in your bikes table ordered by the `bike_id`.
+In the psql prompt, view all the data in your bikes table in order by the `bike_id`.
 
 #### HINTS
 
@@ -2337,7 +2335,7 @@ There should two customers in that table now. Lastly, look at all the data in th
 
 ### 1453.1
 
-The rent functionality is finished. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started on that.
+The rent functionality looks like it all works. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started with that.
 
 #### HINTS
 
@@ -2353,7 +2351,7 @@ RETURN_MENU() {
 
 ### 1457.1
 
-Add three single line comments to the return menu; `get customer info`, `if not found`, and `send to main menu`, in that order.
+Add three single line comments to the return menu function; `get customer info`, `if not found`, and `send to main menu`, in that order.
 
 #### HINTS
 
@@ -3130,7 +3128,7 @@ Run the script and return the first bike you rented. When you are done, exit the
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The first bike should be available again.
+- The customer with phone number `555-5555` and name `Me` should have at least one rental with the `date_returned` column not null
 
 ## 1750. psql SELECT * FROM rentals
 
