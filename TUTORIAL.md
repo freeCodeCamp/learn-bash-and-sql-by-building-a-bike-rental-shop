@@ -12,6 +12,19 @@
 
 - Capitalization matters
 - If the tests don't run automatically, try typing `exit` into the terminal and redoing the instructions
+- The previous command was `echo "$(echo ' M e ' | sed 's/^ //g')."`
+- Change the `' M e '` part to include the suggestion
+- asdf <pre>'   M e '</pre>
+- asdf <code>'   M e '</code>
+- asdf:
+```sh
+'   M e '
+```
+- The new text should be `'<three_spaces>M e '`
+- In the terminal, enter
+```sh
+echo "$(echo '   M e ' | sed 's/^ //g')."
+```
 
 ## 20. Log in to Psql
 
@@ -1973,7 +1986,7 @@ The command you used, "piped" a string (`28 | Mountain`) to the `sed` command, w
 
 - The previous command was `echo '28 | Mountain' | sed 's/ /=/g'`
 - Remove the `=` from the previous command
-- Enter `echo '28 | Mountain' | sed 's/ //g'`
+- Enter `echo '28 | Mountain' | sed 's/ //g'` in the terminal
 
 ## 1407. echo '28 | Mountain' | sed 's/ //'
 
@@ -1985,7 +1998,7 @@ The `g` regex flag stands for "global". It will replace all instance of the patt
 
 - The previous command was `echo '28 | Mountain' | sed 's/ //g`
 - Remove the `g` flag from the previous command
-- Enter `echo '28 | Mountain' | sed 's/ //'`
+- Enter `echo '28 | Mountain' | sed 's/ //'` in the terminal
 
 ## 1408. echo '28 | Mountain' | sed 's/ |//'
 
@@ -1996,8 +2009,8 @@ That time, only the first instance of the pattern was replaced. The first space 
 #### HINTS
 
 - The previous command was `echo '28 | Mountain' | sed 's/ //`
-- You want to replace the space in the pattern of the last command with ` |`
-- Enter `echo '28 | Mountain' | sed 's/ |//'`
+- You want to replace the space in the pattern of the last command with `<space_here>|`
+- Enter `echo '28 | Mountain' | sed 's/ |//'` in the terminal
 
 ## 1410. echo '28 | Mountain' | sed 's/ |/"/'
 
@@ -2008,14 +2021,14 @@ Enter the same command, but make the output look like how you want in the messag
 #### HINTS
 
 - The previous command was `echo '28 | Mountain' | sed 's/ |//`
-- Use `"` as the character to replace ` |` with
-- Enter `echo '28 | Mountain' | sed 's/ |/"/'`
+- Use `"` as the character to replace `<space>|` with
+- Enter `echo '28 | Mountain' | sed 's/ |/"/'` in the terminal
 
 ## 1411. Add echo BIKE_INFO | sed 's/ |/"/'
 
 ### 1411.1
 
-Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces ` |` with `"` so the text will read <SIZE>" <TYPE>. `28 | Mountain` would become `28" Mountain`, for instance.
+Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces `<space>|` with `"` so the text will read `<SIZE>" <TYPE>`. `28 | Mountain` would become `28" Mountain`, for instance.
 
 #### HINTS
 
@@ -2030,7 +2043,7 @@ echo $BIKE_INFO | sed 's/ |/"/'
 
 ### 1413.1
 
-Run the script and rent the next bike on the list. Use the same customer that's already in the database.
+Run the script and rent the next bike on the list. Use the customer with phone number `555-5555` again to rent it.
 
 #### HINTS
 
@@ -2057,7 +2070,7 @@ What you put the in subshell (`$(...)`) will be executed, and the result of it w
 #### HINTS
 
 - Use dynamic info for the bike info and the customer's name
-- You want to use the `BIKE_INFO_FORMATTED` and `CUSTOMER_NAME`
+- You want to use the `BIKE_INFO_FORMATTED` and `CUSTOMER_NAME` variables
 - The message should look like this: `I have put you down for the $BIKE_INFO_FORMATTED Bike, $CUSTOMER_NAME.`
 - Add `MAIN_MENU "I have put you down for the $BIKE_INFO_FORMATTED Bike, $CUSTOMER_NAME."` below the `send to main menu` comment
 
@@ -2065,12 +2078,12 @@ What you put the in subshell (`$(...)`) will be executed, and the result of it w
 
 ### 1418.1
 
-Run the script and rent the next bike on the list. Use the customer with `555-5555` as their phone number.
+Run the script and rent the next bike on the list. Use the customer with `555-5555` as their phone number. When you are done, exit the program.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `555-5555` should have the first four bikes rented
+- The customer with phone number `555-5555` should have at least four bikes rented
 
 ## 1420. echo ' M e '
 
@@ -2129,7 +2142,7 @@ That replaced all the spaces. You only had an extra space at the beginning of th
 #### HINTS
 
 - The previous command was `echo "$(echo ' M e ' | sed 's/ //g')."`
-- You want to change the matching pattern to `^ ` (`^<space>`)
+- You want to change the matching pattern to `^<space>`
 - The matching pattern is between the first and second forward slashes
 - The `sed` pattern should look like this: `s/^ //g`
 - Enter `echo "$(echo ' M e ' | sed 's/^ //g')."` in the terminal
@@ -2138,23 +2151,23 @@ That replaced all the spaces. You only had an extra space at the beginning of th
 
 ### 1428.1
 
-The caret you added means that's the start of the text. So it will replace a space only if it's the first character. Enter the last command, but add two more spaces (three total) at the beginning of the text.  
-terminal 
-echo "$(echo '   M e ' | sed 's/^ //g')."
+The caret you added means that's the start of the text. So it will replace a space only if it's the first character. Enter the last command, but add two more spaces (three total) at the beginning of the text.
 
 #### HINTS
 
 - The previous command was `echo "$(echo ' M e ' | sed 's/^ //g')."`
 - Change the `' M e '` part to include the suggestion
-- The new text should be `'   M e '`
-- Enter `echo "$(echo '   M e ' | sed 's/^ //g')."` in the terminal
+- The new text should be `'<three_spaces>M e '`
+- In the terminal, enter
+```sh
+echo "$(echo '   M e ' | sed 's/^ //g')."
+```
 
 ## 1430. echo "$(echo '   M e ' | sed 's/^ *//g')."
 
 ### 1430.1
 
 The caret, space pattern (`^ `), only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.
-echo "$(echo '   M e ' | sed 's/^ *//g')."
 
 #### HINTS
 
@@ -2180,7 +2193,7 @@ The customer name only had an extra space at the beginning. Unsure as to why, bu
 
 ### 1433.1
 
-Add two more spaces to the end of text in the previous command (three total).
+Add two more spaces to the end of **text** in the previous command (three total).
 
 #### HINTS
 
@@ -2244,9 +2257,6 @@ Somewhere in there is a flag for using extended regular expressions with `sed`. 
 
 I knew you could do it. That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.
 
-rom the front or back of text. In 
-change $CUSTOMER_NAME to $(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')
-
 #### HINTS
 
 - Here's an example: `$(echo $CUSTOMER_NAME | sed ...)`
@@ -2258,18 +2268,18 @@ change $CUSTOMER_NAME to $(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')
 
 ### 1442.1
 
-Run the script and rent the next bike on the list. Use the same customer whose phone number is `555-5555`.
+Run the script and rent the next bike on the list. Use the same customer whose phone number is `555-5555`. When you are done, exit the program.
 
 #### HINTS
 
 - Enter `./bike-shop.sh` in the terminal and press enter
-- The customer with phone number `555-5555` should have the first five bikes rented
+- The customer with phone number `555-5555` should have at least five bikes rented
 
 ## 1444. Run the script
 
 ### 1444.1
 
-Run the script again. Rent the next bike on the list. Use `000-0000` as the phone number, and `I` as the name.
+Run the script again. Rent the next bike on the list. Use `000-0000` as the phone number, and `Test` as the name. When you are done, exit the program.
 
 #### HINTS
 
@@ -2280,7 +2290,7 @@ Run the script again. Rent the next bike on the list. Use `000-0000` as the phon
 
 ### 1446.1
 
-Run the script again. Rent the next bike on the list using the customer with phone number `000-0000` you just created.
+Run the script again. Rent the next bike on the list using the customer with phone number `000-0000` you just created. When you are done, exit the program.
 
 #### HINTS
 
@@ -2291,7 +2301,7 @@ Run the script again. Rent the next bike on the list using the customer with pho
 
 ### 1448.1
 
-View all the data in your bikes table ordered by the `bike_id`.
+In the psql prompt, view all the data in your bikes table ordered by the `bike_id`.
 
 #### HINTS
 
@@ -2303,7 +2313,7 @@ View all the data in your bikes table ordered by the `bike_id`.
 
 ### 1449.1
 
-There should be one bike left available to rent. Next, look at all the data in the customers table.
+There should be two bikes left available to rent. Next, look at all the data in the customers table.
 
 #### HINTS
 
@@ -2327,7 +2337,7 @@ There should two customers in that table now. Lastly, look at all the data in th
 
 ### 1453.1
 
-Your business is growing. The rent functionality is finally finished. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started on that.
+The rent functionality is finished. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started on that.
 
 #### HINTS
 
@@ -2367,7 +2377,6 @@ RETURN_MENU() {
 ### 1460.1
 
 Below the `get customer info` comment you just added, print `What's your phone number?` with a new line in front of the sentence.
-Add `echo -e "\nWhat's your phone number?"`
 
 #### HINTS
 
@@ -2482,7 +2491,7 @@ else
 
 fi
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ -z $CUSTOMER_ID  ]]
 then
@@ -2529,7 +2538,7 @@ Next, use a `LEFT JOIN` with `bikes` as the left table to join the bikes and ren
 
 ### 1490.1
 
-You only need the bikes that are being rented. Use the appropriate join with the same two tables to only get those. Use the `USING` keyword again.
+You only need the bikes that are being rented. Use an inner join with the same two tables to only get those. Use the `USING` keyword again.
 
 #### HINTS
 
@@ -2605,9 +2614,9 @@ That's the query you will need to use to get the bikes a customer is renting. In
 
 - Here's an example: `CUSTOMER_RENTALS=$($PSQL "<query_here>")`
 - You previously entered `SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL ORDER BY bike_id;` in the psql prompt
-- Make sure to get the columns in this order: `bike_id, type, size` and use the `PHONE_NUMBER` variable in the query
-- The query looks like this: `SELECT bike_id, type, size FROM customers INNER JOIN rentals USING(customer_id) INNER JOIN bikes USING(bike_id) WHERE customer_id = $CUSTOMER_ID AND date_returned IS NULL ORDER BY bike_id`
-- Add `CUSTOMER_RENTALS=$($PSQL "SELECT bike_id, type, size FROM customers INNER JOIN rentals USING(customer_id) INNER JOIN bikes USING(bike_id) WHERE customer_id = $CUSTOMER_ID AND date_returned IS NULL ORDER BY bike_id")` below the `get customer's rentals` comment
+- All the columns and tables should be in the same order as in the above query
+- The query looks like this: `SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL ORDER BY bike_id`
+- Add `CUSTOMER_RENTALS=$($PSQL "SELECT bike_id, type, size FROM bikes INNER JOIN rentals USING(bike_id) INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND date_returned IS NULL ORDER BY bike_id")` below the `get customer's rentals` comment
 
 ## 1540. Add echo CUSTOMER_RENTALS
 
@@ -2694,7 +2703,7 @@ else
 
 fi
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ -z $CUSTOMER_RENTALS  ]]
 then
@@ -2754,10 +2763,6 @@ Run the script and go to the return menu. Enter `555-5555` for the phone number 
 
 Where you print the list of rented bikes, pipe the command into a `while` loop that reads the data. You should read the data into `BIKE_ID`, `BAR`, `TYPE`, `BAR`, and `SIZE` variables. Make it print each rented bike in the same fashion as the list of available bikes.
 
-add
-
-You need to pipe those results into a while loop again and read the info into a variable so you can make it pretty.
-
 #### HINTS
 
 - Here's an example:
@@ -2768,7 +2773,7 @@ do
 done
 ```
 - The first line should look like this: `echo "$CUSTOMER_RENTALS" | while read BIKE_ID BAR TYPE BAR SIZE`
-- The loop should print `1) 27" Mountain Bike` with the appropriate bike info
+- The loop should print `1) 27" Mountain Bike` for each bike with the appropriate bike info
 - The whole thing looks like this:
 ```sh
 echo "$CUSTOMER_RENTALS" | while read BIKE_ID BAR TYPE BAR SIZE
@@ -2793,7 +2798,6 @@ Run the script and go to the return menu. Enter the same phone number again to m
 ### 1590.1
 
 Below the `ask for bike to return` comment, print `Which one would you like to return?` with a new line in front of it.
-Add `echo -e "\nWhich one would you like to return?"`
 
 #### HINTS
 
@@ -2875,18 +2879,16 @@ else
 
 fi
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]
 then
   # send to main menu
   MAIN_MENU "That is not a valid bike number."
 else
-  # display rented bikes
+  # check if input is rented
 
-  # ask for bike to return
-
-  # if not a number
+  # if input not rented
 
   # send to main menu
 
@@ -2941,7 +2943,7 @@ You only need to know what bike is going to be returned. Narrow the columns from
 
 ### 1630.1
 
-Below the `check if input is rented` comment, create a `RENTAL_ID` variable that gets the rental ID of the bike that was input.
+Back in the script, below the `check if input is rented` comment, create a `RENTAL_ID` variable that gets the rental ID of the bike that was input.
 
 #### HINTS
 
@@ -3061,7 +3063,7 @@ else
 
 fi
 ```
-- The `if` should look like this:
+- The whole `if` should look like this:
 ```sh
 if [[ -z $RENTAL_ID ]]
 then
@@ -3097,7 +3099,6 @@ After a person picks a bike to return and you know that it's a bike they have re
 ### 1710.1
 
 That should update the rentals table. Lastly, you need to make the bike available again. Below the `set bike availability to true` comment, create a `SET_TO_TRUE_RESULT` variable that makes the bike available again.
-Add `SET_TO_TRUE_RESULT=$($PSQL "UPDATE bikes SET available = true WHERE bike_id = $BIKE_ID_TO_RETURN")`
 
 #### HINTS
 
@@ -3111,7 +3112,7 @@ Add `SET_TO_TRUE_RESULT=$($PSQL "UPDATE bikes SET available = true WHERE bike_id
 
 ### 1730.1
 
-After all that is done, send them to the main menu with `Thank you for returning your bike` as the message.
+After all that is done, send them to the main menu with `Thank you for returning your bike.` as the message.
 
 #### HINTS
 
@@ -3159,7 +3160,7 @@ Now the rental has been returned. View all the data in the bikes table in order 
 
 ### 1770.1
 
-And the bike is available again. This is the last step. Run the script once more. Feel free to play around, rent and return some bikes. When you are ready to be done, return all the bikes you rented.
+And the bike is available again. This is the last step. Run the script once more. Feel free to play around, rent and return some bikes. When you are ready to be done, return all the bikes you rented and exit the program.
 
 #### HINTS
 

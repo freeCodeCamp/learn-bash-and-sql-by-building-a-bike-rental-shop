@@ -1255,7 +1255,7 @@ levels:
       - id: '1730.1'
         setup:
           watchers:
-            - ../.bash_history
+            - ./bike-shop.sh
   - id: '1740'
     steps:
       - id: '1740.1'
