@@ -1223,20 +1223,28 @@ Run the script and go to the rent menu to see the list of bikes available.
 
 ### 1140.1
 
-Instead of directly printing the list, `pipe` the output into a `while` loop that reads each word. Here's how that looks:
+Instead of directly printing the list, `pipe` the output into a `while` loop that reads each line. Here's how that looks:
 
+```sh
+echo "$AVAILABLE_BIKES" | while read <VAR_1> <VAR_2> <VAR_3> <VAR_4> <VAR_5>
+do
+  <STATEMENTS>
+done
+```
+
+It will read the first line of your `AVAILABLE_BIKES` variable into the five variables. Each variable being the next word in the line. Read each line into variables, `BIKE_ID BAR TYPE BAR SIZE`. In the `<STATEMENTS>` area, use `echo` to print the `BIKE_ID`, `TYPE`, and `SIZE` variables, in that order.
+
+#### HINTS
+
+- The first line should be `echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR TYPE BAR SIZE`
+- The `<STATEMENTS>` area looks like this: `echo "$BIKE_ID $TYPE $SIZE"`
+- Here's how it should look:
 ```sh
 echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR TYPE BAR SIZE
 do
   echo "$BIKE_ID $TYPE $SIZE"
 done
 ```
-
-It will read the first line of your results into those five variables for you to use in the `do` area. When it gets to a new line, it reads the next five words into the variables again and repeats until there are no new lines left.
-
-#### HINTS
-
-- Make the `echo "$AVAILABLE_BIKES"` line look like the example
 
 ## 1142. Run the script
 
@@ -1917,7 +1925,7 @@ The rental was added and the `date_rented` was filled in automatically. :smile: 
 
 ### 1401.1
 
-The available column was set to false for the bike you rented. The last to do is give a nice message about the rental. Below the `get bike info` comment, create a `BIKE_INFO` variable that gets the `size` and `type`, in that order, of the bike rented.
+The available column was set to false for the bike you rented. The last thing to do is give a nice message about the rental. Below the `get bike info` comment, create a `BIKE_INFO` variable that gets the `size` and `type`, in that order, of the bike rented.
 
 #### HINTS
 
@@ -2138,7 +2146,7 @@ That replaced all the spaces. You only had an extra space at the beginning of th
 
 ### 1428.1
 
-The caret you added means that's the start of the text. So it will replace a space only if it's at the beginning. Enter the last command, but add two more spaces (three total) at the beginning of the text.
+The caret you added means that's the start of the text. So it will replace a space only if it's at the beginning. Enter the last command, but add two more spaces (three total) at the beginning of the **text**.
 
 #### HINTS
 
@@ -2151,7 +2159,7 @@ The caret you added means that's the start of the text. So it will replace a spa
 
 ### 1430.1
 
-The <code>&nbsp;</code> (`^<space>`) pattern only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.
+The <code>^&nbsp;</code> (`^<space>`) pattern only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.
 
 #### HINTS
 
@@ -2253,7 +2261,7 @@ Somewhere in there is a flag for using extended regular expressions with `sed`. 
 
 ### 1442.1
 
-Run the script and rent the next bike on the list. Use the same customer whose phone number is `555-5555`. When you are done, exit the program.
+Run the script and rent another bike with the customer whose phone number is `555-5555`. When you are done, exit the program.
 
 #### HINTS
 
@@ -2899,7 +2907,7 @@ You need to check if the input is a `bike_id` rented by the customer so you can 
 
 ### 1620.1
 
-Add three conditions to the previous query. Check the `phone`, `bike_id`, and `date_returned` columns to narrow the results to the first bike you rented.
+Add three conditions to the previous query. Check the `phone`, `bike_id`, and `date_returned` columns to narrow the results to the first bike you rented with `Me`.
 
 #### HINTS
 
@@ -3068,13 +3076,12 @@ fi
 
 ### 1690.1
 
-After a person picks a bike to return and you know that it's a bike they have rented, you need to update all the info in the database to return it. Below the `update date_returned` comment, create a `RETURN_BIKE_RESULT` variable that sets the `date_returned` column to `NOW()` for the bike rented.
+After a person picks a bike to return and you know that it's a bike they have rented, you need to update all the info in the database to return it. Below the `update date_returned` comment, create a `RETURN_BIKE_RESULT` variable that sets the `date_returned` column to `NOW()` for the bike rented. Use the `RENTAL_ID` to figure out which row to update.
 
 #### HINTS
 
 - Here's an example: `RETURN_BIKE_RESULT=$($PSQL "<query_here>")`
 - You want to use the `UPDATE`, `SET`, `NOW()`, and `WHERE` keywords in the query
-- You want to update the column for the rental using the `RENTAL_ID` variable
 - Here's an example of the query: `UPDATE <table> SET <column> = <value> WHERE <condition>`
 - The query you want is `UPDATE rentals SET date_returned = NOW() WHERE rental_id = $RENTAL_ID`
 - Add `RETURN_BIKE_RESULT=$($PSQL "UPDATE rentals SET date_returned = NOW() WHERE rental_id = $RENTAL_ID")` below the `update date_returned` comment
@@ -3110,7 +3117,7 @@ After all that is done, send them to the main menu with `Thank you for returning
 
 ### 1740.1
 
-Run the script and return the first bike you rented. When you are done, exit the program.
+Run the script and return one of the bikes that `Me` has rented out. When you are done, exit the program.
 
 #### HINTS
 
