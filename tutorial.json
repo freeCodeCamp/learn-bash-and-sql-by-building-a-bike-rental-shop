@@ -717,7 +717,7 @@
               "289122a0c9b14213c508e4da91a80a786d09c933"
             ]
           },
-          "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table. Here's an example of how you can do that:\n\n```sql\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\n```",
+          "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table. Here's an example of how you can do that:\r\n\r\n```sql\r\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\r\n```",
           "hints": [
             "Without the keywords, it looks like tihs: `rentals customer_id customers(customer_id)`",
             "Try entering `ALTER TABLE rentals ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);` in the psql prompt",
@@ -1349,8 +1349,8 @@
           },
           "content": ":smile: In the script, create an empty function named `MAIN_MENU`. This will have a few options to enter when the script runs to rent or return a bike.",
           "hints": [
-            "Here's an example:\n```sh\nFUNCTION_NAME() {\n\n}\n```",
-            "Add this to the bottom of the script:\n```sh\nMAIN_MENU() {\n\n}\n```"
+            "Here's an example:\r\n```sh\r\nFUNCTION_NAME() {\r\n\r\n}\r\n```",
+            "Add this to the bottom of the script:\r\n```sh\r\nMAIN_MENU() {\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -1441,7 +1441,7 @@
               "7813ff8a0cc24bc0f9ffbf473be1f585cd260422"
             ]
           },
-          "content": "It's coming along. Add another `echo` command **in the function** below the other one. Make it output text that looks like this:\n\n```sh\n\n1. Rent a bike\n2. Return a bike\n3. Exit\n```\n\nNote that there's an empty line at the start.",
+          "content": "It's coming along. Add another `echo` command **in the function** below the other one. Make it output text that looks like this:\r\n\r\n```sh\r\n\r\n1. Rent a bike\r\n2. Return a bike\r\n3. Exit\r\n```\r\n\r\nNote that there's an empty line at the start.",
           "hints": [
             "Use the `echo` command with the `-e` flag and line breaks (`\\n`) to produce the suggested output",
             "Without the words, it looks like this: `echo -e \"\\n1. \\n2. \\n3. \"`",
@@ -1496,7 +1496,7 @@
             "Here's an example: `read <VARIABLE_NAME>`",
             "Here's what the code looks like: `read MAIN_MENU_SELECTION`",
             "Add the code at the bottom of the `MAIN_MENU` function",
-            "The `MAIN_MENU` function should look like this:\n```sh\nMAIN_MENU() {\n  echo \"How may I help you?\"\n  echo -e \"\\n1. Rent a bike\\n2. Return a bike\\n3. Exit\"\n  read MAIN_MENU_SELECTION\n}\n```"
+            "The `MAIN_MENU` function should look like this:\r\n```sh\r\nMAIN_MENU() {\r\n  echo \"How may I help you?\"\r\n  echo -e \"\\n1. Rent a bike\\n2. Return a bike\\n3. Exit\"\r\n  read MAIN_MENU_SELECTION\r\n}\r\n```"
           ]
         }
       ]
@@ -1520,7 +1520,7 @@
           "content": "When an option gets entered, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function below the `MAIN_MENU` function.",
           "hints": [
             "Make sure the `RENT_MENU` function is below the `MAIN_MENU` function and above where you call `MAIN_MENU`",
-            "Add this in the suggested area:\n```sh\nRENT_MENU() {\n\n}\n```"
+            "Add this in the suggested area:\r\n```sh\r\nRENT_MENU() {\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -1568,7 +1568,7 @@
           "content": "Add an empty `RETURN_MENU` function below the `RENT_MENU` function for when a user enters the option to return a bike.",
           "hints": [
             "Make sure the `RETURN_MENU` function is below the `RENT_MENU` function and above where you call `MAIN_MENU`",
-            "Add this in the suggested area:\n```sh\nRETURN_MENU() {\n\n}\n```"
+            "Add this in the suggested area:\r\n```sh\r\nRETURN_MENU() {\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -1616,7 +1616,7 @@
           "content": "Add an empty `EXIT` function below the `RETURN_MENU` function for when a user wants to exit the program.",
           "hints": [
             "Make sure the `EXIT` function is below the `RETURN_MENU` function and above where you call `MAIN_MENU`",
-            "Add this in the suggested area:\n```sh\nEXIT() {\n\n}\n```"
+            "Add this in the suggested area:\r\n```sh\r\nEXIT() {\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -1663,11 +1663,11 @@
               "34ac6c25253870453b05877b3cd1a8bb663ee7df"
             ]
           },
-          "content": "When a user enters an option at the main menu, you want to take them to the appropriate sub-menu. You can use a `case` statement for this. Here's an example:\n\n```sh\ncase EXPRESSION in\n  PATTERN) STATEMENTS ;;\n  PATTERN) STATEMENTS ;;\n  PATTERN) STATEMENTS ;;\n  *) STATEMENTS ;;\nesac\n```\n\nThe expression you want is the `$MAIN_MENU_SELECTION` variable. You are expecting it to be a `1`, `2`, or `3` for your various menus. Add a `case` statement that takes users to their corresponding menus. The `*` is for when anything else is entered. Take users to the `MAIN_MENU` when the variable isn't a `1`, `2`, or `3`.",
+          "content": "When a user enters an option at the main menu, you want to take them to the appropriate sub-menu. You can use a `case` statement for this. Here's an example:\r\n\r\n```sh\r\ncase EXPRESSION in\r\n  PATTERN) STATEMENTS ;;\r\n  PATTERN) STATEMENTS ;;\r\n  PATTERN) STATEMENTS ;;\r\n  *) STATEMENTS ;;\r\nesac\r\n```\r\n\r\nThe expression you want is the `$MAIN_MENU_SELECTION` variable. You are expecting it to be a `1`, `2`, or `3` for your various menus. Add a `case` statement that takes users to their corresponding menus. The `*` is for when anything else is entered. Take users to the `MAIN_MENU` when the variable isn't a `1`, `2`, or `3`.",
           "hints": [
             "Add the `case` statement in the `MAIN_MENU` function below the `read MAIN_MENU_SELECTION` line",
-            "Here's how it starts:\n```sh\ncase $MAIN_MENU_SELECTION in\n  1) RENT_MENU ;;\n```",
-            "Add this case statement below the;\n```sh\ncase $MAIN_MENU_SELECTION in\n  1) RENT_MENU ;;\n  2) RETURN_MENU ;;\n  3) EXIT ;;\n  *) MAIN_MENU ;;\nesac\n```"
+            "Here's how it starts:\r\n```sh\r\ncase $MAIN_MENU_SELECTION in\r\n  1) RENT_MENU ;;\r\n```",
+            "Add this case statement below the;\r\n```sh\r\ncase $MAIN_MENU_SELECTION in\r\n  1) RENT_MENU ;;\r\n  2) RETURN_MENU ;;\r\n  3) EXIT ;;\r\n  *) MAIN_MENU ;;\r\nesac\r\n```"
           ]
         }
       ]
@@ -1715,8 +1715,8 @@
           "content": "Add an argument to where you call `MAIN_MENU` in the `case` statement. It should be `Please enter a valid option.`. The next step will adjust the function so the message is printed when a user enters an invalid option.",
           "hints": [
             "Here's an example: `FUNCTION_CALL \"<argument_message>\"`",
-            "Here's how the function call should look:\n```sh\n  *) MAIN_MENU \"Please enter a valid option.\" ;;\n```",
-            "The whole `case` statement should look like this:\n```sh\ncase $MAIN_MENU_SELECTION in\n  1) RENT_MENU ;;\n  2) RETURN_MENU ;;\n  3) EXIT ;;\n  *) MAIN_MENU \"Please enter a valid option.\" ;;\nesac\n```"
+            "Here's how the function call should look:\r\n```sh\r\n  *) MAIN_MENU \"Please enter a valid option.\" ;;\r\n```",
+            "The whole `case` statement should look like this:\r\n```sh\r\ncase $MAIN_MENU_SELECTION in\r\n  1) RENT_MENU ;;\r\n  2) RETURN_MENU ;;\r\n  3) EXIT ;;\r\n  *) MAIN_MENU \"Please enter a valid option.\" ;;\r\nesac\r\n```"
           ]
         }
       ]
@@ -1739,11 +1739,11 @@
           },
           "content": "At the top of the `MAIN_MENU` function, add an `if` condition that checks if there's an argument (`$1`) passed to the function. If there is, print the message with a new line in front of it.",
           "hints": [
-            "Here's an example of an `if`:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example of an `if`:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition you want is `$1`",
             "Use `echo` with the `-e` flag and a new line character (`\\n`) to print the argument with a new line at the beginning in the `<STATEMENTS>` area",
             "Here's an example of that part: `echo -e \"\\n<argument_here>\"`",
-            "The `if` statement should look like this:\n```sh\nif [[ $1 ]]\nthen\n  echo -e \"\\n$1\"\nfi\n```",
+            "The `if` statement should look like this:\r\n```sh\r\nif [[ $1 ]]\r\nthen\r\n  echo -e \"\\n$1\"\r\nfi\r\n```",
             "Make sure to put it at the top of the `MAIN_MENU` function"
           ]
         }
@@ -1792,7 +1792,7 @@
           "content": "Looks good. Delete the `echo \"Rent Menu\"` from the `RENT_MENU` function so you can start adding the ability to rent a bike from the database.",
           "hints": [
             "The `RENT_MENU` function should be empty",
-            "The `RENT_MENU` function should look like this:\n```sh\nRENT_MENU() {\n\n}\n```"
+            "The `RENT_MENU` function should look like this:\r\n```sh\r\nRENT_MENU() {\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -1816,7 +1816,7 @@
           "content": "In the `RENT_MENU` function, add three single line comments; `get available bikes`, `if no bikes available`, and `send to main menu`, in that order.",
           "hints": [
             "Here's an example of a single line comment: `# <comment here>`",
-            "The `RENT_MENU` function should look like this:\n```sh\nRENT_MENU() {\n  # get available bikes\n\n  # if no bikes available\n\n  # send to main menu\n\n}\n```"
+            "The `RENT_MENU` function should look like this:\r\n```sh\r\nRENT_MENU() {\r\n  # get available bikes\r\n\r\n  # if no bikes available\r\n\r\n  # send to main menu\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -1993,8 +1993,8 @@
           "content": "So if there's no bike available, the variable will be empty. In the script, below the `if no bikes available` comment, add an `if` condition that checks if the variable is empty. Use `-z` to check if it's empty. Place the `send to main menu` comment in its `STATEMENTS` area.",
           "hints": [
             "Use `-z <VARIABLE>` to see if a variable is empty",
-            "Here's an example:\n```sh\nif [[ -z <VARIABLE> ]]\nthen\n  <STATEMENTS>\nfi\n```",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $AVAILABLE_BIKES ]]\nthen\n  # send to main menu\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ -z <VARIABLE> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $AVAILABLE_BIKES ]]\r\nthen\r\n  # send to main menu\r\nfi\r\n```",
             "Make sure it's right below the suggested comment"
           ]
         }
@@ -2021,7 +2021,7 @@
             "Here's an example `MAIN MENU \"<message_here>\"`",
             "Make sure it's in the `if` condition below the `send to main menu` comment",
             "The function call should look like this: `MAIN_MENU \"Sorry, we don't have any bikes available right now.\"`",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $AVAILABLE_BIKES ]]\nthen\n  # send to main menu\n  MAIN_MENU \"Sorry, we don't have any bikes available right now.\"\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $AVAILABLE_BIKES ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"Sorry, we don't have any bikes available right now.\"\r\nfi\r\n```"
           ]
         }
       ]
@@ -2070,9 +2070,9 @@
           "hints": [
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
-            "An `if/else` statement looks like this:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nelse\n  <STATEMENTS>\nfi\n```",
-            "The `else` should look like this:\n```sh\nelse\n  # display available bikes\n\n  # ask for bike to rent\n\n  # if input is not a number\n\n  # send to main menu\n\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ -z $AVAILABLE_BIKES ]]\nthen\n  # send to main menu\n  MAIN_MENU \"Sorry, we don't have any bikes available right now.\"\nelse\n  # display available bikes\n\n  # ask for bike to rent\n\n  # if input is not a number\n\n  # send to main menu\n\nfi\n```"
+            "An `if/else` statement looks like this:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nelse\r\n  <STATEMENTS>\r\nfi\r\n```",
+            "The `else` should look like this:\r\n```sh\r\nelse\r\n  # display available bikes\r\n\r\n  # ask for bike to rent\r\n\r\n  # if input is not a number\r\n\r\n  # send to main menu\r\n\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ -z $AVAILABLE_BIKES ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"Sorry, we don't have any bikes available right now.\"\r\nelse\r\n  # display available bikes\r\n\r\n  # ask for bike to rent\r\n\r\n  # if input is not a number\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -2093,7 +2093,7 @@
               "bca52a608c56ab469822c947db9f7e8aba3fa467"
             ]
           },
-          "content": "Below the `display available bikes` comment you just added, use `echo` to print `Here are the bike we have available:` with a new line in front of the message",
+          "content": "Below the `display available bikes` comment you just added, use `echo` to print `Here are the bikes we have available:` with a new line in front of the message",
           "hints": [
             "Use `echo` with the `-e` flag and the new line character (`\\n`) to print the suggested message",
             "Use double quotes around the message",
@@ -2198,11 +2198,11 @@
               "3b2475ef41e4c16d65a202268d67a8e29be9695a"
             ]
           },
-          "content": "Instead of directly printing the list, `pipe` the output into a `while` loop that reads each line. Here's how that looks:\n\n```sh\necho \"$AVAILABLE_BIKES\" | while read <VAR_1> <VAR_2> <VAR_3> <VAR_4> <VAR_5>\ndo\n  <STATEMENTS>\ndone\n```\n\nIt will read the first line of your `AVAILABLE_BIKES` variable into the five variables. Each variable being the next word in the line. Read each line into variables, `BIKE_ID BAR TYPE BAR SIZE`. In the `<STATEMENTS>` area, use `echo` to print the `BIKE_ID`, `TYPE`, and `SIZE` variables, in that order.",
+          "content": "Instead of directly printing the list, `pipe` the output into a `while` loop that reads each line. Here's how that looks:\r\n\r\n```sh\r\necho \"$AVAILABLE_BIKES\" | while read <VAR_1> <VAR_2> <VAR_3> <VAR_4> <VAR_5>\r\ndo\r\n  <STATEMENTS>\r\ndone\r\n```\r\n\r\nIt will read the first line of your `AVAILABLE_BIKES` variable into the five variables. Each variable being the next word in the line. Read each line into variables, `BIKE_ID BAR TYPE BAR SIZE`. In the `<STATEMENTS>` area, use `echo` to print the `BIKE_ID`, `TYPE`, and `SIZE` variables, in that order.",
           "hints": [
             "The first line should be `echo \"$AVAILABLE_BIKES\" | while read BIKE_ID BAR TYPE BAR SIZE`",
             "The `<STATEMENTS>` area looks like this: `echo \"$BIKE_ID $TYPE $SIZE\"`",
-            "Here's how it should look:\n```sh\necho \"$AVAILABLE_BIKES\" | while read BIKE_ID BAR TYPE BAR SIZE\ndo\n  echo \"$BIKE_ID $TYPE $SIZE\"\ndone\n```"
+            "Here's how it should look:\r\n```sh\r\necho \"$AVAILABLE_BIKES\" | while read BIKE_ID BAR TYPE BAR SIZE\r\ndo\r\n  echo \"$BIKE_ID $TYPE $SIZE\"\r\ndone\r\n```"
           ]
         }
       ]
@@ -2254,7 +2254,7 @@
             "Escape a `\"` with `\\\"`",
             "Here's an example: `echo \"<bike_id>) <size>\" <type> Bike\"`",
             "Make the suggested line look like this: `echo \"$BIKE_ID) $SIZE\\\" $TYPE Bike\"`",
-            "The whole loop should look like this:\n```sh\necho \"$AVAILABLE_BIKES\" | while read BIKE_ID BAR TYPE BAR SIZE\ndo\n  echo \"$BIKE_ID) $SIZE\\\" $TYPE Bike\"\ndone\n```"
+            "The whole loop should look like this:\r\n```sh\r\necho \"$AVAILABLE_BIKES\" | while read BIKE_ID BAR TYPE BAR SIZE\r\ndo\r\n  echo \"$BIKE_ID) $SIZE\\\" $TYPE Bike\"\r\ndone\r\n```"
           ]
         }
       ]
@@ -2523,9 +2523,9 @@
           "hints": [
             "You want to check if the `$BIKE_ID_TO_RENT` variable is not a number",
             "You entered `[[ ! 11 =~ ^[0-9]+$ ]]; echo $?` in the terminal on the last step",
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  # send to main menu\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  # send to main menu\r\nfi\r\n```",
             "The condition you want is `[[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]`",
-            "Add this in the suggestion area:\n```sh\nif [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]\nthen\n  # send to main menu\nfi\n```"
+            "Add this in the suggestion area:\r\n```sh\r\nif [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]\r\nthen\r\n  # send to main menu\r\nfi\r\n```"
           ]
         }
       ]
@@ -2599,9 +2599,9 @@
           "hints": [
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
-            "An `if/else` statement looks like this:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nelse\n  <STATEMENTS>\nfi\n```",
-            "The `else` area should look like this:\n```sh\nelse\n  # get bike availability\n\n  # if not available\n\n  # send to main menu\n\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]\nthen\n  # send to main menu\n  MAIN_MENU \"That is not a valid bike number.\"\nelse\n  # get bike availability\n\n  # if not available\n\n  # send to main menu\n\nfi\n```"
+            "An `if/else` statement looks like this:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nelse\r\n  <STATEMENTS>\r\nfi\r\n```",
+            "The `else` area should look like this:\r\n```sh\r\nelse\r\n  # get bike availability\r\n\r\n  # if not available\r\n\r\n  # send to main menu\r\n\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"That is not a valid bike number.\"\r\nelse\r\n  # get bike availability\r\n\r\n  # if not available\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -2701,10 +2701,10 @@
           },
           "content": "The variable will be `t` or empty. Below the `if not available` comment, add an `if` condition that checks if it's empty. Put the `send to main menu` comment in it's statements area.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition you want is `-z $BIKE_AVAILABILITY`",
             "Place the `# send to main menu` comment in the `<STATEMENTS>` area",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $BIKE_AVAILABILITY ]]\nthen\n  # send to main menu\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $BIKE_AVAILABILITY ]]\r\nthen\r\n  # send to main menu\r\nfi\r\n```"
           ]
         }
       ]
@@ -2829,9 +2829,9 @@
           "hints": [
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
-            "An `if/else` statement looks like this:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nelse\n  <STATEMENTS>\nfi\n```",
-            "The `else` area should look like this:\n```sh\nelse\n  # get customer info\n\n  # if customer doesn't exist\n\n  # get new customer name\n\n  # insert new customer\n\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ -z $BIKE_AVAILABILITY  ]]\nthen\n  # send to main menu\n  MAIN_MENU \"That bike is not available.\"\nelse\n  # get customer info\n\n  # if customer doesn't exist\n\n  # get new customer name\n\n  # insert new customer\n\nfi\n```"
+            "An `if/else` statement looks like this:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nelse\r\n  <STATEMENTS>\r\nfi\r\n```",
+            "The `else` area should look like this:\r\n```sh\r\nelse\r\n  # get customer info\r\n\r\n  # if customer doesn't exist\r\n\r\n  # get new customer name\r\n\r\n  # insert new customer\r\n\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ -z $BIKE_AVAILABILITY  ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"That bike is not available.\"\r\nelse\r\n  # get customer info\r\n\r\n  # if customer doesn't exist\r\n\r\n  # get new customer name\r\n\r\n  # insert new customer\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -2934,10 +2934,10 @@
           },
           "content": "If the customer is in the database with the phone number used, the variable will be set to the name. If not, it will be empty. Add an `if` condition below the `if customer doesn't exist` comment that checks if the variable is empty. Place the next two comments in the `then` area.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition you want is `-z $CUSTOMER_NAME`",
             "Place the `# get new customer name` and `# insert new customer` comments in the `<STATEMENTS>` area",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $CUSTOMER_NAME ]]\nthen\n  # get new customer name\n\n  # insert new customer\n\nfi\n```",
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $CUSTOMER_NAME ]]\r\nthen\r\n  # get new customer name\r\n\r\n  # insert new customer\r\n\r\nfi\r\n```",
             "Make sure it's below the `if customer doesn't exist` comment"
           ]
         }
@@ -3145,7 +3145,7 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be below (not in) the `if [[ -z $CUSTOMER_NAME ]]` statement",
-            "The comments should look like this:\n```sh\n  if [[ -z $CUSTOMER_NAME ]]\n  then\n    # get new customer name\n    echo -e \"\\nWhat's your name?\"\n    read CUSTOMER_NAME\n\n    # insert new customer\n    INSERT_CUSTOMER_RESULT=$($PSQL \"INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')\")\n  fi\n\n  # get customer_id\n\n  # insert bike rental\n\n  # set bike availability to false\n\n  # get bike info\n\n  # send to main menu\n\n```"
+            "The comments should look like this:\r\n```sh\r\n  if [[ -z $CUSTOMER_NAME ]]\r\n  then\r\n    # get new customer name\r\n    echo -e \"\\nWhat's your name?\"\r\n    read CUSTOMER_NAME\r\n\r\n    # insert new customer\r\n    INSERT_CUSTOMER_RESULT=$($PSQL \"INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')\")\r\n  fi\r\n\r\n  # get customer_id\r\n\r\n  # insert bike rental\r\n\r\n  # set bike availability to false\r\n\r\n  # get bike info\r\n\r\n  # send to main menu\r\n\r\n```"
           ]
         }
       ]
@@ -3530,7 +3530,7 @@
           "hints": [
             "The previous command was `echo '28 | Mountain' | sed 's/ |/\"/'`",
             "You want to add the `| sed 's/ |/\"/'` part of the previous command after your `echo $BIKE_INFO` line",
-            "Make the suggested area look like this:\n```sh\necho $BIKE_INFO | sed 's/ |/\"/'\n```"
+            "Make the suggested area look like this:\r\n```sh\r\necho $BIKE_INFO | sed 's/ |/\"/'\r\n```"
           ]
         }
       ]
@@ -4158,7 +4158,7 @@
           "content": "The rent functionality looks like it all works. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started with that.",
           "hints": [
             "The `RETURN_MENU` function should be empty",
-            "The `RETURN_MENU` function should look like this:\n```sh\nRETURN_MENU() {\n\n}\n```"
+            "The `RETURN_MENU` function should look like this:\r\n```sh\r\nRETURN_MENU() {\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -4184,7 +4184,7 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be in the `RETURN_MENU` function",
-            "The `RETURN_MENU` function should look like this:\n```sh\nRETURN_MENU() {\n  # get customer info\n\n  # if not found\n\n  # send to main menu\n\n}\n```"
+            "The `RETURN_MENU` function should look like this:\r\n```sh\r\nRETURN_MENU() {\r\n  # get customer info\r\n\r\n  # if not found\r\n\r\n  # send to main menu\r\n\r\n}\r\n```"
           ]
         }
       ]
@@ -4285,10 +4285,10 @@
           },
           "content": "If they are in the database, the variable will be their `customer_id`. If not, it will be empty. Below the `if not found` comment, add an `if` statement that checks if it's empty. Put the `send to main menu` comment in the `then` area.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition you want is `-z $CUSTOMER_ID`",
             "Place the `# send to main menu` comment in the `<STATEMENTS>` area",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $CUSTOMER_ID ]]\nthen\n  # send to main menu\n\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $CUSTOMER_ID ]]\r\nthen\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -4363,9 +4363,9 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be in the `else` area of the `if [[ -z CUSTOMER_ID ]]` statement",
-            "An `if/else` statement looks like this:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nelse\n  <STATEMENTS>\nfi\n```",
-            "The `else` area should look like this:\n```sh\nelse\n  # get customer's rentals\n\n  # if no rentals\n\n  # send to main menu\n\nfi\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ -z $CUSTOMER_ID  ]]\nthen\n  # send to main menu\n  MAIN_MENU \"I could not find a record for that phone number.\"\nelse\n  # get customer's rentals\n\n  # if no rentals\n\n  # send to main menu\n\nfi\n```"
+            "An `if/else` statement looks like this:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nelse\r\n  <STATEMENTS>\r\nfi\r\n```",
+            "The `else` area should look like this:\r\n```sh\r\nelse\r\n  # get customer's rentals\r\n\r\n  # if no rentals\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ -z $CUSTOMER_ID  ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"I could not find a record for that phone number.\"\r\nelse\r\n  # get customer's rentals\r\n\r\n  # if no rentals\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -4652,10 +4652,10 @@
           },
           "content": "The query is working. If the customer has no rentals, the variable will be empty. Below the `if no rentals` comment, add an `if` condition that checks if it's empty. Put the `send to main` menu comment in the `then` area again.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition you want is `-z $CUSTOMER_RENTALS`",
             "Place the `# send to main menu` comment in the `<STATEMENTS>` area",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $CUSTOMER_RENTALS ]]\nthen\n  # send to main menu\n\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $CUSTOMER_RENTALS ]]\r\nthen\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -4706,8 +4706,8 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be in the `else` area of the `if [[ -z CUSTOMER_RENTALS ]]` statement",
-            "The `else` area should look like this:\n```sh\nelse\n  # display rented bikes\n\n  # ask for bike to return\n\n  # if not a number\n\n  # send to main menu\n\nfi\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ -z $CUSTOMER_RENTALS  ]]\nthen\n  # send to main menu\n  MAIN_MENU \"You do not have any bikes rented.\"\nelse\n  # display rented bikes\n\n  # ask for bike to return\n\n  # if not a number\n\n  # send to main menu\n\nfi\n```"
+            "The `else` area should look like this:\r\n```sh\r\nelse\r\n  # display rented bikes\r\n\r\n  # ask for bike to return\r\n\r\n  # if not a number\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ -z $CUSTOMER_RENTALS  ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"You do not have any bikes rented.\"\r\nelse\r\n  # display rented bikes\r\n\r\n  # ask for bike to return\r\n\r\n  # if not a number\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -4805,10 +4805,10 @@
           },
           "content": "Where you print the list of rented bikes, pipe the command into a `while` loop that reads the data. You should read the data into `BIKE_ID`, `BAR`, `TYPE`, `BAR`, and `SIZE` variables. Make it print each rented bike in the same fashion as the list of available bikes.",
           "hints": [
-            "Here's an example:\n```sh\necho \"$CUSTOMER_RENTALS\" | while read <VARIABLES>\ndo\n  echo <RENTED_BIKE_INFORMATION>\ndone\n```",
+            "Here's an example:\r\n```sh\r\necho \"$CUSTOMER_RENTALS\" | while read <VARIABLES>\r\ndo\r\n  echo <RENTED_BIKE_INFORMATION>\r\ndone\r\n```",
             "The first line should look like this: `echo \"$CUSTOMER_RENTALS\" | while read BIKE_ID BAR TYPE BAR SIZE`",
             "The loop should print `1) 27\" Mountain Bike` for each bike with the appropriate bike info",
-            "The whole thing looks like this:\n```sh\necho \"$CUSTOMER_RENTALS\" | while read BIKE_ID BAR TYPE BAR SIZE\ndo\n  echo \"$BIKE_ID) $SIZE\\\" $TYPE Bike\"\ndone\n```"
+            "The whole thing looks like this:\r\n```sh\r\necho \"$CUSTOMER_RENTALS\" | while read BIKE_ID BAR TYPE BAR SIZE\r\ndo\r\n  echo \"$BIKE_ID) $SIZE\\\" $TYPE Bike\"\r\ndone\r\n```"
           ]
         }
       ]
@@ -4906,11 +4906,11 @@
           },
           "content": "Below the `if not a number` comment, check if the input for the bike ID to return is a number using the same method you did earlier. Place the `send to main menu` comment in the statement.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition should check that the `$BIKE_ID_TO_RETURN` variable is not a number using the pattern matching operator (`=~`) and the pattern `^[0-9]+$`",
             "The condition you want is `[[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]`",
             "Place the `# send to main menu` comment in the `<STATEMENTS>` area",
-            "The `if` condition should look like this:\n```sh\nif [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]\nthen\n  # send to main menu\n\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]\r\nthen\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -4961,8 +4961,8 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be in the `else` area of the `if [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]` statement",
-            "The `else` area should look like this:\n```sh\nelse\n  # check if input is rented\n\n  # if input not rented\n\n  # send to main menu\n\nfi\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]\nthen\n  # send to main menu\n  MAIN_MENU \"That is not a valid bike number.\"\nelse\n  # check if input is rented\n\n  # if input not rented\n\n  # send to main menu\n\nfi\n```"
+            "The `else` area should look like this:\r\n```sh\r\nelse\r\n  # check if input is rented\r\n\r\n  # if input not rented\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ ! $BIKE_ID_TO_RETURN =~ ^[0-9]+$ ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"That is not a valid bike number.\"\r\nelse\r\n  # check if input is rented\r\n\r\n  # if input not rented\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -5095,10 +5095,10 @@
           },
           "content": "Below the `if input not rented` comment, add an `if` that checks if the `RENTAL_ID` variable is empty. Place the `send to main menu` comment in the `then` area.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nfi\r\n```",
             "The condition you want is `-z $RENTAL_ID`",
             "Place the `# send to main menu` comment in the `<STATEMENTS>` area",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $RENTAL_ID ]]\nthen\n  # send to main menu\n\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $RENTAL_ID ]]\r\nthen\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
@@ -5146,9 +5146,9 @@
           },
           "content": "Add an `else` to the `if` condition you just added. Use `echo` to print `Rental ID $RENTAL_ID found` in it so you can see if it's all working.",
           "hints": [
-            "Here's an example:\n```sh\nif [[ <CONDITION> ]]\nthen\n  <STATEMENTS>\nelse\n  <STATEMENTS>\nfi\n```",
+            "Here's an example:\r\n```sh\r\nif [[ <CONDITION> ]]\r\nthen\r\n  <STATEMENTS>\r\nelse\r\n  <STATEMENTS>\r\nfi\r\n```",
             "Place `echo \"Rental ID $RENTAL_ID found\"` in the else area",
-            "The `if` condition should look like this:\n```sh\nif [[ -z $RENTAL_ID ]]\nthen\n  # send to main menu\n  MAIN_MENU \"You do not have that bike rented.\"\nelse\n  echo \"Rental ID $RENTAL_ID found\"\nfi\n```"
+            "The `if` condition should look like this:\r\n```sh\r\nif [[ -z $RENTAL_ID ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"You do not have that bike rented.\"\r\nelse\r\n  echo \"Rental ID $RENTAL_ID found\"\r\nfi\r\n```"
           ]
         }
       ]
@@ -5221,8 +5221,8 @@
             "Here's an example of a single line comment: `# <comment_here>`",
             "Make sure the comments are in the same order listed",
             "The comments should be in the `else` area of the `if [[ -z $RENTAL_ID ]]` statement",
-            "The `else` area should look like this:\n```sh\nelse\n  # update date_returned\n\n  # set bike availability to true\n\n  # send to main menu\n\nfi\n```",
-            "The whole `if` should look like this:\n```sh\nif [[ -z $RENTAL_ID ]]\nthen\n  # send to main menu\n  MAIN_MENU \"You do not have that bike rented.\"\nelse\n  # update date_returned\n\n  # set bike availability to true\n\n  # send to main menu\n\nfi\n```"
+            "The `else` area should look like this:\r\n```sh\r\nelse\r\n  # update date_returned\r\n\r\n  # set bike availability to true\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```",
+            "The whole `if` should look like this:\r\n```sh\r\nif [[ -z $RENTAL_ID ]]\r\nthen\r\n  # send to main menu\r\n  MAIN_MENU \"You do not have that bike rented.\"\r\nelse\r\n  # update date_returned\r\n\r\n  # set bike availability to true\r\n\r\n  # send to main menu\r\n\r\nfi\r\n```"
           ]
         }
       ]
