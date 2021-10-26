@@ -1170,7 +1170,7 @@ fi
 
 ### 1105.1
 
-Below the `display available bikes` comment you just added, use `echo` to print `Here are the bike we have available:` with a new line in front of the message
+Below the `display available bikes` comment you just added, use `echo` to print `Here are the bikes we have available:` with a new line in front of the message
 
 #### HINTS
 
