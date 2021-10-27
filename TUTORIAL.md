@@ -2601,7 +2601,7 @@ One more thing, order the results of the last query by their `bike_id` column.
 
 ### 1530.1
 
-That's the query you will need to use to get the bikes a customer is renting. In your script below the `get customer's rentals` comment. Create a `CUSTOMER_RENTALS` variable that gets the rentals for the customer.
+That's the query you will need to use to get the bikes a customer is renting. In your script below the `get customer's rentals` comment. Create a `CUSTOMER_RENTALS` variable that gets the rentals for the customer. Use the `PHONE_NUMBER` variable to get them.
 
 #### HINTS
 
