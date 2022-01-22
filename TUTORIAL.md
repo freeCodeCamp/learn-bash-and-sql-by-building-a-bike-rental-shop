@@ -240,7 +240,7 @@ Display the details of the `customers` table so you can make sure your new colum
 
 ### 190.1
 
-It is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.
+There it is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.
 
 #### HINTS
 
