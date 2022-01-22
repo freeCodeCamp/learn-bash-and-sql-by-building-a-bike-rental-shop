@@ -257,7 +257,7 @@ Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be nu
 
 #### HINTS
 
-- Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
+- Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, and `NOT NULL` keywords
 - Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
 - Try entering `ALTER TABLE customers ADD COLUMN name VARCHAR(40) NOT NULL;` in the psql prompt
 - Type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in first
