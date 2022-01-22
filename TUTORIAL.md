@@ -280,7 +280,7 @@ Display the details of the `customers` table.
 
 ### 220.1
 
-That table is finished. Lastly, you need a table to store which bikes are who has rented them. Create a new table named `rentals`.
+That table is finished. Lastly, you need a table to store which bikes are rented and who has rented them. Create a new table named `rentals`.
 
 #### HINTS
 
