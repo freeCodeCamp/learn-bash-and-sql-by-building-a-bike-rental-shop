@@ -176,9 +176,9 @@ Add another column to the table named `available`. Make it a `boolean` and has a
 
 #### HINTS
 
-- Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, and `DEFAULT TRUE` keywords
-- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE DEFAULT;`
-- Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN DEFAULT TRUE;` in the psql prompt
+- Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, `NOT NULL` and `DEFAULT TRUE` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS DEFAULT;`
+- Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN NOT NULL DEFAULT TRUE;` in the psql prompt
 - Type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in
 
 ## 150. Display `bikes` details
@@ -1650,7 +1650,7 @@ fi
 
 ### 1240.1
 
-As the comments say, you need to get the customer info and find out if they are an existing customer. Below the `get customer info` comment, print `What's your phone number?` with a new line in front of it. 
+As the comments say, you need to get the customer info and find out if they are an existing customer. Below the `get customer info` comment, print `What's your phone number?` with a new line in front of it.
 
 #### HINTS
 
@@ -3017,7 +3017,7 @@ fi
 
 ### 1650.1
 
-Run the script and go to the return menu. Enter `555-5555` to see the rented bikes. Input a bike that isn't on the list, then go to the menu again and input a bike that is on the list. 
+Run the script and go to the return menu. Enter `555-5555` to see the rented bikes. Input a bike that isn't on the list, then go to the menu again and input a bike that is on the list.
 
 #### HINTS
 
