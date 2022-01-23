@@ -2943,7 +2943,7 @@ Back in the script, below the `check if input is rented` comment, create a `RENT
 - The input is the `BIKE_ID_TO_RETURN` variable
 - Here's an example: `RENTAL_ID=$($PSQL "<query_here>")`
 - You previously entered `SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;` in the psql prompt
-- Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RENT` variables
+- Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RETURN` variables
 - Add `RENTAL_ID=$($PSQL "SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '$PHONE_NUMBER' AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")` below the `check if input is rented` comment
 
 ## 1640. Add if -z RENTAL_ID
