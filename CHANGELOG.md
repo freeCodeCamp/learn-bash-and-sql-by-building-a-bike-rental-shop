@@ -17,3 +17,7 @@ Whenever a new version is created, add the new branch name and the changes here
 - Move SQL log files out of workspace
 - Add `IF EXISTS` to `db.sql` when dropping database to stop warnings
 - Terminate only user `freeCodeCamp` from db when resetting
+
+## [v1.0.2]
+
+- fix https://github.com/freeCodeCamp/freeCodeCamp/issues/44795
