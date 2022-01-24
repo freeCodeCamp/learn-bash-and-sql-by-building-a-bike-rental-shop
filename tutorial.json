@@ -409,9 +409,9 @@
           },
           "content": "Add another column to the table named `available`. Make it a `boolean` and has a constraint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.",
           "hints": [
-            "Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, and `DEFAULT TRUE` keywords",
-            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE DEFAULT;`",
-            "Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN DEFAULT TRUE;` in the psql prompt",
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, `NOT NULL` and `DEFAULT TRUE` keywords",
+            "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS DEFAULT;`",
+            "Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN NOT NULL DEFAULT TRUE;` in the psql prompt",
             "Type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in"
           ]
         }
@@ -540,7 +540,7 @@
               "db6b190f4f9524a71edddf055f0cd305b3b29973"
             ]
           },
-          "content": "It is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.",
+          "content": "There it is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, `NOT NULL`, and `UNIQUE` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
@@ -568,7 +568,7 @@
           },
           "content": "Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be null.",
           "hints": [
-            "Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords",
+            "Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, and `NOT NULL` keywords",
             "Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`",
             "Try entering `ALTER TABLE customers ADD COLUMN name VARCHAR(40) NOT NULL;` in the psql prompt",
             "Type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in first"
@@ -619,7 +619,7 @@
               "08f7974d549f76a14332bfc860a04510dd245ee6"
             ]
           },
-          "content": "That table is finished. Lastly, you need a table to store which bikes are who has rented them. Create a new table named `rentals`.",
+          "content": "That table is finished. Lastly, you need a table to store which bikes are rented and who has rented them. Create a new table named `rentals`.",
           "hints": [
             "Use the `CREATE TABLE` keywords",
             "Don't forget the parenthesis",
@@ -5081,7 +5081,7 @@
             "The input is the `BIKE_ID_TO_RETURN` variable",
             "Here's an example: `RENTAL_ID=$($PSQL \"<query_here>\")`",
             "You previously entered `SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;` in the psql prompt",
-            "Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RENT` variables",
+            "Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RETURN` variables",
             "Add `RENTAL_ID=$($PSQL \"SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '$PHONE_NUMBER' AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL\")` below the `check if input is rented` comment"
           ]
         }

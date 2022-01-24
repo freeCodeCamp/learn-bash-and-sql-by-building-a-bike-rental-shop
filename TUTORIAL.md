@@ -176,9 +176,9 @@ Add another column to the table named `available`. Make it a `boolean` and has a
 
 #### HINTS
 
-- Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, and `DEFAULT TRUE` keywords
-- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE DEFAULT;`
-- Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN DEFAULT TRUE;` in the psql prompt
+- Use the `ALTER TABLE`, `ADD COLUMN`, `BOOLEAN`, `NOT NULL` and `DEFAULT TRUE` keywords
+- Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS DEFAULT;`
+- Try entering `ALTER TABLE bikes ADD COLUMN available BOOLEAN NOT NULL DEFAULT TRUE;` in the psql prompt
 - Type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in
 
 ## 150. Display `bikes` details
@@ -240,7 +240,7 @@ Display the details of the `customers` table so you can make sure your new colum
 
 ### 190.1
 
-It is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.
+There it is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.
 
 #### HINTS
 
@@ -257,7 +257,7 @@ Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be nu
 
 #### HINTS
 
-- Use the `ALTER TABLE`, `ADD COLUMN`, `SERIAL`, and `PRIMARY KEY` keywords
+- Use the `ALTER TABLE`, `ADD COLUMN`, `VARCHAR()`, and `NOT NULL` keywords
 - Here's an example: `ALTER TABLE table_name ADD COLUMN column_name TYPE CONSTRAINTS;`
 - Try entering `ALTER TABLE customers ADD COLUMN name VARCHAR(40) NOT NULL;` in the psql prompt
 - Type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in first
@@ -280,7 +280,7 @@ Display the details of the `customers` table.
 
 ### 220.1
 
-That table is finished. Lastly, you need a table to store which bikes are who has rented them. Create a new table named `rentals`.
+That table is finished. Lastly, you need a table to store which bikes are rented and who has rented them. Create a new table named `rentals`.
 
 #### HINTS
 
@@ -1650,7 +1650,7 @@ fi
 
 ### 1240.1
 
-As the comments say, you need to get the customer info and find out if they are an existing customer. Below the `get customer info` comment, print `What's your phone number?` with a new line in front of it. 
+As the comments say, you need to get the customer info and find out if they are an existing customer. Below the `get customer info` comment, print `What's your phone number?` with a new line in front of it.
 
 #### HINTS
 
@@ -2943,7 +2943,7 @@ Back in the script, below the `check if input is rented` comment, create a `RENT
 - The input is the `BIKE_ID_TO_RETURN` variable
 - Here's an example: `RENTAL_ID=$($PSQL "<query_here>")`
 - You previously entered `SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '555-5555' AND bike_id = 1 AND date_returned IS NULL;` in the psql prompt
-- Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RENT` variables
+- Be sure to use the same columns from the above query for the conditions with the `PHONE_NUMBER` and `BIKE_ID_TO_RETURN` variables
 - Add `RENTAL_ID=$($PSQL "SELECT rental_id FROM rentals INNER JOIN customers USING(customer_id) WHERE phone = '$PHONE_NUMBER' AND bike_id = $BIKE_ID_TO_RETURN AND date_returned IS NULL")` below the `check if input is rented` comment
 
 ## 1640. Add if -z RENTAL_ID
@@ -3017,7 +3017,7 @@ fi
 
 ### 1650.1
 
-Run the script and go to the return menu. Enter `555-5555` to see the rented bikes. Input a bike that isn't on the list, then go to the menu again and input a bike that is on the list. 
+Run the script and go to the return menu. Enter `555-5555` to see the rented bikes. Input a bike that isn't on the list, then go to the menu again and input a bike that is on the list.
 
 #### HINTS
 
