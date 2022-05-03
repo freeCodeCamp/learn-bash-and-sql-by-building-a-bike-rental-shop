@@ -2153,7 +2153,7 @@ The caret you added means that's the start of the text. So it will replace a spa
 - The previous command was `echo "$(echo ' M e ' | sed 's/^ //g')."`
 - Change the `' M e '` part to include the suggestion
 - The new text should be <code>'&nbsp;&nbsp;&nbsp;M e&nbsp;'</code> (`'<three_spaces>M e '`)
-- In the terminal, enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g').</code>
+- In the terminal, enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g')."</code>
 
 ## 1430. echo "$(echo '   M e ' | sed 's/^ *//g')."
 
@@ -3145,7 +3145,7 @@ Now the rental has been returned. View all the data in the bikes table in order 
 #### HINTS
 
 - Use the `SELECT` and `FROM` keywords with `*` to view all the data
-- Enter `SELECT * FROM bikes;` in the psql prompt
+- Enter `SELECT * FROM bikes ORDER BY bike_id;` in the psql prompt
 - You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in.
 
 ## 1770. ./bike-shop.sh

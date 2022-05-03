@@ -1,6 +1,6 @@
 {
   "id": "freeCodeCamp/learn-bash-and-sql-by-building-a-bike-rental-shop:v1.0.0",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "summary": {
     "title": "Learn Bash and SQL by Building a Bike Rental Shop",
     "description": "> Welcome to the Bash and SQL lessons!"
@@ -12,7 +12,7 @@
         "cd .freeCodeCamp && npm install"
       ],
       "commits": [
-        "47ced3299aaa0df7cd8b95af360e888cd152c083"
+        "bd3082faeb6015b4cabae9592e9a26bf7136d35d"
       ]
     },
     "testRunner": {
@@ -24,7 +24,7 @@
     },
     "repo": {
       "uri": "https://github.com/freeCodeCamp/learn-bash-and-sql-by-building-a-bike-rental-shop",
-      "branch": "v1.0.2"
+      "branch": "v1.0.3"
     },
     "continue": {
       "commands": [
@@ -69,7 +69,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "5b3e222b794fccd5271d4cd6e9df8436567244b9"
+              "63fe23d7389edd675bfbb67d7c646e6c534011a4"
             ]
           },
           "content": "**The first thing you need to do is start the terminal.** Do that by clicking the \"hamburger\" menu at the top left of the screen, going to the \"terminal\" section, and clicking \"new terminal\". Once you open a new one, type `echo hello terminal` into the terminal and press enter.",
@@ -93,7 +93,7 @@
               "../pg.log"
             ],
             "commits": [
-              "5b3a4625af2525133d8517e697961c3f11016d09"
+              "b1ceea2699bf7ac61013e70227793691c286b5ec"
             ]
           },
           "content": "You are going to build a bike rental shop. It will have a database, and a bash script to interact with the database. Use the terminal to connect to PostgreSQL by entering `psql --username=freecodecamp --dbname=postgres`.",
@@ -117,7 +117,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "3aba484b99e42af2ee9312ba4e326fd988c46647"
+              "e8315547bffcc8baf58f67e1367b7ae76e3e0b77"
             ]
           },
           "content": "List the databases with `\\l` to see what databases are here.",
@@ -141,7 +141,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "62772f43f21296547773eb12b334dd77f8f5e3dc"
+              "de4b2f95d701e070636072cff6ce8370154641ea"
             ]
           },
           "content": "You need your own database for the bike shop. Create a new database named `bikes`.",
@@ -167,7 +167,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "98f1321758ad49200cf2cbe06126bdeaf321a7e8"
+              "9432f65aa982587158a546466ad62221dfdd2c00"
             ]
           },
           "content": "List databases again to make sure your database got created.",
@@ -192,7 +192,7 @@
               "../pg.log"
             ],
             "commits": [
-              "7bf197df1ca09f750a5eb92b6fe069e1de95d2c0"
+              "f14eaae406b1f1070360f44ba26e484f2dfb9c7a"
             ]
           },
           "content": "There it is. **C**onnect to it so you can start building the structure of your bike shop database.",
@@ -220,7 +220,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "9b2a5e2cd93e9fbd73753dd570ec539cd90a9f02"
+              "830a4c593f5ff73eb8d54f9e29a8cb69bc294a8f"
             ]
           },
           "content": "Your database needs three tables. One for your bike inventory, one for your customers, and one for the bikes that are rented out. Create a table named `bikes` in your database for the inventory.",
@@ -247,7 +247,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "cab62f8014dc5c2cca8b9486d13c8bf5040887c5"
+              "c5e311bd00d37aa04cc8ee5bd1557913f6bfcc59"
             ]
           },
           "content": "**D**isplay the tables to make sure your table got created.",
@@ -273,7 +273,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "a29270b91642a6981ab42ba30f74b4fa9e7762bf"
+              "d473ae0a3b8e389024041a3ed4105e0f4824aca5"
             ]
           },
           "content": "The table will have a few columns for bike information. First, is a unique ID column. Add a column to the `bikes` table named `bike_id`. Give it a type of `SERIAL` and make it a `PRIMARY KEY`.",
@@ -299,7 +299,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "10d6108e82344f7c342c736d44517f334371c29e"
+              "4f952f0fafe5bed2f27f30c72f3b87d816e973bd"
             ]
           },
           "content": "Use the **d**isplay command to view the details of the `bikes` table.",
@@ -325,7 +325,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "509e20791efaae45ae8ae15429bcf1bcb9e228c6"
+              "9cd22e5059be8500b26ab7f52f441475d69a7ab1"
             ]
           },
           "content": "The first column is set. Add a column named `type` for the type of bike. Make it a `VARCHAR(50)` and give it a constraint of `NOT NULL`.",
@@ -351,7 +351,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "b8c0bf092721d94a4040b970f632a69baedb1018"
+              "8bf718292712c434932c96e1f8a8fc9bcd554966"
             ]
           },
           "content": "Display the details of the `bikes` table again.",
@@ -378,7 +378,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "af3e3d2392ba5bc15b9fa9d3b9896f35c220927a"
+              "0bc2576d7b50be49b4808b34c900f39334089c6b"
             ]
           },
           "content": "The first two columns look good. Add a column named `size` to the `bikes` table that is an `INT` and has the `NOT NULL` constraint. This will be for the size of each bike.",
@@ -404,7 +404,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "ba2bd8dfa2bef859f63b9567f3cc4043ac55762a"
+              "ec870d1ee53c0dd0bec51813cc1f1f923a096429"
             ]
           },
           "content": "Add another column to the table named `available`. Make it a `boolean` and has a constraint of `NOT NULL`. Also give it a default value of `TRUE`. This will be set to `false` when someone rents out a bike.",
@@ -430,7 +430,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "4554a83d2e4c72a8d218f09bf2b4e889835bee2e"
+              "961be3331ce62c04df13fe5a8088fbbc93e91a1f"
             ]
           },
           "content": "Display the details of the `bikes` table again so you can make sure it's how you want it.",
@@ -457,7 +457,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "d3485360d29fa5ba4fd1c2b92db3e98fba7a4be8"
+              "64d31d8599dbd79ebafdcb11a37be5435f653e35"
             ]
           },
           "content": "That table is done for now. Create another table named `customers`. It will store a name and phone number for each customer that rents a bike.",
@@ -484,7 +484,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "e291632f4a127ecf8bef7ffcb46482d668dd535f"
+              "f4edc981db10067178e00ea0975c710964f25c33"
             ]
           },
           "content": "Add a `customer_id` column to your new table that is a type of `SERIAL` and make it a `PRIMARY KEY`.",
@@ -510,7 +510,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "e534312d518051ee3439e72d4fa3ed00917f8f4d"
+              "c7b17d8c084bf9fa00617c277e5c0cc359580606"
             ]
           },
           "content": "Display the details of the `customers` table so you can make sure your new column is there.",
@@ -537,7 +537,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "52d35bfe8f7bc5d733e74a56bb8b0c34b4595c03"
+              "c411dad937a934c829230bd90cc66841e2f0de2f"
             ]
           },
           "content": "There it is. Add a column named `phone` for customers phone numbers. Make it a varying character that has a maximum length of `15` characters. Also make sure it can't be null, and that it has to be unique.",
@@ -563,7 +563,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "3ace8ce6e4431226a0247e82fa978b41c4c8d89a"
+              "ebf9d7228039347f9bc6937229c8764c03e92300"
             ]
           },
           "content": "Add the last column. Call it `name` and make it a `VARCHAR(40)` that can't be null.",
@@ -589,7 +589,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "fedf8c11dd3d4965bf624266ee5f3678e4044471"
+              "d11a293b8c55fd2802d81f29f4f89c5e6b7c1299"
             ]
           },
           "content": "Display the details of the `customers` table.",
@@ -616,7 +616,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "fc600bb49c76d62354b9a95f90acdc3fb54eaa8a"
+              "ab76dcc1b0ef89b1c02017ac0459c7b43c137583"
             ]
           },
           "content": "That table is finished. Lastly, you need a table to store which bikes are rented and who has rented them. Create a new table named `rentals`.",
@@ -643,7 +643,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "608757f76d1c05303871aef119ce828da19c7030"
+              "3191e706069a64352fc08a12080da1735a88fd61"
             ]
           },
           "content": "Add a `rental_id` column to your new table. Make it automatically increment with `SERIAL` and make it the primary key for this table.",
@@ -670,7 +670,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "98235a94d8fffc937c9ef2f89ce180ac1281ef59"
+              "a50854fe658fa6024c0e6c93c0072249f03cc704"
             ]
           },
           "content": "Display the details of the `rentals` table.",
@@ -697,7 +697,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "a24e73c082cea02805c2c34c349e1e573df2090c"
+              "f84e25890cfc0f293a9f6442e5b89c2d29cfe858"
             ]
           },
           "content": "Next, you need a column for the customer who is renting a bike. Add column named `customer_id`. This will have an id of a customer from the customers table. Make the column an `INT` and `NOT NULL` to start.",
@@ -724,7 +724,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "d7d656a52b2d0e184343f22a14bde458207048d2"
+              "ba88fcb50dec8ecc807830ee850b22a03a4a78df"
             ]
           },
           "content": "Make the column you just added a foreign key that references the `customer_id` column from the `customers` table. Here's an example of how you can do that:\n\n```sql\nALTER TABLE table_name ADD FOREIGN KEY(column_name) REFERENCES referenced_table(referenced_column);\n```",
@@ -749,7 +749,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "00193f097cd3b20e51aec03e2939d23e632a1844"
+              "fdd7c05b5a4a8227151e6d2fe7c93ad97921a9e7"
             ]
           },
           "content": "Display the details of the `rentals` table to make sure your key is set.",
@@ -776,7 +776,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "02501a2634e38e538c8a45de97bd6ff8e46d7308"
+              "b8ed066785053cde35104636b0a5a336b78baf94"
             ]
           },
           "content": "That foreign key is set. You need another column so you know what bike a customer is renting. Add a column named `bike_id` and make it an `INT` and `NOT NULL`.",
@@ -803,7 +803,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "f1ffa88bb30f3988896f35ec30516347689c2830"
+              "791bd747d0bec3597c993379388236d6a35d5121"
             ]
           },
           "content": "Make that column a foreign key that references the `bike_id` column from the `bikes` table so you know what bike the id is for.",
@@ -829,7 +829,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "35237e77ce1abe06967862c1f7e41c3702e684e0"
+              "6cd19629e4b4e2b4f20600e181347bcad7cd2466"
             ]
           },
           "content": "Display the details of the `rentals` table so you can make sure the key is correct.",
@@ -856,7 +856,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "2a4b25d54c554c801b42b8ce4276cf51116b6b5e"
+              "5d9a3a282bc44e56b1e9b5865f3061bbbeb19684"
             ]
           },
           "content": "Moving along. You want to know when a customer rents a bike, and when it gets returned. Add a column to your `rentals` table named `date_rented` that's a type of `DATE`. Make sure the entry can't be null, and give it a default value of `NOW()`.",
@@ -883,7 +883,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "e15e243630d8776063e7ffbc2e2e8ee130d3d18f"
+              "479875f60fba3f5bf325de9414e79a52f85ead2c"
             ]
           },
           "content": "Display the details of the `rentals` table again.",
@@ -910,7 +910,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "64f5467af39a830c08e4506dd63686749bc2de97"
+              "d991b8cccbbf6110b40fc075cc678b954ef45cdb"
             ]
           },
           "content": "It looks good. Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.",
@@ -937,7 +937,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "e1c384a1b1d867465688ec98ae6b91343bb6acca"
+              "6b5162af2f8a916b64b9bb34189a4604f20d9518"
             ]
           },
           "content": "View the details of the table again.",
@@ -965,7 +965,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "ffbd2c7042cc1381fef1c2a3d746448ef74c8931"
+              "c84d5c22c46ae59b341e89e0de916fd9b7e191ad"
             ]
           },
           "content": "The tables are all finished. Display all the tables so you can see what you ended up with.",
@@ -991,7 +991,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "600093610ae775d26182d7744cc2b0e6df6db462"
+              "f65aa2096fef47533d50a188f1ab961642077e25"
             ]
           },
           "content": "You have nine bikes in your inventory. Add the first one to your `bikes` table. It has a `type` of `Mountain` and a `size` of `27`. Make sure to put your `VARCHAR` values in single quotes. The `bike_id` and `available` columns should be filled in automatically, so you don't need to worry about those.",
@@ -1018,7 +1018,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "025b31e56e1ed0ab46610bfde6549d22dab4fb2c"
+              "3647a35aa03e3e0bf64eee5bce5d8cc6933d046b"
             ]
           },
           "content": "View all the columns in your bikes table with `SELECT`.",
@@ -1044,7 +1044,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "37aafae89a27f53143ee7c4220a1b29206fefdbc"
+              "f67ec606a0c40a538945f964b298bce94d55a18e"
             ]
           },
           "content": "Looks like it's all working, the `bike_id` and `available` columns were filled in automatically. Insert another bike. Give it a `type` of `Mountain` and a `size` of `28`.",
@@ -1071,7 +1071,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "aa94d3ff9df137788167acc19fd1b29c9ae0b47a"
+              "5c1c26ee256529f17110ec674ddaaa527ad01a36"
             ]
           },
           "content": "Add another `Mountain` bike to your inventory. Make it a `29` inch bike.",
@@ -1098,7 +1098,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "18959fb0f423afd061d39c642200085afd38e9ee"
+              "9f32da9014622f931224229d1063e3e5ec9c69f4"
             ]
           },
           "content": "Add a `27` inch `Road` bike to the table.",
@@ -1125,7 +1125,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "898993a31500b1d58422ff3ced0fabf0fc5f0233"
+              "2da6251d331f0064fa29bc818606b37a1eb168b0"
             ]
           },
           "content": "Use `SELECT` to view all the data in the `bikes` table again.",
@@ -1151,7 +1151,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "215de7f0f61420005af45fbb38d685213ab7b603"
+              "aca2253c537e9f8f6f9fa68a23d478f03b445aa7"
             ]
           },
           "content": "Add the two bikes to your inventory, they are `28` and `29` inch `Road` bikes. Try to add them both with one command.",
@@ -1177,7 +1177,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "26674c4be5234f57e82151e9035cf2e1fd7cad7d"
+              "a63389bf6c489ae45f4a51955f660de8a1d0b65e"
             ]
           },
           "content": "There's three more bikes. Add `19`, `20`, and `21` inch `BMX` bikes to your table. Try to add them with one command.",
@@ -1203,7 +1203,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "c267543e014d9d2bf7dc7cbfcb0337c86cf46207"
+              "bf02b320319ca681d914cc16816bbb9865bb5f5e"
             ]
           },
           "content": "View all the data in your bikes table.",
@@ -1229,7 +1229,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "5fdcca3daf23e13fa6bf683366dec71654b8b62a"
+              "c5c146fd5ed57eed209a7bb84c5ac0a92d5a1788"
             ]
           },
           "content": "Your current inventory is all added. For the rest of the project, I recommend leaving that terminal open and connected, and that you should \"split\" the terminal so you have a second one to use for bash commands. Do that by clicking the \"hamburger\" menu at the top left of the window, going to the \"terminal\" section, and clicking \"split terminal\". After you have opened it, use the `touch` command to create a file named `bike-shop.sh` in the `project` folder.",
@@ -1256,7 +1256,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "cc3978d9f3c66caa921f03cd1f7b6d56653aff38"
+              "6ebbdbd933abe7f1f2c59da33a35db6155151427"
             ]
           },
           "content": "This file will be the program for your bike rental shop. Open the file and add a \"shebang\" at the top so it uses `bash` when it's executed. If you don't remember, it looks like this: `#!/bin/bash`.",
@@ -1279,7 +1279,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "790d755eb2047c3790f85688da7e21453e448f4c"
+              "918cace81f5f5992b182d4fa16a7fa4e44aa04ff"
             ]
           },
           "content": "In the file, use `echo` with the `-e` flag to print `~~~~~ Bike Rental Shop ~~~~~` with a new line at the beginning and end.",
@@ -1305,7 +1305,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "d2b0814c73251a4ba759414fbd8be6078478ddc5"
+              "e0c4d174db531eacce7f0c954509904708e3484e"
             ]
           },
           "content": "Use the terminal (not the psql one) and the `chmod` command to make your file executable. Add the `+x` flag and `bike-shop.sh` to the command to do that.",
@@ -1330,7 +1330,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "7e8399588b021445c909541e60e276376c34fba9"
+              "f875b8beaeadb5ddda8d1490ca0ebbd91d655ff3"
             ]
           },
           "content": "Type `./bike-shop.sh` in the terminal to run your script.",
@@ -1354,7 +1354,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "cc3da79fb216728a1470510c9eaa0f2f1553baa7"
+              "5acd2181ca150ab8f3957ddb6d427dfa46f44622"
             ]
           },
           "content": ":smile: In the script, create an empty function named `MAIN_MENU`. This will have a few options to enter when the script runs to rent or return a bike.",
@@ -1378,7 +1378,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "4675be37815e4cec9647f01de59ea076127ff88f"
+              "9f0bf007140ba2da8a4f7cef9bc49905e590e88f"
             ]
           },
           "content": "In your function, echo the text `How may I help you?` so that there's a greeting when you go to the menu.",
@@ -1401,7 +1401,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "11bd096f0f71b21a310831008f734580317e37b6"
+              "09715201779d85d2ca3099923cb43e4ebea3d018"
             ]
           },
           "content": "Call your `MAIN_MENU` at the bottom of the file so the function runs when you start the script.",
@@ -1424,7 +1424,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "cdd0d3013ecd288b8871b61feed4401f21b3c711"
+              "5e3dc026118f8471a53c7953d073c5535ba5ae76"
             ]
           },
           "content": "Run the file in the terminal again so you can see what it is outputting.",
@@ -1448,7 +1448,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "8c06ecf58ec0ef52b6753eafd6783d11bae9f980"
+              "9a924e065f08eebac3e5f712f8dbf1fe5f51f0c5"
             ]
           },
           "content": "It's coming along. Add another `echo` command **in the function** below the other one. Make it output text that looks like this:\n\n```sh\n\n1. Rent a bike\n2. Return a bike\n3. Exit\n```\n\nNote that there's an empty line at the start.",
@@ -1474,7 +1474,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "c09dfd2886720960851ed37f5efd6f1c966f3334"
+              "1f22af5f0b727df3e93208c8f3daa9b80b2fa1d0"
             ]
           },
           "content": "Run the file to make sure it worked.",
@@ -1498,7 +1498,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "53843cc15eba70b0c44ac1eb3efa98933e76f216"
+              "ddca75615cd4d017dc1369c58784ab33d603ec45"
             ]
           },
           "content": "You have some options displaying. Next, you need to get input from whoever is using the program. Use the `read` command to read input into a variable called `MAIN_MENU_SELECTION` below the options.",
@@ -1524,7 +1524,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "48b19fa5b2a95f99b61f13321fdc52810fb94766"
+              "5a71776b4223713040a4955612e5839ca45771fb"
             ]
           },
           "content": "When an option gets entered, you need to take a user to one of those other menus. Add an empty `RENT_MENU` function below the `MAIN_MENU` function.",
@@ -1548,7 +1548,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "d43da929e5e1553dec3556c28ee3224b133efac4"
+              "c2f3f87df742392113619fcf9231a6536948dfd5"
             ]
           },
           "content": "For the time being, just echo `Rent Menu` in the function so you can see if it's working.",
@@ -1572,7 +1572,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "d5e3098e65a6f49cf10b7fe8572ef2daf44cd290"
+              "4309592918a0e6b312954af16921eeb4e89eb2f4"
             ]
           },
           "content": "Add an empty `RETURN_MENU` function below the `RENT_MENU` function for when a user enters the option to return a bike.",
@@ -1596,7 +1596,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0033da3b09e5592d33864a4458bd6145543a9893"
+              "6f2c9644895c712a61af23c81182351f1e957583"
             ]
           },
           "content": "Use `echo` to print `Return Menu` in the function you just added. You will change these later.",
@@ -1620,7 +1620,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "957895cb97c837a28c6f117bdf721c1c338a8aeb"
+              "fb393fb7d72d135800e1cec03a71a27e86bb0915"
             ]
           },
           "content": "Add an empty `EXIT` function below the `RETURN_MENU` function for when a user wants to exit the program.",
@@ -1644,7 +1644,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "a00ffcb5eb328522aab48b7d45ed291e93341604"
+              "1317773ac528be9b2b49c6cf828922a6679e5e8d"
             ]
           },
           "content": "This one probably doesn't need a placeholder message. In the `EXIT` function, use `echo` to print `Thank you for stopping in.` with a new line at the beginning and end of the message.",
@@ -1670,7 +1670,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "e0474255b4c4cd7cb1fc0c294d624d292bd5097e"
+              "7cd3f158762fe65e6a8f7bf818737247e45b2874"
             ]
           },
           "content": "When a user enters an option at the main menu, you want to take them to the appropriate sub-menu. You can use a `case` statement for this. Here's an example:\n\n```sh\ncase EXPRESSION in\n  PATTERN) STATEMENTS ;;\n  PATTERN) STATEMENTS ;;\n  PATTERN) STATEMENTS ;;\n  *) STATEMENTS ;;\nesac\n```\n\nThe expression you want is the `$MAIN_MENU_SELECTION` variable. You are expecting it to be a `1`, `2`, or `3` for your various menus. Add a `case` statement that takes users to their corresponding menus. The `*` is for when anything else is entered. Take users to the `MAIN_MENU` when the variable isn't a `1`, `2`, or `3`.",
@@ -1695,7 +1695,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "6634960632f789faab15167b01e221950d991e39"
+              "20ac8c4c31a2f6589dd6a3c75e04387daeb36b71"
             ]
           },
           "content": "Run the script a few times and try out the different menus. Be sure to enter something other than one of the options to go to the main menu.",
@@ -1719,7 +1719,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "526df539edeafb98cc0501fbd110cc3ee3496040"
+              "cf41dd486af16e1ebdcf75b0666aeb59d943b796"
             ]
           },
           "content": "Add an argument to where you call `MAIN_MENU` in the `case` statement. It should be `Please enter a valid option.`. The next step will adjust the function so the message is printed when a user enters an invalid option.",
@@ -1744,7 +1744,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "6a7ca0fffc713d7f832d4409a8b390584921dfa4"
+              "d694a8d776943911d46f612c6ba71e7ae820c187"
             ]
           },
           "content": "At the top of the `MAIN_MENU` function, add an `if` condition that checks if there's an argument (`$1`) passed to the function. If there is, print the message with a new line in front of it.",
@@ -1772,7 +1772,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "c269c7e1236fc41c91cb6846eb96649e4a6a6fbc"
+              "526f0efbf01731f8298fa2786fee7e146918135e"
             ]
           },
           "content": "Run the script and enter an invalid option to see the message. Exit the program when you are done.",
@@ -1796,7 +1796,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "7f2558211ac870846427531277e29802275224e7"
+              "8cb9b1077caf5267f6f1c997761f5605e8305588"
             ]
           },
           "content": "Looks good. Delete the `echo \"Rent Menu\"` from the `RENT_MENU` function so you can start adding the ability to rent a bike from the database.",
@@ -1820,7 +1820,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "35a1fcd0e5c6f8fa65d08c450e24a5f9c5f360c4"
+              "3a5a90a3f138bead4f5230ce0b12abecd7a4ec34"
             ]
           },
           "content": "In the `RENT_MENU` function, add three single line comments; `get available bikes`, `if no bikes available`, and `send to main menu`, in that order.",
@@ -1844,7 +1844,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "de8f8375bea93083a99a227b35b05c06f092d659"
+              "04b7985434e32f6f0c3da7f775de623bbdfad43e"
             ]
           },
           "content": "To get the bikes available, you need to query the database from your script. Below the \"shebang\", add a `PSQL` variable that looks like this: `PSQL=\"psql -X --username=freecodecamp --dbname=bikes --tuples-only -c\"`. You will then be able to use it to query the database like this: `$($PSQL \"<query_here>\")`.",
@@ -1867,7 +1867,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "1a924f3e5bdb6fc05691c0fbdd914256f0ae64ea"
+              "7124ae76d4c4eb3933f590a2d01c4695e478a24b"
             ]
           },
           "content": "Below the `get available bikes` comment. Create an `AVAILABLE_BIKES` variable that gets the `bike_id`, `type`, and `size` columns from the `bikes` table for the bikes that are available. Order the results by their `bike_id` column. Here's an example: `AVAILABLE_BIKES=$($PSQL \"<query_here>\")`",
@@ -1895,7 +1895,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "e80149e2fd409b1c8a8d7cbf09ad3259434f4fe3"
+              "1b11c90183f94268316a02e0414a026800f62b3f"
             ]
           },
           "content": "Below the new variable, use `echo` to print it. Place it in double quotes so it prints any new lines.",
@@ -1920,7 +1920,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "b7666851df9a9a1395bb3e15e1582fb80dd40973"
+              "5984f83c7b47771384c30604081825ba30afaf11"
             ]
           },
           "content": "Run your script and go to the rent menu to see if the available bikes are being printed.",
@@ -1944,7 +1944,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "a1e155f9a20967f7b8dd84bc08ca6314f1a9c175"
+              "c26ad7f5682d5424112da5b4c841b6192ec7817f"
             ]
           },
           "content": "Awesome. In the psql prompt, set the `available` column to `false` for all the bikes so you can see what it prints when there's no bikes available.",
@@ -1972,7 +1972,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "4a8f81bd37a87a13b0873d4f912c1caf62e088e8"
+              "9d4fee3e41bfac5a3fd9516ca5a63668e6c3d3a0"
             ]
           },
           "content": "Run your script and go to the rent menu to see the output.",
@@ -1997,7 +1997,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0d9ea43a3e97892693391fe00a09aa62d5109e87"
+              "19fa03856cd7a2508b6e1e315364da3747fa01e0"
             ]
           },
           "content": "So if there's no bike available, the variable will be empty. In the script, below the `if no bikes available` comment, add an `if` condition that checks if the variable is empty. Use `-z` to check if it's empty. Place the `send to main menu` comment in its `STATEMENTS` area.",
@@ -2023,7 +2023,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "79e1b49a9ce1d9bf886d72d4bb23e8f6165e6ea0"
+              "90d129941803a675e548a1ffd66b0bfec97f59fa"
             ]
           },
           "content": "Below the comment in the `if` you just added. Send users to the main menu and give them the message, `Sorry, we don't have any bikes available right now.`",
@@ -2049,7 +2049,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "6bbf132184201b341c837216f156fe1d0aa58e84"
+              "f27c19a815a2fe440462e7acb56141fbd0d62e08"
             ]
           },
           "content": "Run the script and go to the rent menu to see the message. When you are done, exit the program.",
@@ -2073,7 +2073,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "aa80f60ced79ce0b108e86120561da29dc1dcd7c"
+              "70678763c9fb4964315340e709a6da0dd1c473ec"
             ]
           },
           "content": "If no bikes are available, you will get that message. Add an `else` to the `if` condition for when there is bikes available. In it, add four single line comments; `display available bikes`, `ask for bike to rent`, `if input is not a number`, and `send to main menu`.",
@@ -2100,7 +2100,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "72d1904636993e76990a3fb65a849e22e5d719a2"
+              "48069c6611da4033da3d2e97a9f1755511961dfd"
             ]
           },
           "content": "Below the `display available bikes` comment you just added, use `echo` to print `Here are the bikes we have available:` with a new line in front of the message",
@@ -2126,7 +2126,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "85cb7eb1a10b913c15a9cea8679203c503527e65"
+              "3a3c9ef2b65af62f7cbd7edd4bce7cf59865a759"
             ]
           },
           "content": "Move the `echo` command that prints all the available bikes below the message you just added.",
@@ -2152,7 +2152,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "2bf466d9d09e4ac063ecd38df7bca5d16527fcec"
+              "33787a74f9c97e23a0eb1b90a5c4f721a84a31ce"
             ]
           },
           "content": "In the psql prompt, set all the bikes, except for the `BMX` bikes, back to true so you can see a list of bikes to rent.",
@@ -2181,7 +2181,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "7d38d097f875941c0a80540330fefb3acdd9d38e"
+              "e4617ea69b201f9e362057e21c0c328c008fc0c5"
             ]
           },
           "content": "Run the script and go to the rent menu to see the list of bikes available.",
@@ -2205,7 +2205,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "70d80945ed74beed35e31837ff84e0c6c87269ff"
+              "b93e1e24a78db93dc23f1d932b1c6e8ae7a66122"
             ]
           },
           "content": "Instead of directly printing the list, `pipe` the output into a `while` loop that reads each line. Here's how that looks:\n\n```sh\necho \"$AVAILABLE_BIKES\" | while read <VAR_1> <VAR_2> <VAR_3> <VAR_4> <VAR_5>\ndo\n  <STATEMENTS>\ndone\n```\n\nIt will read the first line of your `AVAILABLE_BIKES` variable into the five variables. Each variable being the next word in the line. Read each line into variables, `BIKE_ID BAR TYPE BAR SIZE`. In the `<STATEMENTS>` area, use `echo` to print the `BIKE_ID`, `TYPE`, and `SIZE` variables, in that order.",
@@ -2230,7 +2230,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "6ce2a3012a80e91e0ec6b6df25354bea478f1fb0"
+              "976f3aafde036ccb232f12c46766968416c291c8"
             ]
           },
           "content": "Run the script and go to the rent menu again to see if it's working.",
@@ -2254,7 +2254,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "50c4de076a8c16cca7270f7da64340baccd25ae7"
+              "3c3159568f83e72036a049bb400a8234b6c7c8d4"
             ]
           },
           "content": "It's working :smile: Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27\" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.",
@@ -2282,7 +2282,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "e066341349a982266bcd12104b914e55c09d287a"
+              "fd571daa0e1efce442dac3c1d871ac86ebb52f00"
             ]
           },
           "content": "Run the script and go to the rent menu again to see what it looks like now.",
@@ -2306,7 +2306,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "659b8ad2ea70cd87595424c6d219d43de777d1ae"
+              "4402738e0d58b9b7c66bb12cd2fd5ce4b70238a8"
             ]
           },
           "content": "That's better. Below the `ask for bike to rent comment`, print `Which one would you like to rent?` with a new line in front of it.",
@@ -2332,7 +2332,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "5e7c2d8ba8b363a810b6a7dfd4d0fd30459835b2"
+              "94d0e8698c025564189b57534d5ae0edaa80bcbe"
             ]
           },
           "content": "Just below that, add a command to `read` input into a variable named `BIKE_ID_TO_RENT`.",
@@ -2356,7 +2356,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "b8f43a3bd6ce252a4316c30ddeab53430c463a56"
+              "1e95faeffb26c8b3f227927325dd99e06a2884c0"
             ]
           },
           "content": "Next, you want to find out how to test if the user input is a number. In the terminal, enter `[[ a =~ [0-9] ]]; echo $?` to see if `a` is a number. The conditional expression will run, and `echo $?` will print the exit code of it (the last command).",
@@ -2380,7 +2380,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "c00d4f6b73fa01d77567fe6c424007918d13f51a"
+              "111e7d7364792b6ea2dc4b7c70946714a47f1080"
             ]
           },
           "content": "It printed `1` for false. Meaning that `a` did not match the pattern [0-9], or `a` did not contain a number from `0-9`. Enter the same commands, but check if `a1` matches the pattern.",
@@ -2404,7 +2404,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "69dac38801afa7a185d37b3a5f77860629fc900b"
+              "5b961b6e5081a14cfa31bac2cc2fddbc89a783df"
             ]
           },
           "content": "That printed `0` for true. `a1` does contain a number from `0-9`. Enter the same command, but change the pattern to `^[0-9]$`. The `^` signifies the start of the pattern, and `$` means the end. So the input will have to start, contain a number `0-9`, and end.",
@@ -2428,7 +2428,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "90a848f3f5844112d37a7404df6d1478262c82d4"
+              "af2e9653d63270982699d9228fa99824c79e11c7"
             ]
           },
           "content": "`1` for false. `a1` does not match the pattern. Using the same syntax, check if `1` matches the pattern.",
@@ -2452,7 +2452,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "0d8d8326dcf4cd23e2d4a3da6ce8b614d947c1ba"
+              "966ecb6282dcfdf4c3c45c8e8983b74e6811b38d"
             ]
           },
           "content": "`1` does match the pattern. It starts, contains a number, and ends. Check if `11` matches the same pattern.",
@@ -2476,7 +2476,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "c9f0b7509294d4e01fb3e881de6d13a4b4dec979"
+              "c1f63039ec4b2859550d19a00db53bc88c2e3626"
             ]
           },
           "content": "That did not match because the pattern only allows a single number. Add a `+` after the `[0-9]` to allow any strings that start, contain one or more numbers, and end.",
@@ -2501,7 +2501,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "06981c9b2469a96c018254823891b1213d925b44"
+              "05a7f42320570c332db19026f02ba6921cbc5c8e"
             ]
           },
           "content": "So that pattern will match any positive integers. You want to check if the input is not a number. Add `!` in front of the comparison of the previous command to do that.",
@@ -2526,7 +2526,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "039cf9a6cce8de15d2bb99c4626b132a1a565520"
+              "61702fb356a91c55c675eae4c9178321d082bcee"
             ]
           },
           "content": "Back in your script, below the `if input is not a number` comment, add an `if` condition that checks if the input is not a number using the method you just practiced. Add the `send to main menu` comment in the `then` area of the `if`.",
@@ -2553,7 +2553,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "ca5117bc726945f9795e79981ec79304ca139ed6"
+              "b472c8e730853b0e149e77facbbb6cf58a2c2541"
             ]
           },
           "content": "If the `$BIKE_ID_TO_RENT` variable is not a number, add the code to send users to the main menu with the message, `That is not a valid bike number.`",
@@ -2578,7 +2578,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "975231ef8b35908410fe18beb638902455d6e020"
+              "d961af7288b56dc0f23f19fb960599e6627e198d"
             ]
           },
           "content": "Run the script, go to the rent menu, and enter something that isn't a number to make sure it is working. When you are done, exit the program.",
@@ -2602,7 +2602,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "9e69fe50d91bf3a5372b03397215fe501c9d7a0c"
+              "bbe14a8326ff62bd41e434328e0606a47b63892f"
             ]
           },
           "content": "Add an `else` area for when the input is a number. Add these three single line comments in it; `get bike availability`, `if not available`, `send to main menu`.",
@@ -2629,7 +2629,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "c41af51adece6b5c50c739dfafcf891daa62138b"
+              "48cb875779e1aac721501882f077b9f19655c79d"
             ]
           },
           "content": "Below the `get bike availability` comment you just added, create a `BIKE_AVAILABILITY` variable. Set it equal to a query that gets the `available` column from the `bikes` table for the input. Also, make sure to only get the row if it is available.",
@@ -2657,7 +2657,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0b29f909be877f57b0619cf7d89c1d0feb1307a3"
+              "ed3ee1c74e45a335c4117102356c2f576a1fce51"
             ]
           },
           "content": "Right below the variable you just created, use echo to print it so you can see what it looks like.",
@@ -2682,7 +2682,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "72ada1902aff7bf947efed8309814da8590c2c0c"
+              "b1a96a3551fc317a1d7350359b339e3ca2178679"
             ]
           },
           "content": "Run the script a few times, go to the rent menu, enter a bike that is available and one that isn't. You should have some `BMX` bikes that aren't available.",
@@ -2706,7 +2706,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "aab9ae2416d831c95c8ac3b4f9d237b9815d3f9a"
+              "066c64c06b1e3499dbf9d3ff58d077f46ddaa881"
             ]
           },
           "content": "The variable will be `t` or empty. Below the `if not available` comment, add an `if` condition that checks if it's empty. Put the `send to main menu` comment in it's statements area.",
@@ -2732,7 +2732,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "22c754d6dd938b658bc6a31b0ccd56daedc0a465"
+              "495ced6d15ba121ccbfd4adcf583bf3fd7cea534"
             ]
           },
           "content": "In the `if` condition you just added, send users to the main menu with the message `That bike is not available.` if they input a number that isn't available.",
@@ -2757,7 +2757,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "64525782b9f5e1f9a625f3ecb913166f0abf9a9b"
+              "660444481f7da2d3c3aa31fba85b514ea9cba93f"
             ]
           },
           "content": "Remove the line where you print the `BIKE_AVAILABILITY` variable. You don't need it anymore.",
@@ -2780,7 +2780,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "54ee1ac1e20905e8dd5380f5f73c833611e5e192"
+              "1e5796dd4dca5b05ec627986c216d98f816d8230"
             ]
           },
           "content": "Run the script and go to the rent menu, enter a bike that isn't available to make sure it's working. When you are done, exit the program.",
@@ -2804,7 +2804,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "57f4dc6b6a1c33736f742e7a9119dabdaecd6236"
+              "e84b5e7826924b21b74470e38852c45db9ff9eed"
             ]
           },
           "content": "In the psql prompt, set all the bikes availability back to true.",
@@ -2832,7 +2832,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "a46f9f241e13d9fd52fb360fb7568e91d1b3f6cc"
+              "9166449030fa0c19ce94798c764f33a57cff2e80"
             ]
           },
           "content": "In your script, add an `else` for when a bike is available. Add these four comments in the `else` area `get customer info`, `if customer doesn't exist`, `get new customer name`, and `insert new customer`.",
@@ -2859,7 +2859,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "ba48a61cfe24ad6e897d2fb7be6cde30f23405cf"
+              "c8e4d435e936cd88ef2a8772ca4af1193c2a21dc"
             ]
           },
           "content": "As the comments say, you need to get the customer info and find out if they are an existing customer. Below the `get customer info` comment, print `What's your phone number?` with a new line in front of it.",
@@ -2885,7 +2885,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "19a02d36e07575c8ed7fdb71cd27c55cc4e59b3b"
+              "500575cf633d48613b2e6f0d99bcfd8e02bca6da"
             ]
           },
           "content": "Below the line you just printed, read input into a `PHONE_NUMBER` variable. Since the phone number is unique, you can use it to identify a customer.",
@@ -2910,7 +2910,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "82abfbf11f43fa9a9946b6e105ab4ddaed7f59b8"
+              "beb110acf744419041f5a743189f2f38a5b6ad51"
             ]
           },
           "content": "With the customer's phone number, you can get their name. Below where you get the phone number, create a `CUSTOMER_NAME` variable that gets the customers name from the database using the phone number.",
@@ -2939,7 +2939,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "b980f599026ff40075e18dc81b83d14cdd069da7"
+              "0be6a27bf42368adf3b26329735215a517684b3e"
             ]
           },
           "content": "If the customer is in the database with the phone number used, the variable will be set to the name. If not, it will be empty. Add an `if` condition below the `if customer doesn't exist` comment that checks if the variable is empty. Place the next two comments in the `then` area.",
@@ -2966,7 +2966,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "887d5fbc5a48047852a2a2e31ad3fd45a2bef7f4"
+              "0e8a1ad0ca5911b3413123097d4d2b1713577b65"
             ]
           },
           "content": "If the customer isn't in the database, you need to get their name so you can add them. Below the `get new customer name` comment, print `What's your name?` with a new line in front of the message.",
@@ -2992,7 +2992,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "5cfeca8dd15647624650adb511ef24641f4378bd"
+              "bdc5243b0dd9268020cfdfc2da14ae03b4565ae4"
             ]
           },
           "content": "Below the question you just printed, read input into a variable named `CUSTOMER_NAME`.",
@@ -3017,7 +3017,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0849453259fa6b5ea818520c366b0a030e4ae9c8"
+              "1f259dcad58d3e1df8db9061818255bea63cc18b"
             ]
           },
           "content": "You have the two pieces of information you need. Below the `insert new customer` comment, create an `INSERT_CUSTOMER_RESULT` variable that inserts the customer into the database.",
@@ -3046,7 +3046,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "9f5ce87bc21a3c0125e776a1db83b4227a346c92"
+              "da5e29b57aa6a79b582197c3747cd7c4ed384995"
             ]
           },
           "content": "Run your script and go to the rent menu. Pick a bike to rent, then enter `555-5555` when it asks for a phone number, and `Me` when it asks for your name.",
@@ -3072,7 +3072,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "55a342e139b49404811564bbbec0c3937a5b07ba"
+              "e629526aca74154fc9e6b4c561aae03b64867a38"
             ]
           },
           "content": "That should have added a new customer to the database. In the psql prompt, view all the data in the `customers` table to see if it's working.",
@@ -3097,7 +3097,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "3194bb0c1d5b589004c9f53223047a6c055789ee"
+              "b6ae42482782855b023ef6ef0ba691c4c4d1fb5c"
             ]
           },
           "content": "Excellent. View all the data in the rentals table.",
@@ -3122,7 +3122,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "96d946e5efa23ef36a26875381925ee507e2176e"
+              "2910bdaaf5a61dfec8e00873d5a849f91d91e25d"
             ]
           },
           "content": "So you still need to add the rental to the rentals table when a bike is picked out. View all the data in the `bikes` table.",
@@ -3147,7 +3147,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "64d8a28a1056625079e6d821b293951c7fbbec90"
+              "24982332bef07eccba33a18aabd0365395ecdf3b"
             ]
           },
           "content": "And set the `available` column to false for the bike rented. Below the end of the `if` statement that inserts a new customer, add five more comments; `get customer_id`, `insert bike rental`, `set bike availability to false`, `get bike info`, and `send to main menu`",
@@ -3173,7 +3173,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "8026cdebf441cdc2d341ca963e0df861c4b49d33"
+              "c7a46b53e76bb25473693fba9843f1db4536e8b0"
             ]
           },
           "content": "You're getting close to done with the rent functionality. To add a rental to the database, you need the customer ID. Below the `get customer_id` comment, create a `CUSTOMER_ID` variable that gets the `customer_id` using the phone number.",
@@ -3200,7 +3200,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "5173f21c571da9434c10a7bc911e805c081d290e"
+              "6a88274b6ae041bf15579df091744412b53fdb67"
             ]
           },
           "content": "Now that you have the bike ID and customer ID, you can add the rental to the database. Below the `insert bike rental` comment, create a `INSERT_RENTAL_RESULT` variable that adds the rental to the database.",
@@ -3228,7 +3228,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "4e3d30058a1fd086480c145892a18f717f2f98fa"
+              "6e4279fd428bc80803253c35e1399017bbbc1da7"
             ]
           },
           "content": "That should add the rental to the database. The last thing to do is set `available` to false for the bike. Below the `set bike availability to false` comment, create a `SET_TO_FALSE_RESULT` variable that does that.",
@@ -3256,7 +3256,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "e09c0b6b42509db5ad31b1a593a7784a64d82d44"
+              "3bbf352d22626880d390d61763b26f42835498ab"
             ]
           },
           "content": "Run the script and go to the rent menu. Pick the first bike on the list and enter `555-5555` when it asks for a phone number again. That phone number should already be in the database, so it won't ask for a name or insert a customer.",
@@ -3281,7 +3281,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "b7c197a97ee7bbeb5fb810d5d7600f77af3f8329"
+              "66e5db6020c259564953f99159209030812fc79c"
             ]
           },
           "content": "In the psql prompt, view all the data in the `rentals` table. There should be a new rental.",
@@ -3306,7 +3306,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "85222ce5e3eafd491e73e6518193a3bc6a7bec36"
+              "5e21c658676e3e5c3000321700f722f05869dfcc"
             ]
           },
           "content": "The rental was added and the `date_rented` was filled in automatically. :smile: Next, view all the data in the `bikes` table. Order the results by `bike_id`",
@@ -3331,7 +3331,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "8cb3078aec5b7740156491e5fa7495830ec707f7"
+              "fd30cb8df0956f1b44b4b67390c8004914aeb0f1"
             ]
           },
           "content": "The available column was set to false for the bike you rented. The last thing to do is give a nice message about the rental. Below the `get bike info` comment, create a `BIKE_INFO` variable that gets the `size` and `type`, in that order, of the bike rented.",
@@ -3360,7 +3360,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "5daa06461f7b46fdc6c7c479fdff224415b13110"
+              "1e0a84cf767985396e0de9f254c345563705665f"
             ]
           },
           "content": "Below the variable you just created, use `echo` to print it.",
@@ -3385,7 +3385,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "47fccb20cb522bb70e5b241dd3f85bafa224d74b"
+              "224485da45671aef46b8597a26f5a6b1113b2ca7"
             ]
           },
           "content": "Run the script again and go to the rent menu, there should now be one less bike displayed. Pick the next bike on the list and rent it using the customer with phone number `555-5555` again so you can see the variable.",
@@ -3409,7 +3409,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "dbe07f9273d1bb32bab1cfdec117de8186e7a616"
+              "e022523f32e12dc93a4657cf99ddcee252a4a9bc"
             ]
           },
           "content": "It should have printed `28 | Mountain`. The message you want to print after someone rents a bike would have said `I have put you down for the 28\" Mountain Bike, Me.`. You need to format that variable for the message. The `sed` command can be used to replace characters and patterns in text. It looks like this: `sed s/<regex_pattern_to_replace>/<characters_to_replace_with>/<regex_flags>`. In the terminal, enter `echo '28 | Mountain' | sed 's/ /=/g'` to practice.",
@@ -3433,7 +3433,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "382a5060720782bd0a31b3a978cd426deee9e958"
+              "ff34343f2d3ab4accc80d54a5fa7e65890d0dfb8"
             ]
           },
           "content": "The command you used, \"piped\" a string (`28 | Mountain`) to the `sed` command, where it replaced all the spaces with `=`. Enter the same command, but replace all the spaces with nothing.",
@@ -3458,7 +3458,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "374d1e276849d89f88ce31273855b5ea322b0c53"
+              "ac30d12a74447e8fc665aa1cb554ea9b37ea476e"
             ]
           },
           "content": "The `g` regex flag stands for \"global\". It will replace all instance of the pattern. In this case, it replaced all the spaces. Enter the same command but without that flag.",
@@ -3483,7 +3483,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "ece18b5105c599e65ccc1e77f3d46a612d6bd1d9"
+              "557d60fdb23dbb1340ea254b5755c2b3a9731360"
             ]
           },
           "content": "That time, only the first instance of the pattern was replaced. The first space was removed. Enter the same command, but replace the first instance of <code>&nbsp;|</code> (`<space>|`) with nothing.",
@@ -3508,7 +3508,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "f5dab7ef1a004e9d8e077fa2887f1fe2523d4ba0"
+              "257abbb052c2bae443a66fa26113f116c9d4bbf1"
             ]
           },
           "content": "Enter the same command, but make the output look like how you want in the message, `28\" Mountain`.",
@@ -3533,7 +3533,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "24bed15c153c4440a774181c036ef555ee269404"
+              "b51b1c1ff12dbc141cc55f6d9c70a2a721507b6c"
             ]
           },
           "content": "Back in your script, where you `echo` the `BIKE_INFO`, pipe the output into a `sed` command that replaces <code>&nbsp;|</code> (`<space>|`) with `\"` so the text will read `<SIZE>\" <TYPE>`. `28 | Mountain` would become `28\" Mountain`, for instance.",
@@ -3558,7 +3558,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "2f45cf692f90a5c703dba03850fc3919c90b6c40"
+              "ab700aa87061e82c9d1e0eb643e7cb488b7e8014"
             ]
           },
           "content": "Run the script and rent another bike using the customer with phone number `555-5555` again. Make sure the bike info printed looks like you want.",
@@ -3582,7 +3582,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "e19d155a68b8ea86f645d59fb0cddd734313a589"
+              "4ba54ca93b3db9bc5a122ca9045a4888659df776"
             ]
           },
           "content": "Now it is formatted for the message. Take that `echo` command and the part that formats it, put it in a sub shell, and set the output into a variable named `BIKE_INFO_FORMATTED`. Here's an example: `BIKE_INFO_FORMATTED=$(<formatted info here>)`",
@@ -3606,7 +3606,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "ceede443cb67af0dd123b58c2d6ba75d894ecb41"
+              "886f33db1b922697db0f1f71811ddc1cc26ea147"
             ]
           },
           "content": "What you put the in subshell (`$(...)`) will be executed, and the result of it will replace the subshell. In this case, the formatted bike info was printed when you ran the script before, so the `BIKE_INFO_FORMATTED` variable will be set to that. Below the `send to main menu` comment, send users to the main menu with a message that would print `I have put you down for the 28\" Mountain Bike, Me.` if `Me` rented the 28 inch Mountain Bike.",
@@ -3632,7 +3632,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "8a034e535ab67df0c1b6102b02f246a0747c3fe4"
+              "88d155e1a8e25d09a9cb5162a9c4c05b3ef7fecc"
             ]
           },
           "content": "Run the script and rent the next bike on the list. Use the customer with `555-5555` as their phone number. When you are done, exit the program.",
@@ -3656,7 +3656,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "7aee1f48dfae598a1cefe593df579a7d4b3b0e9d"
+              "489c2d36aa853cc2a890e6accff47f3bc26ab177"
             ]
           },
           "content": "There's an extra space around the customer's name. You can use `sed` again to fix that. In the terminal, enter `echo ' M e '` to print `M e` with spaces around it to see if you can find out how.",
@@ -3680,7 +3680,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "c70f0b641b1b2d75cec62abb3935af2d7a6bd9fc"
+              "4c1a49d5d771c6a0dcb90f6d4d9d7c1b9e5b969c"
             ]
           },
           "content": "It printed, but you can only assume there's a space at the end. Place the last command in a subshell with quotes around it. Put a period right after the subshell and echo the whole thing in the terminal. Here's how it looks: `echo \"$(echo ' M e ').\"`",
@@ -3703,7 +3703,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "3b5f07eae88c4d802cdc04b8d48d60fda4518ef1"
+              "52af25715456d11e00551d48f336ba3d696a21f5"
             ]
           },
           "content": "Now you can be certain there's a space at the end. Within the subshell of the last command, use a pipe and the `sed` command to replace the first space with no space. Here's the `sed` replacement pattern you want: `'s/ //'`.",
@@ -3729,7 +3729,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "915c8343b56d7146be14a99e03c0c384b9c41fdb"
+              "294cb52d41d40ecb3d8f8e78a9be3af1c368afe8"
             ]
           },
           "content": "That removed only the first space it found. Change the previous command to replace all instances of a space instead of just the first one.",
@@ -3756,7 +3756,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "fe7b420aa63d5fbae3470193bae7aea74309ee28"
+              "a1fc39f29a6b0d38c49f14b04c096202b1c3a076"
             ]
           },
           "content": "That replaced all the spaces. You only had an extra space at the beginning of the customer name. Add a `^` in front of the space in the replacement pattern of the last command to only replace a space at the beginning of the text.",
@@ -3783,7 +3783,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "0f65838bafcc8a6cfa41910bade37c0eb9629217"
+              "f6001fdd286a192cd0aba2f1d89e81bb0bc06b78"
             ]
           },
           "content": "The caret you added means that's the start of the text. So it will replace a space only if it's at the beginning. Enter the last command, but add two more spaces (three total) at the beginning of the **text**.",
@@ -3791,7 +3791,7 @@
             "The previous command was `echo \"$(echo ' M e ' | sed 's/^ //g').\"`",
             "Change the `' M e '` part to include the suggestion",
             "The new text should be <code>'&nbsp;&nbsp;&nbsp;M e&nbsp;'</code> (`'<three_spaces>M e '`)",
-            "In the terminal, enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g').</code>"
+            "In the terminal, enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ //g').\"</code>"
           ]
         }
       ]
@@ -3809,7 +3809,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "7a79441c0d68d9f8a360fbd334729307355facd1"
+              "be1f74b19202ee83fc0032bbf47834bd9fcb3313"
             ]
           },
           "content": "The <code>^&nbsp;</code> (`^<space>`) pattern only replaced the first space. Add `*` at the end of the matching pattern to replace all spaces at the beginning of text.",
@@ -3835,7 +3835,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "d7b2196b141ea5b5a64ad95805fbf5f9c2314f9b"
+              "babdcc5d9cad6813dbd01ded89595df3bb7ca348"
             ]
           },
           "content": "The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is <code>&nbsp;$</code> (`<space>$`).",
@@ -3861,7 +3861,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "4356147f1a4e367547517db12e8f1eb256c5a3b4"
+              "fb5c47ccd8b3d358bd3712dedaee117fe7918f65"
             ]
           },
           "content": "Add two more spaces to the end of the **text** in the previous command (three spaces total).",
@@ -3887,7 +3887,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "fecf40d7aad0c782ac4b663a25a3b1eed61f689d"
+              "e5d86e04cc2cf5c78b58789441156fbeece11dfa"
             ]
           },
           "content": "The pattern only replaces a single space at the end. Change the last command so it replaces all spaces at the end of the text.",
@@ -3914,7 +3914,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "cbd62d539cbd965bae42a1cc80899d9dd31ba91a"
+              "af1d4e27202b1bbc86edaca77feba5881b4a1c17"
             ]
           },
           "content": "That replaced all the spaces at the end of the text. You can use `|` as an \"or\" operator in a matching pattern to replace one pattern or another. Use it to change the matching pattern so it would replace any amount of spaces at the beginning and any amount of spaces at the end of the text.",
@@ -3941,7 +3941,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "cbb0ce00a230cc0e97c26b89e7efd536bbd9102d"
+              "635609bd21f5f1acc0a0e4085768c1a22eaae4ba"
             ]
           },
           "content": "That didn't work. It doesn't like that \"or\" (`|`) operator for some reason. Check the manual of the `sed` command to see if you can find anything.",
@@ -3966,7 +3966,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "4fc2cb670e2831003ee4572fca4a3e3e0bef0ba8"
+              "1e2f43b9fcaeab7c9ec8260699bad2e404c3e98a"
             ]
           },
           "content": "Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g').\"</code> command that didn't work to find out.",
@@ -3989,7 +3989,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "241f8d895c6d3a8b8108c3584339e3ab00cdbf0e"
+              "74bf2f9a5c4b157ac546ce06a01c4f811e590e7f"
             ]
           },
           "content": ":wink: That trimmed all spaces from the front and end of the text. Back in the last message of your script, place the `CUSTOMER_NAME` variable in a subshell, echo and pipe it into a `sed` command that removes all spaces from the front and back. Use the same method you used in the terminal.",
@@ -4015,7 +4015,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "00e2c08e3fe13d8c15039b83bfdd7cd161286702"
+              "380debdaa68c8b1f827ae0d7244ef98031c62a68"
             ]
           },
           "content": "Run the script and rent another bike with the customer whose phone number is `555-5555`. When you are done, exit the program.",
@@ -4039,7 +4039,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "1235f8d756019351d1fa68d448d6d5d882d3ea1f"
+              "b75b7d4b541ed19dc43abc3d9d85a447c205c7b3"
             ]
           },
           "content": "Run the script again. Rent another bike, use `000-0000` as the phone number this time, and `Test` as the name to create a new customer. When you are done, exit the program.",
@@ -4063,7 +4063,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "3f644e72be30839f081005ff9699c2990643c600"
+              "59888d775366e858ee8385b712dc2d600272a081"
             ]
           },
           "content": "Run the script again. Rent another bike with the customer you just created. When you are done, exit the program.",
@@ -4087,7 +4087,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "caa6e6aef86fab14ee67eb6854d4a4febae31349"
+              "660cad6af6af7c1dc060b19e574e2816e1d193c4"
             ]
           },
           "content": "In the psql prompt, view all the data in your bikes table in order by the `bike_id`.",
@@ -4112,7 +4112,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "8cef6d3d4b8b4c98b559f4348c456a6044cde06d"
+              "59e51c4ae25eec372d6d99e0ca9a10107c45fca6"
             ]
           },
           "content": "There should be two bikes left available to rent. Next, look at all the data in the customers table.",
@@ -4137,7 +4137,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "7cec4bd3c13e40d51776254b55f843a82c610014"
+              "cfffdeacfc56e5664a2eb1c11b779e7353ebe4a9"
             ]
           },
           "content": "There should two customers in that table now. Lastly, look at all the data in the rentals table.",
@@ -4162,7 +4162,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "fb01ba692b92b8d6049dcc29a94bb0914d23fb80"
+              "525f7e6fe5a8ab30aa686690ff1c34125fa075fc"
             ]
           },
           "content": "The rent functionality looks like it all works. Delete the `echo Return Menu` line in the `RETURN_MENU` function so you can get started with that.",
@@ -4186,7 +4186,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "8d07679e8feb057aa5d1063a153f85592bdf0cc3"
+              "f7106b039c24d3c9e619b380c13c3b56416bd4a6"
             ]
           },
           "content": "Add three single line comments to the return menu function; `get customer info`, `if not found`, and `send to main menu`, in that order.",
@@ -4212,7 +4212,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0818a020442fedfee8ec8c771886c2f493b0bb20"
+              "4f391ee7df080ab643519ba196ae9fbb59c65559"
             ]
           },
           "content": "Below the `get customer info` comment you just added, print `What's your phone number?` with a new line in front of the sentence.",
@@ -4238,7 +4238,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "e0dc3600cace340b128f46df0da2bb78404cc4f1"
+              "0f4f04335db72c48f68435918296a2cae7980879"
             ]
           },
           "content": "Just below that, use `read` to get input into a `PHONE_NUMBER` variable.",
@@ -4263,7 +4263,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "2a81cd6646651bdf71a3260828a9a0fa0b1638f4"
+              "1a61602ca5acced9315abf81ce60e12a8435e208"
             ]
           },
           "content": "Just below that, set the `CUSTOMER_ID` variable to a query that gets the customer ID from the database using the phone number they gave you.",
@@ -4290,7 +4290,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "a90ae9e3d50d9c3c0ec6a357b1427563f497703a"
+              "a0122fa557505e4a80f3c06471c8bfb8ffa30070"
             ]
           },
           "content": "If they are in the database, the variable will be their `customer_id`. If not, it will be empty. Below the `if not found` comment, add an `if` statement that checks if it's empty. Put the `send to main menu` comment in the `then` area.",
@@ -4316,7 +4316,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "a8d4d6fc73c319c10a382d228915b31d58d894e1"
+              "b43f2be2d4d3e0ca791620b3634821a41a13fb01"
             ]
           },
           "content": "If the customer isn't found, send them to the main menu with the message `I could not find a record for that phone number.`",
@@ -4341,7 +4341,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "36dd0eeaf987c2b4ef87a224d63419adf23b6cf5"
+              "180657b09807c1c8045f655cb53a8aca42b646af"
             ]
           },
           "content": "Run the script and go to the return menu. Enter a phone number that is not in the database. When you are done, exit the program.",
@@ -4365,7 +4365,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "1f097c526efd28386c06bb76df5c9b8ba89306e9"
+              "258e8abbd38895b6b43ddafafb03fc28d4835937"
             ]
           },
           "content": "Add an `else` to the `if` condition for if the phone number is found in the database. Place `get customer's rentals`, `if no rentals`, and `send to main menu` in the `else` area as single line comments.",
@@ -4393,7 +4393,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "2eb1a12719048c997b63c1d0fa7427e13d69f08d"
+              "927096a3119c0c966846f03988a39d22ca689ed4"
             ]
           },
           "content": "You want to find out what rentals a customer has using their phone number and display them. You will need to join all the tables. Start by using the psql prompt to view all the data in the `bikes` table.",
@@ -4418,7 +4418,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "cd832489750232819fcd091e5eb5cbff05ed12f6"
+              "e61a19b7c0ca90d94da73f29f622e60dc69ad1be"
             ]
           },
           "content": "Next, use a `LEFT JOIN` with `bikes` as the left table to join the bikes and rentals tables. Use the `USING` keyword to join the two tables.",
@@ -4446,7 +4446,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "a869217f02054d859e4440d9f4ce320970ae7d84"
+              "022a037d38f843e07e351ae909d980be94324df4"
             ]
           },
           "content": "You only need the bikes that are being rented. Use an inner join with the same two tables to only get those. Use the `USING` keyword again.",
@@ -4473,7 +4473,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "6a84e66575241ab7ff15a72d31b47c857b89c3a7"
+              "0937e8d8de0575a89d7651161d58a9e63548b9fa"
             ]
           },
           "content": "Add a join to the previous command that joins the last table so you can get the customer information. Use an `INNER JOIN` and the `USING` keyword again.",
@@ -4501,7 +4501,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "72d0a269d81bd5669a53a4829ce9eed23e9c9400"
+              "ff327f608272385a4f60c17e43b11d58364c8b6a"
             ]
           },
           "content": "Add two conditions to the last query to narrow down the results to the bikes that are currently being rented by customer with `555-5555` as their phone number. The second condition should check the `date_returned` column",
@@ -4529,7 +4529,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "4bb1d76849380d56251fb16095ebf7b5f78d6fe5"
+              "a0cffdd79ec37b6a51809b50c26c625d6019ea1e"
             ]
           },
           "content": "Now you have all the rentals for one specific customer. Only get the columns you need to display the bike information to them. They are the same three columns you used to display the list of available bikes.",
@@ -4555,7 +4555,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "7de63d16d26773cca41722571cb724a4d61bd059"
+              "4f4adbd8fb32c922a4416a9e190788abea437724"
             ]
           },
           "content": "One more thing, order the results of the last query by their `bike_id` column.",
@@ -4581,7 +4581,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "e542625470b0dc1bf9a402b831861da6e8aa263c"
+              "dc364d9ec15e1f22af38b14d9ca7f58dd854e405"
             ]
           },
           "content": "That's the query you will need to use to get the bikes a customer is renting. In your script below the `get customer's rentals` comment. Create a `CUSTOMER_RENTALS` variable that gets the rentals for the customer. Use the `PHONE_NUMBER` variable to get them.",
@@ -4608,7 +4608,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "4fb388ea5b44de036d312b7c11f38bfe64895b5a"
+              "3f084cacbb729b7fc11af305191bfd9226963e1d"
             ]
           },
           "content": "Below the variable you just created, use `echo` to print it. Make sure to put double quotes around it.",
@@ -4633,7 +4633,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "65bd3540a56b035c38fe3d17edee592b758ac38b"
+              "93eca483a0d24e12053e76dd289c6acb207672d1"
             ]
           },
           "content": "Run the script and go to the return menu. Enter `555-5555` for the phone number to see the rentals for `Me`.",
@@ -4657,7 +4657,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "d130ad33f645944c41c842420e9a7be12d93920b"
+              "2e01e851dd2317b2080af50d5c05b8a3f09cb719"
             ]
           },
           "content": "The query is working. If the customer has no rentals, the variable will be empty. Below the `if no rentals` comment, add an `if` condition that checks if it's empty. Put the `send to main` menu comment in the `then` area again.",
@@ -4683,7 +4683,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "6e511dca8a0f387d3dc55e97bb6714aaaab0e40d"
+              "0e5b97c5c4b4f85524f3ffe11ea5a609ea56a444"
             ]
           },
           "content": "If the customer has no rentals, send them to the main menu with the message `You do not have any bikes rented.` Add the code below the next comment.",
@@ -4708,7 +4708,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "b244afb12d6e4cce8481e3fd50c4d67f5df35353"
+              "4d5a9de53319a08324b09136a8bf19fc67e8560f"
             ]
           },
           "content": "Add an `else` to the condition for when the customer does have rentals. Place four single line comments in it; `display rented bikes`, `ask for bike to return`, `if not a number`, and `send to main menu`.",
@@ -4735,7 +4735,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "cd50bbaef7efa8b3c3b5d57f2348f6f31471d0cd"
+              "c5b1a84b29712ceaed55caa70248a04ce083fce7"
             ]
           },
           "content": "Below the `display rented bikes` comment, print `Here are your rentals:` with a new line in front of it.",
@@ -4761,7 +4761,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "4fbf3cf8d06407c226f96234e7c2516ff1954244"
+              "d2df22deadf6468cc839499ac29dc0aeb074c515"
             ]
           },
           "content": "Move the `echo $CUSTOMER_RENTALS` line to below the line you just printed.",
@@ -4786,7 +4786,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "b4538f82412ad1dd0dea535a1087ad316ddd7143"
+              "3ff49ba82c3e962472fc09fa6d40f1390f74692c"
             ]
           },
           "content": "Run the script and go to the return menu. Enter `555-5555` for the phone number to see the rented bikes.",
@@ -4810,7 +4810,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "f060179b18f7a5381491240f109e5f85827482e5"
+              "82166aa957ad8e1c889447b35d11dd14951c405a"
             ]
           },
           "content": "Where you print the list of rented bikes, pipe the command into a `while` loop that reads the data. You should read the data into `BIKE_ID`, `BAR`, `TYPE`, `BAR`, and `SIZE` variables. Make it print each rented bike in the same fashion as the list of available bikes.",
@@ -4836,7 +4836,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "01db95fc2cebcf18efb9dbb43d44ed75122ec0c5"
+              "762bafc781365d2fd69edc0cfd3439e9edda3e49"
             ]
           },
           "content": "Run the script and go to the return menu. Enter the same phone number again to make sure the list is showing up correctly.",
@@ -4860,7 +4860,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "7ca9fa28f70def3d373941d46971faaadebf364b"
+              "2db2d617d83ea657c9d1faa92566ebfc07ab9ae9"
             ]
           },
           "content": "Below the `ask for bike to return` comment, print `Which one would you like to return?` with a new line in front of it.",
@@ -4886,7 +4886,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "19313b10071aaadb9f2be8037180e1c18c4e108a"
+              "5bc755cecd0e95cb64bcf5934b7bfc21a976da57"
             ]
           },
           "content": "Below the line you just printed, read input into a `BIKE_ID_TO_RETURN` variable.",
@@ -4911,7 +4911,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "f236a9acd105d9f3bf35cdcae511581935be9b2e"
+              "0686c9dee770056ae0b3b8074073229b76db2f1c"
             ]
           },
           "content": "Below the `if not a number` comment, check if the input for the bike ID to return is a number using the same method you did earlier. Place the `send to main menu` comment in the statement.",
@@ -4938,7 +4938,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "17986ede956416a6467b5c06ea596fea6ae9365b"
+              "f0f96c7efa3da23012b409ed89bc1c767dfeb6b1"
             ]
           },
           "content": "If they don't input a number, send them to the main menu with `That is not a valid bike number.` as the message.",
@@ -4963,7 +4963,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0ee22941cd7a0dd0cf3030fcf1f62152a66d94f9"
+              "658c2f5bdf26954f0c4d4114877e64bad33ed251"
             ]
           },
           "content": "Add an `else` for when they do input a number. Place `check if input is rented`, `if input not rented`, and `send to main menu` single line comments in it.",
@@ -4990,7 +4990,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "c7fd10a312b34c4b89f6b238e8e5fab37cf4669a"
+              "0576c50e36b1d43eb6ed30c7cd051fd0c70e85bd"
             ]
           },
           "content": "You need to check if the input is a `bike_id` rented by the customer so you can return it. In the psql prompt, join the `rentals` and `customers` tables with an `INNER JOIN` using the `USING` keyword.",
@@ -5018,7 +5018,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "e9d796c9de07f729148f1ac1a7d075d24d3a9e9d"
+              "dc3d5e0a658d35e26a00d25ef2571101b47fe27d"
             ]
           },
           "content": "Add three conditions to the previous query. Check the `phone`, `bike_id`, and `date_returned` columns to narrow the results to the first bike you rented with `Me`.",
@@ -5047,7 +5047,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "83a4b04b5c77b90c3d962097ff90cb2ab425cbde"
+              "cfa733dbc7118af7d0c5cd3b763a6aebdd7de78b"
             ]
           },
           "content": "You only need to know what bike is going to be returned. Narrow the columns from the last query to only get the one column you would need for returning a bike.",
@@ -5073,7 +5073,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "2e3449b8bc3383190dba70817ceb439dbc8a0256"
+              "eae8c55a0330d77fe472bdaf1931ac540bc797c4"
             ]
           },
           "content": "Back in the script, below the `check if input is rented` comment, create a `RENTAL_ID` variable that gets the rental ID of the bike that was input.",
@@ -5100,7 +5100,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "91f99865183930c1c9f85f61652cff496ba6ea50"
+              "44e537396e078e73f4244d0b0d2815eda8a76c97"
             ]
           },
           "content": "Below the `if input not rented` comment, add an `if` that checks if the `RENTAL_ID` variable is empty. Place the `send to main menu` comment in the `then` area.",
@@ -5126,7 +5126,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "21eb317dd60e35a523ee6cdac5059d8f2919c8ce"
+              "93de7f9b8c38468339518e1423ed9ff21a4d31d4"
             ]
           },
           "content": "If the input isn't rented by the given customer, send them to the main menu with `You do not have that bike rented.` as the message.",
@@ -5151,7 +5151,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "a25567dd01a534db5598624476871892725f4a63"
+              "5dedd816c9fe3c4702873b19ceee4ebfe536c37c"
             ]
           },
           "content": "Add an `else` to the `if` condition you just added. Use `echo` to print `Rental ID $RENTAL_ID found` in it so you can see if it's all working.",
@@ -5176,7 +5176,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "f9fc050fb3e754b482ff86f159ecd16229ed05b2"
+              "e75063158c359c9ed0abf2b6d266248cd977d4e6"
             ]
           },
           "content": "Run the script and go to the return menu. Enter `555-5555` to see the rented bikes. Input a bike that isn't on the list, then go to the menu again and input a bike that is on the list.",
@@ -5200,7 +5200,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "022eea61dc7b4959bc45decafc0a44519af5cc26"
+              "42b39efa91b0206d4273fadd7316cd9d8334efb5"
             ]
           },
           "content": "Looks like it works. Delete the line where you print the rental ID.",
@@ -5223,7 +5223,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "4c884ee05f0c0302fbdf622ff8c6b349ce1a8488"
+              "b5d0561f14a0a7035e88091a8d6cc936df8d95ab"
             ]
           },
           "content": "Add three single line comments in the `else` area; `update date_returned`, `set bike availability to true`, and `send to main menu`.",
@@ -5250,7 +5250,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "5a9ee893918ad5f36fcb66e34913f26b1ea7c5af"
+              "7bcb8603b1fb1f36a0a41adb11b1316b64eee16d"
             ]
           },
           "content": "After a person picks a bike to return and you know that it's a bike they have rented, you need to update all the info in the database to return it. Below the `update date_returned` comment, create a `RETURN_BIKE_RESULT` variable that sets the `date_returned` column to `NOW()` for the bike rented. Use the `RENTAL_ID` to figure out which row to update.",
@@ -5277,7 +5277,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "79bc6c8ef3db9da54d44fd298de8c9bfc2cefc4a"
+              "8a169d662a0152f8fdf706bcb01d15145afd0800"
             ]
           },
           "content": "That should update the rentals table. Lastly, you need to make the bike available again. Below the `set bike availability to true` comment, create a `SET_TO_TRUE_RESULT` variable that makes the bike available again.",
@@ -5304,7 +5304,7 @@
               "./bike-shop.sh"
             ],
             "commits": [
-              "0aa157ca476723cf94dea14dcb9e7be64074561b"
+              "4d7a13906fcd1ef7a56c512a83f742c04a99c10e"
             ]
           },
           "content": "After all that is done, send them to the main menu with `Thank you for returning your bike.` as the message.",
@@ -5330,7 +5330,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "1a8f6db80bc507484ee0d499c92708b28dcf2e03"
+              "1f352a0935240c3f1129d178d197cd32175c0df5"
             ]
           },
           "content": "Run the script and return one of the bikes that `Me` has rented out. When you are done, exit the program.",
@@ -5354,7 +5354,7 @@
               "../queryResults.log"
             ],
             "commits": [
-              "50ec0ad8663bfcf3f965d67a88b82b12fa874666"
+              "f9fc21b518d029938751420b485f6cec17c9684f"
             ]
           },
           "content": "In the psql prompt, view all the data in the `rentals` table.",
@@ -5379,13 +5379,13 @@
               "../queryResults.log"
             ],
             "commits": [
-              "867d59bfd494004689b6ac4c4659527ad021e7d3"
+              "dae5e30c7a15185c779357cf7b7325afd312553f"
             ]
           },
           "content": "Now the rental has been returned. View all the data in the bikes table in order by their `bike_id`.",
           "hints": [
             "Use the `SELECT` and `FROM` keywords with `*` to view all the data",
-            "Enter `SELECT * FROM bikes;` in the psql prompt",
+            "Enter `SELECT * FROM bikes ORDER BY bike_id;` in the psql prompt",
             "You can type `psql --username=freecodecamp --dbname=bikes` into the terminal to log in to psql if you aren't logged in."
           ]
         }
@@ -5404,7 +5404,7 @@
               "../.bash_history"
             ],
             "commits": [
-              "0f3c76ae5d1af17dad17fd06dc229d01632060a9"
+              "fb27f7a177dd5ea7e3d60db3a8498554c41863ce"
             ]
           },
           "content": "And the bike is available again. This is the last step. Run the script once more. Feel free to play around, rent and return some bikes. When you are ready to be done, return all the bikes you rented and exit the program.",
