@@ -2176,7 +2176,7 @@ The customer name only had an extra space at the beginning. Unsure as to why, bu
 
 #### HINTS
 
-- The previous command was <cdoe>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g')."</code>
+- The previous command was <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g')."</code>
 - The matching pattern is between the first and second forward slash
 - Change the matching pattern to the suggestion
 - Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/ $//g')."</code> in the terminal
