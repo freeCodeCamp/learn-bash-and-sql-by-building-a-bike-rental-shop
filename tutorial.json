@@ -3840,7 +3840,7 @@
           },
           "content": "The customer name only had an extra space at the beginning. Unsure as to why, but there may be others with extra spaces at the end as well. You can match the end of text with `$`. Change the matching pattern of the last command so it replaces a single space at the end. The pattern is <code>&nbsp;$</code> (`<space>$`).",
           "hints": [
-            "The previous command was <cdoe>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g').\"</code>",
+            "The previous command was <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/^ *//g').\"</code>",
             "The matching pattern is between the first and second forward slash",
             "Change the matching pattern to the suggestion",
             "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e ' | sed 's/ $//g').\"</code> in the terminal"
