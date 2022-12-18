@@ -2257,7 +2257,7 @@
               "3c3159568f83e72036a049bb400a8234b6c7c8d4"
             ]
           },
-          "content": "It's working :smile: Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27\" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.",
+          "content": "It's working :smile: ! Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27\" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.",
           "hints": [
             "Be sure to use double quotes and escape the `\"` after `SIZE`",
             "Run your script and check the output if you want to see if it matches the suggestion",
@@ -2309,7 +2309,7 @@
               "4402738e0d58b9b7c66bb12cd2fd5ce4b70238a8"
             ]
           },
-          "content": "That's better. Below the `ask for bike to rent comment`, print `Which one would you like to rent?` with a new line in front of it.",
+          "content": "That's better. Below the `ask for bike to rent` comment, print `Which one would you like to rent?` with a new line in front of it.",
           "hints": [
             "Use `echo` with the `-e` flag and the new line character (`\\n`) to print the suggested message",
             "Use double quotes around the message",
@@ -3971,7 +3971,8 @@
           },
           "content": "Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g').\"</code> command that didn't work to find out.",
           "hints": [
-            ":point_down:"
+            "`-E` is the flag that's used for using extended regular expressions with `sed`.",
+            "Enter `echo \"$(echo ' M e ' | sed -E 's/^ *| *$//g').\"`"
           ]
         }
       ]
