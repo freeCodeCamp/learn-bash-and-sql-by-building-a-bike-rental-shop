@@ -1261,7 +1261,7 @@ Run the script and go to the rent menu again to see if it's working.
 
 ### 1145.1
 
-It's working :smile: Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
+It's working :smile: ! Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
 
 #### HINTS
 
@@ -1293,7 +1293,7 @@ Run the script and go to the rent menu again to see what it looks like now.
 
 ### 1160.1
 
-That's better. Below the `ask for bike to rent comment`, print `Which one would you like to rent?` with a new line in front of it.
+That's better. Below the `ask for bike to rent` comment, print `Which one would you like to rent?` with a new line in front of it.
 
 #### HINTS
 
@@ -2242,7 +2242,8 @@ Somewhere in there is a flag for using extended regular expressions with `sed`. 
 
 #### HINTS
 
-- :point_down:
+- `-E` is the flag that's used for using extended regular expressions with `sed`.
+- Enter `echo "$(echo ' M e ' | sed -E 's/^ *| *$//g')."`
 
 ## 1440. Change to trim CUSTOMER_NAME
 
