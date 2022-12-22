@@ -2309,7 +2309,7 @@
               "4402738e0d58b9b7c66bb12cd2fd5ce4b70238a8"
             ]
           },
-          "content": "That's better. Below the `ask for bike to rent comment`, print `Which one would you like to rent?` with a new line in front of it.",
+          "content": "That's better. Below the `ask for bike to rent` comment, print `Which one would you like to rent?` with a new line in front of it.",
           "hints": [
             "Use `echo` with the `-e` flag and the new line character (`\\n`) to print the suggested message",
             "Use double quotes around the message",
@@ -3971,7 +3971,12 @@
           },
           "content": "Somewhere in there is a flag for using extended regular expressions with `sed`. That might work. Add it to the <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g').\"</code> command that didn't work to find out.",
           "hints": [
-            ":point_down:"
+            ":point_down:",
+            "Find the flag in the terminal output for using extended regular expressions with `sed`",
+            "It's the `-E` flag",
+            "You previously entered <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g').\"</code>",
+            "Add the `-E` flag to the `sed` part of that command",
+            "Enter <code>echo \"$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed -E 's/^ *| *$//g').\"</code> in the terminal"
           ]
         }
       ]

@@ -1293,7 +1293,7 @@ Run the script and go to the rent menu again to see what it looks like now.
 
 ### 1160.1
 
-That's better. Below the `ask for bike to rent comment`, print `Which one would you like to rent?` with a new line in front of it.
+That's better. Below the `ask for bike to rent` comment, print `Which one would you like to rent?` with a new line in front of it.
 
 #### HINTS
 
@@ -2243,6 +2243,11 @@ Somewhere in there is a flag for using extended regular expressions with `sed`. 
 #### HINTS
 
 - :point_down:
+- Find the flag in the terminal output for using extended regular expressions with `sed`
+- It's the `-E` flag
+- You previously entered <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g')."</code>
+- Add the `-E` flag to the `sed` part of that command
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed -E 's/^ *| *$//g')."</code> in the terminal
 
 ## 1440. Change to trim CUSTOMER_NAME
 
