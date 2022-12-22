@@ -28,3 +28,7 @@ Whenever a new version is created, add the new branch name and the changes here
 - There was an issue with the last commit not loading after using the reset button in a tutorial. I added a final commit at end that seems to have resolved it.
 - Add `exit` flag to mocha so the tests can't hang
 - Fix hints on steps 1428 and 1760
+
+## [v1.0.4]
+
+- Fix regex tests that weren't working with space literals. Change to use `\s` on steps 1428-1438.
