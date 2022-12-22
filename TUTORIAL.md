@@ -1261,7 +1261,7 @@ Run the script and go to the rent menu again to see if it's working.
 
 ### 1145.1
 
-It's working :smile: ! Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
+It's working :smile: Adjust the echo command that prints the bike info so that the first line printed would look like this: `1) 27" Mountain Bike`. The rest would look the same, but with their bike info. Make sure to escape any characters you need to.
 
 #### HINTS
 
@@ -2242,8 +2242,12 @@ Somewhere in there is a flag for using extended regular expressions with `sed`. 
 
 #### HINTS
 
-- `-E` is the flag that's used for using extended regular expressions with `sed`.
-- Enter `echo "$(echo ' M e ' | sed -E 's/^ *| *$//g')."`
+- :point_down:
+- Find the flag in the terminal output for using extended regular expressions with `sed`
+- It's the `-E` flag
+- You previously entered <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed 's/^ *| *$//g')."</code>
+- Add the `-E` flag to the `sed` part of that command
+- Enter <code>echo "$(echo '&nbsp;&nbsp;&nbsp;M e&nbsp;&nbsp;&nbsp;' | sed -E 's/^ *| *$//g')."</code> in the terminal
 
 ## 1440. Change to trim CUSTOMER_NAME
 
