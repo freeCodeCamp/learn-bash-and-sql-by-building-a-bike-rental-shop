@@ -2053,6 +2053,7 @@ Now it is formatted for the message. Take that `echo` command and the part that 
 
 #### HINTS
 
+- A "subshell" is a child process launched by the shell, or a shell script.
 - You want to put the `echo $BIKE_INFO | sed 's/ |/"/'` part in the subshell
 - It should look like this: `BIKE_INFO_FORMATTED=$(echo $BIKE_INFO | sed 's/ |/"/')`
 
