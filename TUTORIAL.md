@@ -2047,6 +2047,9 @@ Run the script and rent another bike using the customer with phone number `555-5
 
 ## 1415. Add BIKE_INFO_FORMATTED
 
+- `Note`<br> 
+`Definition of Subshell : A subshell is a child process launched by a shell (or shell script). A subshell is a separate instance of the command processor.`
+
 ### 1415.1
 
 Now it is formatted for the message. Take that `echo` command and the part that formats it, put it in a sub shell, and set the output into a variable named `BIKE_INFO_FORMATTED`. Here's an example: `BIKE_INFO_FORMATTED=$(<formatted info here>)`
