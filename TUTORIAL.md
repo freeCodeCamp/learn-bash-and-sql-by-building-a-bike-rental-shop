@@ -435,7 +435,7 @@ Display the details of the `rentals` table again.
 
 ### 330.1
 
-It looks good. Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.
+It looks good. Lastly, you need a column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.
 
 #### HINTS
 
