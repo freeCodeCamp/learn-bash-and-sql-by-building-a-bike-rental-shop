@@ -913,7 +913,7 @@
               "4d5b08e515ce977f04848327a01d70cbf25c8501"
             ]
           },
-          "content": "It looks good. Lastly, you need column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.",
+          "content": "It looks good. Lastly, you need a column for when a customer returns a bike. Add a column named `date_returned` that's a type of `DATE`.",
           "hints": [
             "Use the `ALTER TABLE`, `ADD COLUMN`, `DATE` keywords",
             "Add the column to the `rentals` table",
