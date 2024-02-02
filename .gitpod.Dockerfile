@@ -7,3 +7,4 @@ WORKDIR ${HOMEDIR}
 RUN sudo apt-get update && sudo apt-get upgrade -y
 
 ENV CODEROAD_TUTORIAL_URL=https://raw.githubusercontent.com/freeCodeCamp/learn-bash-and-sql-by-building-a-bike-rental-shop/main/tutorial.json
+ENV CODEROAD_DISABLE_RUN_ON_SAVE=true
