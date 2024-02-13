@@ -32,3 +32,7 @@ Whenever a new version is created, add the new branch name and the changes here
 ## [v1.0.4]
 
 - Fix regex tests that weren't working with space literals. Change to use `\s` on steps 1428-1438.
+
+## [v2.0.0]
+
+- Add Gitpod config
