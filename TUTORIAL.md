@@ -3006,7 +3006,7 @@ else
   <STATEMENTS>
 fi
 ```
-- Place `echo "Rental ID $RENTAL_ID found"` in the else area
+- Place `echo "Rental ID $RENTAL_ID found."` in the else area
 - The `if` condition should look like this:
 ```sh
 if [[ -z $RENTAL_ID ]]
