@@ -559,7 +559,7 @@ Use `SELECT` to view all the data in the `bikes` table again.
 
 ### 420.1
 
-Add the two bikes to your inventory, they are `28` and `29` inch `Road` bikes. Try to add them both with one command.
+Add two more two bikes to your inventory. They are `28` and `29` inch `Road` bikes. Try to add them both with one command.
 
 #### HINTS
 
