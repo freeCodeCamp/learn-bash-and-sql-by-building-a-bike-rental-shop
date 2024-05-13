@@ -2060,7 +2060,7 @@ Now it is formatted for the message. Take that `echo` command and the part that 
 
 ### 1417.1
 
-What you put the in subshell (`$(...)`) will be executed, and the result of it will replace the subshell. In this case, the formatted bike info was printed when you ran the script before, so the `BIKE_INFO_FORMATTED` variable will be set to that. Below the `send to main menu` comment, send users to the main menu with a message that would print `I have put you down for the 28" Mountain Bike, Me.` if `Me` rented the 28 inch Mountain Bike.
+What you put in the subshell (`$(...)`) will be executed, and the result of it will replace the subshell. In this case, the formatted bike info was printed when you ran the script before, so the `BIKE_INFO_FORMATTED` variable will be set to that. Below the `send to main menu` comment, send users to the main menu with a message that would print `I have put you down for the 28" Mountain Bike, Me.` if `Me` rented the 28 inch Mountain Bike.
 
 #### HINTS
 
