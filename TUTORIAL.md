@@ -1339,7 +1339,7 @@ It printed `1` for false. Meaning that `a` did not match the pattern [0-9], or `
 
 ### 1166.1
 
-That printed `0` for true. `a1` does contain a number from `0-9`. Enter the same command, but change the pattern to `^[0-9]$`. The `^` signifies the start of the pattern, and `$` means the end. So the input will have to start, contain a number `0-9`, and end.
+That printed `0` for true. `a1` does contain a number from `0-9`. Enter the same command, but change the pattern to `^[0-9]$`. The `^` signifies the start of the pattern, and `$` means the end. So the input will have to be a single digit to return '0' for true.
 
 #### HINTS
 
