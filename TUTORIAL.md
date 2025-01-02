@@ -1517,7 +1517,7 @@ Right below the variable you just created, use echo to print it so you can see w
 
 ### 1200.1
 
-Run the script a few times, go to the rent menu, enter a bike that is available and one that isn't. You should have some `BMX` bikes that aren't available.
+Run the script a few times, go to the rent menu, enter a bike that is available and one that isn't.
 
 #### HINTS
 

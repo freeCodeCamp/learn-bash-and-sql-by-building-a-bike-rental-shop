@@ -2685,7 +2685,7 @@
               "ad6701ab87f1bd840f0dc1fd1f5e12bb0e8b183d"
             ]
           },
-          "content": "Run the script a few times, go to the rent menu, enter a bike that is available and one that isn't. You should have some `BMX` bikes that aren't available.",
+          "content": "Run the script a few times, go to the rent menu, enter a bike that is available and one that isn't.",
           "hints": [
             "Enter `./bike-shop.sh` in the terminal and press enter",
             "Make sure you are in the `project` folder first"
